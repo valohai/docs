@@ -1,14 +1,26 @@
-.. Valohai documentation master file, created by
-   sphinx-quickstart on Wed Mar 29 14:34:54 2017.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+Valohai Documentation
+=====================
 
-Welcome to Valohai's documentation!
-===================================
+Welcome to the Valohai documentation!
+
+Valohai is a machine learning platform. It can run your experiments
+locally and in the cloud. The platform also tracks your experiment
+history and enables collaboration between members in a machine learning
+team.
+
+Everything in Valohai begins with the ``valohai.yaml`` configuration
+file. It is recommended that you read through the different parts of the
+configuration to understand the core concepts of the Valohai platform.
+
+.. seealso:: :doc:`valohai-yaml`
+
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contents:
+
+   getting-started
+   valohai-yaml
 
 
 
