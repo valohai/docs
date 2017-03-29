@@ -6,3 +6,8 @@ machine:
 test:
   override:
     - "make SPHINXOPTS=-W html"
+deployment:
+  production:
+    branch: master
+    commands:
+      - ./upload.sh
