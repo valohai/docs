@@ -14,19 +14,11 @@ configuration to understand the core concepts of the Valohai platform.
 
 .. seealso:: :doc:`valohai-yaml`
 
+Contents
+~~~~~~~~
 
 .. toctree::
    :maxdepth: 1
-   :caption: Contents:
 
    getting-started
    valohai-yaml
-
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`

@@ -9,50 +9,42 @@ The root level of a configuration file contains a list of steps.
 Steps
 ~~~~~
 
-Every ``step`` defines a separate execution. It has five valid
-properties:
+Every ``step`` defines a separate execution. It has five valid properties:
 
 Name
 ^^^^
 
-``name`` of the step simply identifies the step in a human-readable
-format.
+The ``name`` of the step simply identifies the step in a human-readable format.
 
 Image
 ^^^^^
 
 ``image`` identifies the Docker image that will be used as the base of
 the experiment execution. Your code will be inserted run inside this
-image, so it should contain all the dependencies your experiment has.
+image, so it should contain most or all the dependencies your experiment has.
 
 Command(s)
 ^^^^^^^^^^
 
-``commmand`` defines a single command or a list of commands that are
-run.
+``command`` defines a single command or a list of commands that are run.
 
 Inputs
 ^^^^^^
 
-``inputs`` defines a list of inputs. Inputs are data that is available
-during step execution.
+``inputs`` defines a list of inputs.
+Inputs are data that is available during step execution.
+Inputs are optional for the step.
 
 An input has three valid properties:
 
-``name`` defines a human-readable name for the input.
+* ``name``: defines a human-readable name for the input.
+* ``default``: defines a source where the input will be fetched from.
+* ``optional``: if defined marks that this input is optional and a URL is
+  not necessary to be defined before execution of the step.
 
-``default`` defines a source where the input will be fetched from.
+Currently valid sources for inputs are HTTP and HTTPS URLs. For these basic access authentication is supported.
 
-``optional`` if defined marks that this input is optional and a URL is
-not necessary to be defined before execution of the step.
-
-Currently valid sources for inputs are HTTP and HTTPS URLs. For these
-basic access authentication is supported.
-
-During the step execution, the inputs are available under
-``/valohai/inputs/<input name>/<input file>``.
-
-Inputs are optional for the step.
+During the step execution, the inputs are available under ``/valohai/inputs/<input name>/<input file>``.
 
 Parameters
 ^^^^^^^^^^
@@ -60,32 +52,25 @@ Parameters
 ``parameters`` defines a list of parameters. Parameters can be accessed
 from the code and used to modify the execution at runtime.
 
-A parameter has three valid properties:
-
-``name`` defines a human-readable name for the parameter.
-
-``pass-as`` defines how the parameter is passed to the command(s).
-Optional, if not defined the the parameter is passed as
-``--<name> <value>``.
-
-``description`` describes what the parameter value is used for.
-
-``type`` defines what type the parameter is. Valid values are *float*,
-*integer* and *string*.
-
-``value`` defines a default value for the parameter.
-
-``optional`` if defined marks that this input is parameter and a value
-is not necessary to be defined before execution of the step.
-
 Parameters are optional for the step.
+
+A parameter has these valid properties:
+
+* ``name`` defines a human-readable name for the parameter.
+* ``pass-as`` defines how the parameter is passed to the command(s).
+  Optional; if not defined, the parameter is passed as  ``--<name> <value>``.
+* ``description``: describes what the parameter value is used for.
+* ``type``: defines what type the parameter is. Valid values are *float*, *integer* and *string*.
+* ``default``: defines a default value for the parameter.
+* ``optional``: if defined, marks that this input is optional
+  and a value is not necessary to be defined before execution of the step.
 
 An example configuration file
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A configuration file could look like this:
 
-::
+.. code-block:: yaml
 
     ---
 
