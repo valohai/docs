@@ -1,0 +1,9 @@
+machine:
+  python:
+    version: 3.5.2
+  environment:
+    PIP_EXISTS_ACTION: w
+test:
+  override:
+    - "make html"
+    
