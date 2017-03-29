@@ -1,0 +1,47 @@
+
+header {
+  background: #fff;
+  color: #333;
+  padding: 0.5em 1em;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  img {
+    width: 100px;
+  }
+  nav {
+    flex: 1;
+    padding-top: 0.3em;
+    margin-left: 0.66em;
+    a {
+      color: inherit;
+      &.current {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+main.document {
+  max-width: 50em;
+  margin: auto;
+  line-height: 1.5;
+}
+
+footer {
+  text-align: center;
+  margin: 4em;
+  opacity: 0.5;
+  font-size: 0.825em;
+}
+
+.headerlink {
+  display: none;
+  padding-left: 0.25em;
+  color: #ddd;
+  text-decoration: none;
+
+}
+
+:hover > .headerlink {
+  display: inline;
+}

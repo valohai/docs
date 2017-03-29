@@ -19,5 +19,8 @@ help:
 %: Makefile
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
-watch:
-	sphinx-autobuild -b html -B -p 44044 $(SPHINXOPTS) "$(SOURCEDIR)" "$(BUILDDIR)/html"
+css:
+	node build-css.js
+
+watch: css
+	sphinx-autobuild -i '*.scss' -b html -B -p 44044 $(SPHINXOPTS) "$(SOURCEDIR)" "$(BUILDDIR)/html"

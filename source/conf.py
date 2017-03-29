@@ -31,7 +31,12 @@ language = None
 exclude_patterns = []
 pygments_style = 'sphinx'
 todo_include_todos = True
-html_theme = 'alabaster'
-html_theme_options = {}
+html_theme = 'valodoc'
+html_theme_path = ['_themes']
 html_static_path = ['_static']
+html_theme_options = {
+    'analytics_id': 'UA-87958940-3',
+    'canonical_url': 'https://docs.valohai.com/',
+}
+html_sidebars = {}
 intersphinx_mapping = {'https://docs.python.org/': None}

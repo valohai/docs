@@ -1,0 +1,28 @@
+@import "normalize";
+
+body {
+  margin: 0;
+}
+
+@import "_typo.scss";
+@import "_structure.scss";
+@import "_admonitions.scss";
+
+a {
+  color: #058;
+}
+
+a:hover {
+  color: #011;
+}
+
+a:visited {
+  color: #358;
+}
+
+pre {
+  background: #f6f6f6;
+  padding: 0.5em 1em;
+  margin: 15px 0;
+  line-height: 1.3em;
+}
