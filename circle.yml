@@ -5,5 +5,4 @@ machine:
     PIP_EXISTS_ACTION: w
 test:
   override:
-    - "make html"
-    
+    - "make SPHINXOPTS=-W html"
