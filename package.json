@@ -1,0 +1,13 @@
+{
+  "name": "valohai-docs",
+  "version": "0.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:valohai/docs.git",
+  "author": "Valohai <hait@valohai.com>",
+  "license": "UNLICENSED",
+  "private": "true",
+  "dependencies": {
+    "cssnano": "^3.10.0",
+    "node-sass": "^4.5.2"
+  }
+}
