@@ -2,11 +2,23 @@
 
 ## Development
 
-* `make watch` will open a [`sphinx-autobuild`](sab) server for you.
-  It automagically rebuilds documentation.
-* `make html` will build the HTML documentation for distribution.
+Setup:
 
-### Style development 
+```bash
+# Make Python 3 venv for the project if you want to.
+pip install -r requirement.txt
+yarn  # or npm install
+```
 
-* `make css` will convert SCSS to CSS.
-* When developing styles, use `make SPHINXOPTS=-E watch` to have Sphinx regenerate all files.
+Building:
+
+```bash
+make watch                # starts 'sphinx-autobuild' server that rebuilds HTML on change, but doesn't watch CSS
+make SPHINXOPTS=-E watch  # force regenerates all files
+make css                  # converts SCSS to CSS
+make html                 # builds the HTML and CSS for distribution
+```
+
+## Deployment
+
+Deployment happens automatically when `master` branch updates on GitHub.
