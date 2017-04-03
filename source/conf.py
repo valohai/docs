@@ -31,6 +31,7 @@ language = None
 exclude_patterns = []
 pygments_style = 'sphinx'
 todo_include_todos = True
+html_favicon = 'favicon.ico'
 html_theme = 'valodoc'
 html_theme_path = ['_themes']
 html_static_path = ['_static']
