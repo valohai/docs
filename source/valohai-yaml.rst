@@ -1,74 +1,97 @@
-The ``valohai.yaml`` Configuration File
----------------------------------------
+``valohai.yaml`` Configuration
+------------------------------
 
-The ``valohai.yaml`` configuration file contains all the instructions
-required for the platform to execute your experiments.
+``valohai.yaml`` configuration file defines how the platform runs your experiments.
 
-The root level of a configuration file contains a list of steps.
+``valohai.yaml`` should be placed at the root of your project version control repository.
 
-Steps
-~~~~~
+The configuration file defines a collection of steps:
 
-Every ``step`` defines a separate execution. It has five valid properties:
+.. code-block:: yaml
 
-Name
-^^^^
+    ---
 
-The ``name`` of the step simply identifies the step in a human-readable format.
+    - step:
+        name: Hardware check
+        image: gcr.io/tensorflow/tensorflow:0.12.1-devel-gpu
+        command: nvidia-smi
 
-Image
-^^^^^
+    - step:
+        name: Environment check
+        image: busybox
+        command:
+          - printenv
+          - python --version
 
-``image`` identifies the Docker image that will be used as the base of
-the experiment execution. Your code will be inserted run inside this
-image, so it should contain most or all the dependencies your experiment has.
+For example, the configuration file above defines two steps:
 
-Command(s)
-^^^^^^^^^^
+* **Hardware check**: executes ``nvidia-smi`` to check the status of server GPU using ``gcr.io/tensorflow/tensorflow:0.12.1-devel-gpu`` Docker image
+* **Environment check**: executes ``printenv`` followed by ``python --version`` to check how the run-time environment looks like inside ``busybox`` Docker image
 
-``command`` defines a single command or a list of commands that are run.
+``step`` defines the execution type
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Inputs
-^^^^^^
+Every ``step`` defines a separate type of execution such as "feature extraction" or "training".
 
-``inputs`` defines a list of inputs.
-Inputs are data that is available during step execution.
-Inputs are optional for the step.
+Here is an overview of the five valid ``step`` properties:
 
-An input has three valid properties:
+* ``name``: human-readable name of the step
+* ``image``: the Docker image that will be used as the base of the execution
+* ``command``: one or more commands that are ran during execution
+* ``inputs``: (optional) files available during execution
+* ``parameters``: (optional) valid parameters that can be passed to the ``command``
 
-* ``name``: defines a human-readable name for the input.
-* ``default``: defines a source where the input will be fetched from.
-* ``optional``: if defined marks that this input is optional and a URL is
-  not necessary to be defined before execution of the step.
+How to install dependencies
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Your code will be ran inside the defined Docker ``image`` and it should contain all dependencies you need.
+
+.. container:: tips
+
+   You can also run any dependency installation command as part of your ``command`` but it will result in slower
+   computation time as then each execution starts by dependency setup, which is sub-optimal but nevertheless allowed.
+
+``inputs`` and downloading files before the execution
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+``inputs`` are the data files that are available during step execution.
+
+An input in ``inputs`` has three potential properties:
+
+* ``name``: a human-readable name for the input
+* ``default``: (optional) the default source where the input will be fetched from. If not defined, user has to define the source at the start of the execution.
+* ``optional``: (optional) marks that this input is optional and an URL definition is not necessary before execution of the step
 
 Currently valid sources for inputs are HTTP and HTTPS URLs. For these basic access authentication is supported.
 
-During the step execution, the inputs are available under ``/valohai/inputs/<input name>/<input file>``.
+During the step execution, inputs are available under ``/valohai/inputs/<input name>/<input file>``.
+To see this in action, try running ``ls -la /valohai/inputs/*`` as the main command of execution which has inputs.
 
-Parameters
-^^^^^^^^^^
+.. container:: tips
 
-``parameters`` defines a list of parameters. Parameters can be accessed
-from the code and used to modify the execution at runtime.
+   You can also download any files you want during the execution with e.g. Python library or command-line tool
+   but then your executions become slower as it circumvents our input file caching system.
 
-Parameters are optional for the step.
+``parameters`` and customizing the execution
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A parameter has these valid properties:
+Parameters are injected into the command by replacing ``{parameters}`` markup and are used to modify the executions.
+Good examples of a parameter would be "learning rate" float or "network layout" string.
 
-* ``name`` defines a human-readable name for the parameter.
-* ``pass-as`` defines how the parameter is passed to the command(s).
-  Optional; if not defined, the parameter is passed as  ``--<name> <value>``.
-* ``description``: describes what the parameter value is used for.
-* ``type``: defines what type the parameter is. Valid values are *float*, *integer* and *string*.
-* ``default``: defines a default value for the parameter.
-* ``optional``: if defined, marks that this input is optional
-  and a value is not necessary to be defined before execution of the step.
+A parameter in ``parameters`` has six potential properties:
+
+* ``name``: a human-readable name for the parameter
+* ``type``: the parameter type, valid values are **float**, **integer** and **string**
+* ``pass-as``: (optional) how the parameter is passed to the command e.g. ``-t {v}`` where ``{v}`` becomes the actual value.
+  If not defined, the parameter is passed as  ``--{name}={value}``
+* ``description``: (optional) more detailed human-readable description of the parameter
+* ``default``: (optional) the default value of the parameter
+* ``optional``: (optional) marks that this input is optional and the value can be left undefined
 
 An example configuration file
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A configuration file could look like this:
+A more complex configuration file could look like this:
 
 .. code-block:: yaml
 
@@ -89,30 +112,30 @@ A configuration file could look like this:
             default: https://valohai-mnist.s3.amazonaws.com/t10k-labels-idx1-ubyte.gz
         parameters:
           - name: max_steps
+            type: integer
             pass-as: --max_steps={v}
             description: Number of steps to run the trainer
-            type: integer
             default: 300
           - name: learning_rate
+            type: float
             pass-as: --learning_rate={v}
             description: Initial learning rate
-            type: float
             default: 0.001
           - name: dropout
+            type: float
             pass-as: --dropout={v}
             description: Keep probability for training dropout
-            type: float
             default: 0.9
 
-This configuration file contains one step called *Train model*. The step
-is run in the ``gcr.io/tensorflow/tensorflow:0.12.1-devel-gpu`` Docker
-image.
+This configuration file contains one step called **Train model**.
 
-The *Train model* step contains one command, which runs the Python file
-``train.py`` passing it the parameters defined below.
+The step is run inside the ``gcr.io/tensorflow/tensorflow:0.12.1-devel-gpu`` Docker image.
 
-The step contains four inputs, which are the images and labels for both
-the training and the test set. None of these inputs are optional.
+The step contains one command, which runs a Python file named ``train.py`` passing it the parameters defined further below.
 
-The step contains three parameters: *max\_steps*, *learning\_rate* and
-*dropout*. None of these parameters are optional.
+The step requires four inputs: **training-set-images**, **training-set-labels**, **test-set-images**, **test-set-labels**.
+These are the images and labels for both the training and test sets.
+None of these inputs are optional but all of them have a default source.
+
+The step contains three parameters: **max\_steps**, **learning\_rate** and **dropout**.
+None of these parameters are optional but all of them have a default value.
