@@ -1,4 +1,4 @@
-Quick Start - TensorFlow
+Quick start - TensorFlow
 ------------------------
 
 In this guide we will create a TensorFlow machine learning project based on our
@@ -9,7 +9,7 @@ and run a simple training with it.
    :backlinks: none
    :local:
 
-1. Sign Up
+1. Sign in
 ~~~~~~~~~~
 
 Sign up and sign in to `the Valohai platform <https://app.valohai.com/>`_.

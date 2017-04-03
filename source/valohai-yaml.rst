@@ -1,11 +1,61 @@
-``valohai.yaml`` Configuration
-------------------------------
+``valohai.yaml`` and experiment configuration
+---------------------------------------------
 
 ``valohai.yaml`` configuration file defines how the platform runs your experiments.
 
 ``valohai.yaml`` should be placed at the root of your project version control repository.
 
-The configuration file defines a collection of steps:
+.. contents::
+   :backlinks: none
+   :local:
+
+``step`` defines the type of execution
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Every ``step`` defines a separate type of execution such as feature extraction or training.
+
+Here is an overview of the five valid ``step`` properties:
+
+* ``name``: human-readable name of the step such as "Feature extraction" or "Run training"
+* ``image``: the Docker image that will be used as the base of the execution
+* ``command``: one or more commands that are ran during execution
+* ``inputs``: (optional) files available during execution
+* ``parameters``: (optional) valid parameters that can be passed to the ``command``
+
+``image`` and dependency installation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Your code will be ran inside the defined Docker ``image`` and it should contain all dependencies you need.
+
+.. container:: tips
+
+   You can run dependency installation commands as part of your ``command`` but it will result in slower
+   computation time as then each execution starts by dependency setup, which is sub-optimal but nevertheless allowed.
+
+There are premade Docker images for the most machine learning libraries e.g.
+
+* https://hub.docker.com/r/tensorflow/tensorflow/
+* https://hub.docker.com/r/valohai/keras/
+* https://hub.docker.com/r/valohai/darknet/
+* https://hub.docker.com/r/kaixhin/cuda-torch/
+* https://hub.docker.com/r/kaixhin/cuda-caffe/
+
+And you can create and host your own images on `Docker Hub <https://hub.docker.com/>`_ or any other public Docker
+repository.
+
+``command`` defines what is ran
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+``command`` section defines one or more commands that are ran during execution.
+
+Command is considered to be successful if it returns errors code of 0, which is default for most programs
+and scripting languages. The platform will mark execution as crashed if any of the commands returns
+any other error code.
+
+For example the following configuration file defines two steps:
+
+* **Hardware check**: executes ``nvidia-smi`` to check the status of server GPU using ``gcr.io/tensorflow/tensorflow:0.12.1-devel-gpu`` Docker image
+* **Environment check**: executes ``printenv`` followed by ``python --version`` to check how the runtime environment looks like inside ``busybox`` Docker image
 
 .. code-block:: yaml
 
@@ -23,36 +73,8 @@ The configuration file defines a collection of steps:
           - printenv
           - python --version
 
-For example, the configuration file above defines two steps:
-
-* **Hardware check**: executes ``nvidia-smi`` to check the status of server GPU using ``gcr.io/tensorflow/tensorflow:0.12.1-devel-gpu`` Docker image
-* **Environment check**: executes ``printenv`` followed by ``python --version`` to check how the run-time environment looks like inside ``busybox`` Docker image
-
-``step`` defines the execution type
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Every ``step`` defines a separate type of execution such as "feature extraction" or "training".
-
-Here is an overview of the five valid ``step`` properties:
-
-* ``name``: human-readable name of the step
-* ``image``: the Docker image that will be used as the base of the execution
-* ``command``: one or more commands that are ran during execution
-* ``inputs``: (optional) files available during execution
-* ``parameters``: (optional) valid parameters that can be passed to the ``command``
-
-How to install dependencies
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Your code will be ran inside the defined Docker ``image`` and it should contain all dependencies you need.
-
-.. container:: tips
-
-   You can also run any dependency installation command as part of your ``command`` but it will result in slower
-   computation time as then each execution starts by dependency setup, which is sub-optimal but nevertheless allowed.
-
-``inputs`` and downloading files before the execution
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+``inputs`` and downloading files before execution
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ``inputs`` are the data files that are available during step execution.
 
@@ -69,11 +91,11 @@ To see this in action, try running ``ls -la /valohai/inputs/*`` as the main comm
 
 .. container:: tips
 
-   You can also download any files you want during the execution with e.g. Python library or command-line tool
+   You can download any files you want during the execution with e.g. Python library or command-line tool
    but then your executions become slower as it circumvents our input file caching system.
 
-``parameters`` and customizing the execution
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+``parameters`` and customizing executions
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Parameters are injected into the command by replacing ``{parameters}`` markup and are used to modify the executions.
 Good examples of a parameter would be "learning rate" float or "network layout" string.
@@ -88,10 +110,11 @@ A parameter in ``parameters`` has six potential properties:
 * ``default``: (optional) the default value of the parameter
 * ``optional``: (optional) marks that this input is optional and the value can be left undefined
 
-An example configuration file
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Example ``valohai.yaml`` files
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A more complex configuration file could look like this:
+TensorFlow MNIST training
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: yaml
 

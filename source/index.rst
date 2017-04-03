@@ -7,11 +7,13 @@ Welcome to the Valohai documentation!
 It runs your experiments locally or in the cloud, tracks your experiment history and
 streamlines collaboration inside a data science team.
 
-Contents
-~~~~~~~~
+If you are new to the platform you should start with one of :doc:`our quick start tutorials </tutorials/index>`.
+
+Table of contents
+~~~~~~~~~~~~~~~~~
 
 .. toctree::
-   :maxdepth: 1
 
-   quick-start-tensorflow
+   tutorials/index
    valohai-yaml
+   faq
