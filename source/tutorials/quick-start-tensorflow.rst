@@ -86,5 +86,5 @@ can also plot the metadata on a line chart. Metadata is any data your execution 
 in JSON which we can parse.
 
 The **Output** tab contains download links for all the output artifacts created by the execution.
-The execution defines these outputs by writing them into ``/valohai/output`` directory.
+The execution defines these outputs by writing them into ``/valohai/outputs`` directory.
 The artifacts are stored in AWS S3.

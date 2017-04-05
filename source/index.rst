@@ -15,5 +15,6 @@ Table of contents
 .. toctree::
 
    tutorials/index
+   core-concepts
    valohai-yaml
    faq

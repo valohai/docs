@@ -22,6 +22,8 @@ Here is an overview of the five valid ``step`` properties:
 * ``inputs``: (optional) files available during execution
 * ``parameters``: (optional) valid parameters that can be passed to the ``command``
 
+.. _yaml-image:
+
 ``image`` and dependency installation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -34,11 +36,17 @@ Your code will be ran inside the defined Docker ``image`` and it should contain 
 
 There are premade Docker images for the most machine learning libraries e.g.
 
-* https://hub.docker.com/r/tensorflow/tensorflow/
-* https://hub.docker.com/r/valohai/keras/
-* https://hub.docker.com/r/valohai/darknet/
-* https://hub.docker.com/r/kaixhin/cuda-torch/
-* https://hub.docker.com/r/kaixhin/cuda-caffe/
+* https://hub.docker.com/r/tensorflow
+* https://hub.docker.com/r/valohai
+* https://hub.docker.com/r/kaixhin
+
+Here are the most common Docker images ran on our platform:
+
+* gcr.io/tensorflow/tensorflow:0.12.1-devel-gpu
+* valohai/darknet:b61bcf5-cuda8.0-cudnn5-devel-ubuntu16.04
+* valohai/keras:2.0.0-tensorflow1.0.1-python3.6-cuda8.0-cudnn5-devel-ubuntu16.04
+* valohai/keras:2.0.0-theano0.9.0rc4-python3.6-cuda8.0-cudnn5-devel-ubuntu16.04
+* valohai/keras:2.0.0-theano0.8.2-python3.6-cuda8.0-cudnn5-devel-ubuntu16.04
 
 And you can create and host your own images on `Docker Hub <https://hub.docker.com/>`_ or any other public Docker
 repository.
