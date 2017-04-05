@@ -72,16 +72,20 @@
     {%- block extrahead %} {% endblock %}
 </head>
 <body role="document">
+
 {%- block header %}
     <header>
         <a href="{{ pathto(master_doc) }}" id="logo">
             <img class="logo" src="{{ pathto('_static/logo.svg', 1) }}" alt="Logo">
         </a>
         <nav id="nav">
-            {%- for parent in parents %}
-                <a href="{{ parent.link|e }}">{{ parent.title }}</a>
-            {%- endfor %}
-            <a href="#" class="current">{{ title }}</a>
+            / <a href="{{ pathto(master_doc) }}">Docs</a>
+            {%- if pagename != "index" %}
+                {%- for parent in parents %}
+                    / <a href="{{ parent.link|e }}">{{ parent.title }}</a>
+                {%- endfor %}
+                / <a href="#" class="current">{{ title }}</a>
+            {%- endif %}
         </nav>
         {%- if pagename != "search" and builder != "singlehtml" %}
             <section id="search" style="display: none" role="search">

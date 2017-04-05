@@ -1,24 +1,20 @@
-Valohai Documentation
-=====================
+Documentation
+=============
 
 Welcome to the Valohai documentation!
 
-Valohai is a machine learning platform. It can run your experiments
-locally and in the cloud. The platform also tracks your experiment
-history and enables collaboration between members in a machine learning
-team.
+`Valohai is a machine learning platform. <https://valohai.com/>`_
+It runs your experiments locally or in the cloud, tracks your experiment history and
+streamlines collaboration inside a data science team.
 
-Everything in Valohai begins with the ``valohai.yaml`` configuration
-file. It is recommended that you read through the different parts of the
-configuration to understand the core concepts of the Valohai platform.
+If you are new to the platform you should start with one of :doc:`our quick start tutorials </tutorials/index>`.
 
-.. seealso:: :doc:`valohai-yaml`
-
-Contents
-~~~~~~~~
+Table of contents
+~~~~~~~~~~~~~~~~~
 
 .. toctree::
-   :maxdepth: 1
 
-   getting-started
+   tutorials/index
+   core-concepts
    valohai-yaml
+   faq

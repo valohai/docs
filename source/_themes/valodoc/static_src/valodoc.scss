@@ -1,12 +1,12 @@
 @import "normalize";
+@import "variables.scss";
+@import "typo.scss";
+@import "structure.scss";
+@import "admonitions.scss";
 
 body {
   margin: 0;
 }
-
-@import "_typo.scss";
-@import "_structure.scss";
-@import "_admonitions.scss";
 
 a {
   color: #058;
@@ -20,9 +20,24 @@ a:visited {
   color: #358;
 }
 
-pre {
-  background: #f6f6f6;
-  padding: 0.5em 1em;
-  margin: 15px 0;
-  line-height: 1.3em;
+.literal {
+  background: $code-bg-color;
+  padding: 3px;
+}
+
+.highlight pre {
+  background: $code-bg-color;
+  padding: 11px;
+  margin: 11px 0;
+  line-height: 22px;
+}
+
+.tips {
+  padding: 21px;
+  font-size: 14px;
+  line-height: 22px;
+  color: #1e2856;
+  background-color: #deedf7;
+  border: 1px solid #8eb0c3;
+  border-radius: 3px;
 }
