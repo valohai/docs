@@ -2,7 +2,7 @@
 header {
   background: #fff;
   color: #333;
-  padding: 0.5em 1em;
+  padding: 11px 16px 6px 16px;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
   display: flex;
   img {
@@ -10,8 +10,8 @@ header {
   }
   nav {
     flex: 1;
-    padding-top: 0.3em;
-    margin-left: 0.66em;
+    padding-top: 4px;
+    margin-left: 6px;
     a {
       color: inherit;
       &.current {
@@ -22,8 +22,10 @@ header {
 }
 
 main.document {
-  max-width: 50em;
+  max-width: 800px;
   margin: auto;
+  padding-left: 10px;
+  padding-right: 10px;
   line-height: 1.5;
 }
 
