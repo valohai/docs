@@ -1,9 +1,9 @@
 ``valohai.yaml`` and experiment configuration
 ---------------------------------------------
 
-``valohai.yaml`` configuration file defines how the platform runs your experiments.
+The ``valohai.yaml`` configuration file defines how the platform runs your experiments.
 
-``valohai.yaml`` should be placed at the root of your project version control repository.
+The ``valohai.yaml`` must be placed at the root of your project version control repository.
 
 .. contents::
    :backlinks: none
@@ -16,7 +16,7 @@ Every ``step`` defines a separate type of execution such as feature extraction o
 
 Here is an overview of the five valid ``step`` properties:
 
-* ``name``: human-readable name of the step such as "Feature extraction" or "Run training"
+* ``name``: a human-readable name of the step such as "Feature extraction" or "Run training"
 * ``image``: the Docker image that will be used as the base of the execution
 * ``command``: one or more commands that are ran during execution
 * ``inputs``: (optional) files available during execution
@@ -27,20 +27,23 @@ Here is an overview of the five valid ``step`` properties:
 ``image`` and dependency installation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Your code will be ran inside the defined Docker ``image`` and it should contain all dependencies you need.
+Your code will be run inside the defined Docker ``image``.
 
-.. container:: tips
+The Docker image should preferably contain all dependencies you need, to ensure your runs can get to work
+as quickly as possible.
+
+.. tip::
 
    You can run dependency installation commands as part of your ``command`` but it will result in slower
    computation time as then each execution starts by dependency setup, which is sub-optimal but nevertheless allowed.
 
-There are premade Docker images for the most machine learning libraries e.g.
+There are premade Docker images for the most popular machine learning libraries e.g.
 
 * https://hub.docker.com/r/tensorflow
 * https://hub.docker.com/r/valohai
 * https://hub.docker.com/r/kaixhin
 
-Here are the most common Docker images ran on our platform:
+Here are the most common Docker images run on our platform:
 
 * gcr.io/tensorflow/tensorflow:0.12.1-devel-gpu
 * valohai/darknet:b61bcf5-cuda8.0-cudnn5-devel-ubuntu16.04
@@ -48,19 +51,15 @@ Here are the most common Docker images ran on our platform:
 * valohai/keras:2.0.0-theano0.9.0rc4-python3.6-cuda8.0-cudnn5-devel-ubuntu16.04
 * valohai/keras:2.0.0-theano0.8.2-python3.6-cuda8.0-cudnn5-devel-ubuntu16.04
 
-And you can create and host your own images on `Docker Hub <https://hub.docker.com/>`_ or any other public Docker
+You can also create and host your own images on `Docker Hub <https://hub.docker.com/>`_ or any other public Docker
 repository.
 
-``command`` defines what is ran
+``command`` defines what is run
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-``command`` section defines one or more commands that are ran during execution.
+The ``command`` section defines one or more commands that are run during execution.
 
-Command is considered to be successful if it returns errors code of 0, which is default for most programs
-and scripting languages. The platform will mark execution as crashed if any of the commands returns
-any other error code.
-
-For example the following configuration file defines two steps:
+For example, the following configuration file defines two steps:
 
 * **Hardware check**: executes ``nvidia-smi`` to check the status of server GPU using ``gcr.io/tensorflow/tensorflow:0.12.1-devel-gpu`` Docker image
 * **Environment check**: executes ``printenv`` followed by ``python --version`` to check how the runtime environment looks like inside ``busybox`` Docker image
@@ -81,6 +80,13 @@ For example the following configuration file defines two steps:
           - printenv
           - python --version
 
+.. tip::
+
+   The ``command`` is considered to be successful if it returns error code 0. This is the default convention
+   for most programs and scripting languages.
+
+   The platform will mark execution as crashed if any of the commands returns any other error code.
+
 ``inputs`` and downloading files before execution
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -88,25 +94,26 @@ For example the following configuration file defines two steps:
 
 An input in ``inputs`` has three potential properties:
 
-* ``name``: a human-readable name for the input
-* ``default``: (optional) the default source where the input will be fetched from. If not defined, user has to define the source at the start of the execution.
-* ``optional``: (optional) marks that this input is optional and an URL definition is not necessary before execution of the step
+* ``name``: A human-readable name for the input
+* ``default``: (optional) The default source where the input will be fetched from.
+  If not defined, the user has to define the source at the start of the execution.
+* ``optional``: (optional) Marks that this input is optional and an URL definition is not necessary before execution of the step
 
 Currently valid sources for inputs are HTTP and HTTPS URLs. For these basic access authentication is supported.
 
 During the step execution, inputs are available under ``/valohai/inputs/<input name>/<input file>``.
 To see this in action, try running ``ls -la /valohai/inputs/*`` as the main command of execution which has inputs.
 
-.. container:: tips
+.. tip::
 
-   You can download any files you want during the execution with e.g. Python library or command-line tool
+   You can download any files you want during the execution with e.g. Python libraries or command-line tools
    but then your executions become slower as it circumvents our input file caching system.
 
 ``parameters`` and customizing executions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Parameters are injected into the command by replacing ``{parameters}`` markup and are used to modify the executions.
-Good examples of a parameter would be "learning rate" float or "network layout" string.
+Parameters are injected into the command by replacing the ``{parameters}`` placeholder.
+Good examples of parameters would be "learning rate" number or "network layout" string.
 
 A parameter in ``parameters`` has six potential properties:
 
