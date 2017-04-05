@@ -1,9 +1,9 @@
-Quick start - TensorFlow
-------------------------
+Quick start - Keras
+-------------------
 
-In this guide we will create a TensorFlow machine learning project based on our
-`MNIST TensorFlow example on GitHub <https://github.com/valohai/tensorflow-example>`_
-and run a simple training with it.
+In this guide we will create a Keras machine learning project based on our
+`Keras example on GitHub <https://github.com/valohai/keras-example>`_
+and run a deep mind transform on it.
 
 .. contents::
    :backlinks: none
@@ -18,16 +18,8 @@ Sign up and sign in to `the Valohai platform <https://app.valohai.com/>`_.
 ~~~~~~~~~~~~~~~~~~~
 
 1. Go to the Valohai platform `front page <https://app.valohai.com/>`_ after signing in
-
-.. tip::
-
-   If you haven't created any projects before, you'll be greeted by message
-   "Get started by importing a tutorial project based on our TensorFlow example.".
-   You can optionally select **Import TensorFlow tutorial project** and skip straight to
-   :ref:`create-tensorflow-execution`.
-
 2. Press the **Create Project...** button
-3. Set a ``Name`` for your project, e.g. *test-tensorflow*
+3. Set a ``Name`` for your project, e.g. *test-keras*
 4. You can leave ``Description`` blank, that is more in detail definition of your project
 5. Press the **Create** button
 
@@ -39,11 +31,11 @@ how your machine learning code is run.
 
 Let's setup a repository for your project:
 
-#. Go to the example repository page on GitHub: https://github.com/valohai/tensorflow-example
+#. Go to the example repository page on GitHub: https://github.com/valohai/keras-example
 
    #. If you want to modify the training code, you can fork the repository first.
 
-#. Copy the **HTTPS** URL of the repository e.g. `https://github.com/valohai/tensorflow-example.git`
+#. Copy the **HTTPS** URL of the repository e.g. `https://github.com/valohai/keras-example.git`
 #. Go to the **Repository** tab inside your new project to set your source repository
 #. Paste the URL above to the ``URL`` field on the **Repository** tab
 #. Leave ``Fetch reference`` as the default value `master`
@@ -55,14 +47,12 @@ Let's setup a repository for your project:
 
 Fetch the latest code commit using the **Fetch repository** button at the top right.
 
-.. _create-tensorflow-execution:
-
 5. Create an execution
 ~~~~~~~~~~~~~~~~~~~~~~
 
 1. Go to the **Executions** tab inside your project
 2. Press the **Create execution** button
-3. The ``Step`` field lists all available types of executions. Make sure **Train model** is selected.
+3. The ``Step`` field lists all available types of executions. Make sure **tensorflow-deep-dream** is selected.
 4. You don't need to worry about the rest of the configuration for now.
    The default inputs and parameters of the form are loaded from the ``valohai.yaml`` configuration file
    and should be good for this example execution.
