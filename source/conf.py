@@ -41,3 +41,8 @@ html_theme_options = {
 }
 html_sidebars = {}
 intersphinx_mapping = {'https://docs.python.org/': None}
+
+# Replace the lexer with ours
+from sphinx.highlighting import lexers
+from extended_yaml_lexer import ExtendedYAMLLexer
+lexers['yaml'] = ExtendedYAMLLexer()
