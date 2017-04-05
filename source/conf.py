@@ -5,9 +5,9 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
-# import sys
-# sys.path.insert(0, os.path.abspath('.'))
+import os
+import sys
+sys.path.insert(0, os.path.abspath('.'))
 
 needs_sphinx = '1.5'
 
@@ -29,7 +29,7 @@ version = ''
 release = ''
 language = None
 exclude_patterns = []
-pygments_style = 'sphinx'
+pygments_style = 'valodoc_pygments_style.Valodoc'
 todo_include_todos = True
 html_favicon = 'favicon.ico'
 html_theme = 'valodoc'
