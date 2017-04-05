@@ -19,7 +19,7 @@ Sign up and sign in to `the Valohai platform <https://app.valohai.com/>`_.
 
 1. Go to the Valohai platform `front page <https://app.valohai.com/>`_ after signing in
 
-.. container:: tips
+.. tip::
 
    If you haven't created any projects before, you'll be greeted by message
    "Get started by importing a tutorial project based on our TensorFlow example.".
