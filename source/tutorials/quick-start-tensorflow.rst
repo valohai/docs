@@ -31,8 +31,8 @@ Sign up and sign in to `the Valohai platform <https://app.valohai.com/>`_.
 4. You can leave ``Description`` blank, that is more in detail definition of your project
 5. Press the **Create** button
 
-3. Define version control repository
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+3. Add version control repository
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A valid source repository must contain a ``valohai.yaml`` configuration file that defines
 how your machine learning code is run.
@@ -90,3 +90,11 @@ The **Output** tab contains download links for all the output artifacts created 
 The execution defines these outputs by writing them into ``/valohai/outputs`` directory.
 The artifacts are stored in AWS S3.
 If the execution has not finished, or did not output any files, this tab will not be visible.
+
+7. Next steps
+~~~~~~~~~~~~~
+
+Congratulations on running actual machine learning code on the cloud!
+
+For next steps we would encourage reading about :doc:`the core concepts of Valohai platform </core-concepts>`
+to gain better understanding of all the bells and whistles.
