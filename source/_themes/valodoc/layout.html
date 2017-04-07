@@ -76,10 +76,9 @@
 {%- block header %}
     <header>
         <a href="{{ pathto(master_doc) }}" id="logo">
-            <img class="logo" src="{{ pathto('_static/logo.svg', 1) }}" alt="Logo">
+            <img class="logo" src="{{ pathto('_static/docs-logo.svg', 1) }}" alt="Logo">
         </a>
         <nav id="nav">
-            / <a href="{{ pathto(master_doc) }}">Docs</a>
             {%- if pagename != "index" %}
                 {%- for parent in parents %}
                     / <a href="{{ parent.link|e }}">{{ parent.title }}</a>
