@@ -32,8 +32,8 @@ try out :doc:`our quick start command-line client tutorial </tutorials/quick-sta
 Configuration File
 ~~~~~~~~~~~~~~~~~~
 
-Each Valohai-enabled Git repository should have ``valohai.yaml`` **configuration file** that defines
-what kind of runs can be executed. We'll cover these execution types or "steps", as we call them, in the next section.
+Each Valohai-enabled Git repository must have a ``valohai.yaml`` **configuration file** that defines
+the runs that can be executed. We'll cover these execution types or "steps", as we call them, in the next section.
 
 A single configuration file can be used by multiple projects by various users, as long as the user
 has access to the Git repository.

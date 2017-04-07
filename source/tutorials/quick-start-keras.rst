@@ -87,4 +87,4 @@ If the execution has not finished, or did not output any files, this tab will no
 Congratulations on running actual machine learning code on the cloud!
 
 For next steps we would encourage reading about :doc:`the core concepts of Valohai platform </core-concepts>`
-to gain better understanding of all the bells and whistles.
+to gain a better understanding of all the bells and whistles.

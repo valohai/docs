@@ -25,14 +25,16 @@ to bootstrap a fresh project.
 
 If you don't already have an account, sign up at `the Valohai platform <https://app.valohai.com/>`_.
 
-After that, you can use ``vh login`` to login with the command-line client, just follow the instructions.
+After that, you can use ``vh login`` to login with the command-line client. Just follow the instructions.
 
 3. Create new project and configuration file
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Next we'll use ``vh init`` wizard to create new project on Valohai and bootstrap ``valohai.yaml`` configuration file.
+Next we'll use the ``vh init`` wizard to create a new project on Valohai
+and bootstrap the ``valohai.yaml`` configuration file.
 
-The configuration will have a single **step** named 'Execute nvidia-smi' to see the status of the server GPU.
+The configuration will have a single **step** named 'Execute nvidia-smi' that
+simply prints the status of the server GPU using the ``nvidia-smi`` tool.
 
 .. code-block:: bash
 
@@ -101,8 +103,8 @@ The configuration will have a single **step** named 'Execute nvidia-smi' to see 
 4. Create an execution
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Next we'll create an ad-hoc execution which packages the project directory, send the package to a remote server
-and executes defined command on that server.
+Next we'll create an ad-hoc execution which packages the project directory,
+sends the package to the Valohai platform and executes the command on a GPU-enabled machine in the cloud.
 
 .. code-block:: bash
 
@@ -114,10 +116,10 @@ and executes defined command on that server.
    # Success! Execution #1 created.
    # ...
 
-You can stop watching the execution with ``Ctrl+C``, but this won't stop the execution.
-The execution should take a second or two to finish if the used Docker image is already on the server.
+You can stop watching the execution with ``Ctrl+C``. (This won't stop the execution itself, though.)
+The execution should only take a second or two to finish if the used Docker image is already on the compute node.
 
-You can see the status of the execution on `Valohai web application <https://app.valohai.com/>`_
+You can see the status of the execution in the `web application <https://app.valohai.com/>`_
 or with the command-line client.
 
 .. code-block:: bash
@@ -146,22 +148,25 @@ or with the command-line client.
    # 09:00:38.21 started container 04e3b6dbc on i-0b79f3d49308ef2a8
    # ...
 
-   # And if your execution would've produced output files, you could access them with:
+   # And if your execution had produced output files, you could list them with:
    $ vh execution outputs 1
+   # and download them into, say, the "my_files" directory with
+   $ vh execution outputs 1 -d my_files
 
 .. tip::
 
-   All commands can be written using their shortform if there are no conflicts which sub-command you mean
-   e.g. ``vh execution logs 1`` can also be written ``vh exec logs 1`` or even ``vh e lo 1``.
+   All commands can be abbreviated as long as the abbreviation is unique.
+   That is, ``vh execution logs 1`` can also be written ``vh exec logs 1`` or even ``vh e lo 1``.
 
 5. Next steps
 ~~~~~~~~~~~~~
 
-Ad-hoc executions are good when developing your scripts and learning the platform but you should have your
-main machine learning code version in a version control repository to allow better collaboration.
+Ad-hoc executions are convenient when developing your scripts and learning the platform but we strongly recommend
+that you have your main machine learning code in a version control repository to allow better collaboration and
+repeatability.
 
 Check out :doc:`our quick start TensorFlow tutorial </tutorials/quick-start-tensorflow>` to learn more about
 adding a version control repository to your project.
 
-Wizard created a ``valohai.yaml`` for us during the tutorial; you might want to know
+The wizard created a ``valohai.yaml`` for us during the tutorial; you might want to know
 :doc:`more how these configuration files work </valohai-yaml>`.

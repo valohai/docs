@@ -37,11 +37,17 @@ as quickly as possible.
    You can run dependency installation commands as part of your ``command`` but it will result in slower
    computation time as then each execution starts by dependency setup, which is sub-optimal but nevertheless allowed.
 
-There are premade Docker images for the most popular machine learning libraries e.g.
+You can find premade Docker images for the most popular machine learning libraries on
+`Docker Hub <https://hub.docker.com/>`_.
+
+For instance:
 
 * https://hub.docker.com/r/tensorflow
 * https://hub.docker.com/r/valohai
 * https://hub.docker.com/r/kaixhin
+
+You can also create and host your own images on `Docker Hub <https://hub.docker.com/>`_ or any other public Docker
+repository.
 
 Here are the most common Docker images currently used on our platform:
 
@@ -54,8 +60,8 @@ Here are the most common Docker images currently used on our platform:
 * valohai/keras:2.0.0-theano0.8.2-python3.6-cuda8.0-cudnn5-devel-ubuntu16.04
 * valohai/darknet:b61bcf5-cuda8.0-cudnn5-devel-ubuntu16.04
 
-You can also create and host your own images on `Docker Hub <https://hub.docker.com/>`_ or any other public Docker
-repository.
+.. tip:: Using these images will result in faster executions, since they're pre-seeded onto our compute nodes.
+
 
 ``command`` defines what is run
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
