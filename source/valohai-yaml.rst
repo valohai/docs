@@ -37,22 +37,31 @@ as quickly as possible.
    You can run dependency installation commands as part of your ``command`` but it will result in slower
    computation time as then each execution starts by dependency setup, which is sub-optimal but nevertheless allowed.
 
-There are premade Docker images for the most popular machine learning libraries e.g.
+You can find premade Docker images for the most popular machine learning libraries on
+`Docker Hub <https://hub.docker.com/>`_.
+
+For instance:
 
 * https://hub.docker.com/r/tensorflow
 * https://hub.docker.com/r/valohai
 * https://hub.docker.com/r/kaixhin
 
-Here are the most common Docker images run on our platform:
+You can also create and host your own images on `Docker Hub <https://hub.docker.com/>`_ or any other public Docker
+repository.
 
-* gcr.io/tensorflow/tensorflow:0.12.1-devel-gpu
-* valohai/darknet:b61bcf5-cuda8.0-cudnn5-devel-ubuntu16.04
+Here are the most common Docker images currently used on our platform:
+
+* gcr.io/tensorflow/tensorflow:1.0.1-devel-gpu-py3
+* gcr.io/tensorflow/tensorflow:1.0.1-devel-gpu *(the Python 2 version)*
+* gcr.io/tensorflow/tensorflow:0.12.1-devel-gpu-py3
+* gcr.io/tensorflow/tensorflow:0.12.1-devel-gpu *(the Python 2 version)*
 * valohai/keras:2.0.0-tensorflow1.0.1-python3.6-cuda8.0-cudnn5-devel-ubuntu16.04
 * valohai/keras:2.0.0-theano0.9.0rc4-python3.6-cuda8.0-cudnn5-devel-ubuntu16.04
 * valohai/keras:2.0.0-theano0.8.2-python3.6-cuda8.0-cudnn5-devel-ubuntu16.04
+* valohai/darknet:b61bcf5-cuda8.0-cudnn5-devel-ubuntu16.04
 
-You can also create and host your own images on `Docker Hub <https://hub.docker.com/>`_ or any other public Docker
-repository.
+.. tip:: Using these images will result in faster executions, since they're pre-seeded onto our compute nodes.
+
 
 ``command`` defines what is run
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

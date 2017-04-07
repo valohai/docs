@@ -49,12 +49,12 @@ To get the syntax mentioned in the question, add or modify the ``pass-as`` prope
 .. code-block:: yaml
 
    - name: dropout
-     pass-as: {v}
+     pass-as: '{v}'
 
 See :doc:`valohai.yaml documentation </valohai-yaml>` for more details.
 
-How do I upload output files?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+How do I upload files from my executions?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Anything written to the ``/valohai/output`` directory will be uploaded and accessible after the execution.
 

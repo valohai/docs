@@ -13,7 +13,7 @@ If you have used GitHub, projects in Valohai are a lot like code repositories.
 
 Projects are linked to one or more remote Git repositories. You can use any Git hosting service, not just GitHub.
 
-These linked repositories define what kind of "experiments" will be executed in the context of that project
+These linked repositories define what kind of "runs" can be executed in the context of that project
 using the :doc:`valohai.yaml configuration file </valohai-yaml>`.
 
 Here are some in-depth example repositories:
@@ -26,7 +26,19 @@ Here are some in-depth example repositories:
 We also have `quick start tutorials </tutorials>`_ to get you started right away.
 
 Fire-and-forget style experimentation is also supported using
-`our command line client <https://github.com/valohai/valohai-cli>`_.
+`our command line client <https://github.com/valohai/valohai-cli>`_,
+try out :doc:`our quick start command-line client tutorial </tutorials/quick-start-cli>` to get a taste how it works.
+
+Configuration File
+~~~~~~~~~~~~~~~~~~
+
+Each Valohai-enabled Git repository must have a ``valohai.yaml`` **configuration file** that defines
+the runs that can be executed. We'll cover these execution types or "steps", as we call them, in the next section.
+
+A single configuration file can be used by multiple projects by various users, as long as the user
+has access to the Git repository.
+
+:doc:`More about valohai.yaml configuration file. </valohai-yaml>`
 
 Steps
 ~~~~~
