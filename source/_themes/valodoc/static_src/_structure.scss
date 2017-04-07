@@ -8,14 +8,20 @@ header {
   img {
     width: 154px;
   }
+  .backlink {
+    font-size: 11px;
+    line-height: 11px;
+    padding-top: 8px;
+    margin-right: 14px;
+  }
   nav {
     flex: 1;
     padding-top: 4px;
-    margin-left: 6px;
+    margin-left: 5px;
     a {
       color: inherit;
       &.current {
-        font-weight: bold;
+        font-weight: 600;
       }
     }
   }
