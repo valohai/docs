@@ -1,7 +1,7 @@
 import re
 
 from pygments.lexers.data import YamlLexer
-from pygments.token import Number, Token
+from pygments.token import Number, Token, Keyword
 
 
 class ExtendedYAMLLexer(YamlLexer):
@@ -10,4 +10,6 @@ class ExtendedYAMLLexer(YamlLexer):
             if type == Token.Literal.Scalar.Plain:
                 if value.isdigit() or re.match('^[0-9]*\.[0-9]+$', value):  # Smells like a number
                     type = Number
+                if value in ('true', 'false', 'yes', 'no'):
+                    type = Keyword
             yield (type, value)
