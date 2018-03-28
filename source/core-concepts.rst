@@ -5,6 +5,8 @@ Core concepts
    :backlinks: none
    :local:
 
+This document goes through all the core concepts of the Valohai platform.
+
 Projects
 ~~~~~~~~
 
@@ -21,7 +23,7 @@ Here are some in-depth example repositories:
 * https://github.com/valohai/tensorflow-example
 * https://github.com/valohai/keras-example
 * https://github.com/valohai/darknet-example
-* https://github.com/valohai/ladder
+* https://github.com/valohai/r-example
 
 We also have `quick start tutorials </tutorials>`_ to get you started right away.
 
