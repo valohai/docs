@@ -7,4 +7,5 @@ This section contains tutorials and quick start guides to try out the platform.
 
    quick-start-tensorflow
    quick-start-keras
+   quick-start-r
    quick-start-cli
