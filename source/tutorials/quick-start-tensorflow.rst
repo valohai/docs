@@ -12,89 +12,32 @@ and run a simple training with it.
 1. Sign in
 ~~~~~~~~~~
 
-Sign up and sign in to `the Valohai platform <https://app.valohai.com/>`_.
+.. include:: _sign-in-steps.rst
 
 2. Create a project
 ~~~~~~~~~~~~~~~~~~~
 
-1. Go to the Valohai platform `front page <https://app.valohai.com/>`_ after signing in
+.. |example-project-name| replace:: *test-tensorflow*
+.. include:: _create-project-steps.rst
 
-.. tip::
-
-   If you haven't created any projects before, you'll be greeted by message
-   "Get started by importing a tutorial project based on our TensorFlow example.".
-   You can optionally select **Import TensorFlow tutorial project** and skip straight to
-   :ref:`create-tensorflow-execution`.
-
-2. Press the **Create Project...** button
-3. Set a ``Name`` for your project, e.g. *test-tensorflow*
-4. You can leave ``Description`` blank, that is more in detail definition of your project
-5. Press the **Create** button
-
-3. Add version control repository
+3. Link a version control repository
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A valid source repository must contain a ``valohai.yaml`` configuration file that defines
-how your machine learning code is run.
+.. |example-repository-url| replace:: `https://github.com/valohai/tensorflow-example`
+.. include:: _version-control-steps.rst
 
-Let's setup a repository for your project:
-
-#. Go to the example repository page on GitHub: https://github.com/valohai/tensorflow-example
-
-   #. If you want to modify the training code, you can fork the repository first.
-
-#. Copy the **HTTPS** URL of the repository e.g. `https://github.com/valohai/tensorflow-example.git`
-#. Go to the **Repository** tab inside your new project to set your source repository
-#. Paste the URL above to the ``URL`` field on the **Repository** tab
-#. Leave ``Fetch reference`` as the default value `master`
-#. ``SSH private key`` is only required if your Git repository is private
-#. Press the **Save** button
-
-4. Fetch the latest code
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-Fetch the latest code commit using the **Fetch repository** button at the top right.
-
-.. _create-tensorflow-execution:
-
-5. Create an execution
+4. Create an execution
 ~~~~~~~~~~~~~~~~~~~~~~
 
-1. Go to the **Executions** tab inside your project
-2. Press the **Create execution** button
-3. The ``Step`` field lists all available types of executions. Make sure **Train model** is selected.
-4. You don't need to worry about the rest of the configuration for now.
-   The default inputs and parameters of the form are loaded from the ``valohai.yaml`` configuration file
-   and should be good for this example execution.
-5. Press **Submit** to start the execution.
+.. |example-step-name| replace:: **Train model**
+.. include:: _create-execution-steps.rst
 
-6. View the results
+5. View the results
 ~~~~~~~~~~~~~~~~~~~
 
-After you start the execution, you are forwarded to the execution page.
+.. include:: _results-section.rst
 
-This page has several tabs with execution details:
-
-The **Information** tab shows the basic information about the execution, most of which could've been modified in
-the previous execution creation step.
-
-The **Log** tab shows real-time log output from the execution.
-Anything that your code prints to the standard output (stdout) or standard error (stderr) streams is shown here.
-
-The **Metadata** tab shows all the metadata output from the execution.
-You can also plot the metadata on a line chart.
-Metadata is any data your execution writes to the standard output stream in JSON which we can parse.
-If no plottable metadata has been output, this tab is not visible.
-
-The **Output** tab contains download links for all the output artifacts created by the execution.
-The execution defines these outputs by writing them into ``/valohai/outputs`` directory.
-The artifacts are stored in AWS S3.
-If the execution has not finished, or did not output any files, this tab will not be visible.
-
-7. Next steps
+6. Next steps
 ~~~~~~~~~~~~~
 
-Congratulations on running actual machine learning code on the cloud!
-
-For next steps we would encourage reading about :doc:`the core concepts of Valohai platform </core-concepts>`
-to gain a better understanding of all the bells and whistles.
+.. include:: _next-steps.rst
