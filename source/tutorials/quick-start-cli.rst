@@ -59,13 +59,7 @@ simply prints the status of the server GPU using the ``nvidia-smi`` tool.
    # Now let's pick a Docker image to use with your code.
    # Here are some recommended choices, but feel free to type in one of your own.
    # [  1] gcr.io/tensorflow/tensorflow:1.0.1-devel-gpu-py3
-   # [  2] gcr.io/tensorflow/tensorflow:1.0.1-devel-gpu
-   # [  3] gcr.io/tensorflow/tensorflow:0.12.1-devel-gpu-py3
-   # [  4] gcr.io/tensorflow/tensorflow:0.12.1-devel-gpu
-   # [  5] valohai/keras:2.0.0-tensorflow1.0.1-python3.6-cuda8.0-cudnn5-devel-ubuntu16.04
-   # [  6] valohai/keras:2.0.0-theano0.9.0rc4-python3.6-cuda8.0-cudnn5-devel-ubuntu16.04
-   # [  7] valohai/keras:2.0.0-theano0.8.2-python3.6-cuda8.0-cudnn5-devel-ubuntu16.04
-   # [  8] valohai/darknet:b61bcf5-cuda8.0-cudnn5-devel-ubuntu16.04
+   # ...
    # Choose a number or enter a Docker image name.:
    1
 

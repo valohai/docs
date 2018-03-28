@@ -49,18 +49,27 @@ For instance:
 You can also create and host your own images on `Docker Hub <https://hub.docker.com/>`_ or any other public Docker
 repository.
 
-Here are the most common Docker images currently used on our platform:
+Here are the most common Docker images currently used on the platform:
 
+* gcr.io/tensorflow/tensorflow:1.5.0-devel-gpu-py3
+* gcr.io/tensorflow/tensorflow:1.5.0-devel-gpu *(the Python 2 version)*
+* gcr.io/tensorflow/tensorflow:1.4.1-devel-gpu-py3
+* gcr.io/tensorflow/tensorflow:1.4.1-devel-gpu *(the Python 2 version)*
+* gcr.io/tensorflow/tensorflow:1.3.0-devel-gpu-py3
+* gcr.io/tensorflow/tensorflow:1.3.0-devel-gpu *(the Python 2 version)*
 * gcr.io/tensorflow/tensorflow:1.0.1-devel-gpu-py3
 * gcr.io/tensorflow/tensorflow:1.0.1-devel-gpu *(the Python 2 version)*
 * gcr.io/tensorflow/tensorflow:0.12.1-devel-gpu-py3
 * gcr.io/tensorflow/tensorflow:0.12.1-devel-gpu *(the Python 2 version)*
+* valohai/keras:2.1.3-tensorflow1.4.0-python3.5-cuda8.0-cudnn6-devel-ubuntu14.04
 * valohai/keras:2.0.0-tensorflow1.0.1-python3.6-cuda8.0-cudnn5-devel-ubuntu16.04
 * valohai/keras:2.0.0-theano0.9.0rc4-python3.6-cuda8.0-cudnn5-devel-ubuntu16.04
 * valohai/keras:2.0.0-theano0.8.2-python3.6-cuda8.0-cudnn5-devel-ubuntu16.04
+* valohai/darknet:62b781a-cuda8.0-cudnn5-devel-ubuntu16.04
 * valohai/darknet:b61bcf5-cuda8.0-cudnn5-devel-ubuntu16.04
+* r-base:3.4.2
 
-.. tip:: Using these images will result in faster executions, since they're pre-seeded onto our compute nodes.
+.. tip:: Using these images will result in faster executions since they're pre-seeded onto our workers.
 
 
 ``command`` defines what is run
