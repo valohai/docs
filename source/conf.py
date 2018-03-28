@@ -28,7 +28,9 @@ author = 'Valohai'
 version = ''
 release = ''
 language = None
-exclude_patterns = []
+exclude_patterns = [
+    '**/_**',
+]
 pygments_style = 'valodoc_pygments_style.Valodoc'
 todo_include_todos = True
 html_favicon = 'favicon.ico'
