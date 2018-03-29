@@ -21,7 +21,7 @@ and run a simple training with it.
 .. include:: _create-project-steps.rst
 
 3. Link a version control repository
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. |example-repository-url| replace:: `https://github.com/valohai/tensorflow-example`
 .. include:: _version-control-steps.rst

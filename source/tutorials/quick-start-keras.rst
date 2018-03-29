@@ -21,7 +21,7 @@ and run a deep mind transform on it.
 .. include:: _create-project-steps.rst
 
 3. Link a version control repository
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. |example-repository-url| replace:: `https://github.com/valohai/keras-example`
 .. include:: _version-control-steps.rst

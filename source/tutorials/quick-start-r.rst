@@ -20,7 +20,7 @@ In this guide we will create a R machine learning project based on our
 .. include:: _create-project-steps.rst
 
 3. Link a version control repository
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. |example-repository-url| replace:: `https://github.com/valohai/r-example`
 .. include:: _version-control-steps.rst

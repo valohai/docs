@@ -1,7 +1,7 @@
 Tutorials
 =========
 
-This section contains tutorials and quick start guides to try out the platform.
+This section contains quick start tutorials to get a feel for the Valohai platform.
 
 .. toctree::
 
