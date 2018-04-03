@@ -1,10 +1,12 @@
 Tutorials
 =========
 
-This section contains tutorials and quick start guides to try out the platform.
+This section contains quick start tutorials to get a feel for the Valohai platform.
 
 .. toctree::
+    :maxdepth: 2
 
-   quick-start-tensorflow
-   quick-start-keras
-   quick-start-cli
+    quick-start-tensorflow
+    quick-start-keras
+    quick-start-r
+    quick-start-cli

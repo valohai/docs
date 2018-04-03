@@ -1,9 +1,8 @@
-Quick start - TensorFlow
+Quick start - R
 ------------------------
 
-In this tutorial, we will create a TensorFlow machine learning project based on our
-`MNIST TensorFlow example on GitHub <https://github.com/valohai/tensorflow-example>`_
-and run a simple training with it.
+In this tutorial, we will create a R machine learning project based on our
+`R example on GitHub <https://github.com/valohai/r-example>`_.
 
 .. contents::
    :backlinks: none
@@ -17,19 +16,19 @@ and run a simple training with it.
 2. Create a project
 ~~~~~~~~~~~~~~~~~~~
 
-.. |example-project-name| replace:: *test-tensorflow*
+.. |example-project-name| replace:: *test-r*
 .. include:: _create-project-steps.rst
 
 3. Link a version control repository
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. |example-repository-url| replace:: `https://github.com/valohai/tensorflow-example`
+.. |example-repository-url| replace:: `https://github.com/valohai/r-example`
 .. include:: _version-control-steps.rst
 
 4. Create an execution
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. |example-step-name| replace:: **Train model**
+.. |example-step-name| replace:: **Metadata example**
 .. include:: _create-execution-steps.rst
 
 5. View the results

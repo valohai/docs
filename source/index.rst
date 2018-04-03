@@ -13,8 +13,10 @@ Table of contents
 ~~~~~~~~~~~~~~~~~
 
 .. toctree::
+    :maxdepth: 3
 
-   tutorials/index
-   core-concepts
-   valohai-yaml
-   faq
+    tutorials/index
+    guides/index
+    core-concepts
+    valohai-yaml
+    faq
