@@ -1,7 +1,7 @@
 Quick start - TensorFlow
 ------------------------
 
-In this guide we will create a TensorFlow machine learning project based on our
+In this tutorial, we will create a TensorFlow machine learning project based on our
 `MNIST TensorFlow example on GitHub <https://github.com/valohai/tensorflow-example>`_
 and run a simple training with it.
 

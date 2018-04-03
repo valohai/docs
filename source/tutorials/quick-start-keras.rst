@@ -1,7 +1,7 @@
 Quick start - Keras
 -------------------
 
-In this guide we will create a Keras machine learning project based on our
+In this tutorial, we will create a Keras machine learning project based on our
 `Keras example on GitHub <https://github.com/valohai/keras-example>`_
 and run a deep mind transform on it.
 

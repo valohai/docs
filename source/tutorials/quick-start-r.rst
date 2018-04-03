@@ -1,7 +1,7 @@
 Quick start - R
 ------------------------
 
-In this guide we will create a R machine learning project based on our
+In this tutorial, we will create a R machine learning project based on our
 `R example on GitHub <https://github.com/valohai/r-example>`_.
 
 .. contents::
