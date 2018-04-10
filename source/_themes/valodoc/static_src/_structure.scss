@@ -108,3 +108,12 @@ hr {
     padding-right: 22px;
   }
 }
+
+@media (max-width: 800px) {
+  #nav {
+    display: none;
+  }
+  #logo {
+    margin-right: 20px;
+  }
+}
