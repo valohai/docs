@@ -1,11 +1,11 @@
 Core concepts
 =============
 
+This document goes through all the core concepts of the Valohai platform.
+
 .. contents::
    :backlinks: none
    :local:
-
-This document goes through all the core concepts of the Valohai platform.
 
 Projects
 ~~~~~~~~
