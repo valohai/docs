@@ -1,3 +1,6 @@
+body {
+  margin: 0;
+}
 
 header {
   background: #fff;
@@ -16,7 +19,7 @@ header {
   }
   nav {
     flex: 1;
-    padding-top: 4px;
+    padding-top: 1px;
     margin-left: 5px;
     a {
       color: inherit;
@@ -27,12 +30,44 @@ header {
   }
 }
 
-main.document {
-  max-width: 800px;
-  margin: auto;
-  padding-left: 10px;
-  padding-right: 10px;
-  line-height: 1.5;
+.content {
+  display: flex;
+}
+
+.sidebar {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 366px;
+  padding: 22px;
+  font-size: 16px;
+  line-height: 20px;
+  a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  ul {
+    margin: 0;
+    list-style-type: none;
+    ul {
+      list-style-type: none;
+    }
+  }
+  li {
+    margin-bottom: 7px;
+    margin-top: 7px;
+  }
+}
+
+.document {
+  flex-grow: 1;
+  padding-left: 11px;
+  padding-right: 11px;
+}
+
+.body {
+  max-width: 700px;
 }
 
 footer {

@@ -105,13 +105,23 @@
 {% endblock %}
 
 {%- block content %}
-    <main class="document">
-        {%- block document %}
-            <div class="body" role="main">
-                {% block body %} {% endblock %}
+    <div class="content">
+        {% block sidebar1 %}
+            <div class="sidebar">
+                <a href="/">
+                    Valohai documentation
+                </a>
+                {{ toctree(maxdepth=2) }}
             </div>
-        {%- endblock %}
-    </main>
+        {% endblock %}
+        <main class="document">
+            {%- block document %}
+                <div class="body" role="main">
+                    {% block body %} {% endblock %}
+                </div>
+            {%- endblock %}
+        </main>
+    </div>
 {%- endblock %}
 
 {%- block footer %}

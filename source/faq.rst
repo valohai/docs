@@ -20,8 +20,8 @@ For instance, here is a ``valohai.yaml`` file that lists runtime contents of you
 
 See :doc:`valohai.yaml documentation </valohai-yaml>` for more details.
 
-How can I define that my execution failed?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+How to define that my execution failed?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The ``command`` is considered to be successful if it returns error code 0. This is the default
 convention for most programs and scripting languages.

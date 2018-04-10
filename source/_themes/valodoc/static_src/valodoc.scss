@@ -3,31 +3,3 @@
 @import "typo.scss";
 @import "structure.scss";
 @import "admonitions.scss";
-
-body {
-  margin: 0;
-}
-
-a {
-  color: #058;
-}
-
-a:hover {
-  color: #011;
-}
-
-a:visited {
-  color: #358;
-}
-
-.literal {
-  background: $code-bg-color;
-  padding: 3px;
-}
-
-.highlight pre {
-  background: $code-bg-color;
-  padding: 11px;
-  margin: 11px 0;
-  line-height: 22px;
-}

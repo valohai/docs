@@ -1,34 +1,71 @@
 
-body, input, textarea {
-  font-size: 16px;
+body,
+input,
+textarea {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
 }
 
+// HEADINGS
+
 h1 {
-  font-size: 2.25rem;
+  font-size: 36px;
+  line-height: 40px;
+  margin: 22px 0;
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 24px;
+  line-height: 28px;
+  margin: 22px 0;
 }
 
 h3 {
-  font-size: 1.25rem;
+  font-size: 18px;
+  line-height: 22px;
+  margin: 22px 0;
 }
 
-h4 {
-  font-size: 1rem;
-}
-
-h5 {
-  font-size: 1rem;
-}
-
+h4,
+h5,
 h6 {
-  font-size: .875rem;
+  font-size: 16px;
+  line-height: 22px;
+  margin: 22px 0;
 }
 
-pre, tt, code {
+// LINKS
+
+a {
+  color: #058;
+}
+
+a:hover {
+  color: #011;
+}
+
+a:visited {
+  color: #358;
+}
+
+// CODE
+
+pre,
+tt,
+code {
   font-family: 'Consolas', 'Menlo', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
-  //font-size: 0.9em;
+}
+
+.literal {
+  background: $code-bg-color;
+  padding: 3px;
+}
+
+.highlight pre {
+  background: $code-bg-color;
+  padding: 11px;
+  margin: 11px 0;
+  line-height: 22px;
+  font-size: 15px;
 }

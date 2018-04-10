@@ -1,16 +1,17 @@
-Documentation
-=============
+Home
+====
 
-Welcome to the Valohai documentation!
+Introduction
+~~~~~~~~~~~~
 
 `Valohai is a machine learning platform. <https://valohai.com/>`_
 It runs your experiments locally or in the cloud, tracks your experiment history and
 streamlines collaboration inside a data science team.
 
-If you are new to the platform you should start with one of :doc:`our quick start tutorials </tutorials/index>`.
+We recommend starting with one of :doc:`the quick start tutorials </tutorials/index>` and proceed to read about :doc:`the core concepts </core-concepts>` to understand how it all comes together.
 
-Table of contents
-~~~~~~~~~~~~~~~~~
+Sitemap
+~~~~~~~
 
 .. toctree::
     :maxdepth: 3

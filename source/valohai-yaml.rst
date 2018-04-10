@@ -1,5 +1,5 @@
-``valohai.yaml`` and experiment configuration
----------------------------------------------
+``valohai.yaml``
+================
 
 The ``valohai.yaml`` configuration file defines how the platform runs your experiments.
 
