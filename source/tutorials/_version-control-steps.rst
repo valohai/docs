@@ -2,12 +2,14 @@ A valid source repository must contain a ``valohai.yaml`` configuration file tha
 
 Let's set up a repository for your project:
 
-1. Go to the example repository page on GitHub: |example-repository-url|
+1. Go to the example repository page on GitHub:
 
+  * |example-repository-url|
   * If you want to modify the training code, you can fork the repository first.
 
-2. Copy the **HTTPS** URL of the repository: |example-repository-url|.git
+2. Copy the **HTTPS** URL of the repository:
 
+  * |example-repository-url|.git
   * Using an SSH URLs work only for private GitHub repositories.
 
 3. Go to the **Repository** tab inside your new project to set your source repository
