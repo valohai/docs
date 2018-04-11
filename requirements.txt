@@ -18,9 +18,10 @@ pygments==2.2.0           # via sphinx
 pytz==2016.10             # via babel
 pyyaml==3.12              # via sphinx-autobuild, watchdog
 requests==2.13.0          # via sphinx
-six==1.10.0               # via livereload, sphinx
+six==1.10.0               # via livereload, sphinx, sphinx-sitemap
 snowballstemmer==1.2.1    # via sphinx
 sphinx-autobuild==0.6.0
+sphinx-sitemap==0.3.1
 sphinx==1.5.3
 tornado==4.4.2            # via livereload, sphinx-autobuild
 watchdog==0.8.3           # via sphinx-autobuild

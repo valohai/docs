@@ -15,11 +15,13 @@ extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
     'sphinx.ext.githubpages',
+    'sphinx_sitemap',
 ]
 templates_path = [
     '_templates',
 ]
 
+site_url = 'https://docs.valohai.com/'
 source_suffix = ['.rst', '.md']
 master_doc = 'index'
 project = 'Valohai'
