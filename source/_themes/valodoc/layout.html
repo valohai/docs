@@ -108,7 +108,7 @@
     <div class="content">
         {% block sidebar1 %}
             <div class="sidebar">
-                <a href="/">
+                <a href="{{ pathto(master_doc) }}" class="sidebar-title">
                     Valohai documentation
                 </a>
                 {{ toctree(maxdepth=2) }}

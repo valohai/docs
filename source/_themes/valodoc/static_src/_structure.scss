@@ -3,10 +3,10 @@ body {
 }
 
 header {
-  background: #fff;
+  background: #f6f8fa;
   color: #333;
   padding: 18px 16px 14px 16px;
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #cecece;
   display: flex;
   img {
     width: 154px;
@@ -36,11 +36,16 @@ header {
 
 .sidebar {
   flex-grow: 0;
-  flex-shrink: 0;
+  flex-shrink: 1;
   flex-basis: 366px;
   padding: 22px;
   font-size: 16px;
   line-height: 20px;
+  background: #fafbfc;
+  border-right: 1px solid #e1e4e8;
+  .sidebar-title {
+    font-weight: bold;
+  }
   a {
     text-decoration: none;
     &:hover {
@@ -60,21 +65,29 @@ header {
   }
 }
 
+.current > a {
+  font-weight: bold;
+}
+
 .document {
   flex-grow: 1;
-  padding-left: 11px;
-  padding-right: 11px;
+  flex-shrink: 0;
+  padding-left: 22px;
+  padding-right: 22px;
 }
 
 .body {
   max-width: 700px;
+  padding-bottom: 100px;
 }
 
 footer {
   text-align: center;
-  margin: 4em;
+  padding: 55px;
   opacity: 0.5;
-  font-size: 0.825em;
+  font-size: 14px;
+  background: #fafbfc;
+  border-top: 1px solid #e1e4e8;
 }
 
 .headerlink {
@@ -108,10 +121,6 @@ ul.search li {
 @media (max-width: 1130px) {
   .sidebar {
     display: none;
-  }
-  .document {
-    padding-left: 22px;
-    padding-right: 22px;
   }
 }
 
