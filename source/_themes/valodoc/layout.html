@@ -77,7 +77,7 @@
     <header>
         <div class="backlink">
             <a href="https://valohai.com/">
-                &laquo; valohai.com
+                &laquo;&nbsp;valohai.com
             </a>
         </div>
         <a href="{{ pathto(master_doc) }}" id="logo">
@@ -105,13 +105,23 @@
 {% endblock %}
 
 {%- block content %}
-    <main class="document">
-        {%- block document %}
-            <div class="body" role="main">
-                {% block body %} {% endblock %}
+    <div class="content">
+        {% block sidebar1 %}
+            <div class="sidebar">
+                <a href="{{ pathto(master_doc) }}" class="sidebar-title">
+                    Valohai Documentation
+                </a>
+                {{ toctree(maxdepth=2) }}
             </div>
-        {%- endblock %}
-    </main>
+        {% endblock %}
+        <main class="document">
+            {%- block document %}
+                <div class="body" role="main">
+                    {% block body %} {% endblock %}
+                </div>
+            {%- endblock %}
+        </main>
+    </div>
 {%- endblock %}
 
 {%- block footer %}

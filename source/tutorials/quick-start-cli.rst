@@ -1,4 +1,4 @@
-Quick start - command-line client
+Quick Start - Command-line Client
 ---------------------------------
 
 In this tutorial, we will use our `command-line client <https://github.com/valohai/valohai-cli>`_ to bootstrap a fresh project.

@@ -1,8 +1,8 @@
-Frequently asked questions
+Frequently Asked Questions
 ==========================
 
-I'm getting "Missing step configuration file valohai.yaml" error
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+How to fix "Missing step configuration file valohai.yaml"?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Your source code repository must contain a ``valohai.yaml`` file at the root of the repository
 that defines how and in which kind of runtime environment your experiments are ran.
@@ -20,8 +20,8 @@ For instance, here is a ``valohai.yaml`` file that lists runtime contents of you
 
 See :doc:`valohai.yaml documentation </valohai-yaml>` for more details.
 
-How can I define that my execution failed?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+How to define that my execution failed?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The ``command`` is considered to be successful if it returns error code 0. This is the default
 convention for most programs and scripting languages.
@@ -30,10 +30,8 @@ The platform will mark execution as crashed if any of the commands returns any o
 
 The best approach to log what went wrong is to use stderr which is visible on the execution **Logs** tab.
 
-I want to pass commands in ``Rscript myscript.r arg1 arg2`` format
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-That's not a question! :)
+How to use pass command parameters in ``Rscript myscript.r arg1 arg2`` format?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You define how the parameters are passed in the ``parameters`` section in ``valohai.yaml``.
 
@@ -42,7 +40,7 @@ The default syntax is ``--{name}={value}`` so:
 .. code-block:: yaml
 
    - name: dropout
-     pass-as: --dropout={v}
+     pass-as: '--dropout={v}'
 
 To get the syntax mentioned in the question, add or modify the ``pass-as`` property:
 

@@ -1,5 +1,5 @@
-Link a private GitHub using deploy keys
----------------------------------------
+Use a private GitHub repository using deploy keys
+-------------------------------------------------
 
 In this guide, we'll link a private GitHub repository to a Valohai project using a read-only SSH deploy key.
 

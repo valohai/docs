@@ -1,4 +1,4 @@
-Quick start - R
+Quick Start - R
 ------------------------
 
 In this tutorial, we will create a R machine learning project based on our
