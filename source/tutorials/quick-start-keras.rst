@@ -1,4 +1,4 @@
-Quick start - Keras
+Quick Start - Keras
 -------------------
 
 In this tutorial, we will create a Keras machine learning project based on our

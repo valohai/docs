@@ -1,4 +1,4 @@
-Quick start - TensorFlow
+Quick Start - TensorFlow
 ------------------------
 
 In this tutorial, we will create a TensorFlow machine learning project based on our

@@ -1,4 +1,4 @@
-Frequently asked questions
+Frequently Asked Questions
 ==========================
 
 How to fix "Missing step configuration file valohai.yaml"?

@@ -9,8 +9,8 @@ The ``valohai.yaml`` must be placed at the root of your project version control 
    :backlinks: none
    :local:
 
-``step`` defines the type of execution
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``step``
+~~~~~~~~
 
 Every ``step`` defines a separate type of execution such as feature extraction or training.
 
@@ -24,8 +24,8 @@ Here is an overview of the five valid ``step`` properties:
 
 .. _yaml-image:
 
-``image`` and dependency installation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+``image``
+~~~~~~~~~
 
 Your code will be run inside the defined Docker ``image``.
 
@@ -72,8 +72,8 @@ Here are the most common Docker images currently used on the platform:
 .. tip:: Using these images will result in faster executions since they're pre-seeded onto our workers.
 
 
-``command`` defines what is run
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+``command``
+~~~~~~~~~~~
 
 The ``command`` section defines one or more commands that are run during execution.
 
@@ -105,8 +105,8 @@ For example, the following configuration file defines two steps:
 
    The platform will mark execution as crashed if any of the commands returns any other error code.
 
-``inputs`` and downloading files before execution
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+``inputs``
+~~~~~~~~~~
 
 ``inputs`` are the data files that are available during step execution.
 
@@ -127,8 +127,8 @@ To see this in action, try running ``ls -la /valohai/inputs/*`` as the main comm
    You can download any files you want during the execution with e.g. Python libraries or command-line tools
    but then your executions become slower as it circumvents our input file caching system.
 
-``parameters`` and customizing executions
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+``parameters``
+~~~~~~~~~~~~~~
 
 Parameters are injected into the command by replacing the ``{parameters}`` placeholder.
 Good examples of parameters would be "learning rate" number or "network layout" string.
@@ -143,10 +143,10 @@ A parameter in ``parameters`` has six potential properties:
 * ``default``: (optional) the default value of the parameter
 * ``optional``: (optional) marks that this input is optional and the value can be left undefined
 
-Example ``valohai.yaml`` files
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Example YAML Files
+~~~~~~~~~~~~~~~~~~
 
-TensorFlow MNIST training
+TensorFlow MNIST Training
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: yaml

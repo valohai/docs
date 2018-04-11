@@ -1,4 +1,4 @@
-Core concepts
+Core Concepts
 =============
 
 This document goes through all the core concepts of the Valohai platform.
@@ -31,7 +31,7 @@ Fire-and-forget style experimentation is also supported using
 `our command line client <https://github.com/valohai/valohai-cli>`_,
 try out :doc:`our quick start command-line client tutorial </tutorials/quick-start-cli>` to get a taste how it works.
 
-Configuration file
+Configuration File
 ~~~~~~~~~~~~~~~~~~
 
 Each Valohai-enabled Git repository must have a ``valohai.yaml`` **configuration file** that defines
