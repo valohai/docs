@@ -54,6 +54,6 @@ See :doc:`valohai.yaml documentation </valohai-yaml>` for more details.
 How do I upload files from my executions?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Anything written to the ``/valohai/output`` directory will be uploaded and accessible after the execution.
+Anything written to the ``/valohai/outputs`` directory will be uploaded and accessible after the execution.
 
-The files will be uploaded to AWS S3, but we're working on providing other storage options.
+The files are uploaded into a user-specific section of our AWS S3 bucket by default, but you can customize this.
