@@ -51,16 +51,16 @@ repository.
 
 Here are the most common Docker images currently used on the platform:
 
-* gcr.io/tensorflow/tensorflow:1.5.0-devel-gpu-py3
-* gcr.io/tensorflow/tensorflow:1.5.0-devel-gpu *(the Python 2 version)*
-* gcr.io/tensorflow/tensorflow:1.4.1-devel-gpu-py3
-* gcr.io/tensorflow/tensorflow:1.4.1-devel-gpu *(the Python 2 version)*
-* gcr.io/tensorflow/tensorflow:1.3.0-devel-gpu-py3
-* gcr.io/tensorflow/tensorflow:1.3.0-devel-gpu *(the Python 2 version)*
-* gcr.io/tensorflow/tensorflow:1.0.1-devel-gpu-py3
-* gcr.io/tensorflow/tensorflow:1.0.1-devel-gpu *(the Python 2 version)*
-* gcr.io/tensorflow/tensorflow:0.12.1-devel-gpu-py3
-* gcr.io/tensorflow/tensorflow:0.12.1-devel-gpu *(the Python 2 version)*
+* tensorflow/tensorflow:1.5.0-devel-gpu-py3
+* tensorflow/tensorflow:1.5.0-devel-gpu *(the Python 2 version)*
+* tensorflow/tensorflow:1.4.1-devel-gpu-py3
+* tensorflow/tensorflow:1.4.1-devel-gpu *(the Python 2 version)*
+* tensorflow/tensorflow:1.3.0-devel-gpu-py3
+* tensorflow/tensorflow:1.3.0-devel-gpu *(the Python 2 version)*
+* tensorflow/tensorflow:1.0.1-devel-gpu-py3
+* tensorflow/tensorflow:1.0.1-devel-gpu *(the Python 2 version)*
+* tensorflow/tensorflow:0.12.1-devel-gpu-py3
+* tensorflow/tensorflow:0.12.1-devel-gpu *(the Python 2 version)*
 * valohai/keras:2.1.3-tensorflow1.4.0-python3.5-cuda8.0-cudnn6-devel-ubuntu14.04
 * valohai/keras:2.0.0-tensorflow1.0.1-python3.6-cuda8.0-cudnn5-devel-ubuntu16.04
 * valohai/keras:2.0.0-theano0.9.0rc4-python3.6-cuda8.0-cudnn5-devel-ubuntu16.04
@@ -79,7 +79,7 @@ The ``command`` section defines one or more commands that are run during executi
 
 For example, the following configuration file defines two steps:
 
-* **Hardware check**: executes ``nvidia-smi`` to check the status of server GPU using ``gcr.io/tensorflow/tensorflow:0.12.1-devel-gpu`` Docker image
+* **Hardware check**: executes ``nvidia-smi`` to check the status of server GPU using ``tensorflow/tensorflow:0.12.1-devel-gpu`` Docker image
 * **Environment check**: executes ``printenv`` followed by ``python --version`` to check how the runtime environment looks like inside ``busybox`` Docker image
 
 .. code-block:: yaml
@@ -88,7 +88,7 @@ For example, the following configuration file defines two steps:
 
     - step:
         name: Hardware check
-        image: gcr.io/tensorflow/tensorflow:0.12.1-devel-gpu
+        image: tensorflow/tensorflow:0.12.1-devel-gpu
         command: nvidia-smi
 
     - step:
@@ -155,7 +155,7 @@ TensorFlow MNIST Training
 
     - step:
         name: Train model
-        image: gcr.io/tensorflow/tensorflow:0.12.1-devel-gpu
+        image: tensorflow/tensorflow:0.12.1-devel-gpu
         command: python train.py {parameters}
         inputs:
           - name: training-set-images
@@ -185,7 +185,7 @@ TensorFlow MNIST Training
 
 This configuration file contains one step called **Train model**.
 
-The step is run inside the ``gcr.io/tensorflow/tensorflow:0.12.1-devel-gpu`` Docker image.
+The step is run inside the ``tensorflow/tensorflow:0.12.1-devel-gpu`` Docker image.
 
 The step contains one command, which runs a Python file named ``train.py`` passing it the parameters defined further below.
 
