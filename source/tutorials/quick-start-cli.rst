@@ -57,15 +57,15 @@ simply prints the status of the server GPU using the ``nvidia-smi`` tool.
    # Success! Got it! Using nvidia-smi as the command.
    # Now let's pick a Docker image to use with your code.
    # Here are some recommended choices, but feel free to type in one of your own.
-   # [  1] gcr.io/tensorflow/tensorflow:1.0.1-devel-gpu-py3
+   # [  1] tensorflow/tensorflow:1.0.1-devel-gpu-py3
    # ...
    # Choose a number or enter a Docker image name.:
    1
 
-   # Is gcr.io/tensorflow/tensorflow:1.0.1-devel-gpu-py3 correct? [y/N]:
+   # Is tensorflow/tensorflow:1.0.1-devel-gpu-py3 correct? [y/N]:
    y
 
-   # Success! Great! Using gcr.io/tensorflow/tensorflow:1.0.1-devel-gpu-py3.
+   # Success! Great! Using tensorflow/tensorflow:1.0.1-devel-gpu-py3.
    # Here's a preview of the Valohai.yaml file I'm going to create.
    # ...
    # Write this to /Users/user/test-project/valohai.yaml? [y/N]:
@@ -128,7 +128,7 @@ or with the command-line client.
    # command              | nvidia-smi
    # duration             | 1.2570652961731
    # environment name     | AWS eu-west-1 g2.2xlarge
-   # image                | gcr.io/tensorflow/tensorflow:1.0.1-devel-gpu-py3
+   # image                | tensorflow/tensorflow:1.0.1-devel-gpu-py3
    # interpolated command | nvidia-smi
    # project name         | test-project
    # status               | complete
