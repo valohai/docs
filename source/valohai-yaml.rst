@@ -53,8 +53,6 @@ Here are the most common Docker images currently used on the platform:
 
 * tensorflow/tensorflow:1.5.0-devel-gpu-py3
 * tensorflow/tensorflow:1.5.0-devel-gpu *(the Python 2 version)*
-* tensorflow/tensorflow:1.4.1-devel-gpu-py3
-* tensorflow/tensorflow:1.4.1-devel-gpu *(the Python 2 version)*
 * tensorflow/tensorflow:1.3.0-devel-gpu-py3
 * tensorflow/tensorflow:1.3.0-devel-gpu *(the Python 2 version)*
 * tensorflow/tensorflow:1.0.1-devel-gpu-py3
