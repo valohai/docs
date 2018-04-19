@@ -4,7 +4,7 @@ Tutorials
 This section contains quick start tutorials to get a feel for the Valohai platform.
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
 
     quick-start-tensorflow
     quick-start-keras
