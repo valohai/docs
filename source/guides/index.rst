@@ -7,3 +7,4 @@ This section contains more in-depth guidance for specific features of the Valoha
     :maxdepth: 1
 
     private-github-repository
+    private-s3-bucket
