@@ -44,7 +44,7 @@ html_theme_options = {
     'canonical_url': 'https://docs.valohai.com/',
 }
 html_sidebars = {}
-intersphinx_mapping = {'https://docs.python.org/': None}
+intersphinx_mapping = {'https://docs.python.org/3/': None}
 
 # Replace the lexer with ours
 from sphinx.highlighting import lexers
