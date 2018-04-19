@@ -1,3 +1,4 @@
+$nav-element-bg: #fafbfc;
 body {
   margin: 0;
 }
@@ -41,7 +42,7 @@ header {
   padding: 22px;
   font-size: 16px;
   line-height: 20px;
-  background: #fafbfc;
+  background: $nav-element-bg;
   border-right: 1px solid #e1e4e8;
   .sidebar-title {
     font-weight: bold;
@@ -83,10 +84,11 @@ header {
 
 footer {
   text-align: center;
-  padding: 55px;
+  padding-top: 55px;
+  padding-bottom: 1em;
   opacity: 0.5;
   font-size: 14px;
-  background: #fafbfc;
+  background: $nav-element-bg;
   border-top: 1px solid #e1e4e8;
 }
 
