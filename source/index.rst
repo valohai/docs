@@ -17,4 +17,5 @@ Contents
     guides/index
     core-concepts
     valohai-yaml
+    docker-images
     faq
