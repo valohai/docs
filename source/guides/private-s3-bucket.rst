@@ -1,5 +1,5 @@
-Use a private S3 bucket for data storage
-----------------------------------------
+Use a private S3 bucket as data store
+-------------------------------------
 
 In this guide, we'll link a private AWS S3 bucket to a Valohai project.
 
@@ -13,23 +13,56 @@ In this guide, we'll link a private AWS S3 bucket to a Valohai project.
 For this tutorial you will need:
 
 * an Amazon Web Services (AWS) account you can administer
-* a Valohai project which to link the bucket to
+* a Valohai project which to link the S3 bucket to
 
-2. Create the S3 Bucket
+2. Create the S3 bucket
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Create an S3 bucket in the the Amazon AWS console ( https://s3.console.aws.amazon.com/s3/home ).
+.. figure:: bucket-01.png
+   :alt: S3 home page
 
-Throughout this guide, we will assume the name of the bucket is ``my-valohai-bucket``; *be sure to replace
-this with the actual name of your bucket* when copying in any example configuration!
+Create an S3 bucket through AWS console (https://s3.console.aws.amazon.com/s3/home).
 
+2.1 Select bucket name and region
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-3. Configure CORS for the S3 Bucket
+.. figure:: bucket-02.png
+   :alt: S3 bucket creation, page 1
+
+1. Throughout this guide, we will assume the name of the bucket is ``my-valohai-bucket``; *be sure to replace this with the actual name of your bucket* when copying in any example configuration!
+2. Create the bucket in the region you'll be running your training to minimize data transfer costs. If you don't have a preference, we recommend using Ireland (`eu-west-1`) as most of our computation resides there.
+
+2.2 Use default bucket properties
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. figure:: bucket-03.png
+   :alt: S3 bucket creation, page 2
+
+Default bucket properties are fine, no need to activate versioning or anything else.
+
+2.3 Use default bucket permissions
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. figure:: bucket-04.png
+   :alt: S3 bucket creation, page 3
+
+Default bucket permissions are fine, but double check that your bucket is not public.
+
+3. Configure CORS for the S3 bucket
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you wish to be able to upload files to the store using the app.valohai.com web UI, you will need to
-add a CORS Policy document to the S3 bucket.  The document should allow POST from https://app.valohai.com/ .
-An example document follows.
+add a CORS Policy document to the S3 bucket.
+
+.. figure:: bucket-05.png
+   :alt: S3 bucket listing with the new bucket highlighted
+
+First you navigate to the AWS S3 bucket you created.
+
+.. figure:: bucket-06.png
+   :alt: S3 bucket CORS setting location
+
+Then you go to the "CORS settings" and add the rules below.
 
 .. code-block:: xml
 
@@ -49,10 +82,57 @@ An example document follows.
        </CORSRule>
    </CORSConfiguration>
 
-4. Create and configure an IAM User
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Now your bucket allows POSTs for your user on `https://app.valohai.com` website
 
-Using the AWS console, create a new IAM user with programmatic access credentials (access key ID / secret access key).
+4. Create an IAM user
+~~~~~~~~~~~~~~~~~~~~~
+
+.. figure:: s3-user-01.png
+   :alt: IAM home page
+
+Using the AWS console, start creating a new IAM user with programmatic access credentials (access key ID / secret access key).
+
+4.1 Select name for your programmatic user
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. figure:: s3-user-02.png
+   :alt: IAM user creation, page 1
+
+1. User name can be anything, try to be descriptive.
+2. Double check that programmatic access is turned on.
+
+4.2 Skip the permission configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+We will add permissions later, you can skip to the next step.
+
+4.3 Save access key ID and secret for later usage
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. figure:: s3-user-03.png
+   :alt: IAM user creation, page 3
+
+Download the CSV or copy-paste the "Access key ID" and "Secret access key" somewhere safe.
+
+.. tip:: If you lose these credentials, you can generate new ones though `IAM > Select user > Security credentials > Create access key`.
+
+5. Allow the IAM user to access the bucket
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Now we have a user without any permissions, let's allow the user to access our new bucket.
+
+.. figure:: s3-user-04.png
+   :alt: IAM user listing
+
+Find and open the user you created in the previous section.
+
+.. figure:: s3-user-05.png
+   :alt: IAM user inline policy location
+
+Add a new inline policy. You can use any other AWS IAM policy definition methods just as well. Inline policies are the easiest get started.
+
+.. figure:: s3-user-06.png
+   :alt: IAM user inline policy definition
 
 The user needs to have full access to the S3 bucket; an example of a suitable access policy document is below.
 Make sure to change the resource name `my-valohai-bucket`!
@@ -63,30 +143,22 @@ Make sure to change the resource name `my-valohai-bucket`!
        "Version": "2012-10-17",
        "Statement": [
            {
-               "Sid": "AllowBucketAccess",
                "Effect": "Allow",
-               "Action": [
-                   "s3:*"
-               ],
+               "Action": "s3:*",
                "Resource": [
                    "arn:aws:s3:::my-valohai-bucket",
                    "arn:aws:s3:::my-valohai-bucket/*"
-               ]
-           },
-           {
-               "Sid": "AllowListAccess",
-               "Effect": "Allow",
-               "Action": [
-                   "s3:ListAllMyBuckets"
-               ],
-               "Resource": [
-                   "arn:aws:s3:::*"
                ]
            }
        ]
    }
 
-5. Large File Uploads (optional)
+.. figure:: s3-user-07.png
+   :alt: IAM user policy creation review page
+
+Give your policy a descriptive name and we are done with the mandatory AWS setup!
+
+5. Large file uploads (optional)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If executions need to upload outputs larger than 5 GB, additional setup is needed.
@@ -99,7 +171,7 @@ Be sure to replace the following placeholders in the following policy examples!
 
 * `BUCKET` – the target S3 bucket
 * `ACCOUNTNUMBER` – your AWS account number
-* `USERNAME` – the username associated with the access keys that are being used with the store
+* `USERNAME` – the username liked to the access keys that are being used with the store
 
 Create a new AWS IAM **Role**. The role policy document should look like:
 
@@ -145,20 +217,27 @@ The trust relationship document should look like:
      ]
    }
 
-Take note of the role's AWS ARN (``arn:aws:...``).
+Take note of the role's AWS ARN (``arn:aws:...``), that will be configured to your Valohai project.
 
 6. Set up the store in Valohai
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Navigate to your project's Settings and choose Data Stores. Then choose "Add S3 store".
+.. figure:: store-settings-01.png
+   :alt: Valohai S3 store creation location
+
+Navigate to `Project > Settings > Data Stores > Add S3 store`
+
+.. figure:: store-settings-02.png
+   :alt: Valohai S3 store creation view
 
 Name your store and paste in the bucket name and the IAM credentials in the fields provided.
 
-If you also created the IAM Role for large uploads, paste the ARN in in the "Multipart Upload IAM Role ARN" field.
-If you did not create the role, you may leave this field empty.
+If you also created the optional IAM Role for large uploads, paste the ARN in in the "Multipart Upload IAM Role ARN" field. You may leave this field empty.
 
 When you create the store, the credentials provided will be checked by creating a small test file in the bucket.
 
-Once set up, you can set the store as your project's default store in the Settings > Basic Information view.
-This ensures outputs will be stored in your S3 bucket.
+.. figure:: store-settings-03.png
+   :alt: Valohai project settings with default store highlighted
+
+Once set up, you can set the store as your project's default store in the `Settings > Basic Information` view. This ensures outputs will be stored in your S3 bucket.
 
