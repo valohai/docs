@@ -40,7 +40,7 @@ html_theme = 'valodoc'
 html_theme_path = ['_themes']
 html_static_path = ['_static']
 html_theme_options = {
-    'analytics_id': 'UA-87958940-3',
+    'analytics_id': 'UA-87958940-1',
     'canonical_url': 'https://docs.valohai.com/',
 }
 html_sidebars = {}
