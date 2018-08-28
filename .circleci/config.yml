@@ -1,0 +1,25 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/valohai/docs
+    parallelism: 1
+    shell: /bin/bash --login
+    environment:
+      PIP_EXISTS_ACTION: w
+    docker:
+    - image: circleci/python:3.6.6-stretch-node-browsers
+    steps:
+    - run: echo 'export PATH="/home/circleci/.local/bin:$PATH"' >> $BASH_ENV
+    - checkout
+    - restore_cache:
+        keys:
+        - v2-dep-{{ checksum "yarn.lock" }}-{{ checksum "requirements.txt" }}
+    - run: yarn install
+    - run: pip install --user -r requirements.txt
+    - save_cache:
+        key: v2-dep-{{ checksum "yarn.lock" }}-{{ checksum "requirements.txt" }}
+        paths:
+        - ~/.cache
+    - run: node build-css.js
+    - run: make SPHINXOPTS=-W html
+    - run: '[ "${CIRCLE_BRANCH}" == "master" ] && ./upload.sh || true'
