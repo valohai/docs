@@ -1,3 +1,6 @@
+.. meta::
+    :description: Documentation of Valohai machine learning platform guides through the core concepts of the platform and helps to get started in injecting best practices of machine learning development to everyday work.
+
 Introduction
 ~~~~~~~~~~~~
 
