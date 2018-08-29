@@ -2,10 +2,9 @@ Introduction
 ~~~~~~~~~~~~
 
 `Valohai is a machine learning platform. <https://valohai.com/>`_
-It runs your experiments locally or in the cloud, tracks your experiment history and
-streamlines collaboration inside a data science team.
+It runs your experiments in the cloud, tracks your experiment history and streamlines data science workflows.
 
-We recommend starting with one of :doc:`the quick start tutorials </tutorials/index>` and proceed to read about :doc:`the core concepts </core-concepts>` to understand how it all comes together.
+We recommend getting a feeling for the platform with one of our :doc:`quick start tutorials </tutorials/index>` and proceed to read about :doc:`the core concepts </core-concepts>` to understand how it all comes together.
 
 Contents
 ~~~~~~~~
