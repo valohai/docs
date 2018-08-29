@@ -1,3 +1,6 @@
+.. meta::
+    :description: Everything in Valohai deep learning platform works through an API. Learn how to setup and optimize deep learning experiments with command-line client that supports Python 2.7 or Python 3.4 and higher.
+
 Quick Start - Command-line Client
 ---------------------------------
 
