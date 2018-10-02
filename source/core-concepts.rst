@@ -37,7 +37,7 @@ try out :doc:`our quick start command-line client tutorial </tutorials/quick-sta
 Configuration File
 ~~~~~~~~~~~~~~~~~~
 
-Each Valohai-enabled Git repository must have a ``valohai.yaml`` **configuration file** that defines
+Each Valohai-enabled Git repository can have a ``valohai.yaml`` **configuration file** that defines
 the runs that can be executed. We'll cover these execution types or "steps", as we call them, in the next section.
 
 A single configuration file can be used by multiple projects by various users, as long as the user
@@ -65,12 +65,13 @@ parameter, input file or command configurations.
 
 The context the commands are run in depends on three things:
 
-1. *Environment* meaning the machine type and cloud.
+1. **Environment** meaning the machine type and cloud.
    For instance, you might want to run neural net training on a high-end Amazon AWS instance with 8 GPU cards,
    but a feature extraction step might need a memory-heavy instance with no GPUs instead.
-2. The *Docker image* containing tools, libraries and frameworks.
-3. The contents of a commit in your linked *repository*, such as training scripts.
-   The commit's contents will be available at ``/valohai/repository``.
+2. The **Docker image** containing tools, libraries and frameworks.
+3. The contents of a commit in your linked **repository**, such as training scripts.
+   The commit's contents will be available at ``/valohai/repository``, which is also the default
+   working directory during executions.
 
 .. tip::
 
@@ -87,8 +88,9 @@ An execution can be in one of six states:
   launched or you'll have to wait for another execution (either your own or someone else's) to finish
 * **started**: The execution is currently running on an instance. You should see real-time logs and metadata
   through the web interface.
-* **error**: One of the execution commands failed; check the logs for more information.
-* **stopped**: An user manually cancelled the execution through the web interface or command line client
+* **error**: The last of the execution commands failed; check the logs for more information.
+* **stopping**: An user manually cancelled the execution through the web interface or command line client
+* **stopped**: The execution has been successfully stopped by the platform
 * **complete**: The execution was ran successfully and its results are available
   through the web interface and command line client.
 
@@ -129,7 +131,7 @@ monitoring long runs so you can stop them if training doesn't converge well.
 You can sort executions by metadata values in the web interface which is useful for e.g. finding training
 executions with the highest prediction accuracy.
 
-The latest or last value of each key such as ``accuracy`` is used for the sorting.
+The latest or last value of each key such as ``accuracy`` can be used for the sorting hyperparameter optimization results.
 
 Tasks
 ~~~~~
