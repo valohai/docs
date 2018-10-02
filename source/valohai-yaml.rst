@@ -4,9 +4,20 @@
 ``valohai.yaml``
 ================
 
-The ``valohai.yaml`` configuration file defines how the platform runs your experiments.
+The ``valohai.yaml`` configuration file defines steps of your machine learning pipeline.
 
-The ``valohai.yaml`` must be placed at the root of your project version control repository.
+The configuration file is optional but we recommend adding it so everything stays reproducible between
+different Valohai projects using the same git repository.
+The configuration file must be placed at the root of your project repository.
+
+Here is a very simple ``valohai.yaml`` to print "hello" on a worker machine with Python 3.6.
+
+.. code-block:: yaml
+
+    - step:
+        name: greet-me
+        image: python:3.6
+        command: echo hello
 
 .. contents::
    :backlinks: none
@@ -15,11 +26,11 @@ The ``valohai.yaml`` must be placed at the root of your project version control 
 ``step``
 ~~~~~~~~
 
-Every ``step`` defines a separate type of execution such as feature extraction or training.
+Every ``step`` defines a separate type of execution such as feature extraction, training or evaluation.
 
 Here is an overview of the five valid ``step`` properties:
 
-* ``name``: a human-readable name of the step such as "Feature extraction" or "Run training"
+* ``name``: the name of the step such as "feature-extraction" or "model-training"
 * ``image``: the Docker image that will be used as the base of the execution
 * ``command``: one or more commands that are ran during execution
 * ``inputs``: (optional) files available during execution
@@ -30,7 +41,7 @@ Here is an overview of the five valid ``step`` properties:
 ``image``
 ~~~~~~~~~
 
-Your code will be run inside the defined Docker ``image``.
+Your code will be run inside a Docker container based on the defined Docker ``image``.
 
 The Docker image should preferably contain all dependencies you need, to ensure your runs can get to work
 as quickly as possible.
@@ -43,7 +54,7 @@ as quickly as possible.
 You can find Docker images for the most popular machine learning libraries on
 `Docker Hub <https://hub.docker.com/>`_.
 
-You can also create and host your images on `Docker Hub <https://hub.docker.com/>`_ or any other public Docker repository.
+You can also create and host your images on `Docker Hub <https://hub.docker.com/>`_ or any other Docker repository.
 
 .. include:: _image-list.rst
 
@@ -54,31 +65,26 @@ The ``command`` section defines one or more commands that are run during executi
 
 For example, the following configuration file defines two steps:
 
-* **Hardware check**: executes ``nvidia-smi`` to check the status of server GPU using ``tensorflow/tensorflow:0.12.1-devel-gpu`` Docker image
-* **Environment check**: executes ``printenv`` followed by ``python --version`` to check how the runtime environment looks like inside ``busybox`` Docker image
+* **hardware-check**: executes ``nvidia-smi`` to check the status of server GPU using ``tensorflow/tensorflow:0.12.1-devel-gpu`` Docker image
+* **environment-check**: executes ``printenv`` followed by ``python --version`` to check how the runtime environment looks like inside ``busybox`` Docker image
 
 .. code-block:: yaml
 
-    ---
-
     - step:
-        name: Hardware check
+        name: hardware-check
         image: tensorflow/tensorflow:0.12.1-devel-gpu
         command: nvidia-smi
 
     - step:
-        name: Environment check
-        image: busybox
+        name: environment-check
+        image: python:3.6
         command:
           - printenv
           - python --version
 
 .. tip::
 
-   The ``command`` is considered to be successful if it returns error code 0. This is the default convention
-   for most programs and scripting languages.
-
-   The platform will mark execution as crashed if any of the commands returns any other error code.
+   The platform will mark execution as crashed if *the last* command returns an error code other than 0.
 
 ``inputs``
 ~~~~~~~~~~
@@ -87,15 +93,21 @@ For example, the following configuration file defines two steps:
 
 An input in ``inputs`` has three potential properties:
 
-* ``name``: A human-readable name for the input
+* ``name``: The input name; this is shown on the user interface and names the directory where the input files
+  will be placed during execution like ``/valohai/inputs/my-input-name``.
 * ``default``: (optional) The default source where the input will be fetched from.
   If not defined, the user has to define the source at the start of the execution.
-* ``optional``: (optional) Marks that this input is optional and an URL definition is not necessary before execution of the step
+* ``optional``: (optional) Marks that this input is optional and an URL definition is not
+  necessary before execution of the step.
 
-Currently valid sources for inputs are HTTP and HTTPS URLs. For these basic access authentication is supported.
+Currently valid sources for inputs are HTTP, HTTPS and various cloud provider specific data
+stores such as AWS S3 (``s3://...``) and Azure Storage (``azure://...``).
+
+For these HTTP/S endpoints basic access authentication is supported, but for the cloud provider stores,
+the access credentials must be configured under project settings.
 
 During the step execution, inputs are available under ``/valohai/inputs/<input name>/<input file>``.
-To see this in action, try running ``ls -la /valohai/inputs/*`` as the main command of execution which has inputs.
+To see this in action, try running ``ls -la /valohai/inputs/`` as the main command of execution which has inputs.
 
 .. tip::
 
@@ -110,7 +122,7 @@ Good examples of parameters would be "learning rate" number or "network layout" 
 
 A parameter in ``parameters`` has six potential properties:
 
-* ``name``: a human-readable name for the parameter
+* ``name``: the parameter name, shown on the user interface and used as the default name when passed to commands
 * ``type``: the parameter type, valid values are **float**, **integer** and **string**
 * ``pass-as``: (optional) how the parameter is passed to the command e.g. ``-t {v}`` where ``{v}`` becomes the actual value.
   If not defined, the parameter is passed as  ``--{name}={value}``
@@ -126,10 +138,8 @@ TensorFlow MNIST Training
 
 .. code-block:: yaml
 
-    ---
-
     - step:
-        name: Train model
+        name: train-model
         image: tensorflow/tensorflow:0.12.1-devel-gpu
         command: python train.py {parameters}
         inputs:
@@ -158,7 +168,7 @@ TensorFlow MNIST Training
             description: Keep probability for training dropout
             default: 0.9
 
-This configuration file contains one step called **Train model**.
+This configuration file contains one step called **train-model**.
 
 The step is run inside the ``tensorflow/tensorflow:0.12.1-devel-gpu`` Docker image.
 
