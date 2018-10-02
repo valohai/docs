@@ -104,7 +104,7 @@ sends the package to the Valohai platform and executes the command on a GPU-enab
 
 .. code-block:: bash
 
-   $ vh execution run --adhoc --watch execute
+   $ vh execution run --adhoc --watch execute # replace with the name of your step
    # Packaging /Users/user/test-project...
    #   [########################################]  1/1
    # Uploading 0.30 KiB...
