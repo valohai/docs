@@ -21,6 +21,17 @@ For this tutorial you will need:
 * a Valohai project which to link the repository
 * a tool that can generate SSH keys, this guide uses :code:`ssh-keygen` commonly found on computers
 
+.. tip::
+
+   You can also link private GitHub repositories through
+   `GitHub Apps authorization <https://developer.github.com/apps/differences-between-apps/>`_
+   if you don't wish to manage the secrets yourself.
+
+   .. figure:: github-apps.png
+      :alt: GitHub Apps integration button
+
+      You will find this in the project repository settings.
+
 2. Generate an SSH key pair
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
