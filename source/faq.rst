@@ -43,3 +43,18 @@ Anything written to the ``/valohai/outputs`` directory will be uploaded and acce
 The files are uploaded into a user-specific section of our AWS S3 bucket by default, but you can customize this.
 
 .. seealso:: :doc:`guides/private-s3-bucket`
+
+Do I need to commit and push after each code change?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Not necessarily, Valohai command-line client allows creating one-off executions from local files.
+These ad-hoc executions allow quick iteration with the platform when you are still developing your whole pipeline.
+
+Although, we do strongly recommend using all production code through version control.
+
+.. code-block:: bash
+
+    $ vh exec run --adhoc --watch name-of-your-step
+    # sends project source code to a worker and runs commands in valohai.yaml
+
+See :doc:`tutorials/quick-start-cli` for more details.
