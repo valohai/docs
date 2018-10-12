@@ -16,8 +16,8 @@ Contents
     :maxdepth: 2
 
     tutorials/index
-    guides/index
     core-concepts
     valohai-yaml
     docker-images
+    guides/index
     faq
