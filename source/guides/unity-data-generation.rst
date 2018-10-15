@@ -4,4 +4,7 @@
 Generating training data using Unity
 ------------------------------------
 
-Documentation coming soon
+`Unity 3D <http://www.unity.com/>`__ is a leading real-time rendering and game engine.  In addition to games,
+it can be used to generate realistic training and validation data for deep learning use cases.
+
+Detailed documentation on how to run Unity executables within Valohai is forthcoming.
