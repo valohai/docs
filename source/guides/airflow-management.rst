@@ -1,8 +1,8 @@
 .. meta::
     :description: How to control Valohai executions via Airflow
 
-Using Airflow to manage executions
-----------------------------------
+Use Airflow to manage executions
+--------------------------------
 
 `Apache Airflow <https://airflow.apache.org/>`__ is an open source platform to programmatically author, schedule and monitor workflows.
 
