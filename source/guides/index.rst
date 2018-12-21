@@ -11,5 +11,6 @@ This section contains more in-depth guidance for specific features of the Valoha
 
     private-github-repository
     private-s3-bucket
+    private-swift-container
     airflow-management
     unity-data-generation
