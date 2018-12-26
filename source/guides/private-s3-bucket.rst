@@ -1,8 +1,8 @@
 .. meta::
     :description: Link a private AWS S3 bucket containing the data for deep learning experiments to a Valohai project. Optionally create multiple buckets to keep track of different versions of deep learning models or projects.
 
-Use a private S3 bucket as data store
--------------------------------------
+Use a private S3 bucket as a data store
+---------------------------------------
 
 In this guide, we'll link a private AWS S3 bucket to a Valohai project.
 
@@ -222,8 +222,8 @@ The trust relationship document should look like:
 
 Take note of the role's AWS ARN (``arn:aws:...``), that will be configured to your Valohai project.
 
-6. Set up the store in Valohai
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+6. Link the store to Valohai
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. figure:: store-settings-01.png
    :alt: Valohai S3 store creation location
@@ -243,4 +243,3 @@ When you create the store, the credentials provided will be checked by creating 
    :alt: Valohai project settings with default store highlighted
 
 Once set up, you can set the store as your project's default store in the `Settings > Basic Information` view. This ensures outputs will be stored in your S3 bucket.
-
