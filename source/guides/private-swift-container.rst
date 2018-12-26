@@ -4,7 +4,7 @@
 Use a private Swift container as a data store
 ---------------------------------------------
 
-In this guide, we'll link a private OpenStack Swift container to a Valohai project.
+In this guide, we'll link a private `OpenStack Swift <https://wiki.openstack.org/wiki/Swift>`_ container to a Valohai project.
 
 .. contents::
    :backlinks: none
@@ -26,8 +26,7 @@ First we need to install OpenStack and Swift command-line clients.
 
 .. code-block:: bash
 
-    pip install python-openstackclient
-    pip install python-swiftclient
+    pip install python-openstackclient python-swiftclient
 
 Then we need to authenticate to your OpenStack installation.
 The easiest way to authenticate is using an OpenStack RC File if your provider allows generating those.
@@ -75,15 +74,14 @@ Create a Swift container for your Valohai project.
 3.1 Configure Temporary URL key
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Temporary URL keys are required to give secure download privilege for Valohai workers.
+Temporary URL keys are required to give secure download privileges for Valohai workers.
 
 .. code-block:: bash
 
     # generate random string from somewhere to use as Temporary URL key, e.g.
     cat /dev/urandom | env LC_CTYPE=C tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1
-    6jz7AqUwWisTLN4Fi7BIy51ozcRsCczS
     # set the key to the Swift cluster
-    swift post -m "Temp-URL-Key:6jz7AqUwWisTLN4Fi7BIy51ozcRsCczS"
+    swift post -m "Temp-URL-Key:randomlygeneratedkey"
 
 3.2 Configure CORS
 ^^^^^^^^^^^^^^^^^^
@@ -101,7 +99,7 @@ add a CORS (Cross-Origin Resource Sharing) policy to the Swift container.
     swift stat -v my-project-data
     # ...
     Meta Access-Control-Allow-Origin: https://app.valohai.com
-         Meta Access-Control-Max-Age: 3000
+    Meta Access-Control-Max-Age: 3000
     # ...
 
 Now your container allows uploads from `https://app.valohai.com` website
@@ -110,7 +108,7 @@ Now your container allows uploads from `https://app.valohai.com` website
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. figure:: swift-02.png
-   :alt: Where to find the OpenStack Swift container confinguration.
+   :alt: Where to find the OpenStack Swift container configuration.
 
 Navigate to `Project > Settings > Data Stores > Add OpenStack Swift Object Store`
 
@@ -121,12 +119,12 @@ Required fields:
 
 - **Name:** Understandable name for the storage.
 - **Auth URL:** This can be found in the OpenStack RC File, variable :code:`OS_AUTH_URL`.
-- **Auth Version:** Valohai currently only supports 3.0, contact support for more information.
+- **Auth Version:** Valohai currently only supports 3.0. Contact support for more information.
 - **Username:** Your OpenStack account username.
 - **Password:** Your OpenStack account password.
-- **Container Name:** Container name, we used :code:`my-project-data` in this guide.
-- **Region Name:** :code:`openstack region list` gives you a list of all the regions.
-- **Temp URL Key:** This is the key we previously generated in step 3.1
+- **Container Name:** The name of the container. We used :code:`my-project-data` in this guide.
+- **Region Name:** :code:`openstack region list` gives you a list of all the regions for your installation.
+- **Temp URL Key:** This is the key we previously generated in step 3.1.
 
 .. figure:: swift-04.png
    :alt: Making the new data store default data store for the project.
