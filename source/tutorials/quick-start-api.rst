@@ -52,18 +52,21 @@ Here is a Python script for getting a token:
     login_url = 'https://app.valohai.com/api/v0/get-token/'
     data = {'username': 'test', 'password': 'test'}
 
-    req = requests.post(login_url, data=data)
-    req.raise_for_status() # Raise an exception for unsuccessful request
+    resp = requests.post(login_url, data=data)
+    resp.raise_for_status()  # Raise an exception for unsuccessful request
     auth_token = req.json()['token']
 
-    print(f'# My auth token is: {auth_token}')
+    print('# My auth token is:', auth_token)
 
 Save the code as ``test.py`` and run the following shell command:
 
 .. code-block:: bash
 
     $ python test.py
-    # My auth token is: Ljjh90HrsgKMxL6ntauGmHNC4J7KfywIuF2dd7NG
+    # My auth token is: Alb3r7o5t1F460TiN&TOERaEy77iBuh6uw4NM3L0d14n
+
+Take a note of the authentication token.
+In a real application, you might want to save it in a configuration file or a database.
 
 4. Make an API request
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -81,17 +84,8 @@ have one item.
     import requests
     import json
 
-    login_url = 'https://app.valohai.com/api/v0/get-token/'
-    data = {'username': 'test', 'password': 'test'}
-
-    req = requests.post(login_url, data=data)
-    req.raise_for_status() # Raise an exception for unsuccessful request
-    auth_token = req.json()['token']
-
-    print(f'# My auth token is: {auth_token}')
-
-    organizations_list_url = 'https://app.valohai.com/api/v0/organizations/'
-    headers={'Authorization': 'Token %s' % auth_token}
+    auth_token = '<insert your authentication token from above here>'
+    headers = {'Authorization': 'Token %s' % auth_token}
 
     req = requests.get(organizations_list_url, headers=headers)
     req.raise_for_status()
