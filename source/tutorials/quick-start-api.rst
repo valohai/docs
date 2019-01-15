@@ -4,7 +4,7 @@
 Quick Start - Valohai API
 ---------------------------------
 
-In this tutorial, we will use Valohai API to login and fetch a list of organizations
+In this tutorial, we will use the Valohai API to login and fetch a list of projects
 associated with the user account.
 
 1. Prerequisites
@@ -34,6 +34,7 @@ We also need to install the `Requests <http://python-requests.org>` library:
 
 If you don't already have an account, sign up at `the Valohai platform <https://app.valohai.com/>`_.
 
+Also, create an example project if you don't have one.
 
 3. Authentication Token
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -73,8 +74,7 @@ In a real application, you might want to save it in a configuration file or a da
 
 Let's take the above code and extend it with another request.
 
-We shall fetch a list of all organizations accessible from this user account. For most people, the list will only
-have one item.
+We shall fetch a list of all projects accessible from this user account.
 
 .. note::
     We added ``import json`` for nicer output.
@@ -87,18 +87,17 @@ have one item.
     auth_token = '<insert your authentication token from above here>'
     headers = {'Authorization': 'Token %s' % auth_token}
 
-    req = requests.get(organizations_list_url, headers=headers)
-    req.raise_for_status()
-    response = json.dumps(req.json(), indent=4)
+    resp = requests.get('https://app.valohai.com/api/v0/projects/', headers=headers)
+    resp.raise_for_status()
 
-    print(f'# API Response:\n{response}')
+    print('# API Response:\n')
+    print(json.dumps(req.json(), indent=4))
 
 Save the code as ``test.py`` and run it again:
 
 .. code-block:: bash
 
     $ python test.py
-    # My auth token is: JUFyi0Kj9ccJV98mY5I2E7wKc5oWFANhGR5Zdbsk
     # API Response:
     {
         "count": 1,
@@ -106,9 +105,22 @@ Save the code as ``test.py`` and run it again:
         "previous": null,
         "results": [
             {
-                "id": 123,
-                "name": "testorg",
-                "url": "https://app.valohai.com/api/v0/organizations/123/"
+                "id": "015f25c1-0101-1010-fefe-a0a0a0a0a0a0",
+                "name": "my-project",
+                "description": "",
+                "owner": {
+                    "id": 1337,
+                    "username": "myusername"
+                },
+                "ctime": "2017-10-16T15:16:19.230872Z",
+                "mtime": "2017-10-16T15:16:19.230895Z",
+                "url": "https://app.valohai.com/api/v0/projects/015f25c1-0101-1010-fefe-a0a0a0a0a0a0/",
+                "urls": {
+                    "display": "https://app.valohai.com/p/myusername/my-project/",
+                    "display_repository": "https://app.valohai.com/p/myusername/my-project/settings/repository/"
+                },
+                "execution_count": 0,
+                "last_execution_ctime": null
             }
         ]
     }
