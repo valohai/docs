@@ -12,7 +12,7 @@ associated with the user account.
 
 You can use any programming language you want to make HTTP requests.
 
-In this tutorial we will be using Python (version 3.4+ recommended).
+In this tutorial we will be using Python 3 (version 3.4+ recommended).
 Installing Python and Pip is outside the scope of this tutorial, but
 a good place for information is `docs.python-guide.org <https://docs.python-guide.org/>`_
 
@@ -23,7 +23,7 @@ To validate your enviroment, open a terminal and run:
     $ python --version
 
 
-We also need to install requests library:
+We also need to install the `Requests <http://python-requests.org>` library:
 
 .. code-block:: bash
 
@@ -34,13 +34,14 @@ We also need to install requests library:
 
 If you don't already have an account, sign up at `the Valohai platform <https://app.valohai.com/>`_.
 
-3. Auth Token
-~~~~~~~~~~~~~
+
+3. Authentication Token
+~~~~~~~~~~~~~~~~~~~~~~~
 
 To make API requests, you need to authenticate yourself.
 
-In Valohai API, first you request a token using your username & password. Then you use that token for all
-your consecutive requests.
+In the Valohai API, first you request a token using your username and password.
+Then you use that token for all following requests.
 
 Here is a Python script for getting a token:
 
