@@ -24,18 +24,19 @@ And you have a local project linked to Valohai, then you can run the step with t
 
 But this will crash because the inputs aren't defined.
 
-How do I point to various datasets?
+So, how can you refer to various datasets?
 
 Option #1: Datum URL
 ~~~~~~~~~~~~~~~~~~~~
 
-You can use ``datum://<identifier>`` to point to input files.
+You can use the ``datum://<identifier>`` syntax to refer to input files.
 
-Files will have a datum url if the files were uploaded to Valohai either:
-1) by another execution
+Files will have a datum URL if the files were uploaded to Valohai either:
+
+1) as outputs from another execution
 2) or using the Valohai web interface uploader under "Data" tab of the project
 
-You can find datum URL by clicking the "datum://" button under "Data" tab of the project.
+You can find the datum URL by clicking the "datum://" button under "Data" tab of the project.
 
 Usage example:
 
@@ -50,7 +51,8 @@ Option #2: Custom Store URL
 
 You can connect custom private stores to Valohai projects.
 
-If you connect a store that contains files that Valohai doesn't know about, like the files that you have uploaded there yourself, you can use the following syntax to point to files.
+If you connect a store that contains files that Valohai doesn't know about,
+like the files that you have uploaded there yourself, you can use the following syntax to refer to files.
 
 * Azure Blob Storage: ``azure://{account_name}/{container_name}/{blob_name}``
 * Google Storage: ``gs://{bucket}/{key}``
@@ -59,8 +61,8 @@ If you connect a store that contains files that Valohai doesn't know about, like
 
 This syntax also has supports wildcard syntax to download multiple files:
 
-* ``s3://my-bucket/dataset/images/*.jpg`` for all JPEG files
-* ``s3://my-bucket/dataset/image-sets/**/*.jpg`` for recursiving subdirectories
+* ``s3://my-bucket/dataset/images/*.jpg`` for all .jpg (JPEG) files
+* ``s3://my-bucket/dataset/image-sets/**.jpg`` for recursing subdirectories for all .jpg (JPEG) files
 
 Usage example:
 
@@ -73,7 +75,7 @@ Usage example:
 Option #3: Public HTTP(S) URL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If your dataset is public and available through a HTTP(S) address, you can use that.
+If your dataset is public and available through an HTTP(S) address, you can use that.
 
 Usage example:
 
