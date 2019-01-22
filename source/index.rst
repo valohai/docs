@@ -9,11 +9,8 @@ It runs your experiments in the cloud, tracks your experiment history and stream
 
 We recommend getting a feeling for the platform with one of our :doc:`quick start tutorials </tutorials/index>` and proceed to read about :doc:`the core concepts </core-concepts>` to understand how it all comes together.
 
-Contents
-~~~~~~~~
-
 .. toctree::
-    :maxdepth: 2
+    :titlesonly:
 
     tutorials/index
     core-concepts
