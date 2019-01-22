@@ -18,7 +18,7 @@ Contents
     tutorials/index
     core-concepts
     valohai-yaml
-    docker-images
     valohai-cli/index
+    docker-images
     guides/index
     faq
