@@ -12,6 +12,7 @@ The command-line interface is best suited for iterative development, debugging a
 This section focuses on how to setup and work with ``valohai-cli``.
 
 .. toctree::
-    :maxdepth: 1
+    :titlesonly:
 
     installation
+    using-inputs
