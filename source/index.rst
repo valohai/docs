@@ -18,4 +18,5 @@ We recommend getting a feeling for the platform with one of our :doc:`quick star
     valohai-cli/index
     docker-images
     guides/index
+    architecture/index
     faq
