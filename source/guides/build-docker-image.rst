@@ -94,7 +94,7 @@ Now you have your own Docker image! Next we'll host it somewhere for later use.
 4. Host the image
 ~~~~~~~~~~~~~~~~~
 
-We recommend hosting your images on `Docker Hub <https://hub.docker.com/>`_ if there is nothing secret about your dependencies. Just create an account and login using the ``Docker Desktop`` app or the command line client.
+We recommend hosting your images on `Docker Hub <https://hub.docker.com/>`_ if there is nothing secret about your dependencies. Just create an account and login using the ``Docker Desktop`` app or the command-line client.
 
 On Docker Hub, create repository using the ``Create Repository`` button on the `dashboard <https://hub.docker.com/>`_. Give it a descriptive name like ``my-image`` like we have been using in this example ;)
 

@@ -31,7 +31,7 @@ Here are some in-depth example repositories:
 We also have `quick start tutorials </tutorials>`_ to get you started right away.
 
 Fire-and-forget style experimentation is also supported using
-`our command line client <https://github.com/valohai/valohai-cli>`_,
+`our command-line client <https://github.com/valohai/valohai-cli>`_,
 try out :doc:`our quick start command-line client tutorial </tutorials/quick-start-cli>` to get a taste how it works.
 
 Configuration File
@@ -77,7 +77,7 @@ The context the commands are run in depends on three things:
 
    * You can use ready available images or provide URL your own.
      More about images in the :ref:`yaml-image` section.
-   * You can skip using version control by using `our command line client <https://github.com/valohai/valohai-cli>`_
+   * You can skip using version control by using `our command-line client <https://github.com/valohai/valohai-cli>`_
      but then you miss all the benefits of version control system.
 
 An execution can be in one of six states:
@@ -89,13 +89,13 @@ An execution can be in one of six states:
 * **started**: The execution is currently running on an instance. You should see real-time logs and metadata
   through the web interface.
 * **error**: The last of the execution commands failed; check the logs for more information.
-* **stopping**: An user manually cancelled the execution through the web interface or command line client
+* **stopping**: An user manually cancelled the execution through the web interface or command-line client
 * **stopped**: The execution has been successfully stopped by the platform
 * **complete**: The execution was ran successfully and its results are available
-  through the web interface and command line client.
+  through the web interface and command-line client.
 
 Everything your commands write to the standard output or standard error streams is logged and visible in real-time
-through our command line client and web app.  That is, you can freely ``print()`` things and view them in the app.
+through our command-line client and web app.  That is, you can freely ``print()`` things and view them in the app.
 
 At the end of an execution, anything stored in the ``/valohai/outputs`` directory will be uploaded to storage.
 This is the place to store your neural network weights and biases if you want to access them later.
