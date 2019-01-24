@@ -4,7 +4,9 @@
 Docker Images
 =============
 
-You can use any Docker images to package your dependencies. So Valohai platform is capable to run any kind of code from C to Python as long as it runs inside a predefined Docker container.
+Valohai utilizes Docker images to package your dependencies. This means that the platform is capable of running any code from C to Python as long as it can run inside a Docker container.
+
+You can use any Docker image accessible through the Internet or :doc:`build your own </guides/build-docker-image>`.
 
 We recommend hosting your images on `Docker Hub <https://hub.docker.com/>`_ but you can use any Docker repository.
 
