@@ -1,5 +1,5 @@
 ``step.parameters``
-~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 
 Parameters are injected into the command by replacing the ``{parameters}`` placeholder.
 Good examples of parameters would be "learning rate" number or "network layout" string.

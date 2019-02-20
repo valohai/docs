@@ -1,5 +1,5 @@
 ``step.command``
-~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 
 The ``command`` section defines one or more commands that are run during execution.
 

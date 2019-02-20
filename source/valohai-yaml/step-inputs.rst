@@ -1,5 +1,5 @@
 ``step.inputs``
-~~~~~~~~~~
+~~~~~~~~~~~~~~~
 
 ``inputs`` are the data files that are available during step execution.
 

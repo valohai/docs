@@ -1,5 +1,5 @@
 ``step.image``
-~~~~~~~~~
+~~~~~~~~~~~~~~
 
 Your code will be run inside a Docker container based on the defined Docker ``image``.
 
