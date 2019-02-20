@@ -1,5 +1,5 @@
 .. meta::
-    :description: xxx
+    :description: Valohai deep learning management platform architecture diagram and installation flavors.
 
 Architecture
 ============

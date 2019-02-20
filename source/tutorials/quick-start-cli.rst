@@ -165,4 +165,4 @@ Check out :doc:`our quick start TensorFlow tutorial </tutorials/quick-start-tens
 adding a version control repository to your project.
 
 The wizard created a ``valohai.yaml`` for us during the tutorial; you might want to know
-:doc:`more how these configuration files work </valohai-yaml>`.
+:doc:`more how these configuration files work </valohai-yaml/index>`.
