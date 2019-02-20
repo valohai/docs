@@ -34,7 +34,7 @@ To achieve the syntax mentioned in the question, add or modify the ``pass-as`` p
    - name: dropout
      pass-as: '{v}'
 
-See the :doc:`valohai.yaml documentation </valohai-yaml>` for more details.
+See the :doc:`valohai.yaml documentation </valohai-yaml/index>` for more details.
 
 How do I upload files from my executions?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

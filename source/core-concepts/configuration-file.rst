@@ -10,4 +10,4 @@ A single configuration file can be used by multiple projects by various users, a
 
 .. seealso::
 
-    :doc:`Valohai YAML Standard </valohai-yaml>`
+    :doc:`Valohai YAML Standard </valohai-yaml/index>`

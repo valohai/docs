@@ -10,7 +10,7 @@ If you have used GitHub, projects in Valohai are a lot like code repositories.
 Projects are linked to one or more remote git repositories. You can use any git hosting service, not just GitHub but also e.g. BitBucket and GitLab.
 
 These linked repositories define what kind of "runs" can be executed in the context of that project
-using the :doc:`valohai.yaml configuration file </valohai-yaml>`.
+using the :doc:`valohai.yaml configuration file </valohai-yaml/index>`.
 
 Here are more in-depth example repositories which have ``valohai.yaml`` defined:
 

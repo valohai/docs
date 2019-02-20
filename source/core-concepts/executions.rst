@@ -21,7 +21,6 @@ The context the commands are run in depends on three things:
 .. tip::
 
    * You can use ready available images or provide URL your own.
-     More about images in the :ref:`yaml-image` section.
    * You can skip using version control by using :doc:`our command-line client </tutorials/quick-start-cli>`
      but then you miss all the benefits of version control system.
 

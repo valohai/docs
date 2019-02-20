@@ -23,4 +23,4 @@ You can run anything that works inside a Docker container so the possibilities a
 
 .. seealso::
 
-    :doc:`Valohai YAML Standard </valohai-yaml>`
+    :doc:`Valohai YAML Standard </valohai-yaml/index>`
