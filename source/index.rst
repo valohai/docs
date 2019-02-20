@@ -13,7 +13,7 @@ We recommend getting a feeling for the platform with one of our :doc:`quick star
     :titlesonly:
 
     tutorials/index
-    core-concepts
+    core-concepts/index
     valohai-yaml
     valohai-cli/index
     docker-images
