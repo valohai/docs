@@ -16,3 +16,4 @@ This section focuses on how to setup and work with ``valohai-cli``.
 
     installation
     using-inputs
+    using-environments
