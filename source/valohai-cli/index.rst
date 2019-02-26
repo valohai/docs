@@ -1,5 +1,5 @@
 .. meta::
-    :description: xxx
+    :description: Valohai CLI is a command-line client to manage your deep learning model lifecycle.
 
 Valohai CLI
 ===========
@@ -16,3 +16,4 @@ This section focuses on how to setup and work with ``valohai-cli``.
 
     installation
     using-inputs
+    using-environments

@@ -1,5 +1,5 @@
 .. meta::
-    :description: xxx
+    :description: How to install Valohai command-line client?
 
 Install Valohai CLI
 ===================
