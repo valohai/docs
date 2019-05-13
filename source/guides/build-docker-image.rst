@@ -1,8 +1,8 @@
 .. meta::
     :description: Build your own Docker images to run custom machine learning code on scalable deep learning infrastructure.
 
-Build a custom Docker image
----------------------------
+Custom Docker Images
+====================
 
 In this guide, we'll build a custom Docker image to be used as the runtime environment for Valohai executions.
 
