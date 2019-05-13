@@ -26,8 +26,8 @@ The context the commands are run in depends on three things:
 
 An execution can be in one of six states:
 
-* **created**: The execution is not yet queued, most likely because you don't have enough quota and the system is waiting for one of your past executions to finish.
-* **queued**: The execution is enqueued, but there are no free servers which means that either a new server is being launched or you'll have to wait for another execution (either your own or someone else's) to finish.
+* **created**: The execution is not yet queued, most likely because you don't have enough quota and the system is waiting for one of your older executions to finish.
+* **queued**: The execution is queued, but there are no free servers which means that either a new server is being launched or you'll have to wait for another execution (either your own or someone else's) to finish.
 * **started**: The execution is currently running on an instance. You should see real-time logs and metadata through the web interface.
 * **error**: The last of the execution commands failed; check the logs for more information.
 * **stopping**: An user manually cancelled the execution through the web interface or command-line client.

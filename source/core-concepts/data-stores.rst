@@ -15,9 +15,12 @@ Valohai supports the following data store types:
 * Google Storage
 * OpenStack Swift
 
-If you don't assing a data store to your project, your files will be uploaded to a Amazon S3 bucket under Valohai account. The bucket is not public so your data is safe with us but we do recommend setting up a private data store if you have any slightest concern for data security.
+If you don't assing a data store to your project, your files will be uploaded to a Amazon S3 bucket under Valohai account. The bucket is not public so your data is safe with us but we do recommend setting up your own private data store.
 
-In addition to downloading files from data stores, you can also download from any public HTTP(S) address. For private installations, we also provide mount and FTP- based data ingestion options.
+In addition to downloading files from data stores, you can also download from any public HTTP(S) address. For private installations, we also provide mount-based data ingestion options.
+
+.. figure:: data-stores.jpg
+   :alt: You configure data stores per project-basis on Valohai.
 
 .. seealso::
 

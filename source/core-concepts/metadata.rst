@@ -28,6 +28,9 @@ The ``_time`` value is in UTC, formatted as an ISO-8601 datetime (e.g. ``2017-04
 You can generate real-time charts based on metadata which helps with
 monitoring long runs so you can stop them if training doesn't converge well.
 
+.. figure:: metadata-chart.jpg
+   :alt: Metadata chart comparison
+
 You can sort executions by metadata values in the web interface which is useful for e.g. finding training
 executions with the highest prediction accuracy.
 

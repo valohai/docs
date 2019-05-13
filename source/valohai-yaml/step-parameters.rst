@@ -9,7 +9,7 @@ A parameter in ``parameters`` has six potential properties:
 * ``name``: the parameter name, shown on the user interface and used as the default name when passed to commands
 * ``type``: the parameter type, valid values are **float**, **integer**, **string** and **flag**
 * ``pass-as``: (optional) how the parameter is passed to the command e.g. ``-t {v}`` where ``{v}`` becomes the actual value.
-  If not defined, the parameter is passed as  ``--{name}={value}``. Note: Type 'flag' defaults to '--{name}'.
+  If not defined, the parameter is passed as  ``--<PARAMETER_NAME>={v}``. Note that ``flag`` type defaults to just ``--<PARAMETER_NAME>``.
 * ``description``: (optional) more detailed human-readable description of the parameter
 * ``default``: (optional) the default value of the parameter
 * ``optional``: (optional) marks that this input is optional and the value can be left undefined. Note: has no effect for the type 'flag'.

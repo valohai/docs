@@ -4,7 +4,7 @@
 Core Concepts
 =============
 
-This document briefly covers all the core concepts of the Valohai platform to help us communicate their meaning.
+This document briefly covers all the core concepts of the Valohai platform.
 
 .. toctree::
     :titlesonly:

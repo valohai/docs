@@ -4,7 +4,7 @@
 Deployments
 ===========
 
-**Deployment** is a versioned collection of one or more HTTPS endpoints that you can call to get your predictions
+**Deployment** is a versioned collection of one or more web endpoints for your predictive models.
 
 Each deployment has a deploy target, which is the Kubernetes cluster the service will be served on. This can be configured when creating the deployment and we provide a default Kubernetes cluster for you to try it out.
 

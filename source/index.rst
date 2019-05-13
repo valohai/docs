@@ -5,9 +5,9 @@ Introduction
 ============
 
 `Valohai is a machine learning platform. <https://valohai.com/>`_
-It runs your experiments in the cloud, tracks your experiment history and streamlines data science workflows.
+It runs your experiments in the cloud/on-premises, automatically tracks your experiment history, streamlines data science workflows and manages your pre-defined machine learning pipelines.
 
-We recommend getting a feeling for the platform with one of our :doc:`quick start tutorials </tutorials/index>` and proceed to read about :doc:`the core concepts </core-concepts/index>` to understand how it all comes together.
+We recommend you to get a feeling for the platform with our :doc:`quick start tutorials </tutorials/index>` and then proceed to read about :doc:`the core concepts </core-concepts/index>` to understand how it all comes together.
 
 .. toctree::
     :titlesonly:
@@ -19,4 +19,5 @@ We recommend getting a feeling for the platform with one of our :doc:`quick star
     docker-images
     guides/index
     architecture/index
+    on-premises/index
     faq

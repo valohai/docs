@@ -8,3 +8,6 @@ Tasks
 
 The most common task is hyperparameter optimization where you execute a single step with various
 parameter configurations to find the most optimal neural network layout, weights and biases.
+
+.. figure:: task-execution-table.jpg
+   :alt: Tasks are frequently used for hyperparameter sweeps and random search.
