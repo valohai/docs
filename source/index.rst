@@ -19,4 +19,5 @@ We recommend you to get a feeling for the platform with our :doc:`quick start tu
     docker-images
     guides/index
     architecture/index
+    on-premises/index
     faq
