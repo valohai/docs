@@ -4,7 +4,7 @@
 Private GitHub Repository
 =========================
 
-In this guide, we'll link a private GitHub repository to a Valohai project using a read-only SSH deploy key.
+In this guide, we'll link a private GitHub repository to a Valohai project using a deploy key.
 
 You can also use GitHub App integration to link private repositories, and you can find that setting on the Valohai project repository settings page.
 
@@ -17,9 +17,9 @@ You can also use GitHub App integration to link private repositories, and you ca
 
 For this tutorial you will need:
 
-* a private GitHub repository with Valohai YAML defined
+* a private GitHub repository
 * a Valohai project which to link the repository
-* a tool that can generate SSH keys, this guide uses :code:`ssh-keygen` commonly found on computers
+* a tool that generates SSH keys, this guide uses :code:`ssh-keygen`
 
 .. tip::
 
@@ -46,7 +46,7 @@ The :code:`ssh-keygen` above generates two files:
 
 You should not include these keys in the version control. Anybody that gains access to the :code:`my-project-deploy-key` file contents will have read access to your repository so use appropriate caution.
 
-3. Add the public key to GitHib
+3. Add the public key to GitHub
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Find the :code:`my-project-deploy-key.pub` file we generated in the last section, and it should contain one line that starts with :code:`ssh-rsa AAAA...`. This line is the public key that we'll be adding to GitHub.
@@ -82,7 +82,7 @@ Find the :code:`my-project-deploy-key.pub` file we generated in the last section
 4. Add the private key to Valohai
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Find the :code:`my-project-deploy-key` file (without the :code:`.pub` extension) we generated before. It should contain multiple lines starting with :code:`-----BEGIN RSA PRIVATE KEY-----`. The contents of this file are the private key we'll be adding to Valohai.
+Find the :code:`my-project-deploy-key` file (without the :code:`.pub` extension) we generated before. It should contain multiple lines starting with :code:`-----BEGIN RSA PRIVATE KEY-----`  or something similar. The contents of this file are the private key we'll be adding to Valohai.
 
 4.1 Go to repository settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
