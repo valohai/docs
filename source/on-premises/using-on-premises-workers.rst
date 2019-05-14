@@ -15,6 +15,6 @@ After on-premises worker setup and onboarding, there are four ways to use your l
 
 If you are unsure what is the "slug" of your on-premises environment, you can run ``vh environments`` on your Valohai command-line client after login.
 
-.. tip::
+.. note::
 
-    When using on-premises workers, note that downloading and uploading files can be slow so I would advice not to use ``/valohai/inputs`` and ``/valohai/outputs`` except for small files.
+    When using on-premises workers, downloading and uploading files can be slow so we advice not to use ``/valohai/inputs`` and ``/valohai/outputs`` except for small files.

@@ -34,7 +34,7 @@ You can queue as much work as you wish and the workers will process them as they
 
 Valohai worker runs encapsulated workloads in Docker containers, here are helpful commands that you can use to managed those:
 
-.. tip::
+.. note::
 
     Valohai also includes a cleanup service called ``peon-clean`` so running the following Docker maintenance commands
     is not necessary except in special cases.
