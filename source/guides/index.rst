@@ -10,6 +10,8 @@ This section contains more in-depth guidance for specific features of the Valoha
     :titlesonly:
 
     private-github-repository
+    private-bitbucket-repository
+    private-gitlab-repository
     private-s3-bucket
     private-swift-container
     build-docker-image
