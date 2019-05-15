@@ -9,6 +9,7 @@ This document briefly covers all the core concepts of the Valohai platform.
 .. toctree::
     :titlesonly:
 
+    what-is-valohai
     projects
     configuration-file
     steps
