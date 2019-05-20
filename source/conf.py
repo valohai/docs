@@ -15,6 +15,7 @@ extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
     'sphinx.ext.githubpages',
+    'sphinxcontrib.images',
     'sphinx_sitemap',
 ]
 templates_path = [

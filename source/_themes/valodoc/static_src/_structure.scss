@@ -118,9 +118,14 @@ hr {
   margin-bottom: 44px;
 }
 
-.figure img {
+.figure img,
+[data-lightbox] img {
   border: 1px solid #888;
   max-width: 100%;
+}
+
+.lightbox .lb-dataContainer {
+  padding-top: 10px;
 }
 
 ul.search li {
