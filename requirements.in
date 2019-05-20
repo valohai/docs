@@ -2,3 +2,4 @@ awscli
 sphinx
 sphinx-autobuild
 sphinx-sitemap
+sphinxcontrib-images
