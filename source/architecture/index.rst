@@ -29,7 +29,7 @@ Components
 
 To get a general idea of how the architecture looks, here is a diagram of the common SaaS use-case:
 
-.. figure:: architecture-overview.png
+.. thumbnail:: architecture-overview.png
   :alt: Architecture Overview Diagram
 
 * **Valohai Master:**
