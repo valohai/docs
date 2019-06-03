@@ -1,8 +1,8 @@
 .. meta::
     :description: How to link a private GitHub repository to a Valohai project using a read-only SSH deploy key. For this tutorial you will need a private GitHub repository that includes your machine learning code and Valohai YAML file.
 
-Private GitHub Repository
-=========================
+Link GitHub Repository
+======================
 
 In this guide, we'll link a private GitHub repository to a Valohai project using a deploy key.
 
