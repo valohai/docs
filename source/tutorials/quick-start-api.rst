@@ -23,7 +23,7 @@ To validate your enviroment, open a terminal and run:
     $ python --version
 
 
-We also need to install the `Requests <http://python-requests.org>` library:
+We also need to install the ``requests`` library to make HTTP requests:
 
 .. code-block:: bash
 
@@ -128,4 +128,7 @@ Save the code as ``test.py`` and run it again:
 This is the raw JSON. Next step is to parse it using your favorite parser
 and use the data to for amazing things!
 
-The rest of the API is documented here: `<https://app.valohai.com/api/v0>`_
+The rest of the API is documented here:
+
+* `<https://app.valohai.com/api/v0>`_
+* `<https://app.valohai.com/api/docs/>`_

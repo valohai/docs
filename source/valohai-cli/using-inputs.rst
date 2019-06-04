@@ -64,8 +64,10 @@ Files will have a datum URL if the files were uploaded to Valohai either:
 
 You can find the datum URL by clicking the "datum://" button under "Data" tab of the project.
 
-.. figure:: datum-url-button.jpg
-   :alt: Where to find
+.. thumbnail:: datum-url-button.jpg
+   :alt: Where to find datum URL with identifier.
+
+    You can use datum URLs to download specific files.
 
 Usage example:
 

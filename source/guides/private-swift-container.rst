@@ -1,8 +1,8 @@
 .. meta::
     :description: Connect an OpenStack Swift container holding your data to a Valohai project to automate machine learning workloads. Consider creating many containers to streamline data science team collaboration over different projects.
 
-Private OpenStack Swift Data Store
-==================================
+Add OpenStack Swift Data Store
+==============================
 
 In this guide, we'll link a private `OpenStack Swift <https://wiki.openstack.org/wiki/Swift>`_ container to a Valohai project.
 
@@ -34,7 +34,7 @@ More authentication methods in `OpenStack documentation <https://docs.openstack.
 
 For example:
 
-.. figure:: swift-01.png
+.. thumbnail:: swift-01.png
    :alt: An example how to get OpenStack RC File on Pouta OpenStack installation.
 
 Run the OpenStack RC File:
@@ -107,12 +107,12 @@ Now your container allows uploads from `https://app.valohai.com` website
 4. Link the store to Valohai
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. figure:: swift-02.png
+.. thumbnail:: swift-02.png
    :alt: Where to find the OpenStack Swift container configuration.
 
 Navigate to `Project > Settings > Data Stores > Add OpenStack Swift Object Store`
 
-.. figure:: swift-03.png
+.. thumbnail:: swift-03.png
    :alt: Screenshot with some example Swift data store configuration.
 
 Required fields:
@@ -126,7 +126,7 @@ Required fields:
 - **Region Name:** :code:`openstack region list` gives you a list of all the regions for your installation.
 - **Temp URL Key:** This is the key we previously generated in step 3.1.
 
-.. figure:: swift-04.png
+.. thumbnail:: swift-04.png
    :alt: Making the new data store default data store for the project.
 
 Once the store has been set up, you can set the store as your project's default store in
