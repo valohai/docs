@@ -21,9 +21,9 @@ Here is a very simple ``valohai.yaml`` to print "hello" on a worker machine with
     :titlesonly:
 
     step
-    step-environment
     step-image
     step-command
     step-parameters
     step-inputs
+    step-environment
     example-tensorflow-mnist
