@@ -16,6 +16,7 @@ We recommend you to get a feeling for the platform with our :doc:`quick start tu
     core-concepts/index
     valohai-yaml/index
     valohai-cli/index
+    valohai-api/index
     docker-images
     guides/index
     architecture/index
