@@ -7,9 +7,9 @@ An input in ``inputs`` has three potential properties:
 
 * ``name``: The input name; this is shown on the user interface and names the directory where the input files
   will be placed during execution like ``/valohai/inputs/my-input-name``.
-* ``default``: (optional) The default source where the input will be fetched from.
+* ``default``: **(optional)** The default source where the input will be fetched from.
   If not defined, the user has to define the source at the start of the execution.
-* ``optional``: (optional) Marks that this input is optional and an URL definition is not
+* ``optional``: **(optional)** Marks that this input is optional and an URL definition is not
   necessary before execution of the step.
 
 Currently valid sources for inputs are HTTP, HTTPS and various cloud provider specific data
