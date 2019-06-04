@@ -24,4 +24,5 @@ For example, the following configuration file defines two steps:
 
 .. tip::
 
-   The platform will mark execution as crashed if *the last* command returns an error code other than 0.
+   The platform will mark execution as crashed if **the last** command returns an error code other than 0.
+   It sometimes can make sense to add a last ``python check.py`` command that verifies that everything went smoothly.
