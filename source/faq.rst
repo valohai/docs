@@ -45,6 +45,7 @@ The files are uploaded into a user-specific section of our AWS S3 bucket by defa
 
 .. seealso::
 
+    * :doc:`guides/private-azure-storage`
     * :doc:`guides/private-s3-bucket`
     * :doc:`guides/private-swift-container`
 
