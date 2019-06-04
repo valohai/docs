@@ -1,5 +1,5 @@
 ``step.inputs``
-~~~~~~~~~~~~~~~
+===============
 
 ``inputs`` are the data files that are available during step execution.
 
@@ -15,6 +15,10 @@ An input in ``inputs`` has three potential properties:
 Currently valid sources for inputs are HTTP, HTTPS and various cloud provider specific data
 stores such as AWS S3 (``s3://...``) and Azure Storage (``azure://...``).
 
+.. seealso::
+
+    Read more about custom data stores from :doc:`/core-concepts/data-stores` documentation page.
+
 For these HTTP/S endpoints basic access authentication is supported, but for the cloud provider stores,
 the access credentials must be configured under project settings.
 
@@ -25,3 +29,20 @@ To see this in action, try running ``ls -la /valohai/inputs/`` as the main comma
 
    You can download any files you want during the execution with e.g. Python libraries or command-line tools
    but then your executions become slower as it circumvents our input file caching system.
+
+When you specify the actual input or default for one, you have 3 options:
+
+Option #1: Custom Store URL
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: /_input-custom-store-url.rst
+
+Option #2: Datum URI
+~~~~~~~~~~~~~~~~~~~~
+
+.. include:: /_input-datum-uri.rst
+
+Option #3: Public HTTP(S) URL
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: /_input-http.rst
