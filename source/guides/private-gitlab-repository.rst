@@ -41,10 +41,10 @@ Find the :code:`my-project-deploy-key.pub` file we generated in the last section
 3.1 Go to deploy key settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. figure:: gitlab-key-1.png
+.. thumbnail:: gitlab-key-1.png
    :alt: GitLab - route to the deploy key creation page
 
-   Navigate to the add deploy key page in your repository at `Settings` > `Repository` > `Deploy Keys`.
+Navigate to the add deploy key page in your repository at `Settings` > `Repository` > `Deploy Keys`.
 
 .. note::
 
@@ -53,14 +53,14 @@ Find the :code:`my-project-deploy-key.pub` file we generated in the last section
 3.2 Add new deploy key
 ^^^^^^^^^^^^^^^^^^^^^^
 
-.. figure:: gitlab-key-2.png
+.. thumbnail:: gitlab-key-2.png
    :alt: GitLab - deploy public key setup example
 
-   Copy and paste the contents of :code:`my-project-deploy-key.pub` into the `Key` field.
+Copy and paste the contents of :code:`my-project-deploy-key.pub` into the `Key` field.
 
-   Give the deploy key an identifying `Title` such as Valohai.
+Give the deploy key an identifying `Title` such as Valohai.
 
-   Valohai doesn't require write access, make sure that is off.
+Valohai doesn't require write access, make sure that is off.
 
 4. Add the private key to Valohai
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -70,52 +70,52 @@ Find the :code:`my-project-deploy-key` file (without the :code:`.pub` extension)
 4.1 Go to repository settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. figure:: valohai-key-1.png
+.. thumbnail:: valohai-key-1.png
    :alt: Valohai - route to repository settings
 
-   Navigate to the repository settings in your Valohai Project through `Settings` > `Repository`.
+Navigate to the repository settings in your Valohai Project through `Settings` > `Repository`.
 
 4.2 Copy the repository SSH URL
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. figure:: gitlab-key-3.png
+.. thumbnail:: gitlab-key-3.png
    :alt: GitLab - where to find repository SSH URL
 
-   To make sure you get the correct repository URL, open GitLab in another tab. On GitLab, navigate to `Project Details` page and press `Clone`.
+To make sure you get the correct repository URL, open GitLab in another tab. On GitLab, navigate to `Project Details` page and press `Clone`.
 
-   Make sure you select the **Clone with SSH** field.
+Make sure you select the **Clone with SSH** field.
 
-   Then copy the field contents, something like :code:`git@gitlab.com:<owner>/<repository>.git`
+Then copy the field contents, something like :code:`git@gitlab.com:<owner>/<repository>.git`
 
 4.3 Configure repository settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. figure:: valohai-key-3.png
+.. thumbnail:: valohai-key-3.png
    :alt: Valohai - repository configuration example
 
-   Paste the SSH URL (:code:`git@gitlab.com:<owner>/<repository>.git`) into the `URL` field.
+Paste the SSH URL (:code:`git@gitlab.com:<owner>/<repository>.git`) into the `URL` field.
 
-   Change `Fetch reference` if applicable to your use-case. It's essentially the branch Valohai uses. `master` is the most commonly used fetch reference.
+Change `Fetch reference` if applicable to your use-case. It's essentially the branch Valohai uses. `master` is the most commonly used fetch reference.
 
-   Copy and paste the contents of :code:`my-project-deploy-key` file (without the :code:`.pub` extension) into the `SSH private key` field.
+Copy and paste the contents of :code:`my-project-deploy-key` file (without the :code:`.pub` extension) into the `SSH private key` field.
 
 4.4 Save the repository settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. figure:: valohai-key-4.png
+.. thumbnail:: valohai-key-4.png
    :alt: Valohai - screen after saving repository settings
 
-   After you click `Save`, the repository links to the project and automatically fetches your code.
+After you click `Save`, the repository links to the project and automatically fetches your code.
 
-   On errors, double check the fields or contact support through Intercom.
+On errors, double check the fields or contact support through Intercom.
 
 4.5 Update project as necessary
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. figure:: valohai-key-5.png
+.. thumbnail:: valohai-key-5.png
    :alt: Valohai - highlighted Fetch repository button
 
-   After you add new commits to your GitLab repository, remember to press the `Fetch repository` to update the code in Valohai.
+After you add new commits to your GitLab repository, remember to press the `Fetch repository` to update the code in Valohai.
 
 5. Results
 ~~~~~~~~~~

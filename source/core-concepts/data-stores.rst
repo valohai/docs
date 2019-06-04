@@ -19,10 +19,11 @@ If you don't assing a data store to your project, your files will be uploaded to
 
 In addition to downloading files from data stores, you can also download from any public HTTP(S) address. For private installations, we also provide mount-based data ingestion options.
 
-.. figure:: data-stores.jpg
+.. thumbnail:: data-stores.jpg
    :alt: You configure data stores per project-basis on Valohai.
 
 .. seealso::
 
+    * :doc:`/guides/private-azure-storage`
     * :doc:`/guides/private-s3-bucket`
     * :doc:`/guides/private-swift-container`

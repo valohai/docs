@@ -23,7 +23,7 @@ You can run anything that works inside a Docker container so the possibilities a
 
 You define project steps in :doc:`valohai.yaml</valohai-yaml/index>`.
 
-.. figure:: execution-form.jpg
+.. thumbnail:: execution-form.jpg
    :alt: Step form to create an execution.
 
 .. tip::
