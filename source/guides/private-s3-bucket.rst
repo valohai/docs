@@ -55,7 +55,7 @@ Default bucket permissions are fine, but double check that your bucket is not pu
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you wish to be able to upload files to the store using the app.valohai.com web UI, you will need to
-add a CORS Policy document to the S3 bucket.
+add a CORS policy document to the S3 bucket.
 
 .. figure:: bucket-05.png
    :alt: S3 bucket listing with the new bucket highlighted
