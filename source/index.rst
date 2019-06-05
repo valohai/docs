@@ -21,4 +21,5 @@ We recommend you to get a feeling for the platform with our :doc:`quick start tu
     guides/index
     architecture/index
     on-premises/index
+    jupyter/index
     faq
