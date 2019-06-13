@@ -18,6 +18,7 @@ For this tutorial you will need:
 * a private GitLab repository
 * a Valohai project which to link the repository
 * a tool that generates SSH keys, this guide uses :code:`ssh-keygen`
+* access from Valohai (IP address: 34.248.245.191) through your firewall to your private GitLab
 
 2. Generate an SSH key pair
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
