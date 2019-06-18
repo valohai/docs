@@ -20,6 +20,7 @@ For this tutorial you will need:
 * a private GitHub repository
 * a Valohai project which to link the repository
 * a tool that generates SSH keys, this guide uses :code:`ssh-keygen`
+* access from Valohai (IP address: 34.248.245.191) through your firewall to your private GitHub
 
 .. tip::
 
