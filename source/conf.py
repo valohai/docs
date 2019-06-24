@@ -7,6 +7,7 @@
 #
 import os
 import sys
+
 sys.path.insert(0, os.path.abspath('.'))
 
 needs_sphinx = '1.8'
@@ -45,9 +46,11 @@ html_theme_options = {
     'canonical_url': 'https://docs.valohai.com/',
 }
 html_sidebars = {}
+html_extra_path = ['robots.txt']
 intersphinx_mapping = {'https://docs.python.org/3/': None}
 
 # Replace the lexer with ours
 from sphinx.highlighting import lexers
 from extended_yaml_lexer import ExtendedYAMLLexer
+
 lexers['yaml'] = ExtendedYAMLLexer()
