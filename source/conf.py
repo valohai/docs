@@ -18,6 +18,7 @@ extensions = [
     'sphinx.ext.githubpages',
     'sphinxcontrib.images',
     'sphinx_sitemap',
+    '_redirects',
 ]
 templates_path = [
     '_templates',
