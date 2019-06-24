@@ -33,6 +33,7 @@ version = ''
 release = ''
 language = None
 exclude_patterns = [
+    '_**',
     '**/_**',
 ]
 pygments_style = 'valodoc_pygments_style.Valodoc'
