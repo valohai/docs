@@ -1,5 +1,5 @@
-Example YAML - TensorFlow MNIST
-===============================
+Example - TensorFlow MNIST
+==========================
 
 .. code-block:: yaml
 

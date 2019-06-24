@@ -5,6 +5,7 @@ import os
 
 redirects = {
     # '/old-page/index.html': '/new-page/awesome/whatever.html'
+    '/core-concepts/live-upload.html': '/executions/live-outputs/index.html'
 }
 
 TEMPLATE = """

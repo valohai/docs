@@ -4,11 +4,18 @@
 Executions
 ==========
 
-Simply put, an **execution** is one or more commands run on a remote server.
+We encapsulate machine learning workloads in entities called **executions**.
+An execution is a similar concept as "a job" or "an experiment" in other systems,
+emphasis being that an execution is a smaller piece in a much larger data science process,
+be it experimental or well defined production computation.
 
-Running a step creates an execution; multiple executions can be based on the same step with varying parameters, input files, hardware or other execution configurations.
+But, simply put, an execution is one or more strictly defined commands ran on a remote server.
 
-The context the commands are run in depends on three things:
+Running a step creates an execution;
+multiple executions can be said to implement the same step with
+varying parameters, input files, hardware or other configuration.
+
+The context in which the commands are run in depends on three main things:
 
 1. **Environment** meaning the machine type and cloud.
    For instance, you might want to run neural net training on a high-end Amazon AWS instance with 8 GPU cards,
@@ -18,25 +25,14 @@ The context the commands are run in depends on three things:
    The commit's contents will be available at ``/valohai/repository``, which is also the default
    working directory during executions.
 
+A separate :doc:`Executions documentation section </executions/index>` is dedicated
+to explore executions in finer detail as it is one of larger topics to learn when working with Valohai.
+
 .. tip::
 
-   * You can use ready available images or provide URL your own.
-   * You can skip using version control by using :doc:`our command-line client </tutorials/quick-start-cli>`
-     but then you miss all the benefits of version control system.
+   You can use ready available Docker images e.g. from DockerHub or host your own.
 
-An execution can be in one of six states:
+.. tip::
 
-* **created**: The execution is not yet queued, most likely because you don't have enough quota and the system is waiting for one of your older executions to finish.
-* **queued**: The execution is queued, but there are no free servers which means that either a new server is being launched or you'll have to wait for another execution (either your own or someone else's) to finish.
-* **started**: The execution is currently running on an instance. You should see real-time logs and metadata through the web interface.
-* **error**: The last of the execution commands failed; check the logs for more information.
-* **stopping**: An user manually cancelled the execution through the web interface or command-line client.
-* **stopped**: The execution has been successfully stopped by the platform.
-* **complete**: The execution was ran successfully and its results are available through the web interface and command-line client.
-
-Everything your commands write to the standard output or standard error streams is logged and visible in real-time
-through our command-line client and web app.  That is, you can freely ``print()`` things and view them in the app.
-
-At the end of an execution, anything stored in the ``/valohai/outputs`` directory will be uploaded to storage.
-This is the place to store your neural network weights and biases if you want to access them later.
-Everything else is thrown away at the end of an execution.
+   You can skip using version control by using :doc:`our command-line client </tutorials/quick-start-cli>`
+   but then you lose the benefits of version control. This will create ad-hoc executions.
