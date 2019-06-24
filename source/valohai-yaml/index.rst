@@ -26,5 +26,6 @@ Here is a very simple ``valohai.yaml`` to print "hello" on a worker machine with
     step-parameters
     step-inputs
     step-environment
+    step-environment-variables
     endpoint
     example-tensorflow-mnist
