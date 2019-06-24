@@ -27,7 +27,7 @@ This section explains how executions work and how to create them.
     :titlesonly:
 
     lifecycle/index
-    file-configs/index
+    file-config/index
     logs/index
     inputs/index
     outputs/index
