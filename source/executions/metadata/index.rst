@@ -1,8 +1,16 @@
 .. meta::
-    :description: What is Valohai execution metadata? Keep track of your experiments.
+    :description: What is Valohai execution metadata? Create visualizations and keep track of your experiments.
+
+Creating Visualizations
+=======================
+
+If you wish to create visualizations, you can either:
+
+1. render them as part of the execution and save them to ``/valohai/outputs`` to be uploaded
+2. use our metadata system to render interactive graphs on the web interface
 
 Metadata
-========
+~~~~~~~~
 
 Execution **metadata** is output by writing lines of JSON to the standard output stream.
 
@@ -28,7 +36,7 @@ The ``_time`` value is in UTC, formatted as an ISO-8601 datetime (e.g. ``2017-04
 You can generate real-time charts based on metadata which helps with
 monitoring long runs so you can stop them if training doesn't converge well.
 
-.. thumbnail:: metadata-chart.jpg
+.. thumbnail:: /_images/metadata-chart.jpg
    :alt: Metadata chart comparison
 
 You can sort executions by metadata values in the web interface which is useful for e.g. finding training

@@ -30,6 +30,7 @@ This section explains how executions work and how to create them.
     placeholder-config/index
     file-config/index
     logs/index
+    metadata/index
     inputs/index
     outputs/index
     live-outputs/index

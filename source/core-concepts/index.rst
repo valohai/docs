@@ -14,7 +14,6 @@ This section briefly covers all the core concepts and terminology in the Valohai
     configuration-file
     steps
     executions
-    metadata
     data-stores
     tasks
     deployments

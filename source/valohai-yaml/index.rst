@@ -21,6 +21,7 @@ Here is a "Hello World" ``valohai.yaml`` to print "hello" on a worker machine wi
     :titlesonly:
 
     step
+    step-name
     step-image
     step-command
     step-parameters

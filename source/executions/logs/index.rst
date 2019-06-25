@@ -15,8 +15,3 @@ use :doc:`our outputs system </executions/outputs/index>`.
 
 After your execution has finished, you can download the full log from the web user interface.
 Before that, you will be able to inspect last 2000 lines of logs.
-
-If you wish to create visualizations, you can either:
-
-1. render them as part of the execution and save them to ``/valohai/outputs`` to be uploaded
-2. use our :doc:`metadata </core-concepts/metadata>` system to render interactive graphs on the web interface
