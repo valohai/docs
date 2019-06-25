@@ -32,6 +32,3 @@ You define project steps in project :doc:`valohai.yaml</valohai-yaml/index>`.
 .. tip::
 
     You can also run steps from command-line or API; web interface is just one approach.
-
-.. thumbnail:: execution-form.jpg
-   :alt: Step form to create an execution.

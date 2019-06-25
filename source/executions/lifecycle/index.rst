@@ -10,6 +10,9 @@ Executions can either 1) implement a step or 2) be an execution of an "unknown" 
    via the command-line client, API or web interface.
 2. If you don't have ``valohai.yaml``, you can create test executions with the web interface.
 
+.. thumbnail:: /_images/execution-form.jpg
+   :alt: Step form to create an execution.
+
 .. role:: created
 .. role:: queued
 .. role:: started
