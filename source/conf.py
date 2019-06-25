@@ -7,6 +7,7 @@
 #
 import os
 import sys
+
 sys.path.insert(0, os.path.abspath('.'))
 
 needs_sphinx = '1.8'
@@ -17,6 +18,7 @@ extensions = [
     'sphinx.ext.githubpages',
     'sphinxcontrib.images',
     'sphinx_sitemap',
+    '_redirects',
 ]
 templates_path = [
     '_templates',
@@ -26,12 +28,13 @@ site_url = 'https://docs.valohai.com/'
 source_suffix = ['.rst', '.md']
 master_doc = 'index'
 project = 'Valohai'
-copyright = '2018, Valohai'
+copyright = '2019, Valohai'
 author = 'Valohai'
 version = ''
 release = ''
 language = None
 exclude_patterns = [
+    '_**',
     '**/_**',
 ]
 pygments_style = 'valodoc_pygments_style.Valodoc'
@@ -45,9 +48,11 @@ html_theme_options = {
     'canonical_url': 'https://docs.valohai.com/',
 }
 html_sidebars = {}
+html_extra_path = ['robots.txt']
 intersphinx_mapping = {'https://docs.python.org/3/': None}
 
 # Replace the lexer with ours
 from sphinx.highlighting import lexers
 from extended_yaml_lexer import ExtendedYAMLLexer
+
 lexers['yaml'] = ExtendedYAMLLexer()

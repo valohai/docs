@@ -14,6 +14,7 @@ We recommend you to get a feeling for the platform with our :doc:`quick start tu
 
     tutorials/index
     core-concepts/index
+    executions/index
     valohai-yaml/index
     valohai-cli/index
     valohai-api/index

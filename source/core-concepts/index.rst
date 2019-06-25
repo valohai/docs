@@ -4,7 +4,7 @@
 Core Concepts
 =============
 
-This document briefly covers all the core concepts of the Valohai platform.
+This section briefly covers all the core concepts and terminology in the Valohai platform.
 
 .. toctree::
     :titlesonly:
@@ -14,8 +14,6 @@ This document briefly covers all the core concepts of the Valohai platform.
     configuration-file
     steps
     executions
-    live-upload
-    metadata
     data-stores
     tasks
     deployments

@@ -3,6 +3,8 @@
 
 Every ``step`` defines a separate type of execution such as training or evaluation.
 
+You run a step by creating an execution that implements that step.
+
 Here is an overview of the valid ``step`` properties:
 
 * ``name``: name of the step such as "feature-extraction" or "model-training"
@@ -11,3 +13,4 @@ Here is an overview of the valid ``step`` properties:
 * ``parameters``: **(optional)** valid parameters that can be passed to the commands
 * ``inputs``: **(optional)** files available during execution
 * ``environment``: **(optional)** default environment slug that specifies hardware and location e.g. "aws-eu-west-1-g3s-xlarge"
+* ``environment-variables``: **(optional)** define expected runtime environment variables and their default values
