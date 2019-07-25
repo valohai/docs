@@ -1,3 +1,7 @@
+.. meta::
+    :description: The parameters section declares dynamic parameters for your execution, and for hyperparameter optimization.
+
+
 ``step.parameters``
 ===================
 

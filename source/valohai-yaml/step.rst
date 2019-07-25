@@ -1,3 +1,6 @@
+.. meta::
+    :description: Step sections define separate types of executions.
+
 ``step``
 ~~~~~~~~
 

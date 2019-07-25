@@ -1,3 +1,7 @@
+.. meta::
+    :description: The environment variables section lets you pass additional environment variables to your commands.
+
+
 ``step.environment-variables``
 ==============================
 

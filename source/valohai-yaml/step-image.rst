@@ -1,3 +1,6 @@
+.. meta::
+    :description: The image section lets you decide which Docker container to run your code within.
+
 ``step.image``
 ~~~~~~~~~~~~~~
 
