@@ -1,8 +1,12 @@
 import glob
+import os
 import sys
 
 names_without_description_blocks = []
 for name in glob.glob('source/**/**.rst', recursive=True):
+    if os.path.basename(name).startswith('_'):
+        # Included file, never mind
+        continue
     with open(name, 'r') as fh:
         content = fh.read()
     if ':description: ' not in content:
