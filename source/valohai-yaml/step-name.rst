@@ -1,3 +1,7 @@
+.. meta::
+    :description: The name property gives your execution a human-readable name.
+
+
 ``step.name``
 ~~~~~~~~~~~~~~~~
 

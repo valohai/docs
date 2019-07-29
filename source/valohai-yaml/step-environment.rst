@@ -1,3 +1,6 @@
+.. meta::
+    :description: The environment section defines the hardware and the location where to run your code.
+
 ``step.environment``
 ~~~~~~~~~~~~~~~~~~~~
 

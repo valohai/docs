@@ -16,11 +16,14 @@ help:
 
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
-%: Makefile
+%: Makefile check-descriptions
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
 css:
 	node build-css.js
 
-watch: css
+check-descriptions:
+	python check_descriptions.py
+
+watch: css check-descriptions
 	sphinx-autobuild -i '*.scss' -b html -B -p 44044 $(SPHINXOPTS) "$(SOURCEDIR)" "$(BUILDDIR)/html"
