@@ -1,3 +1,7 @@
+.. meta::
+    :description: The Valohai API can be used to access Valohai programmatically.
+
+
 Valohai API
 ===========
 

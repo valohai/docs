@@ -1,3 +1,6 @@
+.. meta::
+    :description: Endpoints describe how deployments are accessed.
+
 ``endpoint``
 ============
 

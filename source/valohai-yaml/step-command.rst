@@ -1,3 +1,7 @@
+.. meta::
+    :description: The command section defines what to run.
+
+
 ``step.command``
 ~~~~~~~~~~~~~~~~
 

@@ -1,3 +1,6 @@
+.. meta::
+    :description: The inputs section defines the data files for your execution.
+
 ``step.inputs``
 ===============
 

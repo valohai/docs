@@ -6,10 +6,10 @@
 #
 alabaster==0.7.12         # via sphinx
 argh==0.26.2              # via sphinx-autobuild, watchdog
-awscli==1.16.175
+awscli==1.16.205
 babel==2.7.0              # via sphinx
-botocore==1.12.165        # via awscli, s3transfer
-certifi==2019.3.9         # via requests
+botocore==1.12.195        # via awscli, s3transfer
+certifi==2019.6.16        # via requests
 chardet==3.0.4            # via requests
 colorama==0.3.9           # via awscli
 docutils==0.14            # via awscli, botocore, sphinx
@@ -24,21 +24,21 @@ pathtools==0.1.2          # via sphinx-autobuild, watchdog
 port_for==0.3.1           # via sphinx-autobuild
 pyasn1==0.4.5             # via rsa
 pygments==2.4.2           # via sphinx
-pyparsing==2.4.0          # via packaging
+pyparsing==2.4.1.1        # via packaging
 python-dateutil==2.8.0    # via botocore
 pytz==2019.1              # via babel
-pyyaml==3.13              # via awscli, sphinx-autobuild, watchdog
+pyyaml==5.1               # via awscli, sphinx-autobuild, watchdog
 requests==2.22.0          # via sphinx, sphinxcontrib-images
 rsa==3.4.2                # via awscli
 s3transfer==0.2.1         # via awscli
 six==1.12.0               # via livereload, packaging, python-dateutil, sphinx, sphinx-sitemap
-snowballstemmer==1.2.1    # via sphinx
+snowballstemmer==1.9.0    # via sphinx
 sphinx-autobuild==0.7.1
 sphinx-sitemap==1.0.2
 sphinx==1.8.5
 sphinxcontrib-images==0.8.0
 sphinxcontrib-websupport==1.1.2  # via sphinx
-tornado==6.0.2            # via livereload, sphinx-autobuild
+tornado==6.0.3            # via livereload, sphinx-autobuild
 urllib3==1.25.3           # via botocore, requests
 watchdog==0.9.0           # via sphinx-autobuild
 
