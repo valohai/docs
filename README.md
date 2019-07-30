@@ -6,7 +6,7 @@ Setup:
 
 ```bash
 # Make Python 3 venv for the project if you want to.
-pip install -r requirement.txt
+pip install -r requirements.txt
 yarn  # or npm install
 ```
 

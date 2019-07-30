@@ -38,16 +38,10 @@ Run the notebook server in port 8888.
 
 Open in browser: http://127.0.0.1:8888
 
-.. thumbnail:: token2.png
-   :alt: Input token source
-.. thumbnail:: token.png
-   :alt: Input token
+Your current working directory will be mapped into the container.
 
-Copy the token from terminal to the login form.
-
-Your current folder will be mapped into `/work` inside the server to move files between
-the docker container and your local filesystem. This means anything saved in `/work` will persist
-even if you shut down the container.
+- All the files in your current working directory will be available within the container
+- All changes within the mapped folder will persist after shutting down
 
 4. Create notebook
 ~~~~~~~~~~~~~~~~~~
