@@ -1,15 +1,18 @@
 .. meta::
     :description: Valohai Jupyter notebook extension
 
-Jupyter Notebook (beta)
-=======================
+Jupyter Notebook
+================
+
+.. note::
+
+    **Valohai Jupyter notebook extension is in public beta.**
 
 .. figure:: notebook-generic.gif
    :alt: Jupyhai
 
 Jupyhai is the Valohai Jupyter notebook extension. It enables you to use Jupyter notebooks easily with the Valohai platform.
 It is an optional way of interacting with projects in the same capacity as our web user interface, API and CLI.
-
 
 1. Requirements
 ~~~~~~~~~~~~~~~

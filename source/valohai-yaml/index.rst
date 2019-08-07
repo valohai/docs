@@ -28,5 +28,8 @@ Here is a "Hello World" ``valohai.yaml`` to print "hello" on a worker machine wi
     step-inputs
     step-environment
     step-environment-variables
+    pipeline/index
+    pipeline/nodes/index
+    pipeline/edges/index
     endpoint
     example-tensorflow-mnist
