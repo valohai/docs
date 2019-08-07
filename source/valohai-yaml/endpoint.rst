@@ -4,13 +4,17 @@
 ``endpoint``
 ============
 
-An endpoint is a Docker container running a HTTP server in an auto-scaling Kubernetes cluster.
+Endpoint definitions are used to setup auto-scaling REST endpoints for **real-time** predictions.
 
-You can have multiple endpoints per deployment version because a single project can have various inference needs for different contexts.
+.. tip::
 
-.. seealso::
+    If you are doing batch predictions that could take multiple minutes to run,
+    we recommend sticking with normal Valohai executions.
 
-    Read more about deployments from :doc:`/core-concepts/deployments` documentation page.
+Technically, endpoint creates a group of Docker containers running HTTP servers deployed to a Kubernetes cluster.
+
+You can have multiple endpoints as a single project can have various inference requirements
+for different contexts e.g. teams working on the project.
 
 .. tip::
 
@@ -18,6 +22,10 @@ You can have multiple endpoints per deployment version because a single project 
     You can also download the trained model and do more complex deployments.
     I would say it is even more common that people have custom deployments but Valohai deployment endpoints are
     especially excellent for quality assurance and testing.
+
+.. seealso::
+
+    Read more about deployments from :doc:`/core-concepts/deployments` documentation page.
 
 ``endpoint.server-command`` variant
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

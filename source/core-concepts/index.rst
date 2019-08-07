@@ -16,4 +16,5 @@ This section briefly covers all the core concepts and terminology in the Valohai
     executions
     data-stores
     tasks
+    pipelines
     deployments
