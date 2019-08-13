@@ -42,6 +42,10 @@ Also, create an example project if you don't have one.
 To make API requests, you need to authenticate yourself.
 
 In the Valohai API, first you request a token using your username and password.
+
+You do this by POSTing your username and password as form-encoded data (or JSON if that's easier for you)
+to the `get-token` endpoint.  Other HTTP methods than POST will not work.
+
 Then you use that token for all following requests.
 
 Here is a Python script for getting a token:
