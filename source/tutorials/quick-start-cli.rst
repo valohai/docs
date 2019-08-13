@@ -152,7 +152,7 @@ or with the command-line client.
 .. tip::
 
    All commands can be abbreviated as long as the abbreviation is unique.
-   That is, ``vh execution logs 1`` can also be written ``vh exec logs 1`` or even ``vh e lo 1``.
+   That is, ``vh execution logs 1`` can also be written ``vh exec logs 1`` or even ``vh ex lo 1``.
 
 5. Next steps
 ~~~~~~~~~~~~~
