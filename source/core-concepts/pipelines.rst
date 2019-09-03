@@ -6,8 +6,7 @@ Pipelines
 
 .. note::
 
-    **Valohai pipelines are in private beta.**
-    Send an email to info@valohai.com for details.
+    **Valohai pipelines are a beta feature.**
 
 .. seealso::
 
