@@ -6,23 +6,23 @@ Architecture
 
 Valohai can be deployed in four flavors, or a mixture of these:
 
-* **Software-as-a-Service (SaaS)**
-  Users run workloads under Valohai owned AWS, Google Cloud, Azure and other cloud provider accounts.
-  Valohai bills organization depending how much resources they use. SaaS flavor works without any setup.
+* **Valohai Cloud Installation**
+  Users run workloads under Valohai owned AWS, Google Cloud and Azure accounts.
+  Valohai bills the customer depending on how much resources they use or credits can be purchased in advance. Works out of the box without any setup.
 * **Private Cloud Worker Installation:**
   The worker nodes that handle the data processing, training and inference are all deployed within
-  customer-owned AWS, Google Cloud, Azure or OpenStack account.
+  customer-owned AWS, Google Cloud or Azure.
   No input or output data leaves the customer account perimeter.
 * **On-premises Worker Installation:**
-  The worker nodes are also deployed to persistent customer on-premises hardware.
-  This allows some additional features like directory mounting, but cannot utilize auto-scaling.
+  The worker nodes are deployed to persistent customer on-premises hardware.
+  This allows for additional features like directory mounting.
 * **Full Private Cloud Installation:**
   All components are deployed inside customer-owned AWS, Google or Azure cloud or a physical data center,
-  allowing a fully self-contained installation. Required for setups without Internet connection.
+  allowing a fully self-contained installation. 
 
 .. tip::
 
-    Software-as-a-Service with private data stores is by far the most common flavor, but Valohai technical team will go through customer requirements before each installation.
+    The Valohai technical team will go through customer requirements before each installation and set up the installation together with the customer's infrastructure team.
 
 Components
 ~~~~~~~~~~
