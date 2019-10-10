@@ -4,10 +4,6 @@
 Pipelines
 =========
 
-.. note::
-
-    **Valohai pipelines are a beta feature.**
-
 .. seealso::
 
     For technical specifications, go to :doc:`valohai.yaml pipeline section </valohai-yaml/pipeline/index>`.

@@ -4,10 +4,6 @@
 Jupyter Notebook
 ================
 
-.. note::
-
-    **Valohai Jupyter notebook extension is in public beta.**
-
 .. figure:: notebook-generic.gif
    :alt: Jupyhai
 
