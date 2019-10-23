@@ -35,7 +35,7 @@ for different contexts e.g. teams working on the project.
 * ``name``: name of the deployment endpoint, this will be the final part of the URL
 * ``image``: the Docker image that will be used as the deployment environment
 * ``server-command``: command that runs a HTTP server
-* ``port``: **(optional)** where should Valohai expect to find the web server, defaults to 8000
+* ``port``: **(optional)** where should Valohai expect to find the web server, defaults to 8000. Note the server must be bound to ``0.0.0.0`` (all interfaces), _not_ only ``localhost``.
 * ``description``: **(optional)** more detailed human-readable description of the endpoint
 * ``files``: **(optional)** files that will be loaded into the image, for example the trained model. The files will be in the same directory as your code, modified by the ``path`` property.
 
