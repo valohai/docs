@@ -20,11 +20,13 @@ To use jupyter notebook extension, you will need:
 2. Installation
 ~~~~~~~~~~~~~~~
 
-Pull the valohai/jupyhai docker image from DockerHub.
+Pull the valohai/mnist_notebook docker image from DockerHub.
 
 .. code-block:: bash
 
-  docker pull valohai/jupyhai
+  docker pull valohai/mnist_notebook
+
+NOTE: For an empty Jupyter docker, use `valohai/jupyhai` instead.
 
 3. Notebook server
 ~~~~~~~~~~~~~~~~~~
@@ -33,22 +35,28 @@ Run the notebook server in port 8888.
 
 .. code-block:: none
 
-  docker run -p 8888:8888 -v "$PWD":/home/jovyan/work valohai/jupyhai
+  docker run -p 8888:8888 valohai/mnist_notebook
 
 Open in browser: http://127.0.0.1:8888
 
-Your current working directory will be mapped into the container.
+If you want to run your own local notebooks, use:
+
+.. code-block:: none
+
+  docker run -p 8888:8888 -v "$PWD":/home/jovyan/work valohai/mnist_notebook
+
+This way your current working directory will be mapped into the container.
 
 - All the files in your current working directory will be available within the container
 - All changes within the mapped folder will persist after shutting down
 
-4. Create notebook
+4. Open notebook
 ~~~~~~~~~~~~~~~~~~
 
 .. thumbnail:: createnotebook.gif
    :alt: Creating new notebook
 
-Create new notebook in the `/work` folder. This folder is mapped to your local filesystem.
+Create new notebook in the `/work` folder or choose `tf-mnist-valohai.ipynb`.
 
 5. Login
 ~~~~~~~~
