@@ -1,8 +1,8 @@
 .. meta::
     :description: xxx
 
-``Jupyhai`` - Jupyter Notebook Extension
-========================================
+``Jupyhai`` - Jupyter Notebooks with Valohai
+============================================
 
 **Jupyhai** is a Jupyter notebook extension developed and maintained by Valohai.
 It enables you to use Jupyter notebooks easily with the Valohai platform.
