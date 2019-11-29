@@ -14,6 +14,7 @@ This section contains more in-depth guidance for specific features of the Valoha
     private-gitlab-repository
     private-azure-storage
     private-s3-bucket
+    private-gcp-bucket
     private-swift-container
     build-docker-image
     airflow-management
