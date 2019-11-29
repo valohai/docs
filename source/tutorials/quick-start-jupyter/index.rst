@@ -100,7 +100,7 @@ Press the Valohai button in the toolbar and select *Create execution*.
 The gizmo for the new execution will appear to the right.
 
 8. Watch the results
-~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 
 .. thumbnail:: download.gif
    :alt: Get results back from Valohai

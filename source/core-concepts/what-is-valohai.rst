@@ -40,7 +40,7 @@ Valohai includes additional bells-and-whistles for data science workflows,
 like you can see by exploring the rest of the documentation.
 
 "That is cool and all, but what do I *use* Valohai for?"
-------------------------------------------------------
+--------------------------------------------------------
 
 Here is a list of the most common use-cases of how people use Valohai in production and briefly explained how they can be implemented in the context of the Valohai ecosystem.
 

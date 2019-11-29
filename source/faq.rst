@@ -45,9 +45,10 @@ The files are uploaded into a user-specific section of our AWS S3 bucket by defa
 
 .. seealso::
 
-    * :doc:`guides/private-azure-storage`
-    * :doc:`guides/private-s3-bucket`
-    * :doc:`guides/private-swift-container`
+    * :doc:`/guides/private-s3-bucket/index`
+    * :doc:`/guides/private-azure-storage/index`
+    * :doc:`/guides/private-gcp-bucket/index`
+    * :doc:`/guides/private-swift-container/index`
 
 Do I need to commit and push after each code change?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -100,7 +100,7 @@ You can later find the service account email in the `Service Accounts` listing:
    :alt: GCP console service account listing including emails
 
 4. Allow access for the new service account
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Next, we permit the new service account to access files in the bucket.
 

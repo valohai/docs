@@ -12,10 +12,10 @@ This section contains more in-depth guidance for specific features of the Valoha
     private-github-repository
     private-gitlab-repository
     private-bitbucket-repository
-    private-s3-bucket
-    private-azure-storage
-    private-gcp-bucket
-    private-swift-container
-    build-docker-image
-    airflow-management
-    unity-data-generation
+    private-s3-bucket/index
+    private-azure-storage/index
+    private-gcp-bucket/index
+    private-swift-container/index
+    build-docker-image/index
+    airflow-management/index
+    unity-data-generation/index
