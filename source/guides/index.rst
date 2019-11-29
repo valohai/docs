@@ -9,9 +9,9 @@ This section contains more in-depth guidance for specific features of the Valoha
 .. toctree::
     :titlesonly:
 
-    private-github-repository
-    private-gitlab-repository
-    private-bitbucket-repository
+    private-github-repository/index
+    private-gitlab-repository/index
+    private-bitbucket-repository/index
     private-s3-bucket/index
     private-azure-storage/index
     private-gcp-bucket/index
