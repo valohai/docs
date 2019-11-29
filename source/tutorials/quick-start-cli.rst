@@ -1,8 +1,8 @@
 .. meta::
     :description: Everything in Valohai deep learning platform works through an API. Learn how to setup and optimize deep learning experiments with command-line client that supports Python 2.7 or Python 3.4 and higher.
 
-Quick Start - Valohai CLI
--------------------------
+Quick Start - Command-line Client
+---------------------------------
 
 In this tutorial, we will use `Valohai command-line client <https://github.com/valohai/valohai-cli>`_ to bootstrap a fresh project.
 
@@ -10,10 +10,10 @@ In this tutorial, we will use `Valohai command-line client <https://github.com/v
    :backlinks: none
    :local:
 
-1. Installation
+1. Requirements
 ~~~~~~~~~~~~~~~
 
-``valohai-cli`` supports Python 2.7 or Python 3.4 and higher. We recommend Python 3.
+``valohai-cli`` supports Python 3.4+ and works on macOS, Windows and Linux.
 
 .. code-block:: bash
 

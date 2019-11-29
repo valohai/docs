@@ -1,20 +1,21 @@
 .. meta::
     :description: Mount local directories to minimize data download and upload duration.
 
-Directory Mounts
-================
+Mounting a Directory
+====================
 
-On-premises Valohai Enterprise installation allows users to use **local directory mounts**.
+On-premises installations allow users to **mount local directories** during executions.
 
-How this technically works is that specified local directories are mounted inside the Valohai execution containers as Docker volumes. This allows reading and writing to the host machine or local network disks.
+Specified local directories are mounted inside the Valohai execution containers as Docker volumes.
+This allows reading from and writing to the host machine or network disks.
 
-You define the mounts on per-step basis in :doc:`valohai.yaml</valohai-yaml/index>`:
+You define the mounts on per-step basis in :doc:`the valohai.yaml</valohai-yaml/index>`:
 
 .. code-block:: yaml
 
     - step:
         name: mount-example
-        image: tensorflow/tensorflow:1.13.1-gpu-py3
+        image: python:3.6
         command:
           - ls -la /my-data
         mounts:

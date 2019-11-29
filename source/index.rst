@@ -7,20 +7,18 @@ Introduction
 `Valohai is a machine learning platform. <https://valohai.com/>`_
 It runs your experiments in the cloud/on-premises, automatically tracks your experiment history, streamlines data science workflows and manages your pre-defined machine learning pipelines.
 
-We recommend you to get a feeling for the platform with our :doc:`quick start tutorials </tutorials/index>` and then proceed to read about :doc:`the core concepts </core-concepts/index>` to understand how it all comes together.
-
 .. toctree::
     :titlesonly:
 
     tutorials/index
+    guides/index
     core-concepts/index
     executions/index
     valohai-yaml/index
     valohai-cli/index
+    jupyter/index
     valohai-api/index
     docker-images
-    guides/index
-    architecture/index
     on-premises/index
-    jupyter/index
+    architecture/index
     faq

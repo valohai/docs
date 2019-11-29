@@ -1,8 +1,8 @@
 .. meta::
     :description: How to use a private GitLab repository with a Valohai project using a deploy key.
 
-Link GitLab Repository
-======================
+Integrating with GitLab
+=======================
 
 In this guide, we'll link a private GitLab repository to a Valohai project using a deploy key.
 
@@ -71,7 +71,7 @@ Find the :code:`my-project-deploy-key` file (without the :code:`.pub` extension)
 4.1 Go to repository settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. thumbnail:: valohai-key-1.png
+.. thumbnail:: /guides/valohai-key-1.png
    :alt: Valohai - route to repository settings
 
 Navigate to the repository settings in your Valohai Project through `Settings` > `Repository`.
@@ -91,7 +91,7 @@ Then copy the field contents, something like :code:`git@gitlab.com:<owner>/<repo
 4.3 Configure repository settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. thumbnail:: valohai-key-3.png
+.. thumbnail:: /guides/valohai-key-3.png
    :alt: Valohai - repository configuration example
 
 Paste the SSH URL (:code:`git@gitlab.com:<owner>/<repository>.git`) into the `URL` field.
@@ -103,7 +103,7 @@ Copy and paste the contents of :code:`my-project-deploy-key` file (without the :
 4.4 Save the repository settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. thumbnail:: valohai-key-4.png
+.. thumbnail:: /guides/valohai-key-4.png
    :alt: Valohai - screen after saving repository settings
 
 After you click `Save`, the repository links to the project and automatically fetches your code.
@@ -113,7 +113,7 @@ On errors, double check the fields or contact support through Intercom.
 4.5 Update project as necessary
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. thumbnail:: valohai-key-5.png
+.. thumbnail:: /guides/valohai-key-5.png
    :alt: Valohai - highlighted Fetch repository button
 
 After you add new commits to your GitLab repository, remember to press the `Fetch repository` to update the code in Valohai.

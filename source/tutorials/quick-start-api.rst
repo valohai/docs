@@ -1,14 +1,17 @@
 .. meta::
     :description: Everything in Valohai deep learning platform works through an API. Learn how to setup and optimize deep learning experiments with direct calls to our RESTful API.
 
-Quick Start - Valohai API
--------------------------
+Quick Start - API Automation
+----------------------------
 
-In this tutorial, we will use the Valohai API to login and fetch a list of projects
-associated with the user account.
+In this tutorial, we will use the Valohai API to login and fetch a list of projects.
 
-1. Prerequisites
-~~~~~~~~~~~~~~~~
+.. contents::
+   :backlinks: none
+   :local:
+
+1. Requirements
+~~~~~~~~~~~~~~~
 
 You can use any programming language you want to make HTTP requests.
 
@@ -36,8 +39,8 @@ If you don't already have an account, sign up at `the Valohai platform <https://
 
 Also, create an example project if you don't have one.
 
-3. Authentication Token
-~~~~~~~~~~~~~~~~~~~~~~~
+3. Get an authentication token
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To make API requests, you need to authenticate yourself.
 
@@ -129,10 +132,12 @@ Save the code as ``test.py`` and run it again:
         ]
     }
 
-This is the raw JSON. Next step is to parse it using your favorite parser
-and use the data to for amazing things!
+5. Next steps
+~~~~~~~~~~~~~
 
-The rest of the API is documented here:
+Next step is to parse it using your favorite parser and use the data to for amazing things!
+
+The rest of the API is documented here, you must be logged in to read them:
 
 * `<https://app.valohai.com/api/v0>`_
 * `<https://app.valohai.com/api/docs/>`_

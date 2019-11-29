@@ -1,8 +1,8 @@
 .. meta::
     :description: Setting a private Bitbucket repository to a Valohai project using an read-only access key.
 
-Link Bitbucket Repository
-=========================
+Integrating with Bitbucket
+==========================
 
 In this guide, we'll link a private Bitbucket repository to a Valohai project using an access key.
 
@@ -65,7 +65,7 @@ Find the :code:`my-project-access-key` file (without the :code:`.pub` extension)
 4.1 Go to repository settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. thumbnail:: valohai-key-1.png
+.. thumbnail:: /guides/valohai-key-1.png
    :alt: Valohai - route to repository settings
 
 Navigate to the repository settings in your Valohai Project through `Settings` > `Repository`.
@@ -85,7 +85,7 @@ Copy the SSH address without the ``git clone``, something like :code:`git@bitbuc
 4.3 Configure repository settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. thumbnail:: valohai-key-3.png
+.. thumbnail:: /guides/valohai-key-3.png
    :alt: Valohai - repository configuration example
 
 Paste the SSH URL (:code:`git@bitbucket.com:<owner>/<repository>.git`) into the `URL` field.
@@ -97,7 +97,7 @@ Copy and paste the contents of :code:`my-project-access-key` file (without the :
 4.4 Save the repository settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. thumbnail:: valohai-key-4.png
+.. thumbnail:: /guides/valohai-key-4.png
    :alt: Valohai - screen after saving repository settings
 
 After you click `Save`, the repository links to the project and automatically fetches your code.
@@ -107,7 +107,7 @@ On errors, double check the fields or contact support through Intercom.
 4.5 Update project as necessary
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. thumbnail:: valohai-key-5.png
+.. thumbnail:: /guides/valohai-key-5.png
    :alt: Valohai - highlighted Fetch repository button
 
 After you add new commits to your Bitbucket repository, remember to press the `Fetch repository` to update the code in Valohai.

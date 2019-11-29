@@ -1,8 +1,8 @@
 .. meta::
     :description: How to link a private GitHub repository to a Valohai project using a read-only SSH deploy key. For this tutorial you will need a private GitHub repository that includes your machine learning code and Valohai YAML file.
 
-Link GitHub Repository
-======================
+Integrating with GitHub
+=======================
 
 In this guide, we'll link a private GitHub repository to a Valohai project using a deploy key.
 
@@ -88,7 +88,7 @@ Find the :code:`my-project-deploy-key` file (without the :code:`.pub` extension)
 4.1 Go to repository settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. thumbnail:: valohai-key-1.png
+.. thumbnail:: /guides/valohai-key-1.png
    :alt: Valohai - route to repository settings
 
 Navigate to the repository settings in your Valohai Project through `Settings` > `Repository`.
@@ -96,7 +96,7 @@ Navigate to the repository settings in your Valohai Project through `Settings` >
 4.2 Copy the repository SSH URL
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. thumbnail:: valohai-key-2.png
+.. thumbnail:: /guides/valohai-key-2.png
    :alt: GitHub - where to find repository SSH URL
 
 To make sure you get the correct repository URL, open GitHub in another tab. On Github, navigate to `Code` page and press `Clone or download`.
@@ -108,7 +108,7 @@ Then copy the text field with :code:`git@github.com:<owner>/<repository>.git`
 4.3 Configure repository settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. thumbnail:: valohai-key-3.png
+.. thumbnail:: /guides/valohai-key-3.png
    :alt: Valohai - repository configuration example
 
 Paste the SSH URL (:code:`git@github.com:<owner>/<repository>.git`) into the `URL` field.
@@ -120,7 +120,7 @@ Copy and paste the contents of :code:`my-project-deploy-key` file (without the :
 4.4 Save the repository settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. thumbnail:: valohai-key-4.png
+.. thumbnail:: /guides/valohai-key-4.png
    :alt: Valohai - screen after saving repository settings
 
 After you click `Save`, Valohai links the GitHub repository to the project and automatically fetches your code.
@@ -130,7 +130,7 @@ On errors, double check the fields or contact support through Intercom.
 4.5 Update project as necessary
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. thumbnail:: valohai-key-5.png
+.. thumbnail:: /guides/valohai-key-5.png
    :alt: Valohai - highlighted Fetch repository button
 
 After you add new commits to your GitHub repository, remember to press the `Fetch repository` to update the code in Valohai.

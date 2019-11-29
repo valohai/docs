@@ -1,8 +1,8 @@
 .. meta::
     :description: Execution is an abstraction of a machine learning workload in the Valohai ecosystem.
 
-Executions
-==========
+Workload Management
+===================
 
 We encapsulate machine learning workloads in entities called **executions**.
 An execution is a similar concept as "a job" or "an experiment" in other systems,
@@ -21,7 +21,7 @@ Executions can be anything from data generation and preprocessing to model train
     Steps are defined in :doc:`the valohai.yaml configuration file </valohai-yaml/index>`. If your project doesn't
     yet have a ``valohai.yaml`` defined, your executions don't implement any step.
 
-This section explains how executions work and how to create them.
+This section explains how to run and manage data science workloads on Valohai.
 
 .. toctree::
     :titlesonly:
@@ -29,6 +29,7 @@ This section explains how executions work and how to create them.
     lifecycle/index
     placeholder-config/index
     file-config/index
+    envvar-config/index
     logs/index
     metadata/index
     inputs/index

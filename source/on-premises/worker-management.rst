@@ -1,8 +1,8 @@
 .. meta::
     :description: Use Valohai local workers to manage and version control your data science workloads.
 
-Worker Management
-=================
+Managing On-premises Workers
+============================
 
 On-premises Valohai Enterprise installation allows managing your local Valohai workers.
 

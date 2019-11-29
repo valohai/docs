@@ -1,8 +1,8 @@
 .. meta::
     :description: The valohai.yaml configuration file defines how the platform runs your experiments. It must be placed at the root of your project version control repository. Read how to create a YAML file for managing steps in a machine learning pipeline.
 
-``valohai.yaml``
-================
+``valohai.yaml`` - Config File
+==============================
 
 The ``valohai.yaml`` configuration file defines steps of your machine learning pipeline.
 

@@ -9,12 +9,14 @@ This section contains more in-depth guidance for specific features of the Valoha
 .. toctree::
     :titlesonly:
 
-    private-github-repository
-    private-bitbucket-repository
-    private-gitlab-repository
-    private-azure-storage
-    private-s3-bucket
-    private-swift-container
-    build-docker-image
-    airflow-management
-    unity-data-generation
+    private-github-repository/index
+    private-gitlab-repository/index
+    private-bitbucket-repository/index
+    private-s3-bucket/index
+    private-azure-storage/index
+    private-gcp-bucket/index
+    private-swift-container/index
+    azure-ad/index
+    build-docker-image/index
+    airflow-management/index
+    unity-data-generation/index

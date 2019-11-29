@@ -1,8 +1,8 @@
 .. meta::
     :description: Connect an OpenStack Swift container holding your data to a Valohai project to automate machine learning workloads. Consider creating many containers to streamline data science team collaboration over different projects.
 
-Add OpenStack Swift Data Store
-==============================
+Linking OpenStack Swift
+=======================
 
 In this guide, we'll link a private `OpenStack Swift <https://wiki.openstack.org/wiki/Swift>`_ container to a Valohai project.
 
@@ -130,4 +130,4 @@ Required fields:
    :alt: Making the new data store default data store for the project.
 
 Once the store has been set up, you can set the store as your project's default store in
-the `Settings > Basic Information` view. This ensures outputs will be stored in your Swift container.
+the `Settings > General` view. This ensures outputs will be stored in your Swift container.

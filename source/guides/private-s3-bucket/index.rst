@@ -1,8 +1,8 @@
 .. meta::
     :description: Link a private AWS S3 bucket containing the data for deep learning experiments to a Valohai project. Optionally create multiple buckets to keep track of different versions of deep learning models or projects.
 
-Add AWS S3 Data Store
-=====================
+Linking AWS S3
+==============
 
 In this guide, we'll link a private AWS S3 bucket to a Valohai project.
 
@@ -242,4 +242,4 @@ When you create the store, the credentials provided will be checked by creating 
 .. thumbnail:: store-settings-03.png
    :alt: Valohai project settings with default store highlighted
 
-Once set up, you can set the store as your project's default store in the `Settings > Basic Information` view. This ensures outputs will be stored in your S3 bucket.
+Once set up, you can set the store as your project's default store in the `Settings > General` view. This ensures outputs will be stored in your S3 bucket.
