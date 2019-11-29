@@ -16,6 +16,7 @@ This section contains more in-depth guidance for specific features of the Valoha
     private-azure-storage/index
     private-gcp-bucket/index
     private-swift-container/index
+    azure-ad/index
     build-docker-image/index
     airflow-management/index
     unity-data-generation/index
