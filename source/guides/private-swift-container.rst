@@ -130,4 +130,4 @@ Required fields:
    :alt: Making the new data store default data store for the project.
 
 Once the store has been set up, you can set the store as your project's default store in
-the `Settings > Basic Information` view. This ensures outputs will be stored in your Swift container.
+the `Settings > General` view. This ensures outputs will be stored in your Swift container.

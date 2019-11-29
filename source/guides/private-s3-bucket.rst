@@ -242,4 +242,4 @@ When you create the store, the credentials provided will be checked by creating 
 .. thumbnail:: store-settings-03.png
    :alt: Valohai project settings with default store highlighted
 
-Once set up, you can set the store as your project's default store in the `Settings > Basic Information` view. This ensures outputs will be stored in your S3 bucket.
+Once set up, you can set the store as your project's default store in the `Settings > General` view. This ensures outputs will be stored in your S3 bucket.

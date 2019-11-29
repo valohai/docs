@@ -111,5 +111,5 @@ When you create the store, the provided access key will be validated.
 .. thumbnail:: azure-09-vh-default-store.png
    :alt: Valohai default project upload store configuration.
 
-Once set up, you can set the store as your project's default upload store in the `Settings > Basic Information` view.
+Once set up, you can set the store as your project's default upload store in the `Settings > General` view.
 This ensures uploaded outputs will be stored in the blob container.
