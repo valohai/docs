@@ -1,7 +1,7 @@
 .. meta::
     :description: How to link your Valohai project and a private Google Cloud Platform bucket containing your data science datasets.
 
-Add Google Bucket Data Store
+Linking Google Cloud Storage
 ============================
 
 In this guide, we'll link a private Google Cloud Platform bucket to a Valohai project.

@@ -2,8 +2,8 @@
     :description: The Valohai API can be used to access Valohai programmatically.
 
 
-Valohai API
-===========
+Valohai API for Automation
+==========================
 
 Valohai can be used through `the web user interface <https://app.valohai.com/>`_, :doc:`the command-line client</valohai-cli/index>` or the API.
 

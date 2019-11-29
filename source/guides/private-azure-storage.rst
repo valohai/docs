@@ -1,8 +1,8 @@
 .. meta::
     :description: Link your Azure Storage Account Blob Container for data science experiments on Valohai. You can also add multiple data stores, even across cloud-providers.
 
-Add Azure Blob Storage
-======================
+Linking Azure Storage Account
+=============================
 
 In this guide, we'll link a private Azure storage account blob container to a Valohai project.
 

@@ -1,8 +1,8 @@
 .. meta::
     :description: How to use a private GitLab repository with a Valohai project using a deploy key.
 
-Link GitLab Repository
-======================
+Integrating with GitLab
+=======================
 
 In this guide, we'll link a private GitLab repository to a Valohai project using a deploy key.
 

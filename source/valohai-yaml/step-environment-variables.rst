@@ -8,16 +8,6 @@
 Environment variables are dynamic key-value pairs that running processes can write and read.
 This also holds true in the context of Valohai.
 
-By default, Valohai will add three environment variables for your convenience.
-It is not mandatory to use these as part of your file path generation, but advisable for future proofing your code.
-
-.. code-block:: bash
-
-    VH_INPUTS_DIR="/valohai/inputs"         # where downloaded files will be saved
-    VH_OUTPUTS_DIR="/valohai/outputs"       # where to save files to be uploaded
-    VH_REPOSITORY_DIR="/valohai/repository" # where is your git repository code,
-                                            # this is also the working directory
-
 You can define environment variables in three ways:
 
 1. Simply write ``export MY_KEY="my-value"`` in your commands.

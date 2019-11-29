@@ -1,8 +1,8 @@
 .. meta::
     :description: A complete example on running hand-written digit detection using TensorFlow on the MNIST dataset.
 
-Example - TensorFlow MNIST
-==========================
+Examples
+========
 
 .. code-block:: yaml
 

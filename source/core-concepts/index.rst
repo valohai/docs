@@ -4,7 +4,7 @@
 Core Concepts
 =============
 
-This section briefly covers all the core concepts and terminology in the Valohai platform.
+This section covers all the core concepts and terminology used in the Valohai ecosystem.
 
 .. toctree::
     :titlesonly:

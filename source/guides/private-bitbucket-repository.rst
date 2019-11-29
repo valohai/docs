@@ -1,8 +1,8 @@
 .. meta::
     :description: Setting a private Bitbucket repository to a Valohai project using an read-only access key.
 
-Link Bitbucket Repository
-=========================
+Integrating with Bitbucket
+==========================
 
 In this guide, we'll link a private Bitbucket repository to a Valohai project using an access key.
 

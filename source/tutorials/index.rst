@@ -1,14 +1,18 @@
 .. meta::
     :description: Tutorials to get started with Valohai platform. Learn how to start a TensorFlow or Keras project and how to manage your machine learning experiments from command-line client.
 
-Tutorials
-=========
+Getting Started
+===============
 
-This section contains quick start tutorials to get a feel for the Valohai platform.
+If you wish to understand Valohai without running anything yourself,
+read about :doc:`the core concepts </core-concepts/index>`.
+
+If you wish to get your hands dirty, you can get a feeling for the platform with these tutorials:
 
 .. toctree::
     :titlesonly:
 
+    quick-start-jupyter/index
     quick-start-tensorflow
     quick-start-keras
     quick-start-r

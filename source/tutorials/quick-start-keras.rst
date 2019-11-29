@@ -1,8 +1,8 @@
 .. meta::
     :description: Create a Keras machine learning project based on our Keras example on GitHub and run a deep mind transform on it. This is a basic tutorial on how to gain a version control to your deep learning projects.
 
-Quick Start - Keras
--------------------
+Quick Start - Keras Example (Deep Dream)
+----------------------------------------
 
 In this tutorial, we will create a Keras machine learning project based on our
 `Keras example on GitHub <https://github.com/valohai/keras-example>`_
