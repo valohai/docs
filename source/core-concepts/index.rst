@@ -14,6 +14,7 @@ This section covers all the core concepts and terminology used in the Valohai ec
     configuration-file
     steps
     executions
+    parameters
     data-stores
     tasks
     pipelines
