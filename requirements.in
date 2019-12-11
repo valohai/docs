@@ -1,5 +1,5 @@
 awscli
 sphinx
 sphinx-autobuild
-sphinx-sitemap
+-e git+https://github.com/valohai/sphinx-sitemap.git@104a52e7630112c14d1ca6d3f74bfa154459dc4f#egg=sphinx-sitemap
 sphinxcontrib-images
