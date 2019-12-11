@@ -4,6 +4,7 @@
 #
 #    pip-compile requirements.in
 #
+-e git+https://github.com/valohai/sphinx-sitemap.git@104a52e7630112c14d1ca6d3f74bfa154459dc4f#egg=sphinx-sitemap
 alabaster==0.7.12         # via sphinx
 argh==0.26.2              # via sphinx-autobuild, watchdog
 awscli==1.16.205
@@ -31,10 +32,9 @@ pyyaml==5.1               # via awscli, sphinx-autobuild, watchdog
 requests==2.22.0          # via sphinx, sphinxcontrib-images
 rsa==3.4.2                # via awscli
 s3transfer==0.2.1         # via awscli
-six==1.12.0               # via livereload, packaging, python-dateutil, sphinx, sphinx-sitemap
+six==1.12.0               # via livereload, packaging, python-dateutil, sphinx
 snowballstemmer==1.9.0    # via sphinx
 sphinx-autobuild==0.7.1
-sphinx-sitemap==1.0.2
 sphinx==1.8.5
 sphinxcontrib-images==0.8.0
 sphinxcontrib-websupport==1.1.2  # via sphinx
@@ -43,4 +43,4 @@ urllib3==1.25.3           # via botocore, requests
 watchdog==0.9.0           # via sphinx-autobuild
 
 # The following packages are considered to be unsafe in a requirements file:
-# setuptools==41.0.1        # via sphinx
+# setuptools
