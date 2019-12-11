@@ -21,7 +21,7 @@ Valohai can be deployed in numerous ways; here are the four most common configur
   This allows for additional features like directory mounting unavailable for the cloud installations.
 
 **Full Private Installation:**
-  All components are deployed inside customer-owned cloud-provider account or data center.
+  All components are deployed inside customer-owned cloud provider account or data center.
   This allows a self-contained installation that is managed and updated separately from
   the global Valohai installation.
 

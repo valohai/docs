@@ -31,7 +31,7 @@ be covering throughout this documentation.
 From a technological point-of-view, Valohai is **a workload processing ecosystem** akin to a continuous
 integration or build system. Valohai fetches your code, :doc:`configuration </valohai-yaml/index>`
 and :doc:`data sources </core-concepts/data-stores>` and makes your pipelines work smoothly on top of
-an automated infrastructure with a beautiful user interface. Valohai runs on top of all the major cloud-providers
+an automated infrastructure with a beautiful user interface. Valohai runs on top of all the major cloud providers
 as well as on-premises.
 
 Valohai manages **executions**; you can think of them as "jobs" or "experiments".
