@@ -30,7 +30,7 @@ to explore executions in finer detail as it is one of larger topics to learn whe
 
 .. tip::
 
-   You can use ready available Docker images e.g. from DockerHub or host your own.
+   You can use ready available Docker images e.g. from Docker Hub or host your own.
 
 .. tip::
 

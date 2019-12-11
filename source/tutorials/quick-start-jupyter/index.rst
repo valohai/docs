@@ -21,7 +21,7 @@ To use jupyter notebook extension, you will need:
 2. Installation
 ~~~~~~~~~~~~~~~
 
-Pull the ``valohai/mnist_notebook`` docker image from the DockerHub.
+Pull the ``valohai/mnist_notebook`` docker image from the Docker Hub.
 
 .. code-block:: bash
 
