@@ -6,16 +6,27 @@
 
 The ``valohai.yaml`` configuration file defines steps of your machine learning pipeline.
 
-The configuration file is optional but we recommend adding it so everything stays reproducible between different Valohai projects using the same git repository. The configuration file must be placed at the root of your project repository.
+The configuration file is optional but we recommend adding it so everything stays reproducible between
+different Valohai projects using the same git repository. The configuration file must be placed at the root
+of your project repository.
 
-Here is a "Hello World" ``valohai.yaml`` to print "hello" on a worker machine with Python 3.6.
+Here is a "Hello World" step on ``valohai.yaml`` to print "hello" on a worker machine:
 
 .. code-block:: yaml
 
     - step:
         name: greet-me
-        image: python:3.6
+        image: busybox
         command: echo hello
+
+.. seealso::
+
+    `busybox <https://hub.docker.com/_/busybox>`_ is one of the simplest Docker images in existence
+    as it includes only the most basic Unix utilities. You can either utilize
+    :doc:`freely available images from Docker Hub </docker-images>` or
+    :doc:`build your own. </guides/build-docker-image/index>`
+
+This section describes how to write ``valohai.yaml`` files in more detail.
 
 .. toctree::
     :titlesonly:
