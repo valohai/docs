@@ -6,11 +6,11 @@ Creating Visualizations
 
 If you wish to create visualizations, you can either:
 
-1. render them as part of the execution and save them to ``/valohai/outputs`` to be uploaded
+1. save them as images to ``/valohai/outputs`` to be uploaded
 2. use our metadata system to render interactive graphs on the web interface
 
-Metadata
-~~~~~~~~
+Visualizations from Metadata
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Execution **metadata** is output by writing lines of JSON to the standard output stream.
 
