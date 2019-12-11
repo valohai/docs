@@ -42,5 +42,7 @@ This section describes how to write ``valohai.yaml`` files in more detail.
     pipeline/index
     pipeline/nodes/index
     pipeline/edges/index
-    endpoint
+    endpoint/index
+    endpoint/server-command/index
+    endpoint/wsgi/index
     example-tensorflow-mnist
