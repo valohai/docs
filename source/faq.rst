@@ -39,7 +39,7 @@ See the :doc:`valohai.yaml documentation </valohai-yaml/index>` for more details
 How do I upload files from my executions?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Anything written to the ``/valohai/outputs`` directory will be uploaded and accessible after the execution.
+Anything written to the ``/valohai/outputs`` directory will be uploaded after the execution.
 
 The files are uploaded into a user-specific section of our AWS S3 bucket by default, but you can customize this.
 
@@ -77,8 +77,8 @@ There is some redundancy between the command-line arguments defined on the ``tra
 
 Yup, we've noticed the same nuisance with redundant definitions in e.g. Python ``argparse`` definitions and what we define in the YAML file. As we support essentially any programming language or arbitrary command-line tool already installed on the Docker images it is hard to remove this redundancy, unfortunately.
 
-What is the maximum number of trainings I can do at the same time?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+What is the max number of trainings I can do at the same time?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This is a configurable setting per-instance-type with the default of 5 parallel executions on most environments. If you require more, let us know and we'll see what we can do.
 
