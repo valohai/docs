@@ -18,27 +18,26 @@ Valohai can be deployed in numerous ways; here are the four most common configur
 
 **On-premises Worker Installation:**
   The worker nodes are deployed to persistent customer on-premises hardware.
-  This allows for additional features like directory mounting.
+  This allows for additional features like directory mounting unavailable for the cloud installations.
 
 **Full Private Installation:**
   All components are deployed inside customer-owned cloud-provider account or data center.
   This allows a self-contained installation that is managed and updated separately from
   the global Valohai installation.
 
-.. tip::
+.. note::
 
-    The Valohai technical team will go through customer requirements before each non-"Valohai Cloud" installation and
+    Valohai technical team will go through customer requirements before each non-"Valohai Cloud" installation and
     set everything up in collaboration with the customer's infrastructure team.
 
     Valohai engineers spend between 1 hour and 2 days per installation, depending on the agreed configuration.
     After the installation, Valohai team will keep on maintaining and updating the software per a signed contract.
 
-    Valohai Cloud installations are not included here as they require no technical setup.
+    Valohai Cloud installations don't require the above preparation as they don't have a separate technical setup.
+    They work out of the box.
 
 Components
 ~~~~~~~~~~
-
-Diagram of the most used installation setup, click to enlarge it:
 
 .. thumbnail:: architecture-overview.png
   :alt: Architecture Overview Diagram
