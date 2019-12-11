@@ -5,8 +5,42 @@ import os
 
 redirects = {
     # '/old-page/index.html': '/new-page/awesome/whatever.html'
-    '/core-concepts/live-upload.html': '/executions/live-outputs/index.html',
-    '/core-concepts/metadata.html': '/executions/metadata/index.html',
+
+    # moving some core concepts to be under Execution details
+    '/core-concepts/live-upload.html': '/executions/live-outputs/',
+    '/core-concepts/metadata.html': '/executions/metadata/',
+
+    # single file HTML builder to directory builder change...
+    '/tutorials/quick-start-tensorflow.html': '/tutorials/quick-start-tensorflow/',
+    '/tutorials/quick-start-keras.html': '/tutorials/quick-start-keras/',
+    '/tutorials/quick-start-r.html': '/tutorials/quick-start-r/',
+    '/tutorials/quick-start-cli.html': '/tutorials/quick-start-cli/',
+    '/tutorials/quick-start-api.html': '/tutorials/quick-start-api/',
+    '/core-concepts/what-is-valohai.html': '/core-concepts/what-is-valohai/',
+    '/core-concepts/projects.html': '/core-concepts/projects/',
+    '/core-concepts/configuration-file.html': '/core-concepts/configuration-file/',
+    '/core-concepts/steps.html': '/core-concepts/steps/',
+    '/core-concepts/executions.html': '/core-concepts/executions/',
+    '/core-concepts/parameters.html': '/core-concepts/parameters/',
+    '/core-concepts/data-stores.html': '/core-concepts/data-stores/',
+    '/core-concepts/tasks.html': '/core-concepts/tasks/',
+    '/core-concepts/pipelines.html': '/core-concepts/pipelines/',
+    '/core-concepts/deployments.html': '/core-concepts/deployments/',
+    '/valohai-yaml/step.html': '/valohai-yaml/step/',
+    '/valohai-yaml/step-name.html': '/valohai-yaml/step-name/',
+    '/valohai-yaml/step-image.html': '/valohai-yaml/step-image/',
+    '/valohai-yaml/step-command.html': '/valohai-yaml/step-command/',
+    '/valohai-yaml/step-parameters.html': '/valohai-yaml/step-parameters/',
+    '/valohai-yaml/step-inputs.html': '/valohai-yaml/step-inputs/',
+    '/valohai-yaml/step-environment.html': '/valohai-yaml/step-environment/',
+    '/valohai-yaml/step-environment-variables.html': '/valohai-yaml/step-environment-variables/',
+    '/valohai-yaml/endpoint.html': '/valohai-yaml/endpoint/',
+    '/valohai-cli/installation.html': '/valohai-cli/installation/',
+    '/valohai-cli/using-inputs.html': '/valohai-cli/using-inputs/',
+    '/valohai-cli/using-environments.html': '/valohai-cli/using-environments/',
+    '/on-premises/directory-mount.html': '/on-premises/directory-mount/',
+    '/on-premises/using-on-premises-workers.html': '/on-premises/using-on-premises-workers/',
+    '/on-premises/worker-management.html': '/on-premises/worker-management/',
 }
 
 TEMPLATE = """
