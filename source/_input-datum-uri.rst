@@ -1,9 +1,9 @@
 You can use the ``datum://<identifier>`` syntax to refer to specific files Valohai platform already knows about.
 
-Files will have a datum URL if the files were uploaded to Valohai either:
+Files will have a datum identifier if the files were uploaded to Valohai either:
 
-1) as outputs from another execution
-2) or using the Valohai web interface uploader under "Data" tab of the project
+1) by another execution, or
+2) by using the Valohai web interface uploader under "Data" tab of the project
 
 .. tip::
 

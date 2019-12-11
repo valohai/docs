@@ -1,8 +1,8 @@
 .. meta::
     :description: Connect an OpenStack Swift container holding your data to a Valohai project to automate machine learning workloads. Consider creating many containers to streamline data science team collaboration over different projects.
 
-Linking OpenStack Swift
-=======================
+Connecting to OpenStack Swift
+=============================
 
 In this guide, we'll link a private `OpenStack Swift <https://wiki.openstack.org/wiki/Swift>`_ container to a Valohai project.
 
