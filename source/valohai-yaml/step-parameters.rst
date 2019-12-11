@@ -20,6 +20,7 @@ A parameter in ``parameters`` has 2 required and 4 optional properties:
 .. note::
 
     ``optional`` has no effect for the ``flag`` type.
+    It either exists or doesn't. If it's always on, you can type it into the command.
 
 If ``pass-as`` is not defined, the parameter is passed as ``--<PARAMETER_NAME>={v}``, you can customize this by specifying ``{v}`` in the ``pass-as`` e.g. ``-t {v}`` where ``{v}`` becomes the actual value.
 

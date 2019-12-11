@@ -1,1 +1,1 @@
-If your dataset is public and available through an HTTP(S) address, you can use that.
+If your data is available through an HTTP(S) address, use the URL as-is.

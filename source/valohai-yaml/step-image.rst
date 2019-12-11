@@ -12,7 +12,8 @@ as quickly as possible.
 .. tip::
 
    You can run dependency installation commands as part of your ``command`` but it will result in slower
-   computation time as then each execution starts by dependency setup, which is sub-optimal but nevertheless allowed.
+   computation time as then each execution starts by dependency setup, which is sub-optimal but nevertheless
+   a good staring point.
 
 You can find Docker images for the most popular machine learning libraries on
 `Docker Hub <https://hub.docker.com/>`_.

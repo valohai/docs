@@ -12,3 +12,12 @@ This syntax also has supports wildcard syntax to download multiple files:
 
 * ``s3://my-bucket/dataset/images/*.jpg`` for all .jpg (JPEG) files
 * ``s3://my-bucket/dataset/image-sets/**.jpg`` for recursing subdirectories for all .jpg (JPEG) files
+
+.. tip::
+
+    If you are using your own data store, we show the exact location for each file through Data browser (2).
+
+    .. thumbnail:: /datum-store-path-button.png
+       :alt: Where to find the file path in your data store.
+
+        You can find the exact file key under datum browser if you are using your own data store (2).
