@@ -134,12 +134,6 @@ ul.search li {
   list-style-type: none;
 }
 
-@media (max-width: 1130px) {
-  .sidebar {
-    display: none;
-  }
-}
-
 @media (max-width: 800px) {
   #nav {
     display: none;
