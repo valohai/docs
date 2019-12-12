@@ -4,6 +4,10 @@
 Parameters
 ==========
 
+.. seealso::
+
+    For the technical specifications, go to :doc:`valohai.yaml step.parameters section </valohai-yaml/step-parameters>`.
+
 The Wikipedia definition of **a hyperparameter** is: "a parameter whose value is set before the learning process begins."
 This definition exists to differentiate these values that control how the machine learning is conducted from
 parameters such as neural network weights that are actively changed during training.

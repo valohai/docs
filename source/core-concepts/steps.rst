@@ -4,6 +4,10 @@
 Steps
 =====
 
+.. seealso::
+
+    For the technical specifications, go to :doc:`valohai.yaml step section </valohai-yaml/step>`.
+
 Each **step** defines a workload type; such as
 data anonymization, data generation, feature extraction, training or model evaluation.
 
