@@ -26,4 +26,4 @@ check-descriptions:
 	python check_descriptions.py
 
 watch: css check-descriptions
-	sphinx-autobuild -i '*.scss' -b dirhtml -B -p 44044 $(SPHINXOPTS) "$(SOURCEDIR)" "$(BUILDDIR)/html"
+	sphinx-autobuild -i '*.scss' -b dirhtml -p 44044 $(SPHINXOPTS) "$(SOURCEDIR)" "$(BUILDDIR)/html"
