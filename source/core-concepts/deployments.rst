@@ -4,6 +4,10 @@
 Deployments
 ===========
 
+.. seealso::
+
+    For the technical specifications, go to :doc:`valohai.yaml endpoint section </valohai-yaml/endpoint/index>`.
+
 **A deployment** is a versioned collection of one or more web endpoints for online inference.
 
 Each deployment has **a deploy target**, which is a Kubernetes cluster the service will be served on. The default deploy target is a shared Kubernetes cluster managed by Valohai but you can also use your own cluster.

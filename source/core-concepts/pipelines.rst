@@ -6,7 +6,7 @@ Pipelines
 
 .. seealso::
 
-    For technical specifications, go to :doc:`valohai.yaml pipeline section </valohai-yaml/pipeline/index>`.
+    For the technical specifications, go to :doc:`valohai.yaml pipeline section </valohai-yaml/pipeline/index>`.
 
 **Pipeline** is a version controlled collection of executions some of which rely on the results of the previous
 executions thus creating a directed graph. These pipeline graphs consist of nodes and edges and we'll discuss

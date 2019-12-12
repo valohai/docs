@@ -91,6 +91,39 @@ ul {
   padding-bottom: 100px;
 }
 
+.hidden {
+  display: none;
+}
+
+table.image-grid {
+  border: none;
+  display: flex;
+  flex-wrap: wrap;
+  tr {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  th, td {
+    border: none;
+    padding: 14px;
+    flex-grow: 1;
+    text-align: center;
+  }
+  a {
+    display: inline-block;
+    user-select: none;
+    transition: transform .125s;
+    &:hover {
+      cursor: pointer;
+      transform: translate(0, -4px);
+    }
+    &:active {
+      transform: translate(0, 1px);
+    }
+  }
+}
+
 footer {
   text-align: center;
   padding-top: 55px;
@@ -132,19 +165,4 @@ ul.search li {
   margin-top: 40px;
   margin-bottom: 40px;
   list-style-type: none;
-}
-
-@media (max-width: 1130px) {
-  .sidebar {
-    display: none;
-  }
-}
-
-@media (max-width: 800px) {
-  #nav {
-    display: none;
-  }
-  #logo {
-    margin-right: 20px;
-  }
 }
