@@ -35,7 +35,7 @@ an automated infrastructure with a beautiful user interface. Valohai runs on top
 as well as on-premises.
 
 Valohai manages **executions**; you can think of them as "jobs" or "experiments".
-These are covered in more detail in :doc:`the dedicated Executions page </core-concepts/executions>`.
+These are covered in more detail in :doc:`the dedicated workload management section </core-concepts/executions>`.
 Valohai includes additional bells-and-whistles for data science workflows,
 like you can see by exploring the rest of the documentation.
 
