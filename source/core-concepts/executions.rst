@@ -25,7 +25,7 @@ The context in which the commands are run in depends on three main things:
    The commit's contents will be available at ``/valohai/repository``, which is also the default
    working directory during executions.
 
-A separate :doc:`Executions documentation section </executions/index>` is dedicated
+A separate :doc:`workload management section </executions/index>` is dedicated
 to explore executions in finer detail as it is one of larger topics to learn when working with Valohai.
 
 .. tip::

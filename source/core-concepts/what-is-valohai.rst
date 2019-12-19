@@ -28,14 +28,13 @@ a web store recommendation widget or your hobby project on your local machine.
 **Valohai guides and supports you in building such systems** in numerous automated ways which we'll
 be covering throughout this documentation.
 
-From a technological point-of-view, Valohai is **a workload processing ecosystem** akin to a continuous
-integration or build system. Valohai fetches your code, :doc:`configuration </valohai-yaml/index>`
+From a technological point-of-view, Valohai is **a workload processing ecosystem**, akin to a continuous
+integration system but focused on machine learning tasks. Valohai fetches your code, :doc:`configuration </valohai-yaml/index>`
 and :doc:`data sources </core-concepts/data-stores>` and makes your pipelines work smoothly on top of
-an automated infrastructure with a beautiful user interface. Valohai runs on top of all the major cloud providers
-as well as on-premises.
+an automated infrastructure with a beautiful user interface.
 
-Valohai manages **executions**; you can think of them as "jobs" or "experiments".
-These are covered in more detail in :doc:`the dedicated Executions page </core-concepts/executions>`.
+Valohai manages **executions**; you can think of them as "jobs" or "runs".
+These are covered in more detail in :doc:`the dedicated workload management section </core-concepts/executions>`.
 Valohai includes additional bells-and-whistles for data science workflows,
 like you can see by exploring the rest of the documentation.
 
@@ -56,7 +55,7 @@ Your machine learning system won't be needing all of the following components bu
     This is also the same as data transformation, except that your code is different.
 
 **Data Synthetization:**
-    Here the execution receives no inputs, just generates output according to provided parameters e.g. with Unity or other some synthetic generator software.
+    Here the execution receives no inputs, just generates output according to provided parameters e.g. with Unity or other generator software.
 
 **Data Management:**
     Valohai keeps track of all files and pieces of data it sees. The data is always securely stored in your own managed data storage and only references are stored inside Valohai. You can easily search, download and delete any piece of data.
@@ -111,4 +110,4 @@ Here are some use-cases that Valohai *doesn't* automatically help you with:
 **Data Acquisition:**
   We integrate with all the major cloud-based binary data sources and you should use those to ingest your data. Valohai itself doesn't provide features to acquire new data samples. After the data is in AWS S3, Azure Store, Google Cloud Store, OpenStack Swift or on a local mount, you can begin using Valohai.
 **Data Labeling:**
-  Valohai workers do have Internet connection in all license levels above `the Free tier <https://valohai.com/pricing>`_, but workers cannot be used to reliably host web servers or other services. This is by design; they are meant to be ephemeral. Theoretically you could host a labeling service on top of Valohai Deployment but none of the tools are built with labeling in mind. There are other good labeling tools available, such as for example `Labelbox <https://labelbox.com/>`_.
+  Valohai workers do have an Internet connection, but workers cannot be used to reliably host web servers or other services. This is by design; they are meant to be ephemeral. Theoretically you could host a labeling service on top of Valohai Deployment but none of the tools are built with labeling in mind. There are other good labeling tools available, such as for example `Labelbox <https://labelbox.com/>`_.
