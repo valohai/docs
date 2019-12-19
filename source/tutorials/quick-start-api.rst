@@ -44,37 +44,12 @@ Also, create an example project if you don't have one.
 
 To make API requests, you need to authenticate yourself.
 
-In the Valohai API, first you request a token using your username and password.
+Before you can use the Valohai REST API, you need to `create an auth token <https://app.valohai.com/auth/tokens/>`_.
 
-You do this by POSTing your username and password as form-encoded data (or JSON if that's easier for you)
-to the `get-token` endpoint.  Other HTTP methods than POST will not work.
+.. figure:: /_images/get_auth_token.gif
+   :alt: Getting auth token from the Valohai UI.
 
-Then you use that token for all following requests.
-
-Here is a Python script for getting a token:
-
-.. code-block:: python
-
-    import requests
-
-    login_url = 'https://app.valohai.com/api/v0/get-token/'
-    data = {'username': 'test', 'password': 'test'}
-
-    resp = requests.post(login_url, data=data)
-    resp.raise_for_status()  # Raise an exception for unsuccessful request
-    auth_token = req.json()['token']
-
-    print('# My auth token is:', auth_token)
-
-Save the code as ``test.py`` and run the following shell command:
-
-.. code-block:: bash
-
-    $ python test.py
-    # My auth token is: Alb3r7o5t1F460TiN&TOERaEy77iBuh6uw4NM3L0d14n
-
-Take a note of the authentication token.
-In a real application, you might want to save it in a configuration file or a database.
+You might want to save the token in a configuration file or a database.
 
 4. Make an API request
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -91,14 +66,14 @@ We shall fetch a list of all projects accessible from this user account.
     import requests
     import json
 
-    auth_token = '<insert your authentication token from above here>'
+    auth_token = '<insert your authentication token from step 3 here>'
     headers = {'Authorization': 'Token %s' % auth_token}
 
     resp = requests.get('https://app.valohai.com/api/v0/projects/', headers=headers)
     resp.raise_for_status()
 
     print('# API Response:\n')
-    print(json.dumps(req.json(), indent=4))
+    print(json.dumps(resp.json(), indent=4))
 
 Save the code as ``test.py`` and run it again:
 
