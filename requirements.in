@@ -1,5 +1,7 @@
 awscli
 sphinx
 sphinx-autobuild
+sphinx-click
 sphinx-sitemap
 sphinxcontrib-images
+valohai-cli

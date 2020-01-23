@@ -17,6 +17,7 @@ extensions = [
     'sphinx.ext.todo',
     'sphinx.ext.githubpages',
     'sphinxcontrib.images',
+    'sphinx_click.ext',
     'sphinx_sitemap',
     '_redirects',
 ]
