@@ -4,6 +4,7 @@
 #
 #    pip-compile requirements.in
 #
+-e git+https://github.com/valohai/sphinx-click.git@escape-fix#egg=sphinx-click
 alabaster==0.7.12         # via sphinx
 argh==0.26.2              # via sphinx-autobuild, watchdog
 attrs==19.3.0             # via jsonschema
@@ -28,7 +29,7 @@ markupsafe==1.1.1         # via jinja2
 more-itertools==8.1.0     # via zipp
 packaging==19.2           # via sphinx
 pathtools==0.1.2          # via sphinx-autobuild, watchdog
-pbr==5.4.4                # via sphinx-click
+pbr==5.4.4
 port_for==0.3.1           # via sphinx-autobuild
 pyasn1==0.4.8             # via rsa
 pycparser==2.19           # via cffi
@@ -46,7 +47,6 @@ s3transfer==0.2.1         # via awscli
 six==1.13.0               # via cryptography, jsonschema, livereload, packaging, pyopenssl, pyrsistent, python-dateutil, sphinx, sphinx-sitemap, valohai-cli
 snowballstemmer==2.0.0    # via sphinx
 sphinx-autobuild==0.7.1
-sphinx-click==2.3.1
 sphinx-sitemap==1.1.0
 sphinx==1.8.5
 sphinxcontrib-images==0.8.0

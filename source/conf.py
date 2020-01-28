@@ -25,29 +25,6 @@ templates_path = [
     '_templates',
 ]
 
-# <FILTHY-HACK>
-import sphinx_click.ext
-
-
-def i_feel_so_filthy(opt):
-    # This fixes a bug in sphinx-click/docutils combo that cause improper escaping of
-    # backticks (`) in click documentation that trigger the following warning from docutils RST parser.
-    # "WARNING: Inline interpreted text or phrase reference start-string without end-string."
-    # TODO: clean and make a proper PR sometime
-    opt = sphinx_click.ext._get_help_record(opt)
-
-    yield '.. option:: {}'.format(opt[0])
-    if opt[1]:
-        yield ''
-        from docutils import statemachine
-        for line in statemachine.string2lines(opt[1], tab_width=4, convert_whitespace=True):
-            line = line.replace('`', '\\`')  # THE ONLY CHANGE <=
-            yield sphinx_click.ext._indent(line)
-
-
-sphinx_click.ext._format_option = i_feel_so_filthy
-# </FILTHY-HACK>
-
 site_url = 'https://docs.valohai.com/'
 source_suffix = ['.rst', '.md']
 master_doc = 'index'
