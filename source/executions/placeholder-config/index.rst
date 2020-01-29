@@ -29,14 +29,14 @@ following how different parameters affect your model accuracy.
 ``{parameters}`` placeholder
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: /_parameter-parameters-placeholder.rst
+.. include:: /_partials/_parameter-parameters-placeholder.rst
 
 ``{parameter:<NAME>}`` placeholder
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: /_parameter-parameter-placeholder.rst
+.. include:: /_partials/_parameter-parameter-placeholder.rst
 
 ``{parameter-value:<NAME>}`` placeholder
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: /_parameter-parameter-value-placeholder.rst
+.. include:: /_partials/_parameter-parameter-value-placeholder.rst

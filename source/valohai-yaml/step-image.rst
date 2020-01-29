@@ -20,4 +20,4 @@ You can find Docker images for the most popular machine learning libraries on
 
 You can also create and host your images on `Docker Hub <https://hub.docker.com/>`_ or any other Docker repository.
 
-.. include:: /_image-list.rst
+.. include:: /_partials/_image-list.rst

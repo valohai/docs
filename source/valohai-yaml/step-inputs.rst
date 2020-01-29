@@ -38,14 +38,14 @@ When you specify the actual input or default for one, you have 3 options:
 Option #1: Custom Store URL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: /_input-custom-store-url.rst
+.. include:: /_partials/_input-custom-store-url.rst
 
 Option #2: Datum URI
 ~~~~~~~~~~~~~~~~~~~~
 
-.. include:: /_input-datum-uri.rst
+.. include:: /_partials/_input-datum-uri.rst
 
 Option #3: Public HTTP(S) URL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: /_input-http.rst
+.. include:: /_partials/_input-http.rst
