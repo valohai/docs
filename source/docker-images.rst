@@ -15,7 +15,7 @@ After getting initial versions working, it makes sense to package your dependenc
 We recommend hosting your images on `Docker Hub <https://hub.docker.com/>`_ but you can use any Docker registry.
 You can configure authenticated access under organization settings.
 
-.. include:: _image-list.rst
+.. include:: /_partials/_image-list.rst
 
 Which images to use depend on your specific use-case, but it usually makes sense to:
 

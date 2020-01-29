@@ -31,14 +31,14 @@ If ``pass-as`` is not defined, the parameter is passed as ``--<PARAMETER_NAME>={
 ``{parameters}`` placeholder
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: /_parameter-parameters-placeholder.rst
+.. include:: /_partials/_parameter-parameters-placeholder.rst
 
 ``{parameter:<NAME>}`` placeholder
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: /_parameter-parameter-placeholder.rst
+.. include:: /_partials/_parameter-parameter-placeholder.rst
 
 ``{parameter-value:<NAME>}`` placeholder
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: /_parameter-parameter-value-placeholder.rst
+.. include:: /_partials/_parameter-parameter-value-placeholder.rst

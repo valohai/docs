@@ -29,7 +29,7 @@ So, how can you refer to various datasets?
 Option #1: Custom Store URL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: /_input-custom-store-url.rst
+.. include:: /_partials/_input-custom-store-url.rst
 
 Usage example:
 
@@ -42,7 +42,7 @@ Usage example:
 Option #2: Datum URI
 ~~~~~~~~~~~~~~~~~~~~
 
-.. include:: /_input-datum-uri.rst
+.. include:: /_partials/_input-datum-uri.rst
 
 Usage example:
 
@@ -55,7 +55,7 @@ Usage example:
 Option #3: Public HTTP(S) URL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: /_input-http.rst
+.. include:: /_partials/_input-http.rst
 
 Usage example:
 
