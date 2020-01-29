@@ -77,3 +77,22 @@ the execution.
 
 .. thumbnail:: environment-variables-project.png
    :alt: Project environment variables are useful for secrets.
+
+Special environment variables
+=============================
+
+There are a handful of special environment variables that affect the behavior of the Valohai execution agent.
+
+``VH_NO_DATA_CACHE``
+  Setting this to a true value (``1``, ``yes``, ``true``) will have the execution agent ignore
+  any pre-existing cached data.  This is useful if you have reused the same URL for a given datum (which,
+  for reproducibility reasons, you should not generally do).  The datum will still be written to the agent machine's
+  local cache.
+
+``VH_NO_IMAGE_CACHE``
+  Setting this to a true value (``1``, ``yes``, ``true``) will have the execution agent ignore existing Docker
+  images and force pulling them anew from the source.
+
+``VH_CLEAN``
+  Setting this to a true value (``1``, ``yes``, ``true``) will have the execution agent forcibly clean all
+  Docker images and cached data off the agent machine before and after the execution.  This will take additional time.
