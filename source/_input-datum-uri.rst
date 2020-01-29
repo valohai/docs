@@ -9,7 +9,7 @@ Files will have a datum identifier if the files were uploaded to Valohai either:
 
     Find the datum URL through the "datum://" button under "Data" tab of your project.
 
-    .. thumbnail:: /datum-url-button.jpg
+    .. thumbnail:: /_images/datum-url-button.jpg
        :alt: Where to find datum URL with identifier.
 
         You can use datum URLs to download specific files.

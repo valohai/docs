@@ -23,7 +23,7 @@ Each uploaded file will get a datum identifier which looks like this:
 This is unique to that file alone and you can use that identifier to select that particular file as input
 for future executions.
 
-.. thumbnail:: /datum-url-button.jpg
+.. thumbnail:: /_images/datum-url-button.jpg
    :alt: Where to find datum URL with identifier.
 
     You can use datum URLs to download specific files.
