@@ -87,6 +87,8 @@ For example, version alias ``https://valohai.cloud/ruksi/mnist/americas/producti
 Testing an endpoint
 ~~~~~~~~~~~~~~~~~~~~
 
-You can easily test your endpoint by sending it a POST/GET/PUT request with a query and/or fields. A field could be for example a JSON-file or an image.
+You can easily test your endpoint by sending it a POST/GET/PUT request with a query and/or fields.
+A field could be e.g. plain text, a JSON file or an image.
 
-Navigate inside a deployment select the endpoint, define your request and press *Send*. You'll get the response from your inference service directly in your browser.
+Navigate inside a deployment, select the endpoint, define your request and press *Send*.
+You'll get the response from your inference service directly in your browser.
