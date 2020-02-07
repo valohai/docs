@@ -25,4 +25,5 @@
             description: Model output file from TensorFlow
             path: model.pb
 
-Valohai runs automatically ``pip install --disable-pip-version-check --no-cache-dir --user -r requirements.txt`` in case you have additional dependencies defined in *requirements.txt*. You'll then be able run commands from the installed packages from ``~/.local/bin``
+Valohai automatically runs ``pip install --user -r requirements.txt`` in case you have additional dependencies defined in *requirements.txt* in your project root.
+Commands from installed packages end up in ``~/.local/bin``, following the standards for ``pip --user`` installation.
