@@ -83,3 +83,10 @@ Alias
 Aliases create canonical URLs for development so you can use Valohai to control which version is being served in each context. This allows you to update currently used version or rollback to previous version if something goes wrong.
 
 For example, version alias ``https://valohai.cloud/ruksi/mnist/americas/production/predict-digit`` could be used by applications utilizing your predictions and they don't need to change the URL when you a release new version.
+
+Testing an endpoint
+~~~~~~~~~~~~~~~~~~~~
+
+You can easily test your endpoint by sending it a POST/GET/PUT request with a query and/or fields. A field could be for example a JSON-file or an image.
+
+Navigate inside a deployment select the endpoint, define your request and press *Send*. You'll get the response from your inference service directly in your browser.
