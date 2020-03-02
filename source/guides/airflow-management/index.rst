@@ -8,4 +8,4 @@ Using with Airflow Pipelines
 
 You can use Airflow to manage your data and process flow both inside and outside Valohai.
 
-Detailed documentation about how to use Airflow with Valohai is forthcoming.
+To learn more, read `an article about the Valohai Operator <https://blog.valohai.com/scaling-airflow-machine-learning>`__ and `check the GitHub repository <https://github.com/skillupco/airflow-valohai-plugin>`__.
