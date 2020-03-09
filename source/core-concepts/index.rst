@@ -19,3 +19,4 @@ This section covers all the core concepts and terminology used in the Valohai ec
     tasks
     pipelines
     deployments
+    notebooks
