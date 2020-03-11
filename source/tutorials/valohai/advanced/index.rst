@@ -52,7 +52,7 @@ For each parameter you can set the value as a defined single value or use:
 Create a sequence of operations with pipelines
 -----------------------------------------------
 
-.. include:: ../../_shared/_pipelines.rst
+.. include:: ../../../_shared/_pipelines.rst
 
 
 Do more with Valohai APIs

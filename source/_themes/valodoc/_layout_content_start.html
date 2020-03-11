@@ -1,10 +1,10 @@
 <div class="bs-container">
 
     <div class="row">
-
+        
         <!-- Sidebar -->
         {%- if pagename not in theme_exclude_sidebar %}
-
+        <div class="col-3">
             {% block sidebar %}
 
             <div class="sidebar ">
@@ -14,14 +14,14 @@
 
            
             {% endblock %}
-
+        </div>
         {%- endif %}
         <!-- End of Sidebar -->
 
         <!-- Content -->
         <!-- Full width if there is no sidebar -->
         {%- if pagename not in theme_exclude_sidebar %}
-        <div class="col">
+        <div class="col-8">
         {%- endif %}
             
             <div class="container " style="padding:22px;">

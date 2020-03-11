@@ -38,10 +38,14 @@ header {
   flex-grow: 0;
   flex-shrink: 1;
   flex-basis: 250px;
-  width:200px;
   padding: 22px;
   background: none;
   border-right: 1px solid #e1e4e8;
+  display: -ms-flexbox;
+  -ms-flex-direction: row;
+  -ms-flex-pack: justify;
+  overflow-x: hidden;
+
   .sidebar-title {
     font-weight: bold;
   }
