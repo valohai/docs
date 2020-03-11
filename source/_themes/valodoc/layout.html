@@ -191,16 +191,12 @@
 
                     function provideFeedback(value) {
                         $('#feedbackBtns').hide()
-                        const http = new XMLHttpRequest();
-                        http.open("POST", 'https://valohaidocs-feedback.azurewebsites.net/api/HttpTrigger1?code=h0IndJVUbssUunmeIdgah6HlyEDQkwIUGsKAe83E6Fzd1PYaZscbCQ==')
-                        http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
                         switch(value) {
                             case 0:
                                 $('#thankyou').html("<strong>Oh no. 😱</strong> <br />That's no good. Can you give us another chance? Ping us on the chat and we'll help you find the answers you're looking for.");
                                 $('#feedbackProvided').addClass('alert-danger')
                                 $('#feedbackProvided').show()
-                                http.send('{"page":' + window.location.pathname + ', "feedback": "0"}');
                                 showIntercom()
 
                                 break;
@@ -208,7 +204,6 @@
                                 $('#thankyou').html("<strong>Darn. 😞</strong> <br />Let's get to that happy smiley! Ping us on the chat and we can dig deeper.");
                                 $('#feedbackProvided').addClass('alert-warning')
                                 $('#feedbackProvided').show()
-                                http.send('{"page":' + window.location.pathname + ', "feedback": "1"}');
                                 showIntercom()
 
                                 break;
@@ -216,7 +211,6 @@
                                 $('#thankyou').html("<strong>Perfect! 🥳</strong> <br />Thanks for sharing your feedback with us.")
                                 $('#feedbackProvided').addClass('alert-success')
                                 $('#feedbackProvided').show()
-                                http.send('{"page":' + window.location.pathname + ', "feedback": "2"}');
                                 break;
                         }
                     }
