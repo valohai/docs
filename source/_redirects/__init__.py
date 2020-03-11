@@ -11,11 +11,11 @@ redirects = {
     '/core-concepts/metadata.html': '/executions/metadata/',
 
     # single file HTML builder to directory builder change...
-    '/tutorials/quick-start-tensorflow.html': '/tutorials/quick-start-tensorflow/',
-    '/tutorials/quick-start-keras.html': '/tutorials/quick-start-keras/',
-    '/tutorials/quick-start-r.html': '/tutorials/quick-start-r/',
-    '/tutorials/quick-start-cli.html': '/tutorials/quick-start-cli/',
-    '/tutorials/quick-start-api.html': '/tutorials/quick-start-api/',
+    '/quickstarts/quick-start-tensorflow.html': '/quickstarts/quick-start-tensorflow/',
+    '/quickstarts/quick-start-keras.html': '/quickstarts/quick-start-keras/',
+    '/quickstarts/quick-start-r.html': '/quickstarts/quick-start-r/',
+    '/quickstarts/quick-start-cli.html': '/quickstarts/quick-start-cli/',
+    '/quickstarts/quick-start-api.html': '/quickstarts/quick-start-api/',
     '/core-concepts/what-is-valohai.html': '/core-concepts/what-is-valohai/',
     '/core-concepts/projects.html': '/core-concepts/projects/',
     '/core-concepts/configuration-file.html': '/core-concepts/configuration-file/',

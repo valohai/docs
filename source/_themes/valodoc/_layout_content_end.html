@@ -1,0 +1,26 @@
+                                    {%- if pagename not in theme_exclude_feedback %}
+                                        <div id="feedbackarea" class="bs-container" style="padding-bottom:30px;display:none;">
+                                            
+                                            <div id="feedbackBtns">
+                                                <div class="row justify-content-md-center"><p><strong>Was this useful?</strong></p></div>
+                                                <div class="row justify-content-md-center">
+                                                    <button onclick=(provideFeedback(0)) class="feedbackBtn" data-toggle="tooltip" title="This is...">💩</button>
+                                                    <button onclick=(provideFeedback(1)) class="feedbackBtn" data-toggle="tooltip" title="Meh.">🤷</button>
+                                                    <button onclick=(provideFeedback(2)) class="feedbackBtn" data-toggle="tooltip" title="Yes! Got my answer!">👍</button>
+                                                </div>
+                                            </div>
+
+                                            <div class="alert justify-content-md-center" role="alert" id="feedbackProvided" style="display:none;text-align:center;">
+                                                <span id="thankyou">Thank you!</span>
+                                            </div>
+                                        </div>
+                                        {%- endif %}
+
+                                </div>
+
+                            {%- if pagename not in theme_exclude_sidebar %}
+                            </div>
+                            {%- endif %}
+                            <!-- End of Content column -->
+                        </div>
+                    </div>

@@ -34,5 +34,5 @@ to explore executions in finer detail as it is one of larger topics to learn whe
 
 .. tip::
 
-   You can skip using version control by using :doc:`our command-line client </tutorials/quick-start-cli>`
+   You can skip using version control by using :doc:`our command-line client </quickstarts/quick-start-cli>`
    but then you lose the benefits of version control. This will create ad-hoc executions.

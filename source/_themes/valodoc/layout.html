@@ -15,6 +15,7 @@
         {{ js_tag(scriptfile) }}
     {%- endfor %}
     <script type="text/javascript" src="{{ pathto('_static/searchtools.js', 1) }}"></script>
+    <script src="https://kit.fontawesome.com/97444a2242.js" crossorigin="anonymous"></script>
 {%- endmacro %}
 
 {%- macro css() %}
@@ -25,12 +26,18 @@
     {%- endfor %}
 {%- endmacro %}
 
+
 <html{% if language is not none %} lang="{{ language }}"{% endif %}>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset={{ encoding }}" />
     {{ metatags }}
     {%- block htmltitle %}
+        {%- if pagename == "index" %}
+            <title>Valohai Documentation</title>
+        {%- else %}
         <title>{{ title|striptags|e }}{{ titlesuffix }}</title>
+
+        {%- endif %}
     {%- endblock %}
     {{ css() }}
     {%- if not embedded %}
@@ -67,57 +74,168 @@
 
 {%- block header %}
     <header>
-        <div class="backlink">
+        <!--<div class="backlink">
             <a href="https://valohai.com/">
                 &laquo;&nbsp;valohai.com
             </a>
-        </div>
-        <a href="{{ pathto(master_doc) }}" id="logo">
-            <img class="logo" src="{{ pathto('_static/docs-logo.svg', 1) }}" alt="Logo">
-        </a>
-        <nav id="nav">
-            {%- if pagename != "index" %}
-                {%- for parent in parents %}
-                    / <a href="{{ parent.link|e }}">{{ parent.title }}</a>
-                {%- endfor %}
-                / <a href="#" class="current">{{ title }}</a>
-            {%- endif %}
-        </nav>
-        {%- if pagename != "search" and builder != "singlehtml" %}
-            <section id="search" style="display: none" role="search">
-                <form class="search" action="{{ pathto('search') }}" method="get">
-                    <input type="search" name="q" placeholder="Search" />
-                    <input type="hidden" name="check_keywords" value="yes" />
-                    <input type="hidden" name="area" value="default" />
+        </div>-->
+
+
+        <nav id="nav" class="navbar navbar-light bg-light bs-container">
+
+            <ul id="navMenu" class="navbar-nav navbar-expand">
+                <a href="/" id="logo" class="navbar-brand">
+                    <img class="logo" src="{{ pathto('_static/docs-logo.svg', 1) }}" alt="Logo">
+                </a>
+
+                {% if 'index' == pagename %}
+                    <li class="nav-item" style="float:left;">
+                        <a class="nav-link active" href="/">Home</a> 
+                    </li>
+                    <li class="nav-item" style="float:left;">
+                        <a class="nav-link" href="/core-concepts/what-is-valohai">Docs</a> 
+                    </li>
+                    <li class="nav-item" style="float:left;">
+                        <a class="nav-link" href="/tutorials/">Tutorials</a> 
+                    </li>
+                    <li class="nav-item" style="float:left;">
+                        <a class="nav-link" href="/faq/">FAQ</a> 
+                    </li>
+                {% elif 'tutorials' in pagename %}
+                <li class="nav-item" style="float:left;">
+                    <a class="nav-link" href="/">Home</a> 
+                </li>
+                <li class="nav-item" style="float:left;">
+                    <a class="nav-link" href="/core-concepts/what-is-valohai">Docs</a> 
+                </li>
+                <li class="nav-item" style="float:left;">
+                    <a class="nav-link active" href="/tutorials/">Tutorials</a> 
+                </li>
+                <li class="nav-item" style="float:left;">
+                    <a class="nav-link" href="/faq/">FAQ</a> 
+                </li>
+
+                {% elif 'faq' in pagename %}
+                    <li class="nav-item" style="float:left;">
+                        <a class="nav-link" href="/">Home</a> 
+                    </li>
+                    <li class="nav-item" style="float:left;">
+                        <a class="nav-link" href="/core-concepts/what-is-valohai">Docs</a> 
+                    </li>
+                    <li class="nav-item" style="float:left;">
+                        <a class="nav-link" href="/tutorials/">Tutorials</a> 
+                    </li>
+                    <li class="nav-item" style="float:left;">
+                        <a class="nav-link active" href="/faq/">FAQ</a> 
+                    </li>
+
+                {% else %}
+                    <li class="nav-item" style="float:left;">
+                        <a class="nav-link" href="/">Home</a> 
+                    </li>
+                    <li class="nav-item" style="float:left;">
+                        <a class="nav-link active" href="/core-concepts/what-is-valohai">Docs</a> 
+                    </li>
+                    <li class="nav-item" style="float:left;">
+                        <a class="nav-link" href="/tutorials/">Tutorials</a> 
+                    </li>
+                    <li class="nav-item" style="float:left;">
+                        <a class="nav-link" href="/faq/">FAQ</a> 
+                    </li>
+
+                {% endif %}
+
+                        
+            </ul>
+            
+            {%- if pagename != "search" and builder != "singlehtml" and pagename != "index" %}
+            <section id="search" style="float:right;" role="search">
+                <form class="search form-inline" action="{{ pathto('search') }}" method="get">
+                    <div class="form-group"  style="float:left;padding-right:10px;">
+                       <input type="search" class="form-control  mr-sm-2" name="q" placeholder="Search.." />
+                        <input type="hidden" name="check_keywords" value="yes" />
+                        <input type="hidden" name="area" value="default" />
+                    </div>
+                    <button type="submit" class="btn btn-dark-blue">Search</button>
                 </form>
             </section>
             <script type="text/javascript">$('#search').show(0);</script>
-        {%- endif %}
+            {%- endif %}
+        </nav>
+   
     </header>
 {% endblock %}
 
 {%- block content %}
     <div class="content">
-        {% block sidebar1 %}
-            <div class="sidebar">
-                <a href="{{ pathto(master_doc) }}" class="sidebar-title">
-                    Valohai Documentation
-                </a>
-                {{ toctree(maxdepth=3) }}
-            </div>
-        {% endblock %}
         <main class="document">
             {%- block document %}
-                <div class="body" role="main">
+                <div class="body" role="main">  
+
+                    {%- if pagename != "index" %}
+                        {% include '_layout_content_start.html' %}
+                    {%- endif %}
+                    
                     {% block body %} {% endblock %}
+                    
+                    {%- if pagename != "index"  %}
+                        {% include '_layout_content_end.html' %}
+                    {%- endif %}
                 </div>
+                <script type="text/javascript">
+                    $(function () {
+                        $('[data-toggle="tooltip"]').tooltip()
+                        $('#feedbackarea').show()
+                        Intercom('shutdown');
+                    })
+
+                    function provideFeedback(value) {
+                        $('#feedbackBtns').hide()
+                        const http = new XMLHttpRequest();
+                        http.open("POST", 'https://valohaidocs-feedback.azurewebsites.net/api/HttpTrigger1?code=h0IndJVUbssUunmeIdgah6HlyEDQkwIUGsKAe83E6Fzd1PYaZscbCQ==')
+                        http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+                        switch(value) {
+                            case 0:
+                                $('#thankyou').html("<strong>Oh no. 😱</strong> <br />That's no good. Can you give us another chance? Ping us on the chat and we'll help you find the answers you're looking for.");
+                                $('#feedbackProvided').addClass('alert-danger')
+                                $('#feedbackProvided').show()
+                                http.send('{"page":' + window.location.pathname + ', "feedback": "0"}');
+                                showIntercom()
+
+                                break;
+                            case 1:
+                                $('#thankyou').html("<strong>Darn. 😞</strong> <br />Let's get to that happy smiley! Ping us on the chat and we can dig deeper.");
+                                $('#feedbackProvided').addClass('alert-warning')
+                                $('#feedbackProvided').show()
+                                http.send('{"page":' + window.location.pathname + ', "feedback": "1"}');
+                                showIntercom()
+
+                                break;
+                            case 2:
+                                $('#thankyou').html("<strong>Perfect! 🥳</strong> <br />Thanks for sharing your feedback with us.")
+                                $('#feedbackProvided').addClass('alert-success')
+                                $('#feedbackProvided').show()
+                                http.send('{"page":' + window.location.pathname + ', "feedback": "2"}');
+                                break;
+                        }
+                    }
+
+                    function showIntercom() {
+                        Intercom('boot', {  
+                            app_id: 'gvf34yy1'
+                        });
+                    }
+                </script>
             {%- endblock %}
+            <!-- End of Document-->
         </main>
     </div>
 {%- endblock %}
 
 {%- block footer %}
     <footer>
+
         {%- if show_copyright %}
             {%- if hasdoc('copyright') %}
                 {% trans path=pathto('copyright'), copyright=copyright|e %}&#169; <a href="{{ path }}">Copyright</a>
@@ -163,6 +281,29 @@
     'https://lftracker.leadfeeder.com/lftracker_v1_X0n7aEZkr8NxNpPG.js'); })(); 
 </script>
 {# End Leadfeeder #}
+
+{# Intercom #}
+<script async defer>window.intercomSettings = { app_id: "gvf34yy1"};</script>
+<script async defer>
+    (function() {
+        var w=window;
+        var ic=w.Intercom;
+        if(typeof ic==="function"){
+            ic('reattach_activator');
+            ic('update',intercomSettings);
+        }
+        else{
+            var d=document;
+            var i=function(){
+                i.c(arguments)
+            };i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/gvf34yy1';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()</script>
+{# End of Intercom #}
+
+{# Bootstrap #}
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+{# End Bootstrap #}
 
 </body>
 </html>

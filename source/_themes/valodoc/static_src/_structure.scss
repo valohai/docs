@@ -21,7 +21,6 @@ header {
   nav {
     flex: 1;
     padding-top: 1px;
-    margin-left: 5px;
     a {
       color: inherit;
       &.current {
@@ -38,11 +37,10 @@ header {
 .sidebar {
   flex-grow: 0;
   flex-shrink: 1;
-  flex-basis: 366px;
+  flex-basis: 250px;
+  width:200px;
   padding: 22px;
-  font-size: 16px;
-  line-height: 20px;
-  background: $nav-element-bg;
+  background: none;
   border-right: 1px solid #e1e4e8;
   .sidebar-title {
     font-weight: bold;
@@ -87,8 +85,8 @@ ul {
 }
 
 .body {
-  max-width: 700px;
-  padding-bottom: 100px;
+
+  padding-bottom: 00px;
 }
 
 .hidden {

@@ -10,7 +10,7 @@ as long as it can run inside a Docker container.
 
 You can use any Docker image available online.
 After getting initial versions working, it makes sense to package your dependencies by
-:doc:`building your own images </guides/build-docker-image/index>`.
+:doc:`building your own images </tutorials/build-docker-image/index>`.
 
 We recommend hosting your images on `Docker Hub <https://hub.docker.com/>`_ but you can use any Docker registry.
 You can configure authenticated access under organization settings.

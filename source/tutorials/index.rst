@@ -1,20 +1,20 @@
 .. meta::
-    :description: Tutorials to get started with Valohai platform. Learn how to start a TensorFlow or Keras project and how to manage your machine learning experiments from command-line client.
+    :description: In-depth guidance for features of the Valohai platform. How to access your training data that is stored in private S3 bucket and how to use a private GitHub repository to bring version control to deep learning projects.
 
-Getting Started
-===============
+Tutorials
+============
 
-If you wish to understand Valohai without running anything yourself,
-read about :doc:`the core concepts </core-concepts/index>`.
-
-If you wish to get your hands dirty, you can get a feeling for the platform with these tutorials:
+This section contains more in-depth guidance for specific features of the Valohai platform.
 
 .. toctree::
     :titlesonly:
 
-    quick-start-jupyter/index
-    quick-start-tensorflow
-    quick-start-keras
-    quick-start-r
-    quick-start-cli
-    quick-start-api
+    valohai/index
+    valohai/onboard-team/index
+    valohai/advanced/index
+    cloud-storage/index
+    code-repository/index
+    airflow-management/index
+    azure-ad/index
+    build-docker-image/index
+    /quickstarts/index

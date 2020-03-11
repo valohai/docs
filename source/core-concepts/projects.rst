@@ -24,4 +24,4 @@ Here are more in-depth example repositories which have ``valohai.yaml`` defined:
 
 We also have `quick start tutorials </tutorials>`_ to get you started right away.
 
-Iterative experimentation is also supported using our ``vh`` command-line client, try out :doc:`our quick start command-line client tutorial </tutorials/quick-start-cli>` to get a taste how it works.
+Iterative experimentation is also supported using our ``vh`` command-line client, try out :doc:`our quick start command-line client tutorial </quickstarts/quick-start-cli>` to get a taste how it works.
