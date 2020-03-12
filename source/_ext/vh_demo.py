@@ -42,7 +42,7 @@ class VHDemo(Directive):
         options = self.options
 
         headerRow = nodes.container()
-        headerRow['classes'].append(('{0}-container row-center justify-content-center').format(options['bg_color']))
+        headerRow['classes'].append('{0}-container row-center justify-content-center'.format(options['bg_color']))
 
         headerRowContainer = nodes.container()
         headerRowContainer['classes'].append('row bs-container justify-content-center')

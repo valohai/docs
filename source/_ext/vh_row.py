@@ -43,7 +43,7 @@ class VHRowDirective(Directive):
 
         options = self.options
 
-        if ('element_id' in options):
+        if 'element_id' in options:
             headerRow = nodes.container(ids=[options['element_id']])
         else:
             headerRow = nodes.container()

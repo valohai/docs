@@ -368,7 +368,7 @@ Create a function that will do the prediction
             inputfile = read_input(request)
             
             # If read_input didn't find a valid file
-            if(inputfile is None) :
+            if (inputfile is None):
                 response = Response("\nNo image", content_type='text/html')
                 return response(environ, start_response)
 
@@ -400,7 +400,7 @@ Create a function that will do the prediction
                 image = read_input(request)
 
                 # If read_input didn't find a valid file
-                if(image is None) :
+                if (image is None):
                     response = Response("\nNo image", content_type='text/html')
                     return response(environ, start_response)
 

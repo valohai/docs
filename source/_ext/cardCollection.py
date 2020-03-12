@@ -57,7 +57,7 @@ class CardCollectionDirective(Directive):
         self.state.nested_parse(self.content, self.content_offset, par)
 
         bgcolor = 'white'
-        if ('bgcolor' in options):
+        if 'bgcolor' in options:
             bgcolor = options['bgcolor']
 
         # we create a card and we add the section

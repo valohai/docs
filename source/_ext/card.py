@@ -63,7 +63,7 @@ class CardDirective(Directive):
         self.state.nested_parse(self.content, self.content_offset, par)
 
         text_align_class = ''
-        if ('box-style' in options and options['box-style'] == 'center'):
+        if 'box-style' in options and options['box-style'] == 'center':
             text_align_class = '-center'
 
         # we create a card and we add the section
@@ -73,24 +73,24 @@ class CardDirective(Directive):
         node.set_class('card-body-{0}'.format(text_align_class))
 
         btnClass = 'btn'
-        if ('button' in options):
+        if 'button' in options:
             btnClass = 'btn btn-' + options['button']
 
-        if ('image' in options):
-            if ('cta_link' in options):
+        if 'image' in options:
+            if 'cta_link' in options:
                 node += nodes.raw(
                     text='<a class="external text-center" href="{0}"><img src="{1}" alt="{2}" /></a>'.format(
                         options['cta_link'], options['image'], options['image_alt']), format='html')
             else:
                 node += nodes.image(uri=options['image'], alt=options['image_alt'])
-        if ('cta' in options):
+        if 'cta' in options:
             node += nodes.raw(
                 text='<p><a class="reference external {0}" href="{1}">{2}</a></p>'.format(btnClass, options['cta_link'],
                                                                                           options['cta']),
                 format='html')
 
-        if ('title' in options):
-            if ('title_link' in options):
+        if 'title' in options:
+            if 'title_link' in options:
                 node += nodes.raw(
                     text='<a class="h6 blue-link" href={0}>{1}</a>'.format(options['title_link'], options['title']),
                     format='html')
@@ -102,7 +102,7 @@ class CardDirective(Directive):
         bodyContainer += node
 
         columns = 3
-        if ('columns' in options):
+        if 'columns' in options:
             columns = options['columns']
 
         cardContainer = nodes.container()
