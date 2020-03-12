@@ -29,7 +29,6 @@ class ValohaiRowDirective(Directive):
         'title': directives.unchanged,
         'bg_color': directives.unchanged,
         'element_id': directives.unchanged,
-        'title': directives.unchanged
     }
     has_content = True
     add_index = True
