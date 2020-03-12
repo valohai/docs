@@ -4,12 +4,12 @@ from docutils.parsers.rst import directives
 
 
 def setup(app):
-    app.add_node(vh_row_node, html=(visit_card_node, depart_card_node))
-    app.add_directive('vh_row', VHRowDirective)
+    app.add_node(ValohaiRowNode, html=(visit_card_node, depart_card_node))
+    app.add_directive('vh_row', ValohaiRowDirective)
     return {'version': '0.1'}  # identifies the version of our extension
 
 
-class vh_row_node(nodes.Structural, nodes.Element):
+class ValohaiRowNode(nodes.Structural, nodes.Element):
     pass
 
 
@@ -21,7 +21,7 @@ def depart_card_node(self, node):
     pass
 
 
-class VHRowDirective(Directive):
+class ValohaiRowDirective(Directive):
     required_arguments = 0
     optional_arguments = 2
     final_argument_whitespace = True
@@ -44,31 +44,33 @@ class VHRowDirective(Directive):
         options = self.options
 
         if 'element_id' in options:
-            headerRow = nodes.container(ids=[options['element_id']])
+            header_row = nodes.container(ids=[options['element_id']])
         else:
-            headerRow = nodes.container()
+            header_row = nodes.container()
 
-        headerRow['classes'].append(('{0}-container row-center').format(options['bg_color']))
+        header_row['classes'].append(('{0}-container row-center').format(options['bg_color']))
 
-        headerRowContainer = nodes.container()
-        headerRowContainer['classes'].append('row bs-container')
+        header_row_container = nodes.container()
+        header_row_container['classes'].append('row bs-container')
 
         if 'title' in options:
-            titleRowContainer = nodes.container()
-            titleRowContainer['classes'].append('row bs-container')
-            titleRowContainer += nodes.raw(text='<h2 style="margin-bottom:5px;">{0}</h2>'.format(options['title']),
-                                           format='html')
-            headerRow += titleRowContainer
+            title_row_container = nodes.container()
+            title_row_container['classes'].append('row bs-container')
+            title_row_container += nodes.raw(
+                text='<h2 style="margin-bottom:5px;">{0}</h2>'.format(options['title']),
+                format='html'
+            )
+            header_row += title_row_container
 
         par = nodes.paragraph()
         self.state.nested_parse(self.content, self.content_offset, par)
 
-        node = vh_row_node()
+        node = ValohaiRowNode()
         node += par
 
-        headerRowContainer += node
+        header_row_container += node
 
-        headerRow += headerRowContainer
+        header_row += header_row_container
 
         # we return the result
-        return [headerRow]
+        return [header_row]

@@ -4,12 +4,12 @@ from docutils.parsers.rst import directives
 
 
 def setup(app):
-    app.add_node(vh_demo_node, html=(visit_card_node, depart_card_node))
-    app.add_directive('vh_demo', VHDemo)
+    app.add_node(ValohaiDemoNode, html=(visit_card_node, depart_card_node))
+    app.add_directive('vh_demo', ValohaiDemoDirective)
     return {'version': '0.1'}  # identifies the version of our extension
 
 
-class vh_demo_node(nodes.Structural, nodes.Element):
+class ValohaiDemoNode(nodes.Structural, nodes.Element):
     pass
 
 
@@ -21,7 +21,7 @@ def depart_card_node(self, node):
     pass
 
 
-class VHDemo(Directive):
+class ValohaiDemoDirective(Directive):
     required_arguments = 0
     optional_arguments = 2
     final_argument_whitespace = True
@@ -41,36 +41,35 @@ class VHDemo(Directive):
 
         options = self.options
 
-        headerRow = nodes.container()
-        headerRow['classes'].append('{0}-container row-center justify-content-center'.format(options['bg_color']))
+        header_row = nodes.container()
+        header_row['classes'].append('{0}-container row-center justify-content-center'.format(options['bg_color']))
 
-        headerRowContainer = nodes.container()
-        headerRowContainer['classes'].append('row bs-container justify-content-center')
+        header_row_container = nodes.container()
+        header_row_container['classes'].append('row bs-container justify-content-center')
 
         if 'title' in options:
-            titleRowContainer = nodes.container()
-            titleRowContainer['classes'].append('row bs-container justify-content-center')
-            titleRowContainer += nodes.raw(
+            title_row_container = nodes.container()
+            title_row_container['classes'].append('row bs-container justify-content-center')
+            title_row_container += nodes.raw(
                 text='<h2 style="margin-bottom:5px;">{0}</h2>'.format(options['title']),
                 format='html'
             )
-            headerRowContainer += titleRowContainer
+            header_row_container += title_row_container
 
         par = nodes.paragraph()
         self.state.nested_parse(self.content, self.content_offset, par)
 
-        node = vh_demo_node()
+        node = ValohaiDemoNode()
         node += par
 
-        headerRowContainer += node
-
-        headerRowContainer += nodes.raw(
+        header_row_container += node
+        header_row_container += nodes.raw(
             text='<div style="padding: 25px 0;"> \
             <a class="btn btn-red inline-block mb-2 mr-6" href="http://valohai.com/book-a-demo/" target="_blank">Book a demo</a> \
             </div>',
             format='html'
         )
-        headerRow += headerRowContainer
+        header_row += header_row_container
 
         # we return the result
-        return [headerRow]
+        return [header_row]

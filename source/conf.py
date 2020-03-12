@@ -22,7 +22,7 @@ extensions = [
     'sphinx_sitemap',
     '_redirects',
     'card',
-    'cardCollection',
+    'card_collection',
     'vh_header',
     'vh_row',
     'vh_demo',

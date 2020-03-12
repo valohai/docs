@@ -4,16 +4,16 @@ from docutils.parsers.rst import directives
 
 
 def setup(app):
-    app.add_node(card_node, html=(visit_card_node, depart_card_node))
+    app.add_node(CardNode, html=(visit_card_node, depart_card_node))
     app.add_directive('card', CardDirective)
     return {'version': '0.1'}  # identifies the version of our extension
 
 
-class card_node(nodes.Structural, nodes.Element):
+class CardNode(nodes.Structural, nodes.Element):
     pass
 
 
-class cardCollection_node(nodes.Structural, nodes.Element):
+class CardCollectionNode(nodes.Structural, nodes.Element):
     pass
 
 
@@ -67,47 +67,57 @@ class CardDirective(Directive):
             text_align_class = '-center'
 
         # we create a card and we add the section
-        bodyContainer = nodes.container()
-        bodyContainer['classes'].append('card-body{0}'.format(text_align_class))
-        node = card_node()
+        body_container = nodes.container()
+        body_container['classes'].append('card-body{0}'.format(text_align_class))
+        node = CardNode()
         node.set_class('card-body-{0}'.format(text_align_class))
 
-        btnClass = 'btn'
+        btn_class = 'btn'
         if 'button' in options:
-            btnClass = 'btn btn-' + options['button']
+            btn_class = 'btn btn-' + options['button']
 
         if 'image' in options:
             if 'cta_link' in options:
                 node += nodes.raw(
                     text='<a class="external text-center" href="{0}"><img src="{1}" alt="{2}" /></a>'.format(
-                        options['cta_link'], options['image'], options['image_alt']), format='html')
+                        options['cta_link'],
+                        options['image'],
+                        options['image_alt']
+                    ),
+                    format='html'
+                )
             else:
                 node += nodes.image(uri=options['image'], alt=options['image_alt'])
         if 'cta' in options:
             node += nodes.raw(
-                text='<p><a class="reference external {0}" href="{1}">{2}</a></p>'.format(btnClass, options['cta_link'],
-                                                                                          options['cta']),
-                format='html')
+                text='<p><a class="reference external {0}" href="{1}">{2}</a></p>'.format(
+                    btn_class,
+                    options['cta_link'],
+                    options['cta']
+                ),
+                format='html'
+            )
 
         if 'title' in options:
             if 'title_link' in options:
                 node += nodes.raw(
                     text='<a class="h6 blue-link" href={0}>{1}</a>'.format(options['title_link'], options['title']),
-                    format='html')
+                    format='html'
+                )
             else:
                 node += nodes.raw(text='<p class="h5">{0}</p>'.format(options['title']), format='html')
 
         node += par
 
-        bodyContainer += node
+        body_container += node
 
         columns = 3
         if 'columns' in options:
             columns = options['columns']
 
-        cardContainer = nodes.container()
-        cardContainer['classes'].append('card-set-{0}cols'.format(columns))
-        cardContainer += bodyContainer
+        card_container = nodes.container()
+        card_container['classes'].append('card-set-{0}cols'.format(columns))
+        card_container += body_container
 
         # we return the result
-        return [cardContainer]
+        return [card_container]

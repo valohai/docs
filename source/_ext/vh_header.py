@@ -4,12 +4,12 @@ from docutils.parsers.rst import directives
 
 
 def setup(app):
-    app.add_node(vh_header_node, html=(visit_card_node, depart_card_node))
-    app.add_directive('vh_header', VHHeaderDirective)
+    app.add_node(ValohaiHeaderNode, html=(visit_card_node, depart_card_node))
+    app.add_directive('vh_header', ValohaiHeaderDirective)
     return {'version': '0.1'}  # identifies the version of our extension
 
 
-class vh_header_node(nodes.Structural, nodes.Element):
+class ValohaiHeaderNode(nodes.Structural, nodes.Element):
     pass
 
 
@@ -21,7 +21,7 @@ def depart_card_node(self, node):
     pass
 
 
-class VHHeaderDirective(Directive):
+class ValohaiHeaderDirective(Directive):
     # defines the parameter the directive expects
     # directives.unchanged means you get the raw value from RST
     required_arguments = 0
@@ -46,31 +46,31 @@ class VHHeaderDirective(Directive):
         options = self.options
 
         # we create a card and we add the section
-        headerRowContainer = nodes.container(ids=['headerContainer'])
-        headerRowContainer['classes'].append('dark-container row-center')
+        header_row_container = nodes.container(ids=['headerContainer'])
+        header_row_container['classes'].append('dark-container row-center')
 
-        headerColumn = nodes.container()
-        headerColumn['classes'].append('bs-container')
+        header_column = nodes.container()
+        header_column['classes'].append('bs-container')
 
-        headerRow = nodes.container()
-        headerRow['classes'].append('row-justify-end')
+        header_row = nodes.container()
+        header_row['classes'].append('row-justify-end')
 
-        textCol = nodes.container()
-        textCol['classes'].append('col-4')
+        text_col = nodes.container()
+        text_col['classes'].append('col-4')
 
-        textContent = nodes.paragraph(text=options['title'])
-        textContent['classes'].append('header-text-light')
+        text_content = nodes.paragraph(text=options['title'])
+        text_content['classes'].append('header-text-light')
 
-        textCol += textContent
-        headerRow += textCol
+        text_col += text_content
+        header_row += text_col
 
-        searchCol = nodes.container()
-        searchCol['classes'].append('bs-container col-7')
+        search_col = nodes.container()
+        search_col['classes'].append('bs-container col-7')
 
-        searchFormGroup = nodes.container(ids=['searchForm'])
-        searchFormGroup['classes'].append('form-group has-search')
+        search_form_group = nodes.container(ids=['searchForm'])
+        search_form_group['classes'].append('form-group has-search')
 
-        searchForm = nodes.raw(
+        search_form = nodes.raw(
             text='<section id="search" role="search">' \
                  '<form class="search" action="/search/" method="get">' \
                  '<div class="form-group">' \
@@ -84,21 +84,21 @@ class VHHeaderDirective(Directive):
             format='html'
         )
 
-        searchForm += nodes.raw(
+        search_form += nodes.raw(
             text='<p id="popularlinks">Most popular topics: <a href="/docs/core-concepts/index">our core concepts</a>, ' \
                  '<a href="/docs/valohai-yaml">valohai.yaml</a> or '
                  '<a href="/docs/valohai-cli">valohai-cli</a></p>',
             format='html'
         )
 
-        searchFormGroup += searchForm
+        search_form_group += search_form
 
-        searchCol += searchFormGroup
-        headerRow += searchCol
+        search_col += search_form_group
+        header_row += search_col
 
-        headerColumn += headerRow
+        header_column += header_row
 
-        headerRowContainer += headerColumn
+        header_row_container += header_column
 
         # we return the result
-        return [headerRowContainer]
+        return [header_row_container]

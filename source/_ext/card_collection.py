@@ -4,12 +4,12 @@ from docutils.parsers.rst import directives
 
 
 def setup(app):
-    app.add_node(cardCollection_node, html=(visit_card_node, depart_card_node))
+    app.add_node(CardCollectionNode, html=(visit_card_node, depart_card_node))
     app.add_directive('card_collection', CardCollectionDirective)
     return {'version': '0.1'}  # identifies the version of our extension
 
 
-class cardCollection_node(nodes.Structural, nodes.Element):
+class CardCollectionNode(nodes.Structural, nodes.Element):
     pass
 
 
@@ -61,36 +61,43 @@ class CardCollectionDirective(Directive):
             bgcolor = options['bgcolor']
 
         # we create a card and we add the section
-        rowContainer = nodes.container()
-        rowContainer['classes'].append('{0}-container-fluid row-center'.format(bgcolor))
+        row_container = nodes.container()
+        row_container['classes'].append('{0}-container-fluid row-center'.format(bgcolor))
 
         if 'class' in options:
-            rowContainer['classes'].append(options['class'])
+            row_container['classes'].append(options['class'])
 
-        bootstrapContainer = nodes.container()
-        bootstrapContainer['classes'].append('bs-container')
+        bootstrap_container = nodes.container()
+        bootstrap_container['classes'].append('bs-container')
 
         if 'title' in options:
-            bootstrapContainer += nodes.raw(text='<h2 style="margin-bottom:5px;">{0}</h2>'.format(options['title']),
-                                            format='html')
+            bootstrap_container += nodes.raw(
+                text='<h2 style="margin-bottom:5px;">{0}</h2>'.format(options['title']),
+                format='html'
+            )
             if 'subtitle' in options:
                 if 'subtitle_link' in options:
-                    bootstrapContainer += nodes.raw(
+                    bootstrap_container += nodes.raw(
                         text='<p><a href="{0}" class="text-muted" style="text-decoration:none;">{1}</a><br /></p>'.format(
-                            options['subtitle_link'], options['subtitle']), format='html')
+                            options['subtitle_link'],
+                            options['subtitle']),
+                        format='html'
+                    )
                 else:
-                    bootstrapContainer += nodes.raw(
-                        text='<p class="text-muted">{0}<br /></p>'.format(options['subtitle']), format='html')
+                    bootstrap_container += nodes.raw(
+                        text='<p class="text-muted">{0}<br /></p>'.format(options['subtitle']),
+                        format='html'
+                    )
             else:
-                bootstrapContainer += nodes.raw(text='<br />', format='html')
+                bootstrap_container += nodes.raw(text='<br />', format='html')
 
-        cardCollectionContainer = nodes.container(ids=[options['name']])
-        cardCollectionContainer['classes'].append('vh-card-group')
+        card_collection_container = nodes.container(ids=[options['name']])
+        card_collection_container['classes'].append('vh-card-group')
 
-        cardCollectionContainer += par
-        bootstrapContainer += cardCollectionContainer
+        card_collection_container += par
+        bootstrap_container += card_collection_container
 
-        rowContainer += bootstrapContainer
+        row_container += bootstrap_container
 
         # we return the result
-        return [rowContainer]
+        return [row_container]
