@@ -1,6 +1,5 @@
 from docutils import nodes
 from docutils.parsers.rst import Directive
-from sphinx.locale import _
 from docutils.parsers.rst import directives
 
 
