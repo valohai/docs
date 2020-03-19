@@ -5,7 +5,7 @@
     :orphan: true
 
 .. vh_header::
-    :title: Hello stranger 👋 How can we help you today? 
+    :title: Hello stranger 👋 How can we help you today?
 
 ..
 
@@ -17,7 +17,7 @@
     :subtitle_link: /quickstarts
 
     .. card::
-        :image: ../_images/tf_logo.png
+        :image: /_images/tf_logo.png
         :image_alt: TensorFlow
         :box-style: center
         :cta_link: /quickstarts/quick-start-tensorflow
@@ -25,7 +25,7 @@
         Import and run our TensorFlow sample on Valohai.
 
     .. card::
-        :image: ../_images/r_logo1.png
+        :image: /_images/r_logo.png
         :image_alt: R-language
         :box-style: center
         :cta_link: /quickstarts/quick-start-r
@@ -33,7 +33,7 @@
         Import and run our R sample on Valohai.
 
     .. card::
-        :image: ../_images/jupyter_logo.png
+        :image: /_images/jupyter_logo.png
         :image_alt: Jupyter Notebooks
         :box-style: center
         :cta_link: /quickstarts/quick-start-jupyter/
@@ -41,7 +41,7 @@
         Run experiments with Jupyter Notebooks.
 
     .. card::
-        :image: ../_images/keras_logo.jpg
+        :image: /_images/keras_logo.jpg
         :image_alt: Keras
         :box-style: center
         :cta_link: /quickstarts/quick-start-keras
@@ -59,7 +59,7 @@
 
     .. card::
         :box-style: center
-        :image: /_images/start_icon1.png
+        :image: /_images/start_icon.png
         :image_alt: Start
         :cta: 1. Learn the basics
         :cta_link:  /tutorials/valohai
@@ -74,7 +74,7 @@
 
     .. card::
         :box-style: center
-        :image: /_images/team_icon1.png
+        :image: /_images/team_icon.png
         :image_alt: Team
         :cta: 2. Onboard your team
         :cta_link: /tutorials/valohai/onboard-team
@@ -89,7 +89,7 @@
 
     .. card::
         :box-style: center
-        :image: /_images/advanced_icon1.png
+        :image: /_images/advanced_icon.png
         :image_alt: Advanced
         :cta: 3. Advanced topics
         :cta_link: /tutorials/valohai/advanced
@@ -147,7 +147,7 @@
 .. vh_demo::
     :bg_color: lightblue
     :title: Looking to try out Valohai?
-    
+
 ..
 
 .. card_collection::

@@ -78,16 +78,12 @@ class CardDirective(Directive):
 
         if 'image' in options:
             if 'cta_link' in options:
-                node += nodes.raw(
-                    text='<a class="external text-center" href="{0}"><img src="{1}" alt="{2}" /></a>'.format(
-                        options['cta_link'],
-                        options['image'],
-                        options['image_alt']
-                    ),
-                    format='html'
-                )
+                img_ref = nodes.reference('', '', refuri=options['cta_link'])
+                img_ref.append(nodes.image(uri=options['image'], alt=options['image_alt']))
+                node += img_ref
             else:
                 node += nodes.image(uri=options['image'], alt=options['image_alt'])
+
         if 'cta' in options:
             node += nodes.raw(
                 text='<p><a class="reference external {0}" href="{1}">{2}</a></p>'.format(
