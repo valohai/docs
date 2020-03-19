@@ -17,4 +17,4 @@ And now you have ``vh`` command available in your terminal.
     $ vh
     # Usage: vh [OPTIONS] COMMAND [ARGS]...
 
-If you want to get an overview how the client works, check out :doc:`our Valohai CLI quick start </tutorials/quick-start-cli>`.
+If you want to get an overview how the client works, check out :doc:`our Valohai CLI quick start </quickstarts/quick-start-cli>`.

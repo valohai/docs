@@ -88,7 +88,7 @@ Find the :code:`my-project-deploy-key` file (without the :code:`.pub` extension)
 4.1 Go to repository settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. thumbnail:: /guides/valohai-key-1.png
+.. thumbnail:: /tutorials/valohai-key-1.png
    :alt: Valohai - route to repository settings
 
 Navigate to the repository settings in your Valohai Project through `Settings` > `Repository`.
@@ -96,7 +96,7 @@ Navigate to the repository settings in your Valohai Project through `Settings` >
 4.2 Copy the repository SSH URL
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. thumbnail:: /guides/valohai-key-2.png
+.. thumbnail:: /tutorials/valohai-key-2.png
    :alt: GitHub - where to find repository SSH URL
 
 To make sure you get the correct repository URL, open GitHub in another tab. On Github, navigate to `Code` page and press `Clone or download`.
@@ -108,7 +108,7 @@ Then copy the text field with :code:`git@github.com:<owner>/<repository>.git`
 4.3 Configure repository settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. thumbnail:: /guides/valohai-key-3.png
+.. thumbnail:: /tutorials/valohai-key-3.png
    :alt: Valohai - repository configuration example
 
 Paste the SSH URL (:code:`git@github.com:<owner>/<repository>.git`) into the `URL` field.
@@ -120,7 +120,7 @@ Copy and paste the contents of :code:`my-project-deploy-key` file (without the :
 4.4 Save the repository settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. thumbnail:: /guides/valohai-key-4.png
+.. thumbnail:: /tutorials/valohai-key-4.png
    :alt: Valohai - screen after saving repository settings
 
 After you click `Save`, Valohai links the GitHub repository to the project and automatically fetches your code.
@@ -130,7 +130,7 @@ On errors, double check the fields or contact support through Intercom.
 4.5 Update project as necessary
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. thumbnail:: /guides/valohai-key-5.png
+.. thumbnail:: /tutorials/valohai-key-5.png
    :alt: Valohai - highlighted Fetch repository button
 
 After you add new commits to your GitHub repository, remember to press the `Fetch repository` to update the code in Valohai.

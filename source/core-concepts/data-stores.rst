@@ -24,7 +24,7 @@ In addition to downloading files from data stores, you can also download from an
 
 .. seealso::
 
-    * :doc:`/guides/private-s3-bucket/index`
-    * :doc:`/guides/private-azure-storage/index`
-    * :doc:`/guides/private-gcp-bucket/index`
-    * :doc:`/guides/private-swift-container/index`
+    * :doc:`/tutorials/cloud-storage/private-s3-bucket/index`
+    * :doc:`/tutorials/cloud-storage/private-azure-storage/index`
+    * :doc:`/tutorials/cloud-storage/private-gcp-bucket/index`
+    * :doc:`/tutorials/cloud-storage/private-swift-container/index`

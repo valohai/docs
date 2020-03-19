@@ -161,7 +161,7 @@ Ad-hoc executions are convenient when developing your scripts and learning the p
 that you have your main machine learning code in a version control repository to allow better collaboration and
 repeatability.
 
-Check out :doc:`our quick start TensorFlow tutorial </tutorials/quick-start-tensorflow>` to learn more about
+Check out :doc:`our quick start TensorFlow tutorial </quickstarts/quick-start-tensorflow>` to learn more about
 adding a version control repository to your project.
 
 The wizard created a ``valohai.yaml`` for us during the tutorial; you might want to know
