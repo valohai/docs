@@ -17,7 +17,7 @@
     :subtitle_link: /quickstarts
 
     .. card::
-        :image: /_images/tf_logo.png
+        :image: /_logos/tensorflow-symbol.svg
         :image_alt: TensorFlow
         :box-style: center
         :cta_link: /quickstarts/quick-start-tensorflow
@@ -25,7 +25,7 @@
         Import and run our TensorFlow sample on Valohai.
 
     .. card::
-        :image: /_images/r_logo.png
+        :image: /_logos/r.svg
         :image_alt: R-language
         :box-style: center
         :cta_link: /quickstarts/quick-start-r
@@ -33,7 +33,7 @@
         Import and run our R sample on Valohai.
 
     .. card::
-        :image: /_images/jupyter_logo.png
+        :image: /_logos/jupyter.svg
         :image_alt: Jupyter Notebooks
         :box-style: center
         :cta_link: /quickstarts/quick-start-jupyter/
@@ -41,7 +41,7 @@
         Run experiments with Jupyter Notebooks.
 
     .. card::
-        :image: /_images/keras_logo.jpg
+        :image: /_logos/keras-symbol.svg
         :image_alt: Keras
         :box-style: center
         :cta_link: /quickstarts/quick-start-keras

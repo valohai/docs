@@ -79,7 +79,8 @@ class CardDirective(Directive):
         if 'image' in options:
             if 'cta_link' in options:
                 img_ref = nodes.reference('', '', refuri=options['cta_link'])
-                img_ref.append(nodes.image(uri=options['image'], alt=options['image_alt']))
+                # HINT: you can make the 'height' customizable in the future if directive gets more uses
+                img_ref.append(nodes.image(uri=options['image'], alt=options['image_alt'], height='70px'))
                 node += img_ref
             else:
                 node += nodes.image(uri=options['image'], alt=options['image_alt'])
