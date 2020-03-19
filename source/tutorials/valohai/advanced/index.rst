@@ -158,7 +158,7 @@ Example: Fetch execution metadata
 
     **Note**
 
-    You can define the maximum API token lifetime for all users in your organisation under the organisation settings.
+    You can define the maximum API token lifetime for all users in your organization under the organization settings.
 ..
 
 .. seealso:: 

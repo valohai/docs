@@ -4,7 +4,7 @@
 Onboard your team
 ==========================
 
-Once your organisation is setup on Valohai, you'll be able to easily share projects within your teams.
+Once your organization is setup on Valohai, you'll be able to easily share projects within your teams.
 
 
 ☁️ Connect to a cloud storage 
@@ -143,16 +143,16 @@ Tags are useful when you for example want to highlight an execution that lead to
 Set tags at the bottom of each executions Details tab.
 
 
-💡 Additional organisation settings
+💡 Additional organization settings
 ----------------------------------------------
 
 There are a variety of other settings that you can manage for your organization:
 
-* **Manage users and teams** inside you organisation
-    * You can set project access and visibility to only to members of a certain team, instead the whole organisation.
+* **Manage users and teams** inside you organization
+    * You can set project access and visibility to only to members of a certain team, instead the whole organization.
 * **Connect Valohai to Azure AD** and keep access control on Azure, avoiding access control setting duplication.
-* **Require two-factor authentication** for all users in your organisation
-* **Prevent users from running personal projects** under organisation execution environments
+* **Require two-factor authentication** for all users in your organization
+* **Prevent users from running personal projects** under organization execution environments
 
 
 

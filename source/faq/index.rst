@@ -26,7 +26,7 @@ General
     You can easily take add your existing project to Valohai. You'll just need to add a ``valohai.yaml`` configuration file, describing what you want to run and your dependencies.
 
 * **Does Valohai support GPU machines?**
-    Yes. You can run executions either CPU or GPU machines on Valohai. The exact type will depend on your organisation settings and cloud provider availability (AWS, Azure, GCP)
+    Yes. You can run executions either CPU or GPU machines on Valohai. The exact type will depend on your organization settings and cloud provider availability (AWS, Azure, GCP)
 
 Executions
 ----------------------
@@ -35,12 +35,12 @@ Executions
     This is a configurable setting per-instance-type with the default of 5 parallel executions on most environments. If you launch more executions than you have quota for, we will properly queue everything so executions do get ran when the previous ones finish.
 
 * **Why do some of my executions get queued?**
-    Each machine type on Valohai has a maximum scale setting that determines how many parallel executions can be ran on each machine type. The setting can be configured from your organisations environment settings, if you're running Valohai workers in your own cloud environment or on-premises hardware. If you're running on the Valohai environment, the default maximum setting is 5. Contact us at info@valohai.com if you require more.
+    Each machine type on Valohai has a maximum scale setting that determines how many parallel executions can be ran on each machine type. The setting can be configured from your organization's environment settings, if you're running Valohai workers in your own cloud environment or on-premises hardware. If you're running on the Valohai environment, the default maximum setting is 5. Contact us at info@valohai.com if you require more.
 
 * **Why does it sometimes take so long to start a execution machine?**
     When you launch an execution Valohai will check if there are any available machines running. If there are available machines it will use one of them, otherwise it will request a new machine. The machine will be available as soon as it's ready at the cloud provider.
     
-    Sometimes your execution might be queued because all the available machines are being used and you'll have to wait for a machine to free up. You can adjust the min/max settings and the per user quota for each machine type, under your organisation settings. If you set the minimum ammount of a machine type to 1 or above, we'll make sure there is always some machines running.
+    Sometimes your execution might be queued because all the available machines are being used and you'll have to wait for a machine to free up. You can adjust the min/max settings and the per user quota for each machine type, under your organization settings. If you set the minimum ammount of a machine type to 1 or above, we'll make sure there is always some machines running.
 
 * **How do I install additional libraries, tools and other dependencies to my execution?**
     You can define multiple commands under the ``step.command`` section in your valohai.yaml configuration. For example:

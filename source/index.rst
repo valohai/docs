@@ -30,7 +30,7 @@
         :box-style: center
         :cta_link: /quickstarts/quick-start-r
 
-        Import and run our R sample on Valohai.
+        Import and run our R language sample on Valohai.
 
     .. card::
         :image: /_logos/jupyter.svg
@@ -38,7 +38,7 @@
         :box-style: center
         :cta_link: /quickstarts/quick-start-jupyter/
 
-        Run experiments with Jupyter Notebooks.
+        Run experiments with Jupyter Notebooks and Valohai.
 
     .. card::
         :image: /_logos/keras-symbol.svg
@@ -68,7 +68,7 @@
         * Running experiments
         * Data inputs and outputs
         * Metadata and visualizations
-        * Deployments
+        * Deployments and inference
 
     ..
 
@@ -83,7 +83,7 @@
         * Connect your cloud storage
         * Configure environments
         * Reproducability and lineage
-        * Manage organisation settings
+        * Manage organization settings
 
     ..
 
@@ -126,7 +126,7 @@
         :cta_link:  /executions/metadata
         :button: transparent
 
-        Track additional metadata from your executions.
+        Track and visualize additional details about your executions.
 
     .. card::
         :box-style: center
@@ -134,7 +134,7 @@
         :cta_link:  /core-concepts/pipelines
         :button: transparent
 
-        Create a series of connected executions.
+        Create and maintain a series of connected workloads.
     
     .. card::
         :box-style: center
@@ -142,7 +142,7 @@
         :cta_link: /core-concepts/deployments
         :button: transparent
 
-        Learn about real-time and batch inference.
+        Learn about real-time and batch inference and monitoring.
 
 .. vh_demo::
     :bg_color: lightblue
@@ -188,7 +188,7 @@
 
         **Why do some of my executions get queued?** 🕓
 
-        * Each machine type on Valohai has a maximum scale setting that determines how many parallel executions can be ran per machine type. The setting can be configured from your organisations environment settings, if you're running Valohai workers in your own cloud environment or on-premises hardware.
+        * Each machine type on Valohai has a maximum scale setting that determines how many parallel executions can be ran per machine type. The setting can be configured from your organization's environment settings, if you're running Valohai workers in your own cloud environment or on-premises hardware.
     ..
 
     .. card::

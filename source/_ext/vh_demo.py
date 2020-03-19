@@ -64,7 +64,7 @@ class ValohaiDemoDirective(Directive):
 
         header_row_container += node
         header_row_container += nodes.raw(
-            text='<div style="padding: 25px 0;"> \
+            text='<div style="padding: 10px 0 40px 0;"> \
             <a class="btn btn-red inline-block mb-2 mr-6" href="http://valohai.com/book-a-demo/" target="_blank">Book a demo</a> \
             </div>',
             format='html'
