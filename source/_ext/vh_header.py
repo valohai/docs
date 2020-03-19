@@ -85,9 +85,9 @@ class ValohaiHeaderDirective(Directive):
         )
 
         search_form += nodes.raw(
-            text='<p id="popularlinks">Most popular topics: <a href="/docs/core-concepts/index">our core concepts</a>, ' \
-                 '<a href="/docs/valohai-yaml">valohai.yaml</a> or '
-                 '<a href="/docs/valohai-cli">valohai-cli</a></p>',
+            text='<p id="popularlinks">Most popular topics: <a href="/core-concepts/">our core concepts</a>, ' \
+                 '<a href="/valohai-yaml/">valohai.yaml</a> or '
+                 '<a href="/valohai-cli/">valohai-cli</a></p>',
             format='html'
         )
 
