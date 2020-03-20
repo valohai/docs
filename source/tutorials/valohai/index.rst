@@ -375,7 +375,7 @@ Create a function that will do the prediction
             response = Response("\nWe got an image!") 
             return response(environ, start_response)
         
-        ..
+    ..
     
     * Now run your code locally again with ``python predict.py`` and send it an image as an example. You can use ``curl`` on the command line to test this.
         * Open a new command line window, navigate to the folder with your test image (7.png) and run ``curl -X POST -F "image=@7.png" localhost:8000/``
@@ -439,7 +439,7 @@ Configure the deployment endpoint in ``valohai.yaml``
                 command: python train.py {parameters}
                 inputs:
                     - name: my-mnist-dataset
-                    default: {datum://id}
+                      default: {datum://id}
             - endpoint:
                 name: digit-predict
                 description: predict digits from image inputs
@@ -486,3 +486,10 @@ Congratulations! You now have trained your own model, learned to work with cloud
 
 Now is a good time to pat yourself on the back and celebrate 🎉🎉
 
+.. seealso::
+
+    Continue the tutorial with:
+
+    * `Creating parameters and running Tasks for hyperoptimization </tutorials/valohai/advanced/#use-tasks-for-hyperparameter-optimization>`_
+
+..

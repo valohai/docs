@@ -41,13 +41,99 @@ For each parameter you can set the value as a defined single value or use:
     Using interactive hyperparameter optimisation can make hyperparameter tuning faster and more efficient than for example using a random search or an exhaustive grid search. 
 ..
 
-.. seealso::
+Tutorial: Add parameters
+-------------------------
 
-    * `Read more about parameters </docs/core-concepts/parameters/>`_
-    * `Define parameters in valohai.yaml </docs/valohai-yaml/step-parameters/>`_
+Let's continue our sample project from the `Valohai Quickstart </tutorials/valohai/>`_. If you haven't completed the tutorial, you can get the sample code from `GitHub <https://github.com/DrazenDodik/valohaiquickstart>`_.
+
+As you start running your experiments and trying different combinations, you'll soon wish there is a way to pass values like the ``epochnum`` or ``learningrate`` to your code without changing the code. Allowing you quickly to experiment with different parameter values. Have no fear, we can do that!
+
+* Edit your ``valohai.yaml`` to include additional parameters. Define parameters ``epochnum`` and ``learningrate``
+* Update your command to ensure that the parameters get passed in
+    .. code:: yaml
+
+        - step:
+            name: Train MNIST model
+            image: tensorflow/tensorflow:2.0.1-gpu-py3
+            command: python train.py {parameters}
+            inputs:
+              - name: my-mnist-dataset
+                default: {datum://id}
+            parameters:
+              - name: epochnum
+                type: integer
+                default: 5
+              - name: learningrate
+                type: float
+                default: 0.001
+        - endpoint:
+                name: digit-predict
+                description: predict digits from image inputs
+                image: tensorflow/tensorflow:2.0.1-py3
+                wsgi: predict:mypredictor
+                files:
+                    - name: model
+                      description: Model output file from TensorFlow
+                      path: model.h5
+
+    ..
+
+Next update ``train.py`` and use these parameters in our code. We'll need to first parse the arguments passed to the code and then use these two new parameters. We'll use `argparse from the Python Standard Library <https://docs.python.org/3/library/argparse.html>`_ to parse the arguments.
+
+* Add ``import argparse`` to your train.py
+* Define a new function that will parse our arguments
+    .. code:: python
+
+        def getArgs():
+            # Initialize the ArgumentParser
+            parser = argparse.ArgumentParser()
+            # Define two arguments that it should parse
+            parser.add_argument('--epochnum', type=int, default=5)
+            parser.add_argument('--learningrate', type=float, default=0.001)
+
+            # Now run the parser that will return us the arguments and their values and store in our variable args
+            args = parser.parse_args()
+
+            # Return the parsed arguments
+            return args
+    ..
+* Now call our new function in the beginning of our file, for example after defining the functions.
+    .. code:: python
+
+        # Call our newly created getArgs() function and store the parsed arguments in a variable args. We can later access the values through it, for example args.learningrate
+        args = getArgs()
+    ..
+* Now that we've parsed our values, we can start using them. Lets first update the simpler one: epochnum by updating our model.fit to use the parameter value.
+    .. code:: python
+
+        model.fit(x_train, y_train, epochs=args.epochnum, callbacks=[metadataCallback])
+    ..
+* We'll also need to use the learning_rate parameter, which is passed to the Keras optimizer. According to the `Adam optimizer documentation <https://www.tensorflow.org/api_docs/python/tf/keras/optimizers/Adam>`_ we can pass the learning rate in the initialization of the optimizer.
+    .. code:: python
+
+        model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=args.learningrate),
+                loss=loss_fn,
+                metrics=['accuracy'])
+    ..
+* Create a new execution and pass it parameter values ``vh exec run --adhoc train --learningrate=0.1 --epochnum=10``
+
+.. container:: alert alert-warning
+
+    **Connect your project to a repository to run Tasks**
+
+    You might get an error when trying to create a Tasks: "No commits are available. Please set up and fetch the repository first."
+    Valohai requires the project to be connected to a repository to be able to create Tasks and for us it's not available as we haven't connected our project to a repository but ran executions as ``--adhoc``.
+
+    However, there is a way around this for the sake of testing this feature. Go into your latest completed Execution that used parameters. On the Details-tab you click the "Task"-button to create a Task based on this ``--adhoc`` commit. Now you can try the different optimization techniques and start multiple tasks.
 
 ..
 
+.. seealso::
+
+    * `Read more about parameters </core-concepts/parameters/>`_
+    * `Define parameters in valohai.yaml </valohai-yaml/step-parameters/>`_
+
+..
 
 Create a sequence of operations with pipelines
 -----------------------------------------------
