@@ -34,5 +34,5 @@ Special environment variables
 ``VH_TPU``
   For private environments where Google Cloud TPU is enabled, this environment variable will contain the GRPC endpoint(s)
   of the allocated Cloud TPU(s), separated by spaces.  This may be passed in as the argument for ``TPUClusterResolver``,
-  e.g. ``TPUClusterResolver(tpu=os.environ["VH_TPU"].split()).get_master()``or similar.
+  e.g. ``TPUClusterResolver(tpu=os.environ["VH_TPU"].split()).get_master()`` or similar.
   When TPUs are not enabled, this variable will not be set.
