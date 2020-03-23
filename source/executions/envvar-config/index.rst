@@ -27,3 +27,12 @@ By default, Valohai defines the following environment variables:
 
     In your code, you can check if ``VH_JOB_ID`` exists to know if you are running on Valohai.
 
+
+Special environment variables
+-----------------------------
+
+``VH_TPU``
+  For private environments where Google Cloud TPU is enabled, this environment variable will contain the GRPC endpoint(s)
+  of the allocated Cloud TPU(s), separated by spaces.  This may be passed in as the argument for ``TPUClusterResolver``,
+  e.g. ``TPUClusterResolver(tpu=os.environ["VH_TPU"].split()).get_master()``or similar.
+  When TPUs are not enabled, this variable will not be set.
