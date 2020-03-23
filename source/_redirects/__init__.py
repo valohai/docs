@@ -61,13 +61,9 @@ def install_redirects(app, exception):
     mapping in the "redirects" dictionary.
     """
     for old, new in redirects.items():
-        old_path = app.outdir.rstrip('/') + '/' + old.lstrip('/')
-
-        if os.path.isfile(old_path):
-            # redirecting overwrite all other files
-            os.remove(old_path)
-
-        with open(old_path, 'w+') as f:
+        old_path = os.path.join(app.outdir, old.lstrip("/"))
+        os.makedirs(os.path.dirname(old_path), exist_ok=True)
+        with open(old_path, 'w') as f:
             f.write(TEMPLATE.format(url=new))
 
 
