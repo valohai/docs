@@ -42,18 +42,17 @@ Run the notebook server on local port 8888.
 
 Open in browser: http://127.0.0.1:8888
 
-.. note::
+.. container:: alert alert-warning
 
-    If you want to run your own notebooks, use:
+   **Run your own code and notebooks**
 
-    .. code-block:: none
-
-      docker run -p 8888:8888 -v "$PWD":/home/jovyan/work valohai/jupyhai
-
-    This mounts your current working directory into the container.
-
-    - All the files in your current working directory will be available within the container
-    - All changes within the mounted folder will persist after shutting down
+   * Run ``docker pull valohai/jupyhai`` instead.
+   * Navigate to the folder where your files are
+   * Run ``docker run -p 8888:8888 -v "$PWD":/home/jovyan/work valohai/jupyhai``.
+      * This mounts your current working directory into the container.
+      * All the files in your current working directory will be available within the container
+      * All changes within the mounted folder will persist after shutting down
+   * You can run install additional libraries to the environment by adding a new cell at the top of your notebook and running ``!pip install mylibrary``
 
 4. Open a notebook
 ~~~~~~~~~~~~~~~~~~
@@ -99,13 +98,20 @@ Press the Valohai button in the toolbar and select *Create execution*.
 
 The gizmo for the new execution will appear to the right.
 
+.. container:: alert alert-warning
+
+   **Open a Notebook from a previous execution**
+
+   Each of the colored gizmos on the right side of the page signify a single Valohai execution. You can click on any of the completed executions and select ``Notebook`` to launch the Notebook version that was used to run the execution.
+
+..
+
 8. Watch the results
 ~~~~~~~~~~~~~~~~~~~~
 
 .. thumbnail:: download.gif
    :alt: Get results back from Valohai
 
-Each of the colored gizmos on the right side of the page signify a single Valohai execution.
 You can click the `#1 > Notebook` button to download the finished notebook back to your local machine.
 
 9. Parameterize the notebook
