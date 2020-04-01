@@ -20,10 +20,10 @@ Configuring a data store will ensure that all your execution outputs will stay c
 
 **Follow one of our tutorials below to setup your own data stores:**
 
-* `Connecting to Azure Storage Account </tutorials/cloud-storage/private-azure-storage/index>`_
-* `Connecting to Google Cloud Storage </tutorials/cloud-storage/private-gcp-bucket/index>`_
-* `Connecting to AWS S3 </tutorials/cloud-storage/private-s3-bucket/index>`_
-* `Connecting to OpenStack Swift </tutorials/cloud-storage/private-swift-container/index>`_
+* `Connecting to Azure Storage Account </tutorials/cloud-storage/private-azure-storage>`_
+* `Connecting to Google Cloud Storage </tutorials/cloud-storage/private-gcp-bucket>`_
+* `Connecting to AWS S3 </tutorials/cloud-storage/private-s3-bucket>`_
+* `Connecting to OpenStack Swift </tutorials/cloud-storage/private-swift-container>`_
 
 
 .. container:: alert alert-warning
@@ -93,9 +93,9 @@ If you're connecting to a private repository:
 
 **Follow our step-by-step guides to connect your private repository:**
 
-* `Connect to GitHub </tutorials/code-repository/private-github-repository/index>`_
-* `Connect to GitLab </tutorials/code-repository/private-gitlab-repository/index>`_
-* `Connect to BitBucket </tutorials/code-repository/private-bitbucket-repository/index>`_
+* `Connect to GitHub </tutorials/code-repository/private-github-repository>`_
+* `Connect to GitLab </tutorials/code-repository/private-gitlab-repository>`_
+* `Connect to BitBucket </tutorials/code-repository/private-bitbucket-repository>`_
 
 
 🗄 Reproducability and lineage 

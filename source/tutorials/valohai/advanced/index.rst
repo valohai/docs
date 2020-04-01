@@ -41,6 +41,9 @@ For each parameter you can set the value as a defined single value or use:
     Using interactive hyperparameter optimisation can make hyperparameter tuning faster and more efficient than for example using a random search or an exhaustive grid search. 
 ..
 
+.. image:: /_images/bayesian_ui.gif
+    :alt: Bayesian UI on Valohai
+
 Tutorial: Add parameters
 -------------------------
 
@@ -139,6 +142,121 @@ Create a sequence of operations with pipelines
 -----------------------------------------------
 
 .. include:: ../../../_shared/_pipelines.rst
+
+Tutorial: Create a sequence of operations with pipelines
+-----------------------------------------------------------
+
+Let's continue our sample project from the `Valohai Quickstart </tutorials/valohai/>`_. If you haven't completed the tutorial, you can get the sample code from `GitHub <https://github.com/DrazenDodik/valohaiquickstart>`_ and continue from there by adding pipelines functionality.
+
+In our example we're not doing any heavy preprocessing work but we'll still use the MNIST example as the concept remains the same even for a larger project.
+
+1. `Split your code to multiple steps <#id3>`_
+2. `Define a pipeline <#id4>`_ 
+
+.. container:: alert alert-warning
+
+    You'll need to have your code in a code repository and connect the repository to a Valohai project to proceed. Pipelines do not work through ``--adhoc`` executions.
+   
+    * `Connect to GitHub </tutorials/code-repository/private-github-repository>`_
+    * `Connect to GitLab </tutorials/code-repository/private-gitlab-repository>`_
+    * `Connect to BitBucket </tutorials/code-repository/private-bitbucket-repository>`_
+..
+
+Split your code to multiple steps
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* In our ``train.py`` we have a simple transformation for our data ``x_train, x_test = x_train / 255.0, x_test / 255.0``. Remove it from ``train.py``. We'll want to move this to another step in Valohai, so we don't need to run it every time we want to train a model..
+* Create a new file called ``preprocess.py`` and populate it the below:
+    .. code:: python
+
+        import os
+        import numpy
+
+        inputs_path = os.getenv('VH_INPUTS_DIR', './inputs')
+        outputs_path = os.getenv('VH_OUTPUTS_DIR', './outputs')
+
+        # Get path to raw MNIST dataset
+        input_path = os.path.join(inputs_path, 'my-raw-mnist-dataset/mnist.npz')
+
+        with np.load(input_path, allow_pickle=True) as file:
+            x_train, y_train = file['x_train'], file['y_train']
+            x_test, y_test = file['x_test'], file['y_test']
+
+        # Preprocess dataset
+        x_train, x_test = x_train / 255.0, x_test / 255.0
+
+        # Output the preprocessed file
+        processed_file_path = os.path.join(outputs_path, 'preprocessed_mnist.npz')
+
+        numpy.savez(processed_file_path, x_train=x_train, y_train=y_train, x_test=x_test, y_test=y_test)
+
+    ..
+* Now edit your ``valohai.yaml`` to edit the input name of the ``Train MNIST model`` step and include a new step for preprocessing.
+* We'll run two commands there, one to install numpy on the ``python:3.6`` image we're using for the step and another to run ``preprocess.py``
+    .. code:: yaml
+
+        - step:
+            name: Preprocess data
+            image: python:3.6
+            command:
+            - pip install numpy==1.18.1
+            - python preprocess.py
+            inputs:
+            - name: my-raw-mnist-dataset
+                #default: {datum://id} 
+                default: https://storage.googleapis.com/tensorflow/tf-keras-datasets/mnist.npz
+        - step:
+            name: Train MNIST model
+            image: tensorflow/tensorflow:2.0.1-gpu-py3
+            command: python train.py
+            inputs:
+                - name: my-processed-mnist-dataset
+                  #default: {datum://id} 
+                  default: https://storage.googleapis.com/tensorflow/tf-keras-datasets/mnist.npz
+
+        - step:
+            name: Preprocess data
+            image: python:3.6
+            command:
+            - pip install numpy==1.18.1
+            - python preprocess.py
+            inputs:
+            - name: my-raw-mnist-dataset
+                #default: {datum://unprocessed-data}
+                default: https://storage.googleapis.com/tensorflow/tf-keras-datasets/mnist.npz
+
+    ..
+* 🔥You can now test your step by running ``vh exec run --adhoc preprocess``
+* You'll see a new output appear from your execution with the preprocessed data. Use that as the input for your train step.
+    * In your ``valohai.yaml`` replace the default address of the ``my-processed-mnist-dataset`` input to point to the newly generated dataset (datum URI).
+
+Define a pipeline
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Next we'll need to create the pipeline definition. We'll need to define the steps our pipeline has and how inputs/outputs flow through them.
+
+* **Nodes** - In our case these will represent different steps (preprocess and train)
+* **Edges** - How do we connect these steps? For example the output of preprocessing should be used as the input of our train step.
+
+* In your ``valohai.yaml`` create a new pipeline as:
+    .. code:: yaml
+
+        - pipeline:
+            name: Training pipeline
+            nodes:
+            - name: preprocess
+                type: execution
+                step: Preprocess data
+            - name: train
+                type: execution
+                step: Train MNIST model
+            edges:
+            - [preprocess.output.*.npz, train.input.my-processed-mnist-dataset]
+
+    ..
+* Now push a new commit to your code repository and fetch a new commit to Valohai.
+* 🔥 You can now create a new pipeline from your project. This will automatically launch the right executions and pass the right inputs to our train step.
+    * You'll notice that the simple graph appears with familiar colors (blue for starting, green for completed)
 
 
 Do more with Valohai APIs

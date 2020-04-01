@@ -491,5 +491,6 @@ Now is a good time to pat yourself on the back and celebrate 🎉🎉
     Continue the tutorial with:
 
     * `Creating parameters and running Tasks for hyperoptimization </tutorials/valohai/advanced/#use-tasks-for-hyperparameter-optimization>`_
+    * `Create a sequence of operations with pipelines </tutorials/valohai/advanced/#tutorial-run-multiple-steps-through-a-pipeline>`_
 
 ..
