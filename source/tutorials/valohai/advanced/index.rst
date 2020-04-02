@@ -254,8 +254,10 @@ Next we'll need to create the pipeline definition. We'll need to define the step
             - [preprocess.output.*.npz, train.input.my-processed-mnist-dataset]
 
     ..
+* The ``node.step`` is the name of the ``step`` in ``valohai.yaml`` and the ``edges`` are defining the output/input data of those steps (e.g. step.input.input-name)
 * Now push a new commit to your code repository and fetch a new commit to Valohai.
 * 🔥 You can now create a new pipeline from your project. This will automatically launch the right executions and pass the right inputs to our train step.
+    * As per the ``edges`` definition of your pipeline, it will replace the default input of ``my-processed-mnist-dataset`` with the .npz file that was outputted from the preprocessing step.
     * You'll notice that the simple graph appears with familiar colors (blue for starting, green for completed)
 
 
