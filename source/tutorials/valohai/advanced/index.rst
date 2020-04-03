@@ -287,7 +287,7 @@ Using the Valohai APIs is rather straightforward, you'll need to create an API t
       import json
 
       # Authenticate yourself with the token
-      auth_token = 'bSoBrjudHterhjS1woonhSfeCDDFaXV330e1oXnX'
+      auth_token = '<your-auth-token>'
       headers = {'Authorization': 'Token %s' % auth_token}
 
       # Send a request (with the authentication headers) to fetch Valohai projects
@@ -316,7 +316,7 @@ Example: Fetch all (failed) executions of a project
       import json
 
       # Authenticate yourself with the token
-      auth_token = 'bSoBrjudHterhjS1woonhSfeCDDFaXV330e1oXnX'
+      auth_token = '<your-auth-token>'
       headers = {'Authorization': 'Token %s' % auth_token}
 
       # Send a request (with the authentication headers) to fetch all executions in a project
@@ -346,7 +346,7 @@ Example: Fetch execution metadata
       import json
 
       # Authenticate yourself with the token
-      auth_token = 'bSoBrjudHterhjS1woonhSfeCDDFaXV330e1oXnX'
+      auth_token = '<your-auth-token>'
       headers = {'Authorization': 'Token %s' % auth_token}
 
       # Send a request (with the authentication headers) to fetch all executions in a project
