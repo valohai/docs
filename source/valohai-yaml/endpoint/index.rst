@@ -41,10 +41,7 @@ For instance, for a Flask app, you can use it to wrap the Flask WSGI app:
 
 .. tip::
 
-    It is optional to use deployment endpoints in Valohai.
-    You can also download the trained model and do more complex deployments.
-    I would say it is even more common that people have custom deployments but Valohai deployment endpoints are
-    especially excellent for quality assurance and testing.
+    It's optional to use Valohai deployments. You can also choose to download the trained models and deploy to your own existing environment, if you want more control over the deployments and integrate to existing. Check out Valohai APIs to understand how to automate this.
 
 .. seealso::
 
