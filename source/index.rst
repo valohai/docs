@@ -115,7 +115,7 @@
     .. card::
         :box-style: center
         :cta: Parameters »
-        :cta_link:  /core-concepts/tasks
+        :cta_link:  /core-concepts/parameters
         :button: transparent
 
         Run hyperparameter optimization on Valohai.
