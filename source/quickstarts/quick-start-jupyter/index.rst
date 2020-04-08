@@ -4,7 +4,7 @@
 Jupyter Notebooks with Valohai
 =======================================
 
-You can use Jupyter Notebooks with Valohai either directly through the Web UI through Valohai Hosted Notebooks or using our Jupyhai notebook extension and running Notebooks locally through Docker.
+You can use Jupyter Notebooks with Valohai either directly through the Web UI (Valohai Hosted Notebooks) or using our Jupyhai notebook extension which allows you to create Valohai executions from a notebook running on your local machine.
 
 
 .. toctree::
