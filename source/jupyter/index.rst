@@ -10,5 +10,5 @@ It is an optional way of interacting with projects in the same capacity as our w
 
 Go through our :doc:`/quickstarts/quick-start-jupyter/index` tutorial to see the extension in action.
 
-.. figure:: /quickstarts/quick-start-jupyter/notebook-generic.gif
+.. figure:: /quickstarts/quick-start-jupyter/shared/notebook-generic.gif
    :alt: Jupyhai

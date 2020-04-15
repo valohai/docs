@@ -128,3 +128,23 @@ called grid search.
 For example, here we have 6 different values for learning_rate and 6 different values for dropout. In total this is
 6*6 = 36 executions. Valohai calculates the number for permutations for you and you can see it in the right bottom corner
 of this screenshot.
+
+
+Bayesian Optimization
+----------------------
+
+Using interactive hyperparameter optimisation can make hyperparameter tuning faster and more efficient than for example using a random search or an exhaustive grid search.
+
+.. image:: /_images/bayesian_ui.gif
+   :alt: Bayesian Optimization.
+
+Configure a max count of executions, an execution batch size, a target metric and a target value for that metric and iteratively optimise the target metric towards the target value.
+
+Valohai uses the open source Hyperopt-library’s Tree Parzen Estimator algorithm to use the hyperparameters and outputs of the previous executions to suggest future execution hyperparameters.
+
+Under the hood, Bayesian optimization (of which TPE is an implementation) works in the following steps:
+
+* Create startup executions using random search
+* Based on these executions, create a simplified function to model the relationship between the hyperparameters and the target metric value (for example “loss”)
+* Based on this simplification of their relationship, find the optimal values for the hyper parameter to make the target metric as close to the target value as possible
+* Run the next batch of executions and repeat the process from step 2.

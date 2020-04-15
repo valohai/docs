@@ -10,6 +10,7 @@ Let's assume we have something similar to the following set up in Valohai YAML:
 
     - step:
       name: show-variables
+      image: python:3.6
       command: printenv
 
 And you have a local project linked to Valohai, then you can run the step with the following.
@@ -18,7 +19,7 @@ And you have a local project linked to Valohai, then you can run the step with t
 
     $ vh exec run show-variables
 
-This will run the execution in the default environment, which is Amazon EC2 g2 instances on Ireland region for the most projects. You can change the default environment in the Project settings of the Valohai web application.
+This will run the execution in the default environment, which is a Microsoft Azure NC6 instance on the Ireland region for the most projects.
 
 But how to change which hardware or cloud provider to use for a specific execution?
 
@@ -47,6 +48,14 @@ You can specify which environment to use with the ``-e`` parameter of the ``vh e
 
     $ vh exec run -e aws-eu-west-1-t2xlarge-no-gpu show-variables
     Success! Execution created.
+
+.. container:: alert alert-warning
+
+    **Changing the default environment for the project**
+
+    The ``-e`` parameter will change the environment only for that single execution.
+    
+    To change the default environment of the project go to the Valohai web application and change the Default Environment under Project->Settings->General.
 
 .. tip::
 

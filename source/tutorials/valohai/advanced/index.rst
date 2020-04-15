@@ -16,7 +16,7 @@ It can be daunting to try different hyperparameters one-by-one. Valohai offers a
 * **Grid search** - Search all permutations of multiple values for multiple hyperparameters.
     * For example, if we wanted to run with 6 different values for learning_rate and 6 different values for dropout we would get in total 6*6 = 36 executions
 * **Random search** - Configure a max count of executions and find the corresponding amount of random parameters in a defined search space
-* **Bayesian Optimization** - Configure a max count of executions, an execution batch size, a target metric and a target value for that metric and iteratively optimise the target metric towards the target value.
+* **Bayesian Optimization** - Using interactive hyperparameter optimisation can make hyperparameter tuning faster and more efficient than for example using a random search or an exhaustive grid search. Configure a max count of executions, an execution batch size, a target metric and a target value for that metric and iteratively optimise the target metric towards the target value.
 
 For each parameter you can set the value as a defined single value or use:
 
@@ -25,24 +25,12 @@ For each parameter you can set the value as a defined single value or use:
 * **Logspace** - a search with values inside a specific range in logarithmic space
 * **Random** - search randomly within a specified range and distribution.
 
-.. container:: alert alert-warning
+.. seealso::
 
-    **Bayesian optimization**
+    * `Read more about parameters </core-concepts/parameters/>`_
+    * `Define parameters in valohai.yaml </valohai-yaml/step-parameters/>`_
 
-    Valohai uses the open source Hyperopt-library's Tree Parzen Estimator algorithm to use the hyperparameters and outputs of the previous executions to suggest future execution hyperparameters.
-    
-    Under the hood, Bayesian optimization (of which TPE is an implementation) works in the following steps:
-
-        * Create startup executions using random search
-        * Based on these executions, create a simplified function to model the relationship between the hyperparameters and the target metric value (for example "loss")
-        * Based on this simplification of their relationship, find the optimal values for the hyper parameter to make the target metric as close to the target value as possible
-        * Run the next batch of executions and repeat the process from step 2.
-    
-    Using interactive hyperparameter optimisation can make hyperparameter tuning faster and more efficient than for example using a random search or an exhaustive grid search. 
 ..
-
-.. image:: /_images/bayesian_ui.gif
-    :alt: Bayesian UI on Valohai
 
 Tutorial: Add parameters
 -------------------------
@@ -131,17 +119,34 @@ Next update ``train.py`` and use these parameters in our code. We'll need to fir
 
 ..
 
-.. seealso::
-
-    * `Read more about parameters </core-concepts/parameters/>`_
-    * `Define parameters in valohai.yaml </valohai-yaml/step-parameters/>`_
-
-..
-
 Create a sequence of operations with pipelines
 -----------------------------------------------
 
-.. include:: ../../../_shared/_pipelines.rst
+**Pipeline** is a version controlled collection of executions some of which rely on the results of the previous
+executions thus creating a directed graph. These pipeline graphs consist of nodes and edges and we'll discuss
+these further down.
+
+For example, consider the following sequence of data science operations:
+
+1. **preprocess** dataset on a memory-optimized machine
+2. **train** multiple machine learning models on GPU machines using the preprocessed data (1)
+3. **evaluate** all of the trained models (2) to find the best one
+
+We could say that you have 3 separate operations or :doc:`steps </core-concepts/steps>`:
+**preprocess**, **train**, **evaluate**.
+
+This pipeline would have 3 or more **nodes**; at least one for each step mentioned above.
+Training could have additional nodes if you are training in parallel but lets keep it simple:
+
+.. thumbnail:: /core-concepts/pipelines.png
+   :alt: You configure data stores per project-basis on Valohai.
+
+.. seealso::
+
+    * `Read more about pipelines </core-concepts/pipelines/>`_
+    * `Define pipelines in valohai.yaml </valohai-yaml/pipeline/>`_
+
+..
 
 Tutorial: Create a sequence of operations with pipelines
 -----------------------------------------------------------
