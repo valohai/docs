@@ -134,7 +134,7 @@
         :cta_link:  /core-concepts/pipelines
         :button: transparent
 
-        Create and maintain a series of connected workloads.
+        Create a sequence of executions with pipelines.
     
     .. card::
         :box-style: center
@@ -142,7 +142,15 @@
         :cta_link: /core-concepts/deployments
         :button: transparent
 
-        Learn about real-time and batch inference and monitoring.
+        Publish HTTP endpoints for online inference.
+
+    .. card::
+        :box-style: center
+        :cta: APIs »
+        :cta_link: /valohai-api/
+        :button: transparent
+
+        Automate your workflow with APIs.
 
 .. vh_demo::
     :bg_color: lightblue

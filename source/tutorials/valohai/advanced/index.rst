@@ -160,6 +160,8 @@ In our example we're not doing any heavy preprocessing work but we'll still use 
 
 .. container:: alert alert-warning
 
+    **Requirements**
+
     You'll need to have your code in a code repository and connect the repository to a Valohai project to proceed. Pipelines do not work through ``--adhoc`` executions.
    
     * `Connect to GitHub </tutorials/code-repository/private-github-repository>`_
@@ -308,74 +310,16 @@ Using the Valohai APIs is rather straightforward, you'll need to create an API t
 
 You'll notice that the response contains information about all your projects. It's as easy as this! Now you can do what ever you want with the results.
 
-**You can read more about at:** `Valohai API Docs <https://app.valohai.com/api/docs/>`_
+.. seealso:: 
 
-Example: Fetch all (failed) executions of a project
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-* You'll need the ID of a single project to fetch its executions, you can get it from the previous results (or query for a specific name)
-* Create a new folder on your computer and inside it create a new file ``fetchExecutions.py``
-    .. code:: Python
-
-      import requests
-      import json
-
-      # Authenticate yourself with the token
-      auth_token = '<your-auth-token>'
-      headers = {'Authorization': 'Token %s' % auth_token}
-
-      # Send a request (with the authentication headers) to fetch all executions in a project
-      # You can get the project ID for example 
-      resp = requests.get('https://app.valohai.com/api/v0/executions/?project={project_id}', headers=headers)
-
-      # To fetch all failed executions you could run
-      # https://app.valohai.com/api/v0/executions/?project={project_id}&status=error
-
-      resp.raise_for_status()
-
-      # Print the response you've received back
-      print('# API Response:\n')
-      print(json.dumps(resp.json(), indent=4))
-
-  ..
-* Save and run ``python3 fetchExecutions.py`` and you'll see a list of executions with their details.
-
-Example: Fetch execution metadata
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-* You'll need the ID of a single execution to fetch its metadata. You can get an ID from the results of our previous sample, or by going to the browser and navigate inside an execution. You'll see the ID in the url.
-* Create a new folder on your computer and inside it create a new file ``fetchMetadata.py``
-    .. code:: Python
-
-      import requests
-      import json
-
-      # Authenticate yourself with the token
-      auth_token = '<your-auth-token>'
-      headers = {'Authorization': 'Token %s' % auth_token}
-
-      # Send a request (with the authentication headers) to fetch all executions in a project
-      # You can get the project ID for example 
-      resp = requests.get('https://app.valohai.com/api/v0/executions/{execution_id}/metadata/', headers=headers)
-
-      resp.raise_for_status()
-
-      # Print the response you've received back
-      print('# API Response:\n')
-      print(json.dumps(resp.json(), indent=4))
-* 🔥 Save and run ``python3 fetchMetadata.py`` and you'll see the metadata stream of a single execution.
+    * You can read more about our APIs at `Valohai API Docs <https://app.valohai.com/api/docs/>`_
+    * Find more API examples on our `tutorials page </tutorials/apis/>`_
+..
 
 .. container:: alert alert-warning
 
     **Note**
 
     You can define the maximum API token lifetime for all users in your organization under the organization settings.
-..
-
-.. seealso:: 
-
-  * `Valohai API <https://app.valohai.com/api/v0/>`_
-  * `Valohai API Docs <https://app.valohai.com/api/docs/>`_ 
-
 ..
 
