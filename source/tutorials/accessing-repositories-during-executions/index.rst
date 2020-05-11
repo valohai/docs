@@ -10,6 +10,17 @@ When you run a Valohai execution all the files from the specified commit will be
 
 However, sometimes you might want to connect and fetch additional files from a different private repository. In this tutorial we'll show you how to authenticate and fetch files from another private repository during an execution run.
 
+.. container:: alert alert-warning
+
+    **A note on versioning and reproducability**
+    
+    Valohai allows you easily to reproduce past executions with the exact same code version by keeping track of the repository connected to the project and the commit used for the execution.
+    
+    Valohai won't keep track of the commits from other repositories that you access and clone in your code.
+
+..
+
+
 Generate a new ssh key
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
