@@ -60,6 +60,12 @@ The above would generate the following command by default:
 
     python train.py --max_steps=300 --learning_rate=0.001 --dropout=0.9
 
+
+.. seealso:: 
+
+   Tutorial: `Define and parse Valohai parameters (Python) </tutorials/valohai/advanced/#tutorial-add-parameters>`_
+
+
 Selecting values
 ~~~~~~~~~~~~~~~~
 
@@ -148,3 +154,13 @@ Under the hood, Bayesian optimization (of which TPE is an implementation) works 
 * Based on these executions, create a simplified function to model the relationship between the hyperparameters and the target metric value (for example “loss”)
 * Based on this simplification of their relationship, find the optimal values for the hyper parameter to make the target metric as close to the target value as possible
 * Run the next batch of executions and repeat the process from step 2.
+
+.. container:: alert alert-warning
+
+   **Use Bayesian optimization only when the execution count is over 30**
+
+   We recommend to use Bayesian optimization when creating more than 30 executions to ensure the optimiser has enough base values to use TPE effectively.
+   
+   Valohai follows the Hyperopt recomendation and executes the first 20 runs with Random Search before using the TPE to ensure best results. If you have less than 20 runs, the executions will be based on Random Search instead of TPE optimisation.
+
+..

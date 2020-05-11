@@ -6,6 +6,8 @@ Tutorials
 
 This section contains more in-depth guidance for specific features of the Valohai platform.
 
+Get started with Valohai
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. toctree::
     :titlesonly:
 
@@ -14,7 +16,24 @@ This section contains more in-depth guidance for specific features of the Valoha
     valohai/advanced/index
     cloud-storage/index
     code-repository/index
+
+
+Other tutorials
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. toctree::
+    :titlesonly:
+
+    build-docker-image/index
+    accessing-repositories-during-executions/index
+    apis/index
     airflow-management/index
     azure-ad/index
-    build-docker-image/index
+
+    
+Quickstarts
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. toctree::
+    :titlesonly:
+
     /quickstarts/index
+    

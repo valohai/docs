@@ -134,7 +134,7 @@
         :cta_link:  /core-concepts/pipelines
         :button: transparent
 
-        Create and maintain a series of connected workloads.
+        Create a sequence of executions with pipelines.
     
     .. card::
         :box-style: center
@@ -142,7 +142,49 @@
         :cta_link: /core-concepts/deployments
         :button: transparent
 
-        Learn about real-time and batch inference and monitoring.
+        Publish HTTP endpoints for online inference.
+
+    .. card::
+        :box-style: center
+        :cta: APIs »
+        :cta_link: /valohai-api/
+        :button: transparent
+
+        Automate your workflow with APIs.
+
+
+.. card_collection::
+    :bgcolor: lightblue
+    :name: quickstart-group
+    :title: Watch our quickstart videos
+    :subtitle: All videos »
+    :subtitle_link: https://www.youtube.com/channel/UCiR8Fpv6jRNphaZ99PnIuFg
+
+    
+    .. card::
+        :box-style: center
+
+        .. raw:: html
+            
+            <iframe width="464" height="261" src="https://www.youtube.com/embed/videoseries?list=PLMskd1Tlj2waPPbCqNpjtp5oACbmbIyTS" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        ..
+    
+    .. card::
+        :box-style: left
+        :title: Bring your existing project to Valohai
+        :cta_link: https://www.youtube.com/watch?v=7YYDRLZnmeo&list=PLMskd1Tlj2waPPbCqNpjtp5oACbmbIyTS
+        :button: transparent
+
+        This video series is aimed to help you get a fast-start with key Valohai features.
+
+        #. `Configure your existing project to Valohai <https://youtu.be/7YYDRLZnmeo>`_
+        #. `Learn to output and save files to you cloud storage <https://youtu.be/j3TDVpFz_AM>`_
+        #. `Collect and visualize additional performance metrics <https://youtu.be/1mHQFx4a7qM>`_
+        #. `Track and reproduce past executions <https://youtu.be/MzoBhio27EQ>`_
+        #. `Download input data to your executions <https://youtu.be/MzoBhio27EQ>`_
+        #. `Split your project to multiple steps <https://youtu.be/XxZiRek9rpM>`_
+        #. `Create series of executions with pipelines <https://youtu.be/-skw0S8s52M>`_
+        #. `Deploy your model to an HTTP endpoint <https://youtu.be/Pz2GYfIVsuA>`_
 
 .. vh_demo::
     :bg_color: lightblue

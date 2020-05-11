@@ -43,3 +43,9 @@ You can sort executions by metadata values in the web interface which is useful 
 executions with the highest prediction accuracy.
 
 The latest or last value of each key such as ``accuracy`` can be used for the sorting hyperparameter optimization results.
+
+.. seealso::
+
+   How to `download metadata from your execution as a JSON file </tutorials/apis/downloadMetadata/>`_
+
+..
