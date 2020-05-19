@@ -18,26 +18,6 @@ You can have multiple endpoints as a single project can have various inference r
 for different contexts e.g. various teams working on the project.
 
 The endpoints are defined in the ``valohai.yaml`` file, which specifies the WSGI application to serve.
-In the application, the ``SCRIPT_NAME`` environment variable contains the path the application is served under; i.e. something like ``organization/project/deployment/version/endpoint``.
-For Python applications, depending on the web framework being used, this prefix might be automatically used when the ``SCRIPT_NAME`` environment variable is present, or you may need to manage it separately.
-
-When using Flask, Django, or FastAPI with the Gunicorn server, things should work without configuration. If you use the ``wsgi: module.app`` configuration within your endpoint configuration, we will automatically set up a Gunicorn WSGI server, so everything should work out of the box.
-
-If you use FastAPI with the Uvicorn server, the environment variable's contents must at the time of writing be added to each route manually.
-
-If you choose to use a server that does not automatically take ``SCRIPT_NAME`` into account, you'll have to do so manually in your URL routes.
-For Python apps, the Werkzeug package contains ``DispatchMiddleware``, which is useful for this.
-For instance, for a Flask app, you can use it to wrap the Flask WSGI app:
-
-.. code-block:: python
-
-    from flask import Flask
-    import os
-    from werkzeug.middleware.dispatcher import DispatcherMiddleware
-    app = Flask(__name__)
-    # ...
-    app.wsgi_app = DispatcherMiddleware(app.wsgi, {os.environ.get("SCRIPT_NAME", "/"): app.wsgi_app})
-
 
 .. tip::
 
@@ -46,3 +26,12 @@ For instance, for a Flask app, you can use it to wrap the Flask WSGI app:
 .. seealso::
 
     Read more about deployments from :doc:`/core-concepts/deployments` documentation page.
+
+Deployment prefix
+-----------------
+
+The ``VH_DEFAULT_PREFIX`` environment variable contains the **default** prefix the application is served under; i.e. something like ``organization/project/deployment/version/endpoint``. This will *not* take into account any deployment aliases.
+
+The WSGI/HTTP application will also receive a ``X-VH-Prefix`` HTTP header containing the root path the application is served under regardless of whether it's being served via the default version moniker or an alias; i.e. something like ``organization/project/deployment/versionalias/endpoint``.
+
+If you use path-based routing (as opposed to e.g. RPC style) in your deployment code, you may need to use this header or variable to properly route your requests. (Another option is to simply allow any prefix for all of your app's routes, e.g. ``^.*/foo/$``).
