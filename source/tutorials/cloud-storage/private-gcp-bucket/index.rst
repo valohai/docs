@@ -116,7 +116,21 @@ Navigate to *Storage > Browse > "your-bucket" > Permissions > Add member*
 2. **Role:** Select `Storage Object Admin`, this allows download and uploading files.
 3. Press the `Save` button.
 
-5. Link the store to Valohai
+5. Set CORS settings for your bucket
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Click on "Activate Google Cloud Shell" in the upper right corner.
+
+* Create a new CORS configuration file
+   * ``echo '[{"origin": ["*"],"responseHeader": ["Content-Type", "x-ms-*"],"method": ["GET", "HEAD", "OPTIONS"],"maxAgeSeconds": 3600}, {"origin": ["https://app.valohai.com"],"responseHeader": ["Content-Type", "x-ms-*"],"method": ["POST", "PUT"],"maxAgeSeconds": 3600}]' > cors-config.json``
+
+* Update the CORS settings for your bucket 
+   * ``gsutil cors set cors-config.json gs://<your-bucket-name>``
+
+* Check the CORS settings
+   * ``gsutil cors get gs://<your-bucket-name>``
+
+6. Link the store to Valohai
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. thumbnail:: gcp-bucket-valohai-01.png
