@@ -379,3 +379,26 @@ a, a:visited {
         color: $vh-light-blue !important;
         text-decoration: none;
     }
+
+    .architecture-tooltip, .architecture-highlight {
+        display:none;
+        position:absolute;
+        
+    }
+
+    .architecture-tooltip {
+        border:1px solid #333;
+        background-color:#161616;
+        border-radius:5px;
+        padding:5px;
+        color:#fff;
+        font-size:12px Arial;
+        width: 300px;
+        opacity:1;
+    }
+
+    .architecture-highlight {
+        background: #30CCD3;
+        opacity: 0.5;
+        pointer-events: none;
+    }
