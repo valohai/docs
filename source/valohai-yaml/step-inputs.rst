@@ -14,6 +14,17 @@ An input in ``inputs`` has three potential properties:
   If not defined, the user has to define the source at the start of the execution.
 * ``optional``: **(optional)** Marks that this input is optional and an URL definition is not
   necessary before execution of the step.
+* ``filename``: **(optional)** set a custom name to the downloaded file.
+* ``keep-directories``: **(optional)** governs how directory paths are retained when using wildcards.
+  
+  * ``none``: (default) all files are downloaded to ``/valohai/inputs/my-input-name``
+  * ``full``: keeps the full path from the storage root.
+    
+    * E.g. for ``s3://special-bucket/foo/bar/**.jpg`` could end up as ``/valohai/inputs/my-input-name/foo/bar/dataset1/a.jpg``
+  
+  * ``suffix``: keeps the suffix from the "wildcard root".
+    
+    * E.g. for ``s3://special-bucket/foo/bar/**.jpg`` special-bucket/foo/bar/ would be removed, but any relative path after it would be kept, and you might end up with ``/valohai/inputs/my-input-name/dataset1/a.jpg``
 
 Currently valid sources for inputs are HTTP, HTTPS and various cloud provider specific data
 stores such as AWS S3 (``s3://...``) and Azure Storage (``azure://...``).
