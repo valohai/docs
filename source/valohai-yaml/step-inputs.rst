@@ -26,14 +26,14 @@ An input in ``inputs`` has three potential properties:
     
     * E.g. for ``s3://special-bucket/foo/bar/**.jpg`` special-bucket/foo/bar/ would be removed, but any relative path after it would be kept, and you might end up with ``/valohai/inputs/my-input-name/dataset1/a.jpg``
 
-Currently valid sources for inputs are HTTP, HTTPS and various cloud provider specific data
+Currently valid sources for inputs are HTTP(S) and various cloud provider specific data
 stores such as AWS S3 (``s3://...``) and Azure Storage (``azure://...``).
 
 .. seealso::
 
     Read more about custom data stores from :doc:`/core-concepts/data-stores` documentation page.
 
-For these HTTP/S endpoints basic access authentication is supported, but for the cloud provider stores,
+For these HTTP(S) endpoints basic access authentication is supported, but for the cloud provider stores,
 the access credentials must be configured under project settings.
 
 During the step execution, inputs are available under ``/valohai/inputs/<input name>/<input file>``.
