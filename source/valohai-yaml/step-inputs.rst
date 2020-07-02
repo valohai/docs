@@ -17,7 +17,7 @@ An input in ``inputs`` has three potential properties:
 * ``filename``: **(optional)** set a custom name to the downloaded file.
 * ``keep-directories``: **(optional)** governs how directory paths are retained when using wildcards.
   
-  * ``none``: (default) all files are downloaded to ``/valohai/inputs/my-input-name``
+  * ``none``: **(default)** all files are downloaded to ``/valohai/inputs/my-input-name``
   * ``full``: keeps the full path from the storage root.
     
     * E.g. for ``s3://special-bucket/foo/bar/**.jpg`` could end up as ``/valohai/inputs/my-input-name/foo/bar/dataset1/a.jpg``
