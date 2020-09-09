@@ -55,7 +55,7 @@ This tutorial is aimed to help you get a fast-start with key Valohai features.
 
     ..
 
-    * Let's edit our configuration file and change the step name to be more descriptive of what we'll be doing. Open ``valohai.yaml file`` in your favorite editor and change the step name to *Train MNIST model*. Once you've saved the file you can create a new execution with ``vh execute run --adhoc train --watch``
+    * Let's edit our configuration file and change the step name to be more descriptive of what we'll be doing. Open ``valohai.yaml file`` in your favorite editor and change the step name to *Train MNIST model*. Once you've saved the file you can create a new execution with ``vh execution run --adhoc train --watch``
 
     Now pat yourself on the back, you just created a project and ran your first execution on Valohai! 🦈🎉
 ..
@@ -108,7 +108,7 @@ Now that we've gotten our first executions running on Valohai, we can focus on w
 
     ..
 
-* Lets now train our MNIST model on Valohai. You'll just need to the familiar ``vh execute run --adhoc train`` and check the logs to ensure everything is executing as expected.
+* Lets now train our MNIST model on Valohai. You'll just need to the familiar ``vh execution run --adhoc train`` and check the logs to ensure everything is executing as expected.
 
 Look at you go.. already trained your first model on Valohai 👏👏
 

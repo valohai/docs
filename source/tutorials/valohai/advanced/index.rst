@@ -130,12 +130,11 @@ For example, consider the following sequence of data science operations:
 
 1. **preprocess** dataset on a memory-optimized machine
 2. **train** multiple machine learning models on GPU machines using the preprocessed data (1)
-3. **evaluate** all of the trained models (2) to find the best one
 
-We could say that you have 3 separate operations or :doc:`steps </core-concepts/steps>`:
-**preprocess**, **train**, **evaluate**.
+We could say that you have 2 separate operations or :doc:`steps </core-concepts/steps>`:
+**preprocess** and **train**.
 
-This pipeline would have 3 or more **nodes**; at least one for each step mentioned above.
+This pipeline would have 2 or more **nodes**; at least one for each step mentioned above.
 Training could have additional nodes if you are training in parallel but lets keep it simple:
 
 .. thumbnail:: /core-concepts/pipelines.png
@@ -220,17 +219,6 @@ Split your code to multiple steps
                 - name: my-processed-mnist-dataset
                   #default: {datum://id} 
                   default: https://storage.googleapis.com/tensorflow/tf-keras-datasets/mnist.npz
-
-        - step:
-            name: Preprocess data
-            image: python:3.6
-            command:
-            - pip install numpy==1.18.1
-            - python preprocess.py
-            inputs:
-            - name: my-raw-mnist-dataset
-                #default: {datum://unprocessed-data}
-                default: https://storage.googleapis.com/tensorflow/tf-keras-datasets/mnist.npz
 
     ..
 * 🔥You can now test your step by running ``vh exec run --adhoc preprocess``
