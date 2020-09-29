@@ -348,6 +348,7 @@
         valohai-api/index
         docker-images
         on-premises/index
+        installation/index
         architecture/index
         faq/index
         tutorials/index
