@@ -100,3 +100,7 @@ Sample agenda of a Valohai onboarding session
     * Running parameter sweeps and hyperparameter optimization in Valohai
     * Chaining executions with Valohai pipelines
     * Using Valohai APIs to automate steps
+
+.. thumbnail:: onboarding.png
+  :width: 500
+  :alt: Onboarding process
