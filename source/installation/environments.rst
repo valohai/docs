@@ -25,9 +25,9 @@ Check out the full list at `Amazon EC2 Instance Types <https://aws.amazon.com/ec
     * c5.2xlarge *- 8 vCPUs and 16GB memory*
     * c5.4xlarge *- 16 vCPUs and 32GB memory*
 * **Powerful, Scalable GPU instances**
-    * p2.xlarge *- 4 vCPUs, 61GB memory and 1 x NVIDIA K80 GPU*
+    * p2.xlarge *- 4 vCPUs, 61GB memory and 1 x NVIDIA K80*
     * p3.2xlarge *- 8 vCPUs, 61GB memory and 1 x NVIDIA Tesla V100*
-    * g3.4xlarge *- 16 vCPUs, 122GB memory and 1 x NVIDIA Tesla M60 GPUs*
+    * g3.4xlarge *- 16 vCPUs, 122GB memory and 1 x NVIDIA Tesla M60 *
 * **R4 - Memory optimized instances**
     * r4.4xlarge *- 16 vCPUs and 122GB memory*
     * r4.8xlarge *- 32 vCPUs and 244GB memory*

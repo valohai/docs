@@ -57,6 +57,9 @@ There are a couple of things to check in your environment, before you start with
     * When selecting your region, note that regions have different collections of available GPU types. We suggest the regions mentioned below, as they have the widest range of GPU machines available at the moment of writing.
         * **AWS:** *US West 2 (Oregon)* or *EU West 1 (Ireland)*
         * **Azure:** *East US* or *West US 2*
+        * **GCP:**
+            * US: *us-central1 (Iowa)* if you need to use TPUs or *us-west1 (Oregon)* if you want to use K80 and V100 GPUs.
+            * Europe: *europe-west4 (Netherlands)* if need to use TPUs and V100 GPUs, or *europe-west1 (Belgium)* if you need to use K80 and P100 GPUs.
 **5) Choose your machine instance types**
     * Depending on your scenario, you will need virtual machines with different CPU, memory, and GPU configurations for your work. Please choose the instance types you'd like to have available for your organization inside Valohai.
     * The list of available environments can be updated at any time to your subscription by our support team.
