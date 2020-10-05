@@ -17,7 +17,7 @@ Valohai can be deployed in numerous ways; here are the four most common configur
 
 **On-premises Worker Installation:**
   * The worker nodes are deployed to your persistent on-premises hardware.
-  * This allows for additional features like `directory mounting </on-premises/>`_ unavailable for the cloud installations.
+  * This allows for additional features like `directory mounting </setup/on-premises/>`_ unavailable for the cloud installations.
 
 **Full Private Installation:** (`pdf </_static/Valohai_Architecture_FullPrivate.pdf>`__)
   * All components (inc. app.valohai.com) are deployed inside your own cloud provider account or data center.

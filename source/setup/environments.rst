@@ -2,12 +2,12 @@
     :description: Selecting compute instances for Valohai
     
 *********************************************
-Selecting compute instances
+Selecting Compute Instances
 *********************************************
 
-Depending on your scenario, you will need virtual machines with different CPU, memory, and GPU configurations for your work. The list of available environments can be updated at any time to your subscription by our support team. You can enable/disable and change the (min/max) scaling rules of each environment type directly in your Valohai settings.
+Depending on what kind of models you are training you will need virtual machines with different CPU, memory, and GPU configurations. The list of environments available to your subscription can be updated at any time by our support team. You can enable/disable and change the (min/max) scaling rules of each environment type directly in your Valohai settings.
   
-Note that Valohai will only be able to create these machine types, if they're available from the cloud provider in a selected region and your quota limit permit creating additional instances. 
+Note that Valohai will only be able to create these machine types, if they're available from the cloud provider in a selected region and your quota limit permits creating additional instances. 
   
 * `Amazon EC2 Instance Types <https://aws.amazon.com/ec2/instance-types/>`_
 * `Google Compute Engine Instance Type <https://cloud.google.com/compute/docs/machine-types>`_
@@ -27,7 +27,7 @@ Check out the full list at `Amazon EC2 Instance Types <https://aws.amazon.com/ec
 * **Powerful, Scalable GPU instances**
     * p2.xlarge *- 4 vCPUs, 61GB memory and 1 x NVIDIA K80*
     * p3.2xlarge *- 8 vCPUs, 61GB memory and 1 x NVIDIA Tesla V100*
-    * g3.4xlarge *- 16 vCPUs, 122GB memory and 1 x NVIDIA Tesla M60 *
+    * g3.4xlarge *- 16 vCPUs, 122GB memory and 1 x NVIDIA Tesla M60*
 * **R4 - Memory optimized instances**
     * r4.4xlarge *- 16 vCPUs and 122GB memory*
     * r4.8xlarge *- 32 vCPUs and 244GB memory*
@@ -53,7 +53,7 @@ Check out the full list at `Google Compute Engine Instance Type <https://cloud.g
     * Custom machine with 12 vCPUs, 64GB memory and 1 x NVIDIA Tesla P100
     * Custom machine with  12 vCPUs, 64GB memory and 1 x NVIDIA Tesla V100.
 
-Valohai also supports running executions in TPU machines in GCP.
+Valohai also supports running executions on TPU machines in GCP.
 
 ☁️ Microsoft Azure
 ###############################

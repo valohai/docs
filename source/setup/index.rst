@@ -1,9 +1,9 @@
 .. meta::
-    :description: Installation instructions for Valohai
+    :description: Setup instructions for Valohai
     
-******************************************
-Installing Valohai to your environment
-******************************************
+******************************************************************
+Running Valohai Inside Your Own Cloud or On-premise Environment
+******************************************************************
 
 .. seealso::
     .. toctree::
@@ -11,7 +11,8 @@ Installing Valohai to your environment
         :titlesonly:
 
         environments
-        installation_options
+        setup_options
+        on-premises/index
 
 ..
 
@@ -23,12 +24,12 @@ Valohai can be installed on both cloud (Microsoft Azure, AWS, GCP) and on-prem s
 
 There are several ways to install Valohai. The most popular options are:
 
-1) **Valohai Private Workers** - In which Valohai manages a set of worker machines in your subscription. These machines fetch data from your private data stores and run executions (e.g. pre-processing, training, batch infernece).
+1) **Valohai Private Workers** - In which Valohai manages a set of worker machines in your subscription. These machines fetch data from your private data stores and run executions (e.g. pre-processing, training, batch inference) on the workers. Therefore data stays inside your subscription environment.
     
     Valohai will host the app.valohai.com web application and will store execution logs, code snapshots and user management data on Valohai servers.
 2) **Valohai Full Private** - A fully custom installation of Valohai in your environment, and optionally inside your own private network. All Valohai services are hosted in your environment (AWS, GCP, Azure, on-prem) including the web app, core Valohai services, logs, snapshots etc.
 
-👉 Read more about `installation options </installation/installation_options>`__.
+👉 Read more about `setup options </setup/setup_options>`__.
 
 .. container:: alert alert-warning
 
@@ -63,7 +64,7 @@ There are a couple of things to check in your environment, before you start with
 **5) Choose your machine instance types**
     * Depending on your scenario, you will need virtual machines with different CPU, memory, and GPU configurations for your work. Please choose the instance types you'd like to have available for your organization inside Valohai.
     * The list of available environments can be updated at any time to your subscription by our support team.
-    * Read more about `Selecting compute instances </installation/environments>`__
+    * Read more about `Selecting compute instances </setup/environments>`__
 
 .. container:: alert alert-warning
 
@@ -73,7 +74,7 @@ There are a couple of things to check in your environment, before you start with
 
 ..
 
-3. Successful Valohai onboarding
+3. Successful Valohai Onboarding
 ##################################
 
 Our Customer Success team will be there to help you to bring your team and projects to Valohai, and start running your experiments. Together you'll start by:
@@ -86,7 +87,7 @@ Our Customer Success team will be there to help you to bring your team and proje
 * 👉 **Get hands-on with Valohai.** We want to ensure you get value out of Valohai from day one. In our hands-on session we'll give you an overview of Valohai and have you running experiments, pipelines and parameter sweeps like a pro.
     Check out the sample agenda below:
 
-Sample agenda of a Valohai onboarding session
+Sample Agenda of a Valohai Onboarding Session
 ***********************************************
 
 * **Refresh on Valohai platform and capabilities** (10min)

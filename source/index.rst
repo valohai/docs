@@ -347,8 +347,7 @@
         jupyter/index
         valohai-api/index
         docker-images
-        on-premises/index
-        installation/index
+        setup/index
         architecture/index
         faq/index
         tutorials/index
