@@ -123,22 +123,19 @@ Create a sequence of operations with pipelines
 -----------------------------------------------
 
 **Pipeline** is a version controlled collection of executions some of which rely on the results of the previous
-executions thus creating a directed graph. These pipeline graphs consist of nodes and edges and we'll discuss
-these further down.
+executions thus creating a directed graph. These pipeline graphs consist of nodes and edges.
 
 For example, consider the following sequence of data science operations:
 
 1. **preprocess** dataset on a memory-optimized machine
-2. **train** multiple machine learning models on GPU machines using the preprocessed data (1)
+2. **train** multiple machine learning models on GPU machines using the preprocessed database
+3. **deploy** the train model to an HTTP endpoint
 
-We could say that you have 2 separate operations or :doc:`steps </core-concepts/steps>`:
-**preprocess** and **train**.
-
-This pipeline would have 2 or more **nodes**; at least one for each step mentioned above.
+This pipeline would have 3 or more **nodes**; at least one for each step mentioned above.
 Training could have additional nodes if you are training in parallel but lets keep it simple:
 
-.. thumbnail:: /core-concepts/pipelines.png
-   :alt: You configure data stores per project-basis on Valohai.
+.. thumbnail:: /tutorials/valohai/advanced/deploy-pipeline.png
+   :alt: Pipeline with 3 nodes (preprocess, train and deploy)
 
 .. seealso::
 
@@ -176,7 +173,7 @@ Split your code to multiple steps
     .. code:: python
 
         import os
-        import numpy
+        import numpy as np
 
         inputs_path = os.getenv('VH_INPUTS_DIR', './inputs')
         outputs_path = os.getenv('VH_OUTPUTS_DIR', './outputs')
@@ -184,21 +181,19 @@ Split your code to multiple steps
         # Get path to raw MNIST dataset
         input_path = os.path.join(inputs_path, 'my-raw-mnist-dataset/mnist.npz')
 
-        with np.load(input_path, allow_pickle=True) as file:
-            x_train, y_train = file['x_train'], file['y_train']
-            x_test, y_test = file['x_test'], file['y_test']
+        with np.load(input_path, allow_pickle=True) as f:
+            x_train, y_train = f['x_train'], f['y_train']
+            x_test, y_test = f['x_test'], f['y_test']
 
         # Preprocess dataset
         x_train, x_test = x_train / 255.0, x_test / 255.0
 
         # Output the preprocessed file
-        processed_file_path = os.path.join(outputs_path, 'preprocessed_mnist.npz')
+        processed_file_path = os.path.join(outputs_path, 'mnist.npz')
 
-        numpy.savez(processed_file_path, x_train=x_train, y_train=y_train, x_test=x_test, y_test=y_test)
-
+        np.savez(processed_file_path, x_train=x_train, y_train=y_train, x_test=x_test, y_test=y_test)
     ..
-* Now edit your ``valohai.yaml`` to edit the input name of the ``Train MNIST model`` step and include a new step for preprocessing.
-* We'll run two commands there, one to install numpy on the ``python:3.6`` image we're using for the step and another to run ``preprocess.py``
+* Now edit your ``valohai.yaml`` to add the new ``preprocess data`` step and edit the name of our input on ``Train MNIST model``
     .. code:: yaml
 
         - step:
@@ -209,19 +204,32 @@ Split your code to multiple steps
             - python preprocess.py
             inputs:
             - name: my-raw-mnist-dataset
-                #default: {datum://id} 
+                #default: {datum://id}
                 default: https://storage.googleapis.com/tensorflow/tf-keras-datasets/mnist.npz
+                
         - step:
             name: Train MNIST model
             image: tensorflow/tensorflow:2.0.1-gpu-py3
             command: python train.py
             inputs:
                 - name: my-processed-mnist-dataset
-                  #default: {datum://id} 
-                  default: https://storage.googleapis.com/tensorflow/tf-keras-datasets/mnist.npz
+                #default: {datum://id}
+                default: https://storage.googleapis.com/tensorflow/tf-keras-datasets/mnist.npz
 
+        - endpoint:
+            name: digit-predict
+            description: predict digits from image inputs
+            image: tensorflow/tensorflow:2.0.1-py3
+            wsgi: predict:mypredictor
+            files:
+                - name: model
+                description: Model output file from TensorFlow
+                path: model.h5
     ..
-* 🔥You can now test your step by running ``vh exec run --adhoc preprocess``
+
+* Now update your `train.py` to look for it's input file under the new name `my-processed-mnist-dataset`
+    * ``mnist_file_path = os.path.join(input_path, 'my-processed-mnist-dataset/mnist.npz')``
+* 🔥 You can now test your step by running ``vh exec run --adhoc preprocess``
 * You'll see a new output appear from your execution with the preprocessed data. Use that as the input for your train step.
     * In your ``valohai.yaml`` replace the default address of the ``my-processed-mnist-dataset`` input to point to the newly generated dataset (datum URI).
 
@@ -230,31 +238,39 @@ Define a pipeline
 
 Next we'll need to create the pipeline definition. We'll need to define the steps our pipeline has and how inputs/outputs flow through them.
 
-* **Nodes** - In our case these will represent different steps (preprocess and train)
-* **Edges** - How do we connect these steps? For example the output of preprocessing should be used as the input of our train step.
+* **Nodes** - For our sample we'll create two execution nodes, and one deployment node
+* **Edges** - Defines how does data flow from one node to another. For example the output of preprocessing should be used as the input of our train step.
 
 * In your ``valohai.yaml`` create a new pipeline as:
     .. code:: yaml
 
         - pipeline:
-            name: Training pipeline
+            name: Train and deploy pipeline
             nodes:
-            - name: preprocess
+            - name: preprocess-node
                 type: execution
                 step: Preprocess data
-            - name: train
+            - name: train-node
                 type: execution
                 step: Train MNIST model
+            - name: deploy-node
+                type: deployment
+                deployment: predict-digit
+                endpoints:
+                  - predict-digit
             edges:
-            - [preprocess.output.*.npz, train.input.my-processed-mnist-dataset]
+            - [preprocess-node.output.*.npz, train-node.input.my-processed-mnist-dataset]
+            - [train-node.output.model*, deploy-node.input.predict-digit.model]
 
     ..
+
 * The ``node.step`` is the name of the ``step`` in ``valohai.yaml`` and the ``edges`` are defining the output/input data of those steps (e.g. step.input.input-name)
 * Now push a new commit to your code repository and fetch a new commit to Valohai.
 * 🔥 You can now create a new pipeline from your project. This will automatically launch the right executions and pass the right inputs to our train step.
     * As per the ``edges`` definition of your pipeline, it will replace the default input of ``my-processed-mnist-dataset`` with the .npz file that was outputted from the preprocessing step.
     * You'll notice that the simple graph appears with familiar colors (blue for starting, green for completed)
 
+Got stuck? Check out the completed version in our `GitHub repo <https://github.com/DrazenDodik/valohaiquickstart/tree/pipelines>`_
 
 Do more with Valohai APIs
 --------------------------
