@@ -22,6 +22,7 @@ Valid **source node edge traits** you can listen for are:
 Valid **target node edge traits** you can specify are:
 
 * **input**: this execution node requires files from the specified execution outputs
+* **files**: this deployment node requires files from the specified execution outputs
 * **parameter**: the specified parameter of this execution node comes from the metadata of another execution *(in development)*
 
 | For example:
@@ -52,9 +53,25 @@ In practice, shorthand syntax looks something like this:
           - name: train-node
             type: execution
             step: train-model
+          - name: deploy
+            type: deployment
+            deployment: MyDeployment
+            endpoints:
+              - predict-digit
         edges:
           - [gather-node.output.images*, train-node.input.dataset-images]
           - [gather-node.output.labels*, train-node.input.dataset-labels]
+          - [train-node.output.labels*, train-node.input.dataset-labels]
+
+    - endpoint:
+        name: predict-digit
+        description: predict digits from image inputs ("file" parameter)
+        image: tensorflow/tensorflow:1.13.1-py3
+        wsgi: predict_wsgi:predict_wsgi
+        files:
+          - name: model
+            description: Model output file from TensorFlow
+            path: model.pb
 
 Edge Full Syntax
 ~~~~~~~~~~~~~~~~
