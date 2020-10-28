@@ -12,18 +12,14 @@ Edges are unidirectional links and they have **a source node** and **a target no
 * **a target node** requires the information that the source provides
 
 Each edge has two traits; source trait to listen to and target trait to pass it to.
-There are 4 different edge traits, 2 of them are used with source nodes and 2 with target nodes.
 
 Valid **source node edge traits** you can listen for are:
 
 * **output**: these outputs of the source execution will be passed to the paired execution
-* **metadata**: :doc:`metadata </executions/metadata/index>` of this node is used as parameter for another execution node *(in development)*
 
 Valid **target node edge traits** you can specify are:
 
 * **input**: this execution node requires files from the specified execution outputs
-* **files**: this deployment node requires files from the specified execution outputs
-* **parameter**: the specified parameter of this execution node comes from the metadata of another execution *(in development)*
 
 | For example:
 | ``[gather-node.output.images*, train-node.input.dataset-images]``
@@ -53,7 +49,7 @@ In practice, shorthand syntax looks something like this:
           - name: train-node
             type: execution
             step: train-model
-          - name: deploy
+          - name: deploy-node
             type: deployment
             deployment: MyDeployment
             endpoints:
@@ -61,7 +57,7 @@ In practice, shorthand syntax looks something like this:
         edges:
           - [gather-node.output.images*, train-node.input.dataset-images]
           - [gather-node.output.labels*, train-node.input.dataset-labels]
-          - [train-node.output.labels*, train-node.input.dataset-labels]
+          - [train-node.output.model*, deploy-node.input.predict-digit.model]
 
     - endpoint:
         name: predict-digit
@@ -96,3 +92,5 @@ syntax.
             target: train-node.input.dataset-images
           - source: gather-node.output.labels*
             target: train-node.input.dataset-labels
+          - source: train-node.output.model*
+            target: deploy-node.input.predict-digit.model

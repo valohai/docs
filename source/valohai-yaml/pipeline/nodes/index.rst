@@ -33,7 +33,7 @@ Note that separate nodes in a pipeline can implement the same step multiple time
             step: train-model
             override:
               image: tensorflow/tensorflow:1.13.1-py3
-          - name: deploy-node
+          - name: deploy
             type: deployment
             deployment: predict-digit
             endpoints:

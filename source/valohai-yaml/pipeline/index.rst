@@ -39,21 +39,21 @@ A simple pipeline could look something like this:
     - pipeline:
         name: simple-pipeline
         nodes:
-          - name: generate
+          - name: generate-node
             type: execution
             step: generate-dataset
-          - name: train
+          - name: train-node
             type: execution
             step: train-model
-          - name: deploy
+          - name: deploy-node
             type: deployment
             deployment: predict-digit
             endpoints:
               - predict-digit
         edges:
-          - [generate.output.images*, train.input.dataset-images]
-          - [generate.output.labels*, train.input.dataset-labels]
-          - [train-node.output.model*, deploy-node.files.predict-digit.model]
+          - [generate-node.output.images*, train-node.input.dataset-images]
+          - [generate-node.output.labels*, train-node.input.dataset-labels]
+          - [train-node.output.model*, deploy-node.input.predict-digit.model]
     - endpoint:
         name: predict-digit
         description: predict digits from image inputs ("file" parameter)
