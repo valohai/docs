@@ -20,14 +20,14 @@ Running Valohai Inside Your Own Cloud or On-premise Environment
 1. Installing Valohai
 #################################
 
-Valohai can be installed on both cloud (Microsoft Azure, AWS, GCP) and on-prem servers, or a combination of them.
+Valohai can be installed on AWS, Microsoft Azure, GCP, OpenStack or on-prem servers, or a combination of these.
 
 There are several ways to install Valohai. The most popular options are:
 
 1) **Valohai Private Workers** - In which Valohai manages a set of worker machines in your subscription. These machines fetch data from your private data stores and run executions (e.g. pre-processing, training, batch inference) on the workers. Therefore data stays inside your subscription environment.
     
     Valohai will host the app.valohai.com web application and will store execution logs, code snapshots and user management data on Valohai servers.
-2) **Valohai Full Private** - A fully custom installation of Valohai in your environment, and optionally inside your own private network. All Valohai services are hosted in your environment (AWS, GCP, Azure, on-prem) including the web app, core Valohai services, logs, snapshots etc.
+2) **Valohai Full Private** - A fully custom installation of Valohai in your environment, and optionally inside your own private network. All Valohai services are hosted in your environment (AWS, GCP, Azure, OpenStack, on-prem) including the web app, core Valohai services, logs, snapshots etc.
 
 👉 Read more about `setup options </setup/setup_options>`__.
 
