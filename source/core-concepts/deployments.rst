@@ -92,3 +92,49 @@ A field could be e.g. plain text, a JSON file or an image.
 
 Navigate inside a deployment, select the endpoint, define your request and press *Send*.
 You'll get the response from your inference service directly in your browser.
+
+Environment variables
+~~~~~~~~~~~~~~~~~~~~~~
+
+You have two options, when using environments in deployments:
+
+* Inherit the `project's environment variables and secrets </valohai-yaml/step-environment-variables/#project-environment-variables>`_.
+* Define environment variables for a particular deployment version
+
+**In the web app**
+
+* Navigate to *Project->Deployment->[your-deployment]->Create Version*
+* Check the *Inherit project's environment variables and secrets* to include the projects environment variables in this deployment version.
+* Define the key/value pairs in the UI
+
+.. thumbnail:: /_images/deploymentversion.png
+       :alt: Creating a deployment version in the web app
+
+**Using the Valohai APIs**
+
+You can also create a new deployment version using the Valohai APIs
+
+.. code:: json
+
+    {
+        "name": "mynewversion.0",
+        "enabled": true,
+        "deployment": "<deployment-id>",
+        "commit": "<commit-id>",
+        "endpoint_configurations": {
+            "predict-digit": {
+                "enabled": true,
+                "files": {
+                    "model": "<model-datum-id>"
+                }
+            }
+        },
+        "environment_variables": {
+            "myvariable": {
+                "value": "myvalue",
+                "secret": false
+            }
+        },
+        "inherit_environment_variables": true
+    }
+..
