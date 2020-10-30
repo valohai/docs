@@ -260,7 +260,7 @@ Next we'll need to create the pipeline definition. We'll need to define the step
                   - predict-digit
             edges:
             - [preprocess-node.output.*.npz, train-node.input.my-processed-mnist-dataset]
-            - [train-node.output.model*, deploy-node.input.predict-digit.model]
+            - [train-node.output.model*, deploy-node.file.predict-digit.model]
 
     ..
 

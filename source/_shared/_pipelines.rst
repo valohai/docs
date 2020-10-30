@@ -115,7 +115,7 @@ section, but here is a brief overview what the above example pipeline could look
         - [evaluate1-node.output.model*, find-best-model-node.input.models]
         - [evaluate2-node.output.model*, find-best-model-node.input.models]
         - [evaluate3-node.output.model*, find-best-model-node.input.models]
-        - [find-best-model-node.output.model*, deploy-node.input.predict-digit.model]
+        - [find-best-model-node.output.model*, deploy-node.file.predict-digit.model]
     
 ..
 
@@ -321,7 +321,7 @@ Below an example of the API call based on our sample above.
                     "source_key": "model.pb",
                     "source_type": "output",
                     "target_node": "deploy-node",
-                    "target_type": "input",
+                    "target_type": "file",
                     "target_key": "predict-digit.model"
                 }
             ],

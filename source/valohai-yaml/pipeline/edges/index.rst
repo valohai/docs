@@ -20,6 +20,7 @@ Valid **source node edge traits** you can listen for are:
 Valid **target node edge traits** you can specify are:
 
 * **input**: this execution node requires files from the specified execution outputs
+* **file** this deployment nodes requires files from a specified execution output
 
 | For example:
 | ``[gather-node.output.images*, train-node.input.dataset-images]``
@@ -57,7 +58,7 @@ In practice, shorthand syntax looks something like this:
         edges:
           - [gather-node.output.images*, train-node.input.dataset-images]
           - [gather-node.output.labels*, train-node.input.dataset-labels]
-          - [train-node.output.model*, deploy-node.input.predict-digit.model]
+          - [train-node.output.model*, deploy-node.file.predict-digit.model]
 
     - endpoint:
         name: predict-digit
@@ -93,4 +94,4 @@ syntax.
           - source: gather-node.output.labels*
             target: train-node.input.dataset-labels
           - source: train-node.output.model*
-            target: deploy-node.input.predict-digit.model
+            target: deploy-node.file.predict-digit.model

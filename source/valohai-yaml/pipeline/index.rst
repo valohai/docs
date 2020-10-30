@@ -53,7 +53,7 @@ A simple pipeline could look something like this:
         edges:
           - [generate-node.output.images*, train-node.input.dataset-images]
           - [generate-node.output.labels*, train-node.input.dataset-labels]
-          - [train-node.output.model*, deploy-node.input.predict-digit.model]
+          - [train-node.output.model*, deploy-node.file.predict-digit.model]
     - endpoint:
         name: predict-digit
         description: predict digits from image inputs ("file" parameter)
