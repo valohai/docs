@@ -21,35 +21,27 @@ For this tutorial you will need:
 2. Create the S3 bucket
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-.. thumbnail:: bucket-01.png
-   :alt: S3 home page
-
 Create an S3 bucket through AWS console (https://s3.console.aws.amazon.com/s3/home).
 
 2.1 Select bucket name and region
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. thumbnail:: bucket-02.png
+.. thumbnail:: bucket-01.png
    :alt: S3 bucket creation, page 1
 
 1. Throughout this guide, we will assume the name of the bucket is ``my-valohai-bucket``; *be sure to replace this with the actual name of your bucket* when copying in any example configuration!
 2. Create the bucket in the region you'll be running your training to minimize data transfer costs. If you don't have a preference, we recommend using Ireland (`eu-west-1`) as most of our computation resides there.
 
-2.2 Use default bucket properties
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2.2 Use default bucket properties & permissions
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. thumbnail:: bucket-03.png
+.. thumbnail:: bucket-02.png
    :alt: S3 bucket creation, page 2
 
-Default bucket properties are fine, no need to activate versioning or anything else.
+Default bucket properties are fine, but double check that your bucket is not public.
+You can of course edit the default settings based on your needs.
 
-2.3 Use default bucket permissions
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. thumbnail:: bucket-04.png
-   :alt: S3 bucket creation, page 3
-
-Default bucket permissions are fine, but double check that your bucket is not public.
+Create a new bucket.
 
 3. Configure CORS for the S3 bucket
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -57,33 +49,47 @@ Default bucket permissions are fine, but double check that your bucket is not pu
 If you wish to be able to upload files to the store using the app.valohai.com web UI, you will need to
 add a CORS policy document to the S3 bucket.
 
-.. thumbnail:: bucket-05.png
-   :alt: S3 bucket listing with the new bucket highlighted
+.. thumbnail:: bucket-03.png
+   :alt: S3 bucket with the CORS setting
 
 First you navigate to the AWS S3 bucket you created.
 
-.. thumbnail:: bucket-06.png
-   :alt: S3 bucket CORS setting location
+Then you go to the *Permissions* tab and scroll down to *Cross-origin resource sharing (CORS)*.
 
-Then you go to the "CORS settings" and add the rules below.
+Click *Edit* add the rules below.
 
-.. code-block:: xml
+.. code-block:: json
 
-   <?xml version="1.0" encoding="UTF-8"?>
-   <CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
-       <CORSRule>
-           <AllowedOrigin>*</AllowedOrigin>
-           <AllowedMethod>GET</AllowedMethod>
-           <MaxAgeSeconds>3000</MaxAgeSeconds>
-           <AllowedHeader>Authorization</AllowedHeader>
-       </CORSRule>
-       <CORSRule>
-           <AllowedOrigin>https://app.valohai.com</AllowedOrigin>
-           <AllowedMethod>POST</AllowedMethod>
-           <MaxAgeSeconds>3000</MaxAgeSeconds>
-           <AllowedHeader>Authorization</AllowedHeader>
-       </CORSRule>
-   </CORSConfiguration>
+   [
+      {
+         "AllowedHeaders": [
+               "Authorization"
+         ],
+         "AllowedMethods": [
+               "GET"
+         ],
+         "AllowedOrigins": [
+               "*"
+         ],
+         "ExposeHeaders": [],
+         "MaxAgeSeconds": 3000
+      },
+      {
+         "AllowedHeaders": [
+               "Authorization"
+         ],
+         "AllowedMethods": [
+               "POST"
+         ],
+         "AllowedOrigins": [
+               "https://app.valohai.com"
+         ],
+         "ExposeHeaders": [],
+         "MaxAgeSeconds": 3000
+      }
+   ]
+
+..
 
 Now your bucket allows POSTs for your user on `https://app.valohai.com` website
 
