@@ -138,3 +138,9 @@ You can also create a new deployment version using the Valohai APIs
         "inherit_environment_variables": true
     }
 ..
+
+.. seealso:: 
+
+    `Valohai API for Automation <https://docs.valohai.com/valohai-api/>`_
+
+..

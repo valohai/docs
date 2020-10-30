@@ -30,7 +30,7 @@ You can manage pipelines under the ``Pipelines`` tab on the web user interface i
 * Each node will start automatically when all of the requirements have been met.
 * Each node has a list of "edges" (explained below)
 
-**Edges** of the pipeline (the lines between nodes) are :doc:`output </executions/outputs/index>` files used as an input of an upcoming execution.
+**Edges** of the pipeline (the lines between nodes) are :doc:`output </executions/outputs/index>` files used as an input of an upcoming execution or deployment.
 
 Pipelines in YAML
 ###################
@@ -119,15 +119,15 @@ section, but here is a brief overview what the above example pipeline could look
     
 ..
 
-In the above example we have **three execution nodes** (i.e. preprocess, train, evaluate) and one **deployment node**.
+In the above example we have **several execution nodes** (i.e. preprocess, train, evaluate, find-best-model) and one **deployment node**.
 
 The edges definitions define how data flows between different nodes. For example: ``[preprocess-node.output.*x-images*, train.input.x-images]`` equals to
 
-* Complete the **preprocess**
-* Search the outputs of **preprocess** for all files that match ``*x-images*`` (e.g. dataset-x-images-2020.tar.gz)
-* Use those files as the input called ``x-images`` for the train node.
+* Complete the **preprocess-node**
+* Search the outputs of **preprocess-node** for all files that match ``*x-images*`` (e.g. dataset-x-images-2020.tar.gz)
+* Use those files as the input called ``x-images`` for the train node. This input "slot" is defined in the step definition of ``train``.
 
-Valohai will automatically store the files from **preprocess** and provide them for the **train**
+Valohai will automatically store the files from **preprocess-node** in your cloud storage and provide them as inputs for the **train-node**
 
 You can find the full `valohai.yaml` sample in our `GitHub repo for the TensorFlow example <https://github.com/valohai/tensorflow-example/blob/master/valohai.yaml>`_.
 

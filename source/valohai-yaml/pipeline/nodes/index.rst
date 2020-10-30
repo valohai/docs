@@ -41,4 +41,4 @@ Note that separate nodes in a pipeline can implement the same step multiple time
         edges:
           - [gather-node.output.images*, train-node.input.dataset-images]
           - [gather-node.output.labels*, train-node.input.dataset-labels]
-          - [train-node.output.model*, deploy-node.files.predict-digit.model]
+          - [train-node.output.model*, deploy-node.file.predict-digit.model]
