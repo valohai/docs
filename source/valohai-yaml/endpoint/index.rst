@@ -35,3 +35,9 @@ The ``VH_DEFAULT_PREFIX`` environment variable contains the **default** prefix t
 The WSGI/HTTP application will also receive a ``X-VH-Prefix`` HTTP header containing the root path the application is served under regardless of whether it's being served via the default version moniker or an alias; i.e. something like ``organization/project/deployment/versionalias/endpoint``.
 
 If you use path-based routing (as opposed to e.g. RPC style) in your deployment code, you may need to use this header or variable to properly route your requests. (Another option is to simply allow any prefix for all of your app's routes, e.g. ``^.*/foo/$``).
+
+.. seealso::
+
+    `Examples on how to handle Valohai deployment prefixes using common frameworks. <https://github.com/valohai/deployment-prefixes>`_
+    
+..

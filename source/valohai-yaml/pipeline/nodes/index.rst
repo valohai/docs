@@ -7,7 +7,7 @@
 ``pipeline.nodes`` is **an array of objects**, each object having the following properties:
 
 * ``name``: name of the node, used in edge definitions ``edges:``
-* ``type``: type of the node, currently only accepts "execution"
+* ``type``: type of the node, accepts "execution" or "deployment"
 * ``step``: name of the step to be executed, defined in the same file
 * ``override``: **(optional)** override values defined in the original :doc:`step </valohai-yaml/step>`
 
@@ -33,6 +33,12 @@ Note that separate nodes in a pipeline can implement the same step multiple time
             step: train-model
             override:
               image: tensorflow/tensorflow:1.13.1-py3
+          - name: deploy-node
+            type: deployment
+            deployment: predict-digit
+            endpoints:
+              - predict-digit
         edges:
           - [gather-node.output.images*, train-node.input.dataset-images]
           - [gather-node.output.labels*, train-node.input.dataset-labels]
+          - [train-node.output.model*, deploy-node.file.predict-digit.model]

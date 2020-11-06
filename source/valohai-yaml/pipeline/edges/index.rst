@@ -12,17 +12,15 @@ Edges are unidirectional links and they have **a source node** and **a target no
 * **a target node** requires the information that the source provides
 
 Each edge has two traits; source trait to listen to and target trait to pass it to.
-There are 4 different edge traits, 2 of them are used with source nodes and 2 with target nodes.
 
 Valid **source node edge traits** you can listen for are:
 
 * **output**: these outputs of the source execution will be passed to the paired execution
-* **metadata**: :doc:`metadata </executions/metadata/index>` of this node is used as parameter for another execution node *(in development)*
 
 Valid **target node edge traits** you can specify are:
 
 * **input**: this execution node requires files from the specified execution outputs
-* **parameter**: the specified parameter of this execution node comes from the metadata of another execution *(in development)*
+* **file** this deployment node requires files from a specified execution output
 
 | For example:
 | ``[gather-node.output.images*, train-node.input.dataset-images]``
@@ -52,9 +50,25 @@ In practice, shorthand syntax looks something like this:
           - name: train-node
             type: execution
             step: train-model
+          - name: deploy-node
+            type: deployment
+            deployment: MyDeployment
+            endpoints:
+              - predict-digit
         edges:
           - [gather-node.output.images*, train-node.input.dataset-images]
           - [gather-node.output.labels*, train-node.input.dataset-labels]
+          - [train-node.output.model*, deploy-node.file.predict-digit.model]
+
+    - endpoint:
+        name: predict-digit
+        description: predict digits from image inputs ("file" parameter)
+        image: tensorflow/tensorflow:1.13.1-py3
+        wsgi: predict_wsgi:predict_wsgi
+        files:
+          - name: model
+            description: Model output file from TensorFlow
+            path: model.pb
 
 Edge Full Syntax
 ~~~~~~~~~~~~~~~~
@@ -79,3 +93,5 @@ syntax.
             target: train-node.input.dataset-images
           - source: gather-node.output.labels*
             target: train-node.input.dataset-labels
+          - source: train-node.output.model*
+            target: deploy-node.file.predict-digit.model
