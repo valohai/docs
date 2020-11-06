@@ -96,15 +96,15 @@ You'll get the response from your inference service directly in your browser.
 Environment variables
 ~~~~~~~~~~~~~~~~~~~~~~
 
-You have two options, when using environments in deployments:
+You have two options, when using environment variables in deployments:
 
-* Inherit the `project's environment variables and secrets </valohai-yaml/step-environment-variables/#project-environment-variables>`_.
+* Inherit the `project's environment variables and secrets </valohai-yaml/step-environment-variables/#project-environment-variables>`_
 * Define environment variables for a particular deployment version
 
 **In the web app**
 
 * Navigate to *Project->Deployment->[your-deployment]->Create Version*
-* Check the *Inherit project's environment variables and secrets* to include the projects environment variables in this deployment version.
+* Check the *Inherit project's environment variables and secrets* to include the projects environment variables in this deployment version
 * Define the key/value pairs in the UI
 
 .. thumbnail:: /_images/deploymentversion.png

@@ -128,7 +128,7 @@ executions thus creating a directed graph. These pipeline graphs consist of node
 For example, consider the following sequence of data science operations:
 
 1. **preprocess** dataset on a memory-optimized machine
-2. **train** multiple machine learning models on GPU machines using the preprocessed database
+2. **train** multiple machine learning models on GPU machines using the preprocessed data
 3. **deploy** the train model to an HTTP endpoint
 
 This pipeline would have 3 or more **nodes**; at least one for each step mentioned above.

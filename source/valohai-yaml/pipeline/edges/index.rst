@@ -20,7 +20,7 @@ Valid **source node edge traits** you can listen for are:
 Valid **target node edge traits** you can specify are:
 
 * **input**: this execution node requires files from the specified execution outputs
-* **file** this deployment nodes requires files from a specified execution output
+* **file** this deployment node requires files from a specified execution output
 
 | For example:
 | ``[gather-node.output.images*, train-node.input.dataset-images]``

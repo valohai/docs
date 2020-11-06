@@ -47,7 +47,7 @@ A simple pipeline could look something like this:
             step: train-model
           - name: deploy-node
             type: deployment
-            deployment: predict-digit
+            deployment: mydeployment
             endpoints:
               - predict-digit
         edges:
