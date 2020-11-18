@@ -42,7 +42,10 @@ over parsing command-line arguments.
         "valohai.project-id": "0169386e-bf30-a59e-7561-fabc2bcf026c",
         "valohai.project-name": "illuminati/great-tensorflow",
         "valohai.task-counter": null,
-        "valohai.task-id": null
+        "valohai.task-id": null,
+        "valohai.pipeline-counter": null,
+        "valohai.pipeline-id": null,
+        "valohai.pipeline-node-id": null
     }
 
 ``/valohai/config/execution.yaml``
@@ -59,6 +62,9 @@ over parsing command-line arguments.
     valohai.project-name: illuminati/great-tensorflow
     valohai.task-counter: null
     valohai.task-id: null
+    valohai.pipeline-counter: null
+    valohai.pipeline-id: null
+    valohai.pipeline-node-id: null
 
 ``/valohai/config/inputs.json``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

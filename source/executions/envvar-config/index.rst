@@ -13,19 +13,31 @@ By default, Valohai defines the following environment variables:
 
 .. code-block:: bash
 
-    VH_CONFIG_DIR=/valohai/config           # info about the execution itself
-    VH_INPUTS_DIR=/valohai/inputs           # downloaded files will be saved
-    VH_OUTPUTS_DIR=/valohai/outputs         # save files to be uploaded
-    VH_REPOSITORY_DIR=/valohai/repository   # your git repository code,
-                                            # also the working directory
-
-    # the following will change between each execution
-    # it includes the execution UUID
+    # info about the execution itself
+    VH_CONFIG_DIR=/valohai/config
+    # downloaded files will be saved here
+    VH_INPUTS_DIR=/valohai/inputs
+    # save files to be uploaded here
+    VH_OUTPUTS_DIR=/valohai/outputs
+    # your git repository code,  also the working directory
+    VH_REPOSITORY_DIR=/valohai/repository
+    # the following will change between each execution; it includes the execution UUID
     VH_JOB_ID=exec-016eb6ec-50cb-0031-3f48-d556e47b1c78
+    # the execution ID
+    VH_EXECUTION_ID=016eb6ec-50cb-0031-3f48-d556e47b1c78
+    # the project ID
+    VH_PROJECT_ID=04a37c09-dbe1-4c01-b715-0a3223c50188
+    # the task ID (if any)
+    VH_TASK_ID=f9c97759-513e-44a1-9666-97cf198cde80
+    # the pipeline ID (if any)
+    VH_PIPELINE_ID=f403603b-ad11-4cc4-a90d-3118f51c8dcd
+    # the pipeline node ID (if any)
+    VH_PIPELINE_NODE_ID=972834e2-23b5-429a-9f6d-80b8c4a75c8a
+
 
 .. tip::
 
-    In your code, you can check if ``VH_JOB_ID`` exists to know if you are running on Valohai.
+    In your code, you can check if any of the above variables exists to know if you are running on Valohai.
 
 
 Special environment variables
