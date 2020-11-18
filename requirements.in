@@ -1,4 +1,4 @@
--e git+https://github.com/valohai/sphinx-click.git@escape-fix#egg=sphinx-click
+-e git+https://github.com/valohai/sphinx-click.git@escape-fix-250#egg=sphinx-click
 awscli
 sphinx
 sphinx-autobuild
