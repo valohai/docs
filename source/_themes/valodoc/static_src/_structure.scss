@@ -73,6 +73,20 @@ header {
   }
 }
 
+@media print
+{    
+    .sidebar, .sidebar *, .hideInPrint
+    {
+        display: none !important;
+    }
+
+    .full-width-content {
+      width: 100% !important;
+      max-width: 100% !important;
+      flex-basis: 100% !important;
+    }
+}
+
 ul {
   list-style-type: circle;
 }
