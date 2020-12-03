@@ -13,48 +13,37 @@ You can also
    :backlinks: none
    :local:
 
-Requirements
-~~~~~~~~~~~~~~~
-
-To use jupyter notebook extension, you will need:
-
-* Docker (https://docs.docker.com/install)
-
 Installation
 ~~~~~~~~~~~~~~~
 
-Pull the ``valohai/mnist_notebook`` docker image from the Docker Hub.
+Install Valohai's Jupyhai package to run notebooks from your local machine on Valohai.
 
 .. code-block:: bash
 
-  docker pull valohai/mnist_notebook
+  pip install jupyhai
 
-.. note::
-
-    If you want to use an image without examples in it, use ``valohai/jupyhai`` instead.
 
 Start the notebook server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Run the notebook server on local port 8888.
+Navigate to the folder where your notebooks are located and start notebooks.
 
 .. code-block:: none
 
-  docker run -p 8888:8888 valohai/mnist_notebook
+  jupyter notebook
 
-Open in browser: http://127.0.0.1:8888
+..
 
 .. container:: alert alert-warning
 
    **Run your own code and notebooks**
 
-   * Run ``docker pull valohai/jupyhai`` instead.
-   * Navigate to the folder where your files are
-   * Run ``docker run -p 8888:8888 -v "$PWD":/home/jovyan/work valohai/jupyhai``.
-      * This mounts your current working directory into the container.
-      * All the files in your current working directory will be available within the container
-      * All changes within the mounted folder will persist after shutting down
+   * This mounts your current working directory into the container.
+   * All the files in your current working directory will be available within the container
+   * All changes within the mounted folder will persist after shutting down
    * You can run install additional libraries to the environment by adding a new cell at the top of your notebook and running ``!pip install mylibrary``
+
+..
 
 Open a notebook
 ~~~~~~~~~~~~~~~~~~
@@ -62,7 +51,7 @@ Open a notebook
 .. thumbnail:: ../shared/createnotebook.gif
    :alt: Creating new notebook
 
-Create new notebook in the `/work` folder or choose `tf-mnist-valohai.ipynb`.
+Create new notebook folder or choose an existing one.
 
 Sign in
 ~~~~~~~~~~
@@ -71,6 +60,32 @@ Sign in
    :alt: Login to Valohai
 
 Press the Valohai button in the toolbar and login using your Valohai credentials.
+
+.. container:: alert alert-warning
+
+   You'll be automatically logged in, if you've already logged in `valohai-cli`.
+
+..
+
+
+Select the following:
+
+- **Project**: Valohai project where the executions will be version controlled
+- **Environment**: Environment type for the cloud executions (E.g. AWS p2.xlarge)
+- **Docker Image**: Docker image that provides the required libraries (E.g. TensorFlow)
+   - Use `valohai/pypermill` as the base when building your custom Docker image to be used as a part of Valohai Notebook executions.
+
+These are the same settings you would choose when using Valohai website, CLI or `valohai.yaml`.
+
+Once you are happy with your selections. Press save.
+
+Create an execution & watch the results
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. thumbnail:: ../shared/execution.gif
+   :alt: Running Valohai execution
+
+Press the *Run remote* button on the toolbar
 
 .. include:: ../shared/_notebookCore.rst
 

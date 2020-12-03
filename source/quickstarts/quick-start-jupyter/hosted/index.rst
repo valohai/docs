@@ -34,4 +34,32 @@ Open a notebook
 
 Create new notebook in the folder or choose `tf-mnist-valohai.ipynb`.
 
+Configure settings
+~~~~~~~~~~~~~~~~~~~~~
+
+.. thumbnail:: ../shared/settings.gif
+   :alt: Valohai execution settings
+
+Press the Valohai button in the toolbar and go to settings window.
+
+
+Select the following:
+
+- **Project**: Valohai project where the executions will be version controlled
+- **Environment**: Environment type for the cloud executions (E.g. AWS p2.xlarge)
+- **Docker Image**: Docker image that provides the required libraries (E.g. TensorFlow)
+   - Use `valohai/pypermill` as the base when building your custom Docker image to be used as a part of Valohai Notebook executions.
+
+These are the same settings you would choose when using Valohai website, CLI or `valohai.yaml`.
+
+Once you are happy with your selections. Press save.
+
+Create an execution & watch the results
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. thumbnail:: ../shared/execution_hosted.gif
+   :alt: Running Valohai execution
+
+Press the Valohai button in the toolbar and select *Create execution*.
+
 .. include:: ../shared/_notebookCore.rst

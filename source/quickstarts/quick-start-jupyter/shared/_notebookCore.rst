@@ -1,30 +1,8 @@
-Configure settings
-~~~~~~~~~~~~~~~~~~~~~
 
-.. thumbnail:: ../shared/settings.gif
-   :alt: Valohai execution settings
-
-Press the Valohai button in the toolbar and go to settings window.
-
-Select the following:
-
-- **Project**: Valohai project where the executions will be version controlled
-- **Environment**: Environment type for the cloud executions (E.g. AWS p2.xlarge)
-- **Docker Image**: Docker image that provides the required libraries (E.g. TensorFlow)
-
-These are the same settings you would choose when using Valohai website, CLI or `valohai.yaml`.
-
-Once you are happy with your selections. Press save.
-
-Create an execution
-~~~~~~~~~~~~~~~~~~~~~~
-
-.. thumbnail:: ../shared/execution.gif
-   :alt: Running Valohai execution
-
-Press the Valohai button in the toolbar and select *Create execution*.
 
 The gizmo for the new execution will appear to the right.
+
+You can click the `#1 > Notebook` button to download the finished notebook back to your local machine.
 
 .. container:: alert alert-warning
 
@@ -33,14 +11,6 @@ The gizmo for the new execution will appear to the right.
    Each of the colored gizmos on the right side of the page signify a single Valohai execution. You can click on any of the completed executions and select ``Notebook`` to launch the Notebook version that was used to run the execution.
 
 ..
-
-Watch the results
-~~~~~~~~~~~~~~~~~~~~
-
-.. thumbnail:: ../shared/download.gif
-   :alt: Get results back from Valohai
-
-You can click the `#1 > Notebook` button to download the finished notebook back to your local machine.
 
 Parameterize the notebook
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
