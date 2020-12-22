@@ -45,7 +45,8 @@ As you start running your experiments and trying different combinations, you'll 
 
         - step:
             name: Train MNIST model
-            image: tensorflow/tensorflow:2.0.1-gpu-py3
+            image: tensorflow/tensorflow:2.0.1-py3
+            environment: azure-westeurope-f2sv2
             command: python train.py {parameters}
             inputs:
               - name: my-mnist-dataset
@@ -61,6 +62,7 @@ As you start running your experiments and trying different combinations, you'll 
                 name: digit-predict
                 description: predict digits from image inputs
                 image: tensorflow/tensorflow:2.0.1-py3
+                environment: azure-westeurope-f2sv2
                 wsgi: predict:mypredictor
                 files:
                     - name: model
@@ -209,7 +211,8 @@ Split your code to multiple steps
                 
         - step:
             name: Train MNIST model
-            image: tensorflow/tensorflow:2.0.1-gpu-py3
+            image: tensorflow/tensorflow:2.0.1-py3
+            environment: azure-westeurope-f2sv2
             command: python train.py
             inputs:
                 - name: my-processed-mnist-dataset
@@ -220,6 +223,7 @@ Split your code to multiple steps
             name: digit-predict
             description: predict digits from image inputs
             image: tensorflow/tensorflow:2.0.1-py3
+            environment: azure-westeurope-f2sv2
             wsgi: predict:mypredictor
             files:
                 - name: model
