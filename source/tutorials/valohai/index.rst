@@ -40,7 +40,7 @@ This tutorial is aimed to help you get a fast-start with key Valohai features.
     * Login to valohai-cli with ``vh login``
     * Initialize a new Valohai project with ``vh init``
         * Choose ``python train.py`` as the command
-        * Write ``tensorflow/tensorflow:2.0.1-gpu-py3`` as the Docker image. The wizard will list some popular options that you can choose from but for the purpose of this tutorial we'll use the newest TensorFlow image from `Docker Hub <http://hub.docker.com>`_.
+        * Write ``tensorflow/tensorflow:2.0.1-py3`` as the Docker image. The wizard will list some popular options that you can choose from but for the purpose of this tutorial we'll use the newest TensorFlow image from `Docker Hub <http://hub.docker.com>`_.
     * Based on your answers the wizard generated a ``valohai.yaml`` configuration file. We'll get familiar with the file in this quickstart, but for now you can just approve it as is.
     * Next you'll need to connect your working directory and configuration file to a Valohai project. Select to create a new project with ``C`` and name it valohai-quickstart.
     * You can now login to `app.valohai.com <https://app.valohai.com>`_ where you'll see your new project.
@@ -230,7 +230,8 @@ Currently we download our training data directly through TensorFlow with ``mnist
 
         - step:
           name: Train MNIST model
-          image: tensorflow/tensorflow:2.0.1-gpu-py3
+          image: tensorflow/tensorflow:2.0.1-py3
+          environment: azure-westeurope-f2sv2
           command: python train.py
           inputs:
             - name: my-mnist-dataset
@@ -435,7 +436,8 @@ Configure the deployment endpoint in ``valohai.yaml``
 
             - step:
                 name: Train MNIST model
-                image: tensorflow/tensorflow:2.0.1-gpu-py3
+                image: tensorflow/tensorflow:2.0.1-py3
+                environment: azure-westeurope-f2sv2
                 command: python train.py {parameters}
                 inputs:
                     - name: my-mnist-dataset
@@ -444,6 +446,7 @@ Configure the deployment endpoint in ``valohai.yaml``
                 name: digit-predict
                 description: predict digits from image inputs
                 image: tensorflow/tensorflow:2.0.1-py3
+                environment: azure-westeurope-f2sv2
                 wsgi: predict:mypredictor
                 files:
                     - name: model

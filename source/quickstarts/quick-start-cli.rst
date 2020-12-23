@@ -35,8 +35,8 @@ After that, you can use ``vh login`` to login with the command-line client. Just
 Next we'll use the ``vh init`` wizard to create a new project on Valohai
 and bootstrap the ``valohai.yaml`` configuration file.
 
-The configuration will have a single **step** named 'Execute nvidia-smi' that
-simply prints the status of the server GPU using the ``nvidia-smi`` tool.
+The configuration will have a single **step** named 'Execute python --version' that
+simply prints the version of the Python using ``python --version`` command-line command.
 
 .. code-block:: bash
 
@@ -52,23 +52,23 @@ simply prints the status of the server GPU using the ``nvidia-smi`` tool.
    # Looks like you don't have a Valohai.yaml file. Let's create one!
    # We couldn't find script files in this directory.
    # Please enter the command you'd like to run in the Valohai platform.
-   nvidia-smi
+   python --version
 
-   # Is nvidia-smi correct? [y/N]:
+   # Is python --version correct? [y/N]:
    y
 
-   # Success! Got it! Using nvidia-smi as the command.
+   # Success! Got it! Using python --version as the command.
    # Now let's pick a Docker image to use with your code.
    # Here are some recommended choices, but feel free to type in one of your own.
-   # [  1] tensorflow/tensorflow:1.0.1-devel-gpu-py3
+   # [ 12] tensorflow/tensorflow:2.1.0-py3
    # ...
    # Choose a number or enter a Docker image name.:
-   1
+   12
 
-   # Is tensorflow/tensorflow:1.0.1-devel-gpu-py3 correct? [y/N]:
+   # Is tensorflow/tensorflow:2.1.0-py3 correct? [y/N]:
    y
 
-   # Success! Great! Using tensorflow/tensorflow:1.0.1-devel-gpu-py3.
+   # Success! Great! Using tensorflow/tensorflow:2.1.0-py3.
    # Here's a preview of the Valohai.yaml file I'm going to create.
    # ...
    # Write this to /Users/user/test-project/valohai.yaml? [y/N]:
@@ -121,21 +121,21 @@ or with the command-line client.
 .. code-block:: bash
 
    $ vh execution list
-   # # | Status   | Step               | Duration   | URL
-   # ----------------------------------------------------
-   # 1 | complete | Execute nvidia-smi |    0:00:01 | https://app.valohai.com/...
+   # # | Status   | Step                     | Duration   | URL
+   # -----------------------------------------------------------
+   # 1 | complete | Execute python --version |    0:00:01 | https://app.valohai.com/...
 
    $ vh execution info 1
    # key                  | value
    # ----------------------------
-   # command              | nvidia-smi
+   # command              | python --version
    # duration             | 1.2570652961731
    # environment name     | AWS eu-west-1 g2.2xlarge
-   # image                | tensorflow/tensorflow:1.0.1-devel-gpu-py3
-   # interpolated command | nvidia-smi
+   # image                | tensorflow/tensorflow:2.1.0-py3
+   # interpolated command | python --version
    # project name         | test-project
    # status               | complete
-   # step                 | Execute nvidia-smi
+   # step                 | Execute python --version
 
    $ vh execution logs 1
    # 09:00:37.21 Starting job on i-0b79f3d49308ef2a8, Peon 0.8 (f89f4423)
