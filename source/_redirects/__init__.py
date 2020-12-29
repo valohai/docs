@@ -46,7 +46,7 @@ redirects = {
     '/setup/on-premises/directory-mount.html': '/setup/on-premises/directory-mount/',
     '/setup/on-premises/using-on-premises-workers.html': '/setup/on-premises/using-on-premises-workers/',
     '/setup/on-premises/worker-management.html': '/setup/on-premises/worker-management/',
-    '/setup/setup_options.html': '/setup/setup_options/',
+    '/setup/setup-options.html': '/setup/setup-options/',
     '/core-concepts/notebooks.html': '/core-concepts/notebooks/',
     '/tutorials/apis/downloadMetadata.html': '/tutorials/apis/downloadMetadata/',
     '/tutorials/apis/fetchFailedExecutions.html': '/tutorials/apis/fetchFailedExecutions/',
