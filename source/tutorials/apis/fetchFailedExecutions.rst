@@ -6,7 +6,7 @@ Fetch failed executions with Valohai APIs
 
 .. include:: _useAPIsbasic.rst
 
-* You'll need the ID of a single project to fetch its executions. You can get it from the projects' setting page or `query for it using the Valohai APIs </tutorials/api/fetchProjects>`_ results.
+* You'll need the ID of a single project to fetch its executions. You can get it from the projects' setting page or `query for it using the Valohai APIs </tutorials/apis/fetchProjects>`_ results.
 * Create a new file ``fetchExecutions.py``
     .. code:: Python
 

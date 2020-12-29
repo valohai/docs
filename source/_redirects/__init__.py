@@ -41,6 +41,27 @@ redirects = {
     '/on-premises/directory-mount.html': '/on-premises/directory-mount/',
     '/on-premises/using-on-premises-workers.html': '/on-premises/using-on-premises-workers/',
     '/on-premises/worker-management.html': '/on-premises/worker-management/',
+    '/docker-images.html': '/docker-images/',
+    '/setup/environments.html': '/setup/environments/',
+    '/setup/on-premises/directory-mount.html': '/setup/on-premises/directory-mount/',
+    '/setup/on-premises/using-on-premises-workers.html': '/setup/on-premises/using-on-premises-workers/',
+    '/setup/on-premises/worker-management.html': '/setup/on-premises/worker-management/',
+    '/setup/setup_options.html': '/setup/setup_options/',
+    '/core-concepts/notebooks.html': '/core-concepts/notebooks/',
+    '/tutorials/apis/downloadMetadata.html': '/tutorials/apis/downloadMetadata/',
+    '/tutorials/apis/fetchFailedExecutions.html': '/tutorials/apis/fetchFailedExecutions/',
+    '/tutorials/apis/fetchProjects.html': '/tutorials/apis/fetchProjects/',
+    '/tutorials/apis/triggerExecFromGitHub.html': '/tutorials/apis/triggerExecFromGitHub/',
+    '/valohai-cli/reference/environments.html': '/valohai-cli/reference/environments/',
+    '/valohai-cli/reference/execution.html': '/valohai-cli/reference/execution/',
+    '/valohai-cli/reference/init.html': '/valohai-cli/reference/init/',
+    '/valohai-cli/reference/lint.html': '/valohai-cli/reference/lint/',
+    '/valohai-cli/reference/login.html': '/valohai-cli/reference/login',
+    '/valohai-cli/reference/logout.html': '/valohai-cli/reference/logout/',
+    '/valohai-cli/reference/parcel.html': '/valohai-cli/reference/parcel/',
+    '/valohai-cli/reference/project.html': '/valohai-cli/reference/project/',
+    '/valohai-cli/reference/update-check.html': '/valohai-cli/reference/update-check/',
+    '/valohai-yaml/example-tensorflow-mnist.html': '/valohai-yaml/example-tensorflow-mnist/'
 }
 
 TEMPLATE = """

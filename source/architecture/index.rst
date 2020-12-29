@@ -42,7 +42,7 @@ The private cloud worker installation is the most common installation method for
 .. raw:: html
 
   <div id="architecture-map-container" style="width:100%">
-      <img id="architecture" src="/_static/valohai-architecture-privateworker.png" usemap="#image-map" class="map" width="100%">
+      <img id="architecture" src="/_static/valohai-architecture-privateworker.png" alt="Private Worker Architecture" usemap="#image-map" class="map" width="100%">
 
       <map name="image-map" id="image-map">
         <area target="_blank" alt="External code repositories for the data science projects (e.g. GitHub, GitLab, BitBucket or other Git repository)." title="External code repositories for the data science projects (e.g. GitHub, GitLab, BitBucket or other Git repository)." href="https://docs.valohai.com/tutorials/code-repository/" coords="1456,31,1664,243" shape="rect">

@@ -13,7 +13,7 @@ This tutorial is aimed to help you get a fast-start with key Valohai features.
 
     * Make sure you have Python 3 and pip installed on your machine
     * You should have an active account on Valohai
-    * This tutorial is heavily relying on the valohai command line tools. Check out our `Jupyter Quickstart </quickstarts/quick-start-jupyter/index>`_ or `Tensorflow Quickstart </quickstarts/quick-start-tensorflow>`_ if cli isn't your thing.
+    * This tutorial is heavily relying on the valohai command line tools. Check out our `Jupyter Quickstart </quickstarts/quick-start-jupyter/>`_ or `Tensorflow Quickstart </quickstarts/quick-start-tensorflow>`_ if cli isn't your thing.
 
 ..
 
@@ -159,7 +159,7 @@ To output your model file, or any other file, you'll need to save it to the Valo
 
 .. seealso::
 
-    * `Connect your cloud storage </guides/private-azure-storage/>`_ to have files upload to your own storage.
+    * `Connect your cloud storage </tutorials/cloud-storage/>`_ to have files upload to your own storage.
     * `Live Outputs </executions/live-outputs/>`_ to upload files during the execution run, instead of waiting till the end.
 
 ..
