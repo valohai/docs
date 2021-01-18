@@ -324,7 +324,7 @@ You'll notice that the response contains information about all your projects. It
     * Find more API examples on our `tutorials page </tutorials/apis/>`_
 ..
 
-.. container:: alert alert-warning
+.. container:: alert alert-success
 
     **Note**
 
