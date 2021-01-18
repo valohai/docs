@@ -30,7 +30,44 @@ You can manage pipelines under the ``Pipelines`` tab on the web user interface i
 * Each node will start automatically when all of the requirements have been met.
 * Each node has a list of "edges" (explained below)
 
-**Edges** of the pipeline (the lines between nodes) are :doc:`output </executions/outputs/index>` files used as an input of an upcoming execution or deployment.
+**Edges** of the pipeline (the lines between nodes) are either
+    * :doc:`output </executions/outputs/index>` files used as an input of an upcoming execution or deployment.
+    * parameters that are passed from one node to another.
+
+
+Triggers
+############
+
+Valohai triggers allow you to launch a copy of an existing pipeline on a time-based trigger. For example, running a pipeline weekly on Mondays at 09:00.
+
+.. container:: alert alert-warning
+    
+    You need to run at least one successful pipeline before you can set a Trigger to run that pipeline on a schedule.
+
+..
+
+**Set a new pipeline trigger** 
+
+1. Go to project settings
+2. Navigate to the Triggers-tab
+3. Set your trigger title (e.g. *Weekly re-training*)
+4. Select *Scheduled (Cron)* as the condition, as click *Add*
+5. Open the condition and set the schedule you want. For example, Weekly on Mondays at 09:00
+6. On the *Actions* column select *Copy Pipeline* and click *Add*
+7. Open the action and select the *Source Pipeline* that you want to run
+8. Click on *Create trigger* 
+
+.. thumbnail:: /core-concepts/trigger.png
+   :alt: You configure triggers for pipelines
+..
+
+.. container:: alert alert-success
+
+    **Note:** You can get notifications for completed and/or failed pipelines by setting your notification preferences on the home page (`app.valohai.com`) 
+
+..
+
+
 
 Pipelines in YAML
 ###################
@@ -116,6 +153,7 @@ section, but here is a brief overview what the above example pipeline could look
         - [evaluate2-node.output.model*, find-best-model-node.input.models]
         - [evaluate3-node.output.model*, find-best-model-node.input.models]
         - [find-best-model-node.output.model*, deploy-node.file.predict-digit.model]
+        - [find-best-model-node.parameter.my_param, find-best-model-node.parameter.my_param]
     
 ..
 
