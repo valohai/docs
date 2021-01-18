@@ -13,6 +13,14 @@ which is Valohai's main interface on Azure-based installations.
    :backlinks: none
    :local:
 
+.. container:: alert alert-warning
+
+   Data Stores can be either configured on a project-level, or as shared Data Stores across your organization.
+   
+   This guide will show you how to configure a Data Store for a single project, but you can follow the same steps to configure a shared Data Store under your settings.
+
+..
+
 1. Requirements
 ~~~~~~~~~~~~~~~
 
