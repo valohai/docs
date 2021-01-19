@@ -165,7 +165,13 @@ Deployment monitoring
 
 Under each deployment version, you can view the deployment logs from your deployment endpoints.
 
-You can collect additional metrics from your deployments by printing JSON from your deployment endpoint. Valohai will collect these just like execution metrics, and allow you to chart them in both time series and histogram modes.
+You can collect additional metrics from your deployments by printing JSON from your deployment endpoint. Valohai will collect these metrics, and allow you to chart them in both time series and histogram modes.
+
+.. container:: alert alert-warning
+
+    Remember to wrap your metrics in ``vh_metadata`` when printing metadata for deployments.
+
+..
 
 .. code:: python
     
