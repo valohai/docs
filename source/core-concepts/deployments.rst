@@ -87,7 +87,7 @@ For example, version alias ``https://valohai.cloud/ruksi/mnist/americas/producti
 **Create a new alias:**
 
 1. Go to your project
-2. Navigate to the Deployment-tab
+2. Navigate to the Deployment tab
 3. Select an existing deployment
 4. Create alias
 5. Give your alias a name and point it to an existing target
