@@ -52,7 +52,7 @@ Bringing your existing projects to Valohai is straightforward.
         # Load input file from the inputs directory
         # Note that Valohai creates a new folder for each defined input (e.g. my-sample-input) and saves the individual files in that folder
         # e.g. /valohai/inputs/my-sample-input/mydata.csv
-        df = pd.read_csv(os.path.join(VH_INPUTS_DIR, "my-sample-input", "mydata.csv")
+        df = pd.read_csv(os.path.join(VH_INPUTS_DIR, "my-sample-input", "mydata.csv"))
     ..
 
 5. Read Valohai parameters in your code
