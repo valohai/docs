@@ -33,6 +33,7 @@ You can manage pipelines under the ``Pipelines`` tab on the web user interface i
 **Edges** of the pipeline (the lines between nodes) are either
     * :doc:`output </executions/outputs/index>` files used as an input of an upcoming execution or deployment.
     * parameters that are passed from one node to another.
+    * :doc:`input </executions/inputs/index>` files, to allow for copying inputs from one node to another and ensure multiple pipeline nodes use the same inputs.
 
 
 Triggers
