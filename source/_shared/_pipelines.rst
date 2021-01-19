@@ -49,7 +49,7 @@ Valohai triggers allow you to launch a copy of an existing pipeline on a time-ba
 **Set a new pipeline trigger** 
 
 1. Go to project settings
-2. Navigate to the Triggers-tab
+2. Navigate to the Triggers tab
 3. Set your trigger title (e.g. *Weekly re-training*)
 4. Select *Scheduled (Cron)* as the condition, as click *Add*
 5. Open the condition and set the schedule you want. For example, Weekly on Mondays at 09:00
