@@ -10,6 +10,8 @@ In this guide, we'll link a private Google Cloud Platform bucket to a Valohai pr
    :backlinks: none
    :local:
 
+.. include:: ../_shared-data-store-warning.rst
+
 1. Requirements
 ~~~~~~~~~~~~~~~
 

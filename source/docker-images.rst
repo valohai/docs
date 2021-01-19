@@ -28,7 +28,7 @@ Access Private Docker Repositories
 Organizations can use private repositories from Docker Hub, AWS, GCP or Azure for Valohai executions.
 
 1. Create registry credentials so Valohai workers can authenticate to your Docker registry
-    * You can find step-by-step instructions for different providers down below
+    * Find the `step-by-step instructions for different providers down below </docker-images/#create-registry-credentials-for-valohai>`_
 2. Login at `<https://app.valohai.com>`_
 3. Navigate to ``Hi, <name> (the top right menu) > Manage <organization>``
 4. Go to *Registries* under the organization controls

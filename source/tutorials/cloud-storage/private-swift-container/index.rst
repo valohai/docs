@@ -10,6 +10,8 @@ In this guide, we'll link a private `OpenStack Swift <https://wiki.openstack.org
    :backlinks: none
    :local:
 
+.. include:: ../_shared-data-store-warning.rst
+
 1. Requirements
 ~~~~~~~~~~~~~~~
 

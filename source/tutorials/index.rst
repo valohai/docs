@@ -16,6 +16,7 @@ Get started with Valohai
     valohai/advanced/index
     cloud-storage/index
     code-repository/index
+    migrating-existing-projects
 
 
 Other tutorials

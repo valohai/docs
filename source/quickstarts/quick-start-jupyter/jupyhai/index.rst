@@ -21,6 +21,7 @@ Install Valohai's Jupyhai package to run notebooks from your local machine on Va
 .. code-block:: bash
 
   pip install jupyhai
+  jupyhai install
 
 
 Start the notebook server

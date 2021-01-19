@@ -483,6 +483,7 @@ Configure the deployment endpoint in ``valohai.yaml``
     * `Deployments <https://docs.valohai.com/core-concepts/deployments/?highlight=deploy>`_ on Docs
     * `endpoint - from a WSGI definition <https://docs.valohai.com/valohai-yaml/endpoint/wsgi/>`_
     * `endpoint - from a command <https://docs.valohai.com/valohai-yaml/endpoint/server-command/>`_ if you'd like to use something else than WSGI.
+    * `Deployment monitoring </core-concepts/deployments/#deployment-monitoring>`_
 ..
 
 Congratulations! You now have trained your own model, learned to work with cloud storage, collect metadata and deploy your model for online inference! Phew! That was a lot - but you got through it.
@@ -495,5 +496,6 @@ Now is a good time to pat yourself on the back and celebrate 🎉🎉
 
     * `Creating parameters and running Tasks for hyperoptimization </tutorials/valohai/advanced/#use-tasks-for-hyperparameter-optimization>`_
     * `Create a sequence of operations with pipelines </tutorials/valohai/advanced/#tutorial-run-multiple-steps-through-a-pipeline>`_
+    * `Migrating existing Python projects to Valohai </tutorials/migrating_existing_projects>`_ 
 
 ..

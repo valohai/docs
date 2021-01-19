@@ -16,10 +16,12 @@ Each edge has two traits; source trait to listen to and target trait to pass it 
 Valid **source node edge traits** you can listen for are:
 
 * **output**: these outputs of the source execution will be passed to the paired execution
+* **parameter**: these parameters of the source execution will be passed to the paired execution
 
 Valid **target node edge traits** you can specify are:
 
 * **input**: this execution node requires files from the specified execution outputs
+* **parameter** this execution node requires parameters from the specified execution outputs
 * **file** this deployment node requires files from a specified execution output
 
 | For example:

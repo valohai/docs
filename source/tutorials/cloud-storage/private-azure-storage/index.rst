@@ -13,6 +13,8 @@ which is Valohai's main interface on Azure-based installations.
    :backlinks: none
    :local:
 
+.. include:: ../_shared-data-store-warning.rst
+
 1. Requirements
 ~~~~~~~~~~~~~~~
 

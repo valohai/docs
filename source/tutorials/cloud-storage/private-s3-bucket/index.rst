@@ -10,6 +10,8 @@ In this guide, we'll link a private AWS S3 bucket to a Valohai project.
    :backlinks: none
    :local:
 
+.. include:: ../_shared-data-store-warning.rst
+
 1. Requirements
 ~~~~~~~~~~~~~~~
 

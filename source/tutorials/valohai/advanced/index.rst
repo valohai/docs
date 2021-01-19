@@ -243,7 +243,7 @@ Define a pipeline
 Next we'll need to create the pipeline definition. We'll need to define the steps our pipeline has and how inputs/outputs flow through them.
 
 * **Nodes** - For our sample we'll create two execution nodes, and one deployment node
-* **Edges** - Defines how does data flow from one node to another. For example the output of preprocessing should be used as the input of our train step.
+* **Edges** - Defines how does data flow from one node to another. For example the output of preprocessing should be used as the input of our train step or you could pass a parameter value from one node to another.
 
 * In your ``valohai.yaml`` create a new pipeline as:
     .. code:: yaml
@@ -324,7 +324,7 @@ You'll notice that the response contains information about all your projects. It
     * Find more API examples on our `tutorials page </tutorials/apis/>`_
 ..
 
-.. container:: alert alert-warning
+.. container:: alert alert-success
 
     **Note**
 
