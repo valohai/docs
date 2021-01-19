@@ -58,16 +58,14 @@ Bringing your existing projects to Valohai is straightforward.
 5. Read Valohai parameters in your code
     .. code:: python
 
-        import argparse
+        import argparse        
 
-         def getArgs():
+        def parse_args():
             parser = argparse.ArgumentParser()
             parser.add_argument('--learningrate', type=float, default=0.001)
-            args = parser.parse_args()
+            return parser.parse_args()        
 
-            return args
-
-        args = getArgs()
+        args = parse_args()
 
     ..
 
