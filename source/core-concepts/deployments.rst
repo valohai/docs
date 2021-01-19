@@ -84,7 +84,7 @@ Aliases create canonical URLs for development so you can use Valohai to control 
 
 For example, version alias ``https://valohai.cloud/ruksi/mnist/americas/production/predict-digit`` could be used by applications utilizing your predictions and they don't need to change the URL when you a release new version.
 
-**Create a new alias:**
+**Create a new alias**
 
 1. Go to your project
 2. Navigate to the Deployment tab
