@@ -16,7 +16,7 @@ Migrating existing Python projects to Valohai
 
 Bringing your existing projects to Valohai is straightforward.
 
-1. Create a Project and `connect it to your Git-repository </tutorials/code-repository/>`_.
+1. Create a Project and `connect it to your Git repository </tutorials/code-repository/>`_
 2. Add a `valohai.yaml </valohai-yaml/>`_ configuration file to the root of your repository
 3. Inside the configuration file:
     * Define your `project's steps </valohai-yaml/step/>`_  (e.g. preprocess, train, evaluate, deploy)
