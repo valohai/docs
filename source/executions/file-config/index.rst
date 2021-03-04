@@ -39,13 +39,15 @@ over parsing command-line arguments.
         "valohai.execution-counter": 92,
         "valohai.execution-ctime": "2019-06-24T08:11:35.700911+00:00",
         "valohai.execution-id": "016b888a-5592-17d2-b3b0-c343f919e739",
+        "valohai.execution-qtime": "2019-06-24T08:11:35.700911+00:00",
+        "valohai.execution-step": "Train",
+        "valohai.pipeline-counter": null,
+        "valohai.pipeline-id": null,
+        "valohai.pipeline-node-id": null,
         "valohai.project-id": "0169386e-bf30-a59e-7561-fabc2bcf026c",
         "valohai.project-name": "illuminati/great-tensorflow",
         "valohai.task-counter": null,
-        "valohai.task-id": null,
-        "valohai.pipeline-counter": null,
-        "valohai.pipeline-id": null,
-        "valohai.pipeline-node-id": null
+        "valohai.task-id": null
     }
 
 ``/valohai/config/execution.yaml``
@@ -58,13 +60,15 @@ over parsing command-line arguments.
     valohai.execution-counter: 94
     valohai.execution-ctime: '2019-06-24T08:12:58.527200+00:00'
     valohai.execution-id: 016b888b-991c-43e0-6220-fd07d43aa440
+    valohai.execution-qtime: '2019-06-24T08:12:58.527200+00:00'
+    valohai.execution-step: Train
+    valohai.pipeline-counter: null
+    valohai.pipeline-id: null
+    valohai.pipeline-node-id: null
     valohai.project-id: 0169386e-bf30-a59e-7561-fabc2bcf026c
     valohai.project-name: illuminati/great-tensorflow
     valohai.task-counter: null
     valohai.task-id: null
-    valohai.pipeline-counter: null
-    valohai.pipeline-id: null
-    valohai.pipeline-node-id: null
 
 ``/valohai/config/inputs.json``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
