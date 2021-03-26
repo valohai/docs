@@ -63,3 +63,75 @@ For example:
 ..
 
 As changing of this hash doesn’t necessarily mean it’s undesired, Valohai only give you warnings in the user interface if an input file has changed since the last time you’ve used it as an input. The execution will have an descriptive warning message associated with it in both the execution listing and execution details page.
+
+
+Mounting a network file system (NFS)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**This feature is available for customers who are using their own cloud or on-premises workers.**
+
+Mounting gives you direct access to the network file system like `AWS EFS <https://aws.amazon.com/efs/>`_ or `GCP Filestore <https://cloud.google.com/filestore>`_, without having to download the files on your machine.
+
+Valohai does not version or keep track of the changes made inside the mounted file system. The files that are created, edited, or deleted will not be versioned as part of a Valohai execution.
+
+.. container:: alert alert-warning
+
+    **NFS mounts are not version controlled**
+
+    We strongly recommend using the Valohai inputs and outputs system, as they are versioned as a part of the execution. 
+    
+    You can mount a filesystem to access a large dataset, run preprocessing operations, and output the processed dataset into Valohai Outputs before it's used further in the pipeline. This way the snapshot of the preprocessed data will be versioned.
+
+.. 
+
+In your ``valohai.yaml`` specify a new mount:
+
+AWS Elastic File System
+-------------------------
+
+.. code:: yaml
+
+    - step:
+        name: mount-sample
+        image: python:3.7
+        command:
+            - ls -la /my-data
+        mounts:
+            - destination: /my-data
+              source: fs-1234aa62.efs.eu-west-1.amazonaws.com:/
+              type: nfs
+
+..
+
+GCP Filestore
+--------------
+
+.. code:: yaml
+
+    - step:
+        name: mount-sample
+        image: python:3.7
+        command:
+            - ls -la /my-data
+        mounts:
+            - destination: /my-data
+              source: <IP>:/mystore
+              type: nfs
+
+..
+
+On-premises worker
+--------------------
+
+.. code:: yaml
+
+    - step:
+        name: mount-sample
+        image: python:3.7
+        command:
+            - ls -la /my-data
+        mounts:
+            - destination: /my-data
+              source: /path/to/directory/outside/container
+
+..
