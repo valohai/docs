@@ -31,7 +31,9 @@ The above would generate the following command by default:
 
     python train.py --max-steps=300 --lr=0.001 arc 10xRELU-SoftMax
 
-.. note::
+.. admonition:: Default values
+    :class: tip
 
     When a value is undefined, the parameter will appear with its default value, except for the type ``flag``.
+    
     Flags will only ever appear, if they are defined with value set to true.

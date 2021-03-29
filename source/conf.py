@@ -21,22 +21,23 @@ extensions = [
     'sphinx_click.ext',
     'sphinx_sitemap',
     '_redirects',
-    'card',
-    'card_collection',
-    'vh_header',
-    'vh_row',
-    'vh_demo',
+    'sphinx_inline_tabs',
+    'sphinx_copybutton',
+    'sphinxcontrib.video'
 ]
-templates_path = [
-    '_templates',
-]
+
+templates_path = ["_templates"]
+html_additional_pages = {
+    #"index": "landing_page.html"
+}
 
 site_url = 'https://docs.valohai.com/'
 source_suffix = ['.rst', '.md']
 master_doc = 'index'
 project = 'Valohai'
-copyright = '2016 - 2020, Valohai'
+copyright = '2016 - 2021, Valohai'
 author = 'Valohai'
+docstitle = 'Valohai docs'
 version = ''
 release = ''
 language = None
@@ -44,16 +45,18 @@ exclude_patterns = [
     '_**',
     '**/_**',
 ]
-pygments_style = 'valodoc_pygments_style.Valodoc'
 todo_include_todos = True
 html_favicon = 'favicon.ico'
-html_theme = 'valodoc'
+html_logo = 'favicon.ico'
+html_theme = 'furo'
 html_theme_path = ['_themes']
 html_static_path = ['_static']
 html_theme_options = {
-    'analytics_id': 'UA-87958940-1',
-    'canonical_url': 'https://docs.valohai.com/',
-    'exclude_feedback': ['index', 'tutorials/index', 'quickstarts/index'],
+
+    "light_css_variables": {
+        "color-brand-primary": "#003B49",
+        "color-brand-content": "#003B49",
+    }
 }
 html_sidebars = {}
 html_extra_path = ['robots.txt']

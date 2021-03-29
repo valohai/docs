@@ -1,357 +1,73 @@
-:orphan: true
+:hide-toc:
 
 .. meta::
     :description: Documentation of Valohai machine learning platform guides through the core concepts of the platform and helps to get started in injecting best practices of machine learning development to everyday work.
-    :orphan: true
-
-.. vh_header::
-    :title: Hello stranger 👋 How can we help you today?
-
-..
-
-.. card_collection::
-    :bgcolor: lightblue
-    :name: quickstart-group
-    :title: Run sample code on Valohai
-    :subtitle: Import and run your quickstarts »
-    :subtitle_link: /quickstarts
-
-    .. card::
-        :image: /_logos/tensorflow-symbol.svg
-        :image_alt: TensorFlow
-        :box-style: center
-        :cta_link: /quickstarts/quick-start-tensorflow
-
-        Import and run our TensorFlow sample on Valohai.
-
-    .. card::
-        :image: /_logos/r.svg
-        :image_alt: R-language
-        :box-style: center
-        :cta_link: /quickstarts/quick-start-r
-
-        Import and run our R language sample on Valohai.
-
-    .. card::
-        :image: /_logos/jupyter.svg
-        :image_alt: Jupyter Notebooks
-        :box-style: center
-        :cta_link: /quickstarts/quick-start-jupyter/
-
-        Run experiments with Jupyter Notebooks and Valohai.
-
-    .. card::
-        :image: /_logos/keras-symbol.svg
-        :image_alt: Keras
-        :box-style: center
-        :cta_link: /quickstarts/quick-start-keras
-
-        Import our Keras sample & run a deep mind transform on it.
-
-
-.. card_collection::
-    :bgcolor: lightblue
-    :name: quickstart-group
-    :title: Get started with these tutorials
-    :subtitle: View all tutorials »
-    :subtitle_link: /tutorials
-    :class: no-padding
-
-    .. card::
-        :box-style: center
-        :image: /_images/start_icon.png
-        :image_alt: Start
-        :cta: 1. Learn the basics
-        :cta_link:  /tutorials/valohai
-        :button: red
-
-        * Running experiments
-        * Data inputs and outputs
-        * Metadata and visualizations
-        * Deployments and inference
-
-    ..
-
-    .. card::
-        :box-style: center
-        :image: /_images/team_icon.png
-        :image_alt: Team
-        :cta: 2. Onboard your team
-        :cta_link: /tutorials/valohai/onboard-team
-        :button: red
-
-        * Connect your cloud storage
-        * Configure environments
-        * Reproducability and lineage
-        * Manage organization settings
-
-    ..
-
-    .. card::
-        :box-style: center
-        :image: /_images/advanced_icon.png
-        :image_alt: Advanced
-        :cta: 3. Advanced topics
-        :cta_link: /tutorials/valohai/advanced
-        :button: red
-
-        * Hyperparameter optimization
-        * Automate a series of executions
-        * Do more with Valohai APIs
-
-    ..
-
-..
-
-
-.. card_collection::
-    :bgcolor: lightblue
-    :name: quickstart-group
-    :title: Read about key Valohai features
-    :subtitle: All core-concepts »
-    :subtitle_link: /core-concepts
-
     
-    .. card::
-        :box-style: center
-        :cta: Parameters »
-        :cta_link:  /core-concepts/parameters
-        :button: transparent
+Welcome 👋
+===========
 
-        Run hyperparameter optimization on Valohai.
+Valohai is all about taking away the not-so-fun parts of machine learning. Managing cloud instances and writing glue code is neither valuable nor fun. Valohai takes care of that for you.
 
-    .. card::
-        :box-style: center
-        :cta: Metadata »
-        :cta_link:  /executions/metadata
-        :button: transparent
+Get started with Valohai
+**************************
 
-        Track and visualize additional details about your executions.
+Install the Valohai tools and create a new project.
 
-    .. card::
-        :box-style: center
-        :cta: Pipelines »
-        :cta_link:  /core-concepts/pipelines
-        :button: transparent
+.. code-block:: bash
 
-        Create a sequence of executions with pipelines.
-    
-    .. card::
-        :box-style: center
-        :cta: Inference »
-        :cta_link: /core-concepts/deployments
-        :button: transparent
-
-        Publish HTTP endpoints for online inference.
-
-    .. card::
-        :box-style: center
-        :cta: APIs »
-        :cta_link: /valohai-api/
-        :button: transparent
-
-        Automate your workflow with APIs.
-
-
-.. card_collection::
-    :bgcolor: lightblue
-    :name: quickstart-group
-    :title: Watch our quickstart videos
-    :subtitle: All videos »
-    :subtitle_link: https://www.youtube.com/channel/UCiR8Fpv6jRNphaZ99PnIuFg
-
-    
-    .. card::
-        :box-style: center
-
-        .. raw:: html
-            
-            <iframe width="464" height="261" src="https://www.youtube.com/embed/videoseries?list=PLMskd1Tlj2waPPbCqNpjtp5oACbmbIyTS" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        ..
-    
-    .. card::
-        :box-style: left
-        :title: Bring your existing project to Valohai
-        :cta_link: https://www.youtube.com/watch?v=7YYDRLZnmeo&list=PLMskd1Tlj2waPPbCqNpjtp5oACbmbIyTS
-        :button: transparent
-
-        This video series is aimed to help you get a fast-start with key Valohai features.
-
-        #. `Configure your existing project to Valohai <https://youtu.be/7YYDRLZnmeo>`_
-        #. `Learn to output and save files to you cloud storage <https://youtu.be/j3TDVpFz_AM>`_
-        #. `Collect and visualize additional performance metrics <https://youtu.be/1mHQFx4a7qM>`_
-        #. `Track and reproduce past executions <https://youtu.be/MzoBhio27EQ>`_
-        #. `Download input data to your executions <https://youtu.be/MzoBhio27EQ>`_
-        #. `Split your project to multiple steps <https://youtu.be/XxZiRek9rpM>`_
-        #. `Create series of executions with pipelines <https://youtu.be/-skw0S8s52M>`_
-        #. `Deploy your model to an HTTP endpoint <https://youtu.be/Pz2GYfIVsuA>`_
-
-.. vh_demo::
-    :bg_color: lightblue
-    :title: Looking to try out Valohai?
+    pip install valohai-cli valohai-utils
+    vh login
+    vh project create
 
 ..
 
-.. card_collection::
-    :bgcolor: white
-    :name: faq-executions-data
-    :title: Frequently Asked Questions
-    :subtitle: View all »
-    :subtitle_link: /faq/
+Create a new file ``train.py``.
 
-    .. card::
-        :columns: 2
-        :title: Executions »
-        :title_link: /faq/#executions
+.. code-block:: python
 
-        **How do I install additional libraries, tools and other dependencies to my execution?** 📦
+    import valohai
 
-        * You can define multiple commands under the ``step.command`` section in your valohai.yaml configuration. For example:
-            
-            .. code:: yaml
+    print("Hello Valohai!")
 
-                - step:
-                    name: train model
-                    image: python:3.6
-                    command:
-                      - pip install mypackage1
-                      - python train.py
-
-            ..
-            
-            At some point, you might consider `building a custom Docker image </tutorials/build-docker-image/>`_ with all the dependencies and use it in your executions, instead of downloading and installing them at the start of every execution.
-         
-        **How do I change the default machine type for the executions in my project?**
-
-        * Each project has a setting for "Default environment" that you can set in the web UI, valohai.yaml config as ``environment:`` or with the ``-e`` flag  when running CLI.
-
-          You can set the default execution environment for each project in the projects' settings tab.
-
-
-        **Why do some of my executions get queued?** 🕓
-
-        * Each machine type on Valohai has a maximum scale setting that determines how many parallel executions can be ran per machine type. The setting can be configured from your organization's environment settings, if you're running Valohai workers in your own cloud environment or on-premises hardware.
-    ..
-
-    .. card::
-        :columns: 2
-        :title: Data »
-        :title_link: /faq/#data
-
-        **How do I access files from my cloud storage?** ☁️
-
-        * Once you've defined the Data Stores under your execution settings, you can easily access the files by defining them as inputs in your valohai.yaml configuration file as HTTP, HTTPS or cloud provider specific data stores (s3://, gs:// etc.)
-            
-            .. code:: yaml
-
-                - step:
-                    name: train model
-                    image: python:3.6
-                    command: python train.py
-                    inputs:
-                      - name: myimages
-                        default: s3://my-bucket/dataset/images/dataset.zip
-
-            ..
-
-            and then in your code ::
-
-                import os
-
-                # Get the path to the folder where Valohai inputs are
-                input_path = os.getenv('VH_INPUTS_DIR')
-                # Get the file path of the dataset you defined in the YAML
-                myimages_file_path = os.path.join(input_path, 'myimages/dataset.zip')
-        
-        **How do I change where my output files are saved?**
-
-        * In your projects settings you can define the 'Default upload store'. The options are a Valohai owned S3 storage and all the Data Stores you've configured for your project.
-
-        **Can I get a list of all executions that are using a certain model or data set?**
-        
-        * Of course. Inside your project you'll find a Data-tab with all of your outputted data files. You can click *trace* on any of these to visualize how that file was created and where has it been used.
-    ..
+    valohai.prepare(step='hello')
 
 ..
 
-.. card_collection::
-    :bgcolor: white
-    :name: faq-dev-general
-    :class: no-padding
+Generate a configuration file and run a new execution.
 
-    .. card::
-        :columns: 2
-        :title: Development »
-        :title_link: /faq/#development
+.. code-block:: bash
 
-        **Do I need to commit and push after each code change?** 
+    vh yaml step train.py
+    vh exec run hello --adhoc 
+..
 
-        * Nope, you can use ``--adhoc`` runs to create one-off executions from local files. These ad-hoc executions allow quick iteration with the platform when you are still developing your whole pipeline. ``vh exec run --adhoc --watch name-of-your-step``
+.. admonition:: See also
+    :class: seealso
 
-        **How do I use my own Docker images?** 🐳
-
-        * Once you've published your Docker image, you can point your steps and deployments to it in your ``valohai.yaml``. 
-        
-          If you've published the image in a private container registry remember to `add your credentials under your organization settings </docker-images/#access-private-docker-repositories>`_.
-
-        **How can I access files from my Git repository?** 
-
-        * The contents of your repository's commit are available at ``/valohai/repository``, which is also the default working directory during executions.
-
-    ..
-
-    .. card::
-        :columns: 2
-        :title: Metadata »
-        :title_link: /faq/#metadata
-
-        **How do I collect metadata from my executions?** 📈
-
-        * Valohai collects metadata from your executions by collecting JSON from the logs. Read our guide for details or try the Python sample below: ::
-
-            import json
-
-            def logMetadata(epoch, logs):
-                print()
-                print(json.dumps({
-                    'epoch': epoch,
-                    'loss': str(logs['loss']),
-                    'acc': str(logs['accuracy']),
-                }))
-
-        **What can I do with metadata?** 🔎
-        
-        * Metadata is used to track key metrics from your executions. This can be visualized in a Times Seris or a Scatter Plot graph in the executions Metadata tab.
-
-          Using the "Show Columns" button on the Execution view you can select to show each executions metadata in the table, for easy comparison.
-
-          You can also export metadata using the Valohai APIs. `Follow our API quickstart <https://docs.valohai.com/quickstarts/quick-start-api/>`_ and make a request to /executions/{id}/metadata/
-
-    ..
+    * :ref:`quickstart` to learn about data, parameters, collecting metrics, and comparing executions.
+    * :ref:`jupyter` add-on
+    * :ref:`valohai-cli-tutorial`
+    * :ref:`api`
 
 ..
 
-.. vh_row::
-    :bg_color: dark
-    :element_id: frontpageToC
-    :title: Full Table of Contents
 
-    .. toctree::
-        :maxdepth: 2
-        :titlesonly:
+How the documentation is organized
+***********************************
 
-        core-concepts/index
-        executions/index
-        valohai-yaml/index
-        valohai-cli/index
-        jupyter/index
-        valohai-api/index
-        docker-images
-        setup/index
-        architecture/index
-        faq/index
-        tutorials/index
+A high-level overview of how our docs are organized will help you know where to look for certain things:
 
-    ..
-    
-..
+* :ref:`tutorials` take you by the hand through a series of steps to run your project on Valohai. Start here if you’re new to Valohai.
+* :ref:`howto` include the steps involved in addressing key problems and use-cases. They are more advanced than tutorials and assume some knowledge of how Valohai works.
+* :ref:`topicguides` discuss key topics and concepts at a fairly high level and provide useful background information and explanation.
+* :ref:`referenceguides` contain technical reference for APIs and other aspects of Valohai. They describe how it works and how to use it but assume that you have a basic understanding of key concepts.
+
+.. toctree::
+    :maxdepth: 1
+    :hidden:
+
+    tutorials/index
+    howto/index
+    topic-guides/index
+    reference-guides/index
+
