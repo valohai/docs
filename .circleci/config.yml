@@ -20,5 +20,5 @@ jobs:
         - ~/.cache
     - run: node build-css.js
     - run: python check_descriptions.py
-    - run: make SPHINXOPTS=-W dirhtml
+    - run: make dirhtml
     - run: '[ "${CIRCLE_BRANCH}" == "master" ] && ./upload.sh || true'
