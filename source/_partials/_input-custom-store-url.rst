@@ -1,4 +1,4 @@
-You can connect :doc:`private data stores </core-concepts/data-stores>` to Valohai projects.
+You can connect :doc:`private data stores </topic-guides/core-concepts/data-stores>` to Valohai projects.
 
 If you connect a store that contains files that Valohai doesn't know about,
 like the files that you have uploaded there yourself, you can use the following syntax to refer to the files.

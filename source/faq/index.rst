@@ -1,3 +1,5 @@
+:orphan:
+
 .. meta::
     :description: Frequently asked questions about the Valohai machine learning platform. Contact us if you can’t find an answer to your question.
     :orphan:

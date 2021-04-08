@@ -1,3 +1,5 @@
+:orphan:
+
 .. meta::
     :description: Start using organization features on Valohai to enable collaboration and ensure compliance, tracability, and reproducability.
 
@@ -27,8 +29,8 @@ For each parameter you can set the value as a defined single value or use:
 
 .. seealso::
 
-    * `Read more about parameters </core-concepts/parameters/>`_
-    * `Define parameters in valohai.yaml </valohai-yaml/step-parameters/>`_
+    * `Read more about parameters </topic-guides/core-concepts/parameters/>`_
+    * `Define parameters in valohai.yaml </reference-guides/valohai-yaml/step-parameters/>`_
 
 ..
 
@@ -141,8 +143,8 @@ Training could have additional nodes if you are training in parallel but lets ke
 
 .. seealso::
 
-    * `Read more about pipelines </core-concepts/pipelines/>`_
-    * `Define pipelines in valohai.yaml </valohai-yaml/pipeline/>`_
+    * `Read more about pipelines </topic-guides/core-concepts/pipelines/>`_
+    * `Define pipelines in valohai.yaml </reference-guides/valohai-yaml/pipeline/>`_
 
 ..
 

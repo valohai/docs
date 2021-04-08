@@ -1,14 +1,25 @@
 .. meta::
-    :description: Learn how to use Valohai APIs to automate your workflow
+    :description: Everything in Valohai deep learning platform works through an API. Learn how to setup and optimize deep learning experiments with direct calls to our RESTful API.
 
-Valohai API samples to automate your workflow
-===============================================
+.. _api:
 
-.. container:: alert alert-success
+Valohai APIs
+################
 
-    Find the official Valohai API documentation at `app.valohai.com/api/docs <https://app.valohai.com/api/docs/>`_
+The Valohai APIs allow you to launch any operation on Valohai 
+
+.. admonition:: Valohai API Documentation
+    :class: seealso
+
+    API documentation is separate from the this documentation as it is automatically generated. 
+    
+    If you are logged in to Valohai, you can find the API and its documentation at:
+
+    * https://app.valohai.com/api/v0
+    * https://app.valohai.com/api/docs/
 
 ..
+
 
 Below you'll find some examples of using Valohai APIs. 
 

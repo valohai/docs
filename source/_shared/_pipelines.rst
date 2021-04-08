@@ -1,6 +1,8 @@
 .. seealso::
 
-    For the technical specifications, go to :doc:`valohai.yaml pipeline section </valohai-yaml/pipeline/index>`.
+    For the technical specifications, go to :doc:`valohai.yaml pipeline section </reference-guide/valohai-yaml/pipeline/index>`.
+
+.. _pipelines:
 
 **Pipeline** is a version controlled collection of executions some of which rely on the results of the previous
 executions thus creating a directed graph. These pipeline graphs consist of nodes and edges and we'll discuss
@@ -14,11 +16,11 @@ For example, consider the following sequence of data science operations:
 4. **find-best-model** compare the models to find the best model
 5. **deploy** a new version of your trained model for online inference
 
-Our pipeline would have 4 or more **nodes**; at least one for each :doc:`step </core-concepts/steps>` mentioned above and one for the deployment.
+Our pipeline would have 4 or more **nodes**; at least one for each :doc:`step </topic-guides/core-concepts/steps>` mentioned above and one for the deployment.
 
 In the example below we'll train 3 different models in parallel and compare them to find the best performing model that we can deploy to an HTTP endpoint.
 
-.. thumbnail:: /core-concepts/pipelines.png
+.. image:: /topic-guides/core-concepts/pipelines.png
    :alt: You configure data stores per project-basis on Valohai.
 ..
 
@@ -26,14 +28,15 @@ You can manage pipelines under the ``Pipelines`` tab on the web user interface i
 
 **Nodes** of the pipeline (the circles that receive something and/or produce something):
 
-* Nodes can be either :doc:`executions </core-concepts/executions>` or :doc:`deployments </core-concepts/deployments>`
+* Nodes can be either :doc:`executions </topic-guides/core-concepts/executions>` or :doc:`deployments </topic-guides/core-concepts/deployments>`
 * Each node will start automatically when all of the requirements have been met.
 * Each node has a list of "edges" (explained below)
 
-**Edges** of the pipeline (the lines between nodes) are either
-    * :doc:`output </executions/outputs/index>` files used as an input of an upcoming execution or deployment.
-    * parameters that are passed from one node to another.
-    * :doc:`input </executions/inputs/index>` files, to allow for copying inputs from one node to another and ensure multiple pipeline nodes use the same inputs.
+**Edges** of the pipeline (the lines between nodes) are either:
+
+* :doc:`output </topic-guides/executions/outputs/index>` files used as an input of an upcoming execution or deployment.
+* :doc:`parameters  </topic-guides/core-concepts/parameters>` that are passed from one node to another.
+* :doc:`input </topic-guides/executions/inputs/index>` files, to allow for copying inputs from one node to another and ensure multiple pipeline nodes use the same inputs.
 
 
 Triggers
@@ -58,22 +61,20 @@ Valohai triggers allow you to launch a copy of an existing pipeline on a time-ba
 7. Open the action and select the *Source Pipeline* that you want to run
 8. Click on *Create trigger* 
 
-.. thumbnail:: /core-concepts/trigger.png
+.. image:: /topic-guides/core-concepts/trigger.png
    :alt: You configure triggers for pipelines
 ..
 
-.. container:: alert alert-success
-
-    **Note:** You can get notifications for completed and/or failed pipelines by setting your notification preferences on the home page (`app.valohai.com`) 
+.. note::
+    
+    You can get notifications for completed and/or failed pipelines by setting your notification preferences on the home page (`app.valohai.com`) 
 
 ..
-
-
 
 Pipelines in YAML
 ###################
 
-Full documentation how to define pipelines can be found under :doc:`valohai.yaml pipeline </valohai-yaml/pipeline/index>`
+Full documentation how to define pipelines can be found under :doc:`valohai.yaml pipeline </reference-guides/valohai-yaml/pipeline/index>`
 section, but here is a brief overview what the above example pipeline could look like:
 
 .. code-block:: yaml

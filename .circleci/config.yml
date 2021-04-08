@@ -11,14 +11,13 @@ jobs:
     - restore_cache:
         keys:
         - v3-dep-{{ checksum "yarn.lock" }}-{{ checksum "requirements.txt" }}
-    - run: yarn install
+#    - run: yarn install
     - run: pip install -U pip wheel setuptools
     - run: pip install -r requirements.txt
     - save_cache:
         key: v3-dep-{{ checksum "yarn.lock" }}-{{ checksum "requirements.txt" }}
         paths:
         - ~/.cache
-    - run: node build-css.js
     - run: python check_descriptions.py
-    - run: make SPHINXOPTS=-W dirhtml
+    - run: make dirhtml
     - run: '[ "${CIRCLE_BRANCH}" == "master" ] && ./upload.sh || true'

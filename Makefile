@@ -19,11 +19,8 @@ help:
 %: Makefile check-descriptions
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
-css:
-	node build-css.js
-
 check-descriptions:
 	python check_descriptions.py
 
-watch: css check-descriptions
-	sphinx-autobuild -i '*.scss' -b dirhtml -p 44044 $(SPHINXOPTS) "$(SOURCEDIR)" "$(BUILDDIR)/html"
+watch: check-descriptions
+	sphinx-autobuild --port 44044 $(SPHINXOPTS) "$(SOURCEDIR)" "$(BUILDDIR)/html"
