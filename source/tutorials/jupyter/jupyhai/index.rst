@@ -130,7 +130,7 @@ Parameterizing a notebook happens through cell tags. Tags are a standard Jupyter
 
 .. code-block:: python
 
-   epoch_val: 6
+   epoch_val = 6
 
 ..
 
@@ -182,6 +182,7 @@ Update the ``myinput`` in your sample code to point to ``/valohai/inputs/mydata/
 
 .. code-block:: python
    :linenos: 
+   :emphasize-lines: 4
 
    import tensorflow as tf
    import numpy
