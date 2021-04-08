@@ -98,7 +98,7 @@ Edit your ``valohai.yaml`` and add the following endpoint definition.
         name: digits
         description: predict digits from image inputs
         image: tiangolo/uvicorn-gunicorn-fastapi:python3.7
-        server-command: uvicorn predict2:app --host 0.0.0.0 --port 8000
+        server-command: uvicorn predict:app --host 0.0.0.0 --port 8000
         files:
             - name: model
               description: Model output file from TensorFlow
@@ -168,6 +168,28 @@ Create a new deployment
     :autoplay:
     :width: 600
 
-.. seealso::
 
-    * :ref:`howto-deployment-test`
+Test endpoint
+-------------------------
+
+
+You can test your deployment endpoints directly from the Valohai web app. 
+
+* Login to `app.valohai.com <https://app.valohai.com>`_ 
+* Open your project
+* Click on your Project's **Deployment** tab
+* Select an existing deployment
+* Click on the **Test deployment** button
+* Select your endpoint from the drop-down
+* Add a new called ``image`` and change the type to ``File``
+* Choose an image from your machine (you can use the one below)
+* Click on the **Send request** button
+
+.. image:: /_images/7.png
+    :alt: Test image 7
+
+Depending on what your endpoint is expecting, you can send it either text or a file (e.g. image).
+
+.. video:: /_static/videos/test-deployment.mp4
+    :autoplay:
+    :width: 600

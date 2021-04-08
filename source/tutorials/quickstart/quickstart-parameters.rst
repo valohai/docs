@@ -31,10 +31,11 @@ Update **train.py** to parameterize ``epoch``.
 
 
 .. code-block:: python
-    :emphasize-lines: 2,3,4,5,6,7,8,35
+    :emphasize-lines: 3,4,5,6,7,8,9,41
     :linenos:
 
     import tensorflow as tf
+    import numpy
     import valohai
 
     my_parameters = {
@@ -75,7 +76,7 @@ Update **train.py** to parameterize ``epoch``.
 
     model.fit(x_train, y_train, epochs=valohai.parameters('epoch').value)
 
-    save_path = valohai.outputs('model').path('model.h5')
+    save_path = valohai.outputs().path('model.h5')
     model.save(save_path)
 
 ..

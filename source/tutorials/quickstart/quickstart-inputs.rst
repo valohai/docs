@@ -83,7 +83,7 @@ You should also remove the ``mnist.npz`` from your local machine.
 
     model.fit(x_train, y_train, epochs=valohai.parameters('epoch').value)
 
-    save_path = valohai.outputs('model').path('model.h5')
+    save_path = valohai.outputs().path('model.h5')
     model.save(save_path)
 
 ..

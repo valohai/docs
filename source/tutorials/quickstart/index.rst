@@ -21,7 +21,7 @@ The tutorial will start with simply getting a Python script to run on Valohai, a
         cd valohai-quickstart
 
         # Install Valohai tools
-        pip install valohai-cli valohai-utils
+        pip install --upgrade valohai-cli valohai-utils
 
         # Login with your Valohai username and password
         vh login
@@ -30,6 +30,10 @@ The tutorial will start with simply getting a Python script to run on Valohai, a
         vh project create
 
     ..
+
+    * Download `this mnist.npz <https://onboard-sample.s3-eu-west-1.amazonaws.com/tf-sample/mnist.npz>`_ file to the new directory
+
+..
 
 .. toctree::
     :titlesonly:
@@ -50,7 +54,7 @@ The tutorial will start with simply getting a Python script to run on Valohai, a
 A sample training script
 ------------------------
 
-* Download `this mnist.npz <https://onboard-sample.s3-eu-west-1.amazonaws.com/tf-sample/mnist.npz>`_ file to the new directory
+
 * Create a **new file** ``valohai-quickstart/train.py`` and paste the following example script:
 
 
@@ -58,6 +62,7 @@ A sample training script
     :linenos:
 
     import tensorflow as tf
+    import numpy
 
     mnist = tf.keras.datasets.mnist
 
@@ -106,9 +111,10 @@ Now we'll ``import valohai`` and define a new :ref:`step`.
 
 .. code-block:: python
     :linenos:
-    :emphasize-lines: 2,4
+    :emphasize-lines: 3,5
 
     import tensorflow as tf
+    import numpy
     import valohai
 
     valohai.prepare(step='train-model', image='tensorflow/tensorflow:2.4.1')
@@ -122,12 +128,12 @@ Finally we'll update the ``save_path`` to a Valohai output path.
 
 .. code-block:: python
     :linenos:
-    :lineno-start: 36
+    :lineno-start: 37
     :emphasize-lines: 3
     
     model.fit(x_train, y_train, epochs=5)
 
-    save_path = valohai.outputs('model').path('model.h5')
+    save_path = valohai.outputs().path('model.h5')
     model.save(save_path)
 
 ..
