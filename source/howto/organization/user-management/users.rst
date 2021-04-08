@@ -6,7 +6,7 @@ Add users to your organization
 ################################
 
 1. Login at `<https://app.valohai.com>`_
-2. Navigate to ``Hi, <name> (the top-right menu) > Manage <organization>``. 
+2. Navigate to ``Hi, <name> (the top-right menu) > Manage <organization>``.
 3. Go to **Invitations** under the organization controls
 4. Add a new email and send them an invite
 

@@ -11,13 +11,13 @@ Save files from executions
 This guide shows you how to save files from an execution.
 
 
-* Login to `app.valohai.com <https://app.valohai.com>`_ 
+* Login to `app.valohai.com <https://app.valohai.com>`_
 * Open your project
 * Click on your Project's **Data** tab
 * Click on the **Upload** tab
 * Choose the right data store from the dropdown on the right side
 * Select files from your local machine
-* Click **Upload** 
+* Click **Upload**
 
 Navigate back to the **Browse** tab when upload has completed. You should see your uploaded file on the top of the list.
 

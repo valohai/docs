@@ -25,7 +25,7 @@ You can create and manage deployments under ``Deployment`` tab on Valohai web us
     If you only need non-interactive batch predictions (taking a lot of samples as input and writing predictions into a file), you can just create a step to handle that, take your model/samples as inputs and write your predictions to ``/valohai/outputs``.
 
     Valohai Deployments are mainly required if one of the following is true:
-    
+
     * you want to get fast predictions on per-sample basis
     * you want to give prediction endpoint access to application that outside of your organization e.g. a customer that doesn't have a Valohai account
 

@@ -54,7 +54,7 @@ You can specify which environment to use with the ``-e`` parameter of the ``vh e
     **Changing the default environment for the project**
 
     The ``-e`` parameter will change the environment only for that single execution.
-    
+
     To change the default environment of the project go to the Valohai web application and change the Default Environment under Project->Settings->General.
 
 .. tip::

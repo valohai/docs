@@ -75,7 +75,7 @@ Mounting a network file system (NFS)
 
 .. admonition:: See also
     :class: seealso
-    
+
     This feature is available for customers who are using their own cloud or on-premises workers.
 
 ..
@@ -87,11 +87,11 @@ Valohai does not version or keep track of the changes made inside the mounted�
 .. admonition:: NFS mounts are not version controlled
     :class: warning
 
-    We strongly recommend using the Valohai inputs and outputs system, as they are versioned as a part of the execution. 
-    
+    We strongly recommend using the Valohai inputs and outputs system, as they are versioned as a part of the execution.
+
     You can mount a filesystem to access a large dataset, run preprocessing operations, and output the processed dataset into Valohai Outputs before it's used further in the pipeline. This way the snapshot of the preprocessed data will be versioned.
 
-.. 
+..
 
 In your ``valohai.yaml`` specify a new mount:
 

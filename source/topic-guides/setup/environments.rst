@@ -1,14 +1,14 @@
 .. meta::
     :description: Selecting compute instances for Valohai
-    
+
 *********************************************
 Selecting Compute Instances
 *********************************************
 
 Depending on what kind of models you are training you will need virtual machines with different CPU, memory, and GPU configurations. The list of environments available to your subscription can be updated at any time by our support team. You can enable/disable and change the (min/max) scaling rules of each environment type directly in your Valohai settings.
-  
-Note that Valohai will only be able to create these machine types, if they're available from the cloud provider in a selected region and your quota limit permits creating additional instances. 
-  
+
+Note that Valohai will only be able to create these machine types, if they're available from the cloud provider in a selected region and your quota limit permits creating additional instances.
+
 * `Amazon EC2 Instance Types <https://aws.amazon.com/ec2/instance-types/>`_
 * `Google Compute Engine Instance Type <https://cloud.google.com/compute/docs/machine-types>`_
 * `Azure Linux Virtual Machine Pricing <https://azure.microsoft.com/en-us/pricing/details/virtual-machines/linux/>`_

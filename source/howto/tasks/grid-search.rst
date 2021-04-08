@@ -21,9 +21,9 @@ When starting a task, instead of a single value for a single hyperparameter, you
 Create a Task
 ---------------
 
-* **Open your project** on `app.valohai.com <https://app.valohai.com>`_ 
+* **Open your project** on `app.valohai.com <https://app.valohai.com>`_
 * **Open the Task tab**
-* Click **Create task** 
+* Click **Create task**
 * Select the **Step** that contains parameters and you want to use for the Grid-search
 * Scroll down to **Parameters**
 * **Set the values** for each parameter
@@ -31,7 +31,7 @@ Create a Task
     * Input the values (for multiple input one value per line)
 * Click on **Create task**
 
-Valohai will launch a set of execution to run a Grid search. Each execution will have a unique combination of the parameters, within the ranges you provided. 
+Valohai will launch a set of execution to run a Grid search. Each execution will have a unique combination of the parameters, within the ranges you provided.
 
 Valohai manages the queueing of those executions, creating new virtual machines to run the executions and finally scaling the machines back down, when they're not needed anymore.
 
@@ -58,7 +58,7 @@ You can view metadata metrics and compare the a Task's executions just like with
 * On the Executions view of a Task, click on the **Show columns** button on the right side, above the table
 * **Select ``max_steps`` and ``learning_rate``** to show them in the table.
 * **Go to the metadata tab** to view metrics from all executions in that Task.
-* Select **step on X-axis** and **accuracy on Y-axis** 
+* Select **step on X-axis** and **accuracy on Y-axis**
 
 .. video:: /_static/videos/task_compare.mp4
     :autoplay:

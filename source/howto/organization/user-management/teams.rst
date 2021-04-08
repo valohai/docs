@@ -1,5 +1,5 @@
 .. meta::
-    :description: Create teams inside your organization 
+    :description: Create teams inside your organization
 
 
 Create teams in your organization

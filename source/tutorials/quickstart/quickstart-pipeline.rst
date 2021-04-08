@@ -16,11 +16,11 @@ Pipelines automate your machine learning operations on Valohai ecosystem. A pipe
 
 .. admonition:: A short recap on pipelines
     :class: tip
-    
+
     * A pipeline graphs consist of nodes and edges
     * You can launch pipelines manually, on a schedule or trigger them from your internal systems using the API
     * Read more about `pipelines </topic-guides/core-concept/pipelines>`_
-  
+
 ..
 
 .. admonition:: Prerequirements
@@ -30,7 +30,7 @@ Pipelines automate your machine learning operations on Valohai ecosystem. A pipe
 
 ..
 
-Define your pipeline in YAML 
+Define your pipeline in YAML
 ---------------------------------------------
 
 We'll continue from the previous part of this tutorial series by creating a pipeline that trains a new model and then publishes it as an endpoint.
@@ -113,7 +113,7 @@ You can now push a new version of ``valohai.yaml`` to your code repository.
 Launch a pipeline in Valohai
 --------------------------------
 
-* Login to `app.valohai.com <https://app.valohai.com>`_ 
+* Login to `app.valohai.com <https://app.valohai.com>`_
 * Open your project
 * Click on the **Fetch repository** button to fetch a new commit
 * Click on your project's **Pipelines** tab

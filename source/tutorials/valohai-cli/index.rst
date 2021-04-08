@@ -41,4 +41,4 @@ If you want to get an overview how the client works, check out :doc:`our Valohai
     quick-start-cli
     using-environments
     using-inputs
-    
+

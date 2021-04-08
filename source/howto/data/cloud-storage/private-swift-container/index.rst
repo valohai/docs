@@ -8,7 +8,7 @@ In this guide, we'll link a private `OpenStack Swift <https://wiki.openstack.org
 
 .. admonition:: Requirements
     :class: attention
- 
+
 
     * an OpenStack account you can administer
     * a Valohai project which to link the Swift container to

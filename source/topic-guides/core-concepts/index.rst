@@ -8,7 +8,7 @@ This section covers all the core concepts and terminology used in the Valohai ec
 
 .. toctree::
     :titlesonly:
-    
+
     projects
     configuration-file
     steps

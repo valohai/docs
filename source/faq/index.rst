@@ -21,7 +21,7 @@ General
 * **How do I install Valohai?**
     You can register for free on app.valohai.com to start using Valohai. Or reach out to our fantastic sales team to get Valohai installed in your environment.
 
-* **How much does Valohai cost?** 
+* **How much does Valohai cost?**
     Get started for free with model training and batch predictions. Check our Pro and Enterprise pricing for more features: https://valohai.com/pricing/
 
 * **How do I get my existing project to Valohai?**
@@ -41,12 +41,12 @@ Executions
 
 * **Why does it sometimes take so long to start a execution machine?**
     When you launch an execution Valohai will check if there are any available machines running. If there are available machines it will use one of them, otherwise it will request a new machine. The machine will be available as soon as it's ready at the cloud provider.
-    
+
     Sometimes your execution might be queued because all the available machines are being used and you'll have to wait for a machine to free up. You can adjust the min/max settings and the per user quota for each machine type, under your organization settings. If you set the minimum ammount of a machine type to 1 or above, we'll make sure there is always some machines running.
 
 * **How do I install additional libraries, tools and other dependencies to my execution?**
     You can define multiple commands under the ``step.command`` section in your valohai.yaml configuration. For example:
-    
+
         .. code:: yaml
 
             - step:
@@ -66,7 +66,7 @@ Executions
 
 * **How to define that my execution failed?**
     The individual command is considered to be successful if it returns error code 0. This is the standard convention for most programs and operating systems. Valohai will mark an execution as a failure if *the last* commands returns any other code than 0.
-    
+
     The best approach to communicate what went wrong is to use ``STDERR`` which is visible on the execution **Logs** tab.
 
 Development
@@ -75,7 +75,7 @@ Development
     Nope, you can use ``--adhoc`` runs to create one-off executions from local files. These ad-hoc executions allow quick iteration with the platform when you are still developing your whole pipeline. ``vh exec run --adhoc --watch name-of-your-step``
 
 * **Which languages and libraries are supported?**
-    Valohai is completely technology agnostic. You can develop in notebooks, scripts or shared git projects in any language or framework of your choice. 
+    Valohai is completely technology agnostic. You can develop in notebooks, scripts or shared git projects in any language or framework of your choice.
 
 * **How do I use my own Docker image?**
     Once you've published your Docker image, you can point your steps and deployments to it in your ``valohai.yaml``. If you've published the image in a private container registry remember to add your credentials under your organization settings
@@ -119,7 +119,7 @@ Deployments
 
 * **How can I deploy my models for inference?**
     Depending on your case, you might use Valohai executions or Valohai deployments for running your predictions.
-    
+
     * **Executions** are useful when you need to do batch predictions, don't need to have it serving results all the time and don't need to do the predictions on the spot. Maybe you run the predictions daily, weekly or monthly.
     * **Deployments** are great when you need a online prediction service that is constantly receiving requests from users and needs to do the prediction immediately.
         * You can easily deploy for online inference through Valohai. By default the deployments go on a Valohai owned Kubernetes cluster, but it can be configured to your own cluster as well. Follow our guide for detailed instructions.
@@ -129,7 +129,7 @@ Deployments
     You can place a ``requirements.txt`` in the root of your folder, and Valohai will run ``pip install`` on it to install any missing Python dependencies.
 
 * **What if I don't want to run a WSGI server?**
-    Valohai endpoints can be served as a WSGI server but we also support a more generic ``server-command`` with which you can run any HTTP server. Just make sure you either use a Docker image with the all the required dependencies installed on it, or install them by placing a ``requirements.txt`` in the root of your folder. 
+    Valohai endpoints can be served as a WSGI server but we also support a more generic ``server-command`` with which you can run any HTTP server. Just make sure you either use a Docker image with the all the required dependencies installed on it, or install them by placing a ``requirements.txt`` in the root of your folder.
 
 * **What if I want to authenticate users before?**
     Valohai doesn't provide built-in authentication functionality for deployments. If you want to expose your endpoint only to authenticated users consider writing the authentication logic inside your app, using an HTTP server that can do that for you or placing the cluster in a location where only authenticated users can access it.

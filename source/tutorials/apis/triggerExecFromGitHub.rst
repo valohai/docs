@@ -10,7 +10,7 @@ Trigger an execution after a push to a code repository
 
 ..
 
-GitHub Actions allow you to automate development workflows right from your repository. In this tutorial we'll use GitHub Actions to trigger a new execution on Valohai every time a new push is made to our repository. 
+GitHub Actions allow you to automate development workflows right from your repository. In this tutorial we'll use GitHub Actions to trigger a new execution on Valohai every time a new push is made to our repository.
 
 ➡️ Check out `GitHub Actions Documentation <https://help.github.com/en/actions>`_ to learn more about Actions.
 

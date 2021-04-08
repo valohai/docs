@@ -9,7 +9,7 @@ Upload data to Valohai
 
 .. warning::
 
-    Uploading files from the web app is designed for small files. Please check your cloud providers recommendation, if you're looking to upload large sets of data to your cloud storage. 
+    Uploading files from the web app is designed for small files. Please check your cloud providers recommendation, if you're looking to upload large sets of data to your cloud storage.
 
     * `Uploading objects to AWS S3 <https://docs.aws.amazon.com/AmazonS3/latest/userguide/upload-objects.html>`_
     * `Uploading objects to Google Cloud Storage <https://cloud.google.com/storage/docs/uploading-objects>`_
@@ -18,13 +18,13 @@ Upload data to Valohai
 This guide shows you how to upload files to your cloud storage directly from the Valohai web app.
 
 
-* Login to `app.valohai.com <https://app.valohai.com>`_ 
+* Login to `app.valohai.com <https://app.valohai.com>`_
 * Open your project
 * Click on your Project's **Data** tab
 * Click on the **Upload** tab
 * Choose the right data store from the dropdown on the right side
 * Select files from your local machine
-* Click **Upload** 
+* Click **Upload**
 
 Navigate back to the **Browse** tab when upload has completed. You should see your uploaded file on the top of the list.
 

@@ -21,7 +21,7 @@ In this tutorial, we will use Jupyhai, to run a Valohai execution from your loca
 
    .. code:: bash
 
-         pip install notebook 
+         pip install notebook
          pip install jupyhai
          jupyhai install
 
@@ -173,15 +173,15 @@ You can easily download data to your notebook either from a public location (HTT
 ..
 
 .. tip::
-   
-   Valohai will download the input data to ``/valohai/inputs/<name>/<file>``. 
+
+   Valohai will download the input data to ``/valohai/inputs/<name>/<file>``.
 
 ..
 
 Update the ``myinput`` in your sample code to point to ``/valohai/inputs/mydata/mnist.npz``
 
 .. code-block:: python
-   :linenos: 
+   :linenos:
 
    import tensorflow as tf
    import numpy
@@ -215,7 +215,7 @@ Finally you'd need to save the trained model as a Valohai output.
 View in Valohai
 -------------------
 
-* **Open your project** on `app.valohai.com <https://app.valohai.com>`_ 
+* **Open your project** on `app.valohai.com <https://app.valohai.com>`_
 * **Open the latest execution**
 * The details type contains information about the executions
 * The logs tab contains all logs from the execution

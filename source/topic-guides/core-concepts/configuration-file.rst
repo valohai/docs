@@ -35,7 +35,7 @@ We recommend using  `YAML anchors <https://yaml.org/spec/1.2/spec.html#id2765878
     - step:
         name: train-model
         image: tensorflow/tensorflow:2.0.1
-        command: 
+        command:
           - pip install valohai-utils numpy
           - python ./train.py {parameters}
         parameters:

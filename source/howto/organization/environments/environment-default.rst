@@ -11,7 +11,7 @@ Change your organizations default environment
 
 Organization administrators can set the default environment type for all new projects that are created under the organization.
 
-To change the organizations default environment: 
+To change the organizations default environment:
 
 * Login to `app.valohai.com <https://app.valohai.com>`_
 * Click on **Hi, <username>!** on the top right corner
