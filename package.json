@@ -6,8 +6,5 @@
   "author": "Valohai <hait@valohai.com>",
   "license": "UNLICENSED",
   "private": "true",
-  "dependencies": {
-    "cssnano": "^4.1.10",
-    "node-sass": "^4.12.0"
-  }
+  "dependencies": {}
 }
