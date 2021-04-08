@@ -182,6 +182,7 @@ Update the ``myinput`` in your sample code to point to ``/valohai/inputs/mydata/
 
 .. code-block:: python
    :linenos:
+   :emphasize-lines: 4
 
    import tensorflow as tf
    import numpy
