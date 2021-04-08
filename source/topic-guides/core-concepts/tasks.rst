@@ -9,7 +9,7 @@ Tasks
 The most common task is hyperparameter optimization where you execute a single step with various
 parameter configurations to find the most optimal neural network layout, weights and biases.
 
-Tasks can be created with any step that has parameters defined. 
+Tasks can be created with any step that has parameters defined.
 
 .. seealso::
 

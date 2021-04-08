@@ -17,7 +17,7 @@ You can deploy a trained model for online inference using Valohai deployments.
 
 .. admonition:: A short recap on online inference
     :class: tip
-    
+
     * A deployment gives you an URL that you can use for online inference.
     * You can deploy either to a shared Valohai cluster, or your own private cluster.
     * Use a web framework like `FastAPI <https://fastapi.tiangolo.com/>`_ to handle the HTTP requests in your app.
@@ -46,36 +46,36 @@ Create a new file **predict.py** for your online inference code. This script wil
     :emphasize-lines: 9,14,16,26,27,32
 
     from fastapi import FastAPI, File, UploadFile
-    
+
     import tensorflow as tf
-    
+
     import numpy
     from PIL import Image
     from io import BytesIO
-    
+
     app = FastAPI()
-    
+
     model_path = 'model.h5'
     loaded_model = None
-    
+
     @app.post("{full_path:path}")
     async def predict(image: UploadFile = File(...)):
         img = Image.open(BytesIO(await image.read()))
-    
+
         # Resize image and convert to grayscale
         img = img.resize((28, 28)).convert('L')
         img_array = numpy.array(img)
-    
+
         image_data = numpy.reshape(img_array, (1, 28, 28))
-    
+
         global loaded_model
         # Check if model is already loaded
-        if not loaded_model: 
+        if not loaded_model:
             loaded_model = tf.keras.models.load_model(model_path)
-    
+
         # Predict with the model
         prediction = loaded_model.predict_classes(image_data)
-    
+
         return f'Predicted_Digit: {prediction[0]}'
 
 .. admonition:: Test the app locally
@@ -115,7 +115,7 @@ Edit your ``valohai.yaml`` and add the following endpoint definition.
    * - ``image``
      - A Docker image that contains all (or most) of the packages needed to run the predict.py script
    * - ``server-command``
-     - What command should Valohai run to start your webserver? You can also define the endpoint from a `WSGI definition </reference-guides/valohai-yaml/endpoint/wsgi/>`_ 
+     - What command should Valohai run to start your webserver? You can also define the endpoint from a `WSGI definition </reference-guides/valohai-yaml/endpoint/wsgi/>`_
    * - ``files``
      - Define which files are needed to run the endpoint. The ``path`` defines where the file will be stored in your deployment. In our case, the model file will always be at ``model.h5``, regardless of what's the name of the uploaded file
 
@@ -135,7 +135,7 @@ You can add any packages that are not included in the Docker image to the ``requ
 
 Now either commit and push the changes to your code repository:
 
-.. code-block:: 
+.. code-block::
 
     git add valohai.yaml
     git add predict.py
@@ -149,17 +149,17 @@ Alternatively you can run ``vh exec run train-model --adhoc`` to send your local
 Create a new deployment
 ----------------------------
 
-* Login to `app.valohai.com <https://app.valohai.com>`_ 
+* Login to `app.valohai.com <https://app.valohai.com>`_
 * Open your project
 * Click on the **Fetch repository** button to fetch a new commit, if you've connected your project to a Git-repository
 * Click on your Project's **Deployment** tab
 * Click on the **Create deployment** button
 * Name your deployment **mydeployment** and select where the endpoint will be hosted (by default Valohai.Cloud)
-* Click on **Create deployment** 
+* Click on **Create deployment**
 * Choose the ``digits`` endpoint and select a ``model.h5`` you've trained previously.
-* Click on **Create version** 
+* Click on **Create version**
 
-.. note:: 
+.. note::
 
     When the status becomes ``100% - Available``, you can start using your endpoint.
 
@@ -173,9 +173,9 @@ Test endpoint
 -------------------------
 
 
-You can test your deployment endpoints directly from the Valohai web app. 
+You can test your deployment endpoints directly from the Valohai web app.
 
-* Login to `app.valohai.com <https://app.valohai.com>`_ 
+* Login to `app.valohai.com <https://app.valohai.com>`_
 * Open your project
 * Click on your Project's **Deployment** tab
 * Select an existing deployment

@@ -1,8 +1,8 @@
 .. meta::
-    :description: Manage available environments in your organization 
+    :description: Manage available environments in your organization
 
 
-Configure environments and scaling rules 
+Configure environments and scaling rules
 ##################################################
 
 .. seealso::
@@ -34,8 +34,8 @@ The available settings for each environment are:
     * - Min. Scale
       - What's the minimum number of machines that Valohai should keep running? By default, this is set to 0.
     * - Max. Scale
-      - What's the maximum number of machines that Valohai can launch in parallel? By default, this is set to 5. After a maximum number of machines has been launched, new executions will get queued and executed once a machine frees up from a previous execution. Your max scale might be limited by the quota you have available from your cloud provider. 
-    * - Per-User Quota 
+      - What's the maximum number of machines that Valohai can launch in parallel? By default, this is set to 5. After a maximum number of machines has been launched, new executions will get queued and executed once a machine frees up from a previous execution. Your max scale might be limited by the quota you have available from your cloud provider.
+    * - Per-User Quota
       - How many machines can one user run in parallel? The default value is 0 (no limit).
 
 ..

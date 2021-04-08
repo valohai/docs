@@ -7,9 +7,9 @@
 Test your deployment endpoint
 ######################################
 
-You can test your deployment endpoints directly from the Valohai web app. 
+You can test your deployment endpoints directly from the Valohai web app.
 
-* Login to `app.valohai.com <https://app.valohai.com>`_ 
+* Login to `app.valohai.com <https://app.valohai.com>`_
 * Open your project
 * Click on your Project's **Deployment** tab
 * Select an existing deployment

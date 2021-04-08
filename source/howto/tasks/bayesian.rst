@@ -54,9 +54,9 @@ Now set your prefered settings:
 
 .. admonition:: Use Bayesian optimization only when the execution count is over 30
     :class: warning
-    
+
     We recommend to use Bayesian optimization when creating more than 30 executions to ensure the optimiser has enough base values to use TPE effectively.
-    
+
     Valohai follows the Hyperopt recomendation and executes the first 20 runs with Random Search before using the TPE to ensure best results. If you have less than 20 runs, the executions will be based on Random Search instead of TPE optimisation.
 
 ..

@@ -10,7 +10,7 @@ You can easily connect all of your projects to either a public or a private Git-
 
 .. toctree::
     :titlesonly:
-  
+
     private-github-repository/index
     private-bitbucket-repository/index
     private-gitlab-repository/index

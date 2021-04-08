@@ -2,7 +2,7 @@
 
 .. meta::
     :description: Documentation of Valohai machine learning platform guides through the core concepts of the platform and helps to get started in injecting best practices of machine learning development to everyday work.
-    
+
 Welcome 👋
 ===========
 
@@ -38,7 +38,7 @@ Generate a configuration file and run a new execution.
 .. code-block:: bash
 
     vh yaml step train.py
-    vh exec run hello --adhoc 
+    vh exec run hello --adhoc
 ..
 
 .. admonition:: See also

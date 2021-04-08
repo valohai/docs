@@ -27,7 +27,7 @@ A data store is a secure place to keep your files; you download training data fr
 
 ..
 
-.. seealso:: 
+.. seealso::
 
     * `Downloading files to executions <https://docs.valohai.com/executions/inputs/>`_
     * `Uploading files from executions <https://docs.valohai.com/executions/outputs/?highlight=outputs>`_

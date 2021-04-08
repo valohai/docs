@@ -30,7 +30,7 @@ After that, you can use ``vh login`` to login with the command-line client. Just
 
 .. admonition:: Users running in a self-hosted Valohai
    :class: tip
-   
+
    Login to your self-hosted Valohai environment with ``vh login --host=https://valohai.myorg.com``
 
 Create new project and configuration file

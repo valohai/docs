@@ -1,6 +1,6 @@
 .. meta::
     :description: Setup instructions for Valohai
-    
+
 .. _setup:
 
 Running Valohai Inside Your Own Cloud or On-premise Environment
@@ -66,7 +66,7 @@ There are a couple of things to check in your environment, before you start with
     :class: tip
 
     We recommend providing ssh access to the Valohai engineering team to ensure a smooth and easy installation in your private environment.
-    
+
     This access can be revoked after the installation period or provided on a per-request basis after the installation.
 
 ..

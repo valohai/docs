@@ -19,8 +19,8 @@ Create registry credentials for Valohai
 
 
 .. tab:: Docker Hub
-    
-    
+
+
     1. Log in to hub.docker.com.
     2. Click on your username in the top right corner and select **Account Settings**.
     3. Select **Security > New Access Token**.

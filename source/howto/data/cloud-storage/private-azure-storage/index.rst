@@ -84,7 +84,7 @@ Data Stores can be either configured on the project level, or shared across your
 
    * Open a project in the web application
    * Click on the **Data Store** table
-   * Click on **Add Azure Blob Storage Store** 
+   * Click on **Add Azure Blob Storage Store**
    * Add in the details you created in the Azure portal
    * The store name is the name that will be visible on Valohai. Make it something you recognie (e.g. <organization-name>-store)
    * (optional) Click on **Make project default store** to make it the default upload location for this project.
@@ -99,4 +99,4 @@ Data Stores can be either configured on the project level, or shared across your
 
    for orgs
 
-   
+

@@ -67,11 +67,11 @@ A sample training script
     mnist = tf.keras.datasets.mnist
 
     mnist_file_path = 'mnist.npz'
-    
+
     with numpy.load(mnist_file_path, allow_pickle=True) as f:
         x_train, y_train = f['x_train'], f['y_train']
         x_test, y_test = f['x_test'], f['y_test']
-    
+
     x_train, x_test = x_train / 255.0, x_test / 255.0
 
     model = tf.keras.models.Sequential([
@@ -130,7 +130,7 @@ Finally we'll update the ``save_path`` to a Valohai output path.
     :linenos:
     :lineno-start: 37
     :emphasize-lines: 3
-    
+
     model.fit(x_train, y_train, epochs=5)
 
     save_path = valohai.outputs().path('model.h5')
@@ -158,14 +158,14 @@ Finally on the command line run:
 View in Valohai
 -------------------
 
-* **Open your project** on `app.valohai.com <https://app.valohai.com>`_ 
+* **Open your project** on `app.valohai.com <https://app.valohai.com>`_
 * **Open the latest execution**
 * The details type contains information about the executions
 * The logs tab contains all logs from the execution
 
 
 .. seealso::
-    
+
     * :doc:`Docker images</topic-guides/docker-images/>`
     * :ref:`yaml`
     * `vh project </reference-guides/valohai-cli/project/>`_

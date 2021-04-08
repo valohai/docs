@@ -39,7 +39,7 @@ Get an authentication token
     :class: warning
 
     The generated token is personal and it gives you access to Valohai features through your account. You might want to save the token in a configuration file or a database.
-    
+
     Don't include it directly in your version controlled files.
 
 .. figure:: /_images/get_auth_token.gif

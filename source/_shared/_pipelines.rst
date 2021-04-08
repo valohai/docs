@@ -45,12 +45,12 @@ Triggers
 Valohai triggers allow you to launch a copy of an existing pipeline on a time-based trigger. For example, running a pipeline weekly on Mondays at 09:00.
 
 .. container:: alert alert-warning
-    
+
     You need to run at least one successful pipeline before you can set a Trigger to run that pipeline on a schedule.
 
 ..
 
-**Set a new pipeline trigger** 
+**Set a new pipeline trigger**
 
 1. Go to project settings
 2. Navigate to the Triggers tab
@@ -59,15 +59,15 @@ Valohai triggers allow you to launch a copy of an existing pipeline on a time-ba
 5. Open the condition and set the schedule you want. For example, Weekly on Mondays at 09:00
 6. On the *Actions* column select *Copy Pipeline* and click *Add*
 7. Open the action and select the *Source Pipeline* that you want to run
-8. Click on *Create trigger* 
+8. Click on *Create trigger*
 
 .. image:: /topic-guides/core-concepts/trigger.png
    :alt: You configure triggers for pipelines
 ..
 
 .. note::
-    
-    You can get notifications for completed and/or failed pipelines by setting your notification preferences on the home page (`app.valohai.com`) 
+
+    You can get notifications for completed and/or failed pipelines by setting your notification preferences on the home page (`app.valohai.com`)
 
 ..
 
@@ -156,7 +156,7 @@ section, but here is a brief overview what the above example pipeline could look
         - [evaluate3-node.output.model*, find-best-model-node.input.models]
         - [find-best-model-node.output.model*, deploy-node.file.predict-digit.model]
         - [find-best-model-node.parameter.my_param, find-best-model-node.parameter.my_param]
-    
+
 ..
 
 In the above example we have **several execution nodes** (i.e. preprocess, train, evaluate, find-best-model) and one **deployment node**.
@@ -176,10 +176,10 @@ Create a pipeline through an API call
 
 You can also launch a pipeline using the Valohai APIs, without the need of going to the web app. The API works independently of the `valohai.yaml` definition.
 
-Below an example of the API call based on our sample above. 
+Below an example of the API call based on our sample above.
 
 .. code:: python
-    
+
     import requests
 
     resp = requests.request(

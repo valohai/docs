@@ -37,7 +37,7 @@ Valohai can be deployed in numerous ways; here are the four most common configur
 Components of a private cloud worker installation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The private cloud worker installation is the most common installation method for Valohai. 
+The private cloud worker installation is the most common installation method for Valohai.
 
 .. raw:: html
 
@@ -82,10 +82,10 @@ The private cloud worker installation is the most common installation method for
 
           // Place highlight on the coordinates of the selected area
           $('<div class="architecture-highlight"></div>')
-          .css({ 
+          .css({
               top: parseInt(coords[1]) + offset.top,
               left: parseInt(coords[0]) + offset.left,
-              height: parseInt(coords[3]) - parseInt(coords[1]), 
+              height: parseInt(coords[3]) - parseInt(coords[1]),
               width: parseInt(coords[2]) - parseInt(coords[0]) })
           .appendTo('#architecture-map-container')
           .show();

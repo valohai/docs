@@ -156,14 +156,14 @@ Let's continue our sample project from the `Valohai Quickstart </tutorials/valoh
 In our example we're not doing any heavy preprocessing work but we'll still use the MNIST example as the concept remains the same even for a larger project.
 
 1. `Split your code to multiple steps <#id3>`_
-2. `Define a pipeline <#id4>`_ 
+2. `Define a pipeline <#id4>`_
 
 .. container:: alert alert-warning
 
     **Requirements**
 
     You'll need to have your code in a code repository and connect the repository to a Valohai project to proceed. Pipelines do not work through ``--adhoc`` executions.
-   
+
     * `Connect to GitHub </tutorials/code-repository/private-github-repository>`_
     * `Connect to GitLab </tutorials/code-repository/private-gitlab-repository>`_
     * `Connect to BitBucket </tutorials/code-repository/private-bitbucket-repository>`_
@@ -210,7 +210,7 @@ Split your code to multiple steps
             - name: my-raw-mnist-dataset
                 #default: {datum://id}
                 default: https://storage.googleapis.com/tensorflow/tf-keras-datasets/mnist.npz
-                
+
         - step:
             name: Train MNIST model
             image: tensorflow/tensorflow:2.0.1-py3
@@ -320,7 +320,7 @@ Using the Valohai APIs is rather straightforward, you'll need to create an API t
 
 You'll notice that the response contains information about all your projects. It's as easy as this! Now you can do what ever you want with the results.
 
-.. seealso:: 
+.. seealso::
 
     * You can read more about our APIs at `Valohai API Docs <https://app.valohai.com/api/docs/>`_
     * Find more API examples on our `tutorials page </tutorials/apis/>`_

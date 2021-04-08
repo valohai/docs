@@ -18,7 +18,7 @@ Fetch failed executions with Valohai APIs
       headers = {'Authorization': 'Token %s' % auth_token}
 
       # Send a request (with the authentication headers) to fetch all executions in a project
-      # You can get the project ID for example 
+      # You can get the project ID for example
       resp = requests.get('https://app.valohai.com/api/v0/executions/?project={project_id}', headers=headers)
 
       # To fetch all failed executions you could run

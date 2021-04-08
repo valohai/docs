@@ -17,7 +17,7 @@ Define inputs to easily download data from a public address or your private clou
 
 .. admonition:: A short recap on inputs
     :class: tip
-    
+
     * Valohai inputs can be from a public location (HTTP/HTTPS) or from your private cloud storage (AWS S3, Azure Storage, GCP Cloud Storage, OpenStack Swift)
     * The input values you define in your code are default values. You can replace any defined inputs file(s) when creating an execution from the UI, command-line or API.
     * All inputs are downloaded and available during an execution to ``/valohai/inputs/<input-name>/``
@@ -105,19 +105,19 @@ Finally run a new Valohai execution.
 Rerun an execution with different input data
 -------------------------------------------------------
 
-* **Open your project** on `app.valohai.com <https://app.valohai.com>`_ 
+* **Open your project** on `app.valohai.com <https://app.valohai.com>`_
 * **Open the latest execution**
-* Click **Copy** 
+* Click **Copy**
 * Scroll down to the **Inputs** section and remove the current input.
 * You can now either pass in a new URI or select an input from the Data list (for example, if you've uploaded a file)
-* Click **Create execution** 
+* Click **Create execution**
 
 
 .. video:: /_static/videos/execution_inputs.mp4
     :autoplay:
     :width: 600
 
-.. tip:: 
+.. tip::
 
     You can also run a new execution with different input value from the command line:
 

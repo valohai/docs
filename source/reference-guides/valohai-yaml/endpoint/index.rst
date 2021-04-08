@@ -39,5 +39,5 @@ If you use path-based routing (as opposed to e.g. RPC style) in your deployment 
 .. seealso::
 
     `Examples on how to handle Valohai deployment prefixes using common frameworks. <https://github.com/valohai/deployment-prefixes>`_
-    
+
 ..

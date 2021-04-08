@@ -1,6 +1,6 @@
 .. meta::
     :description: Comparison between a Private Worker and Full Private installation
-    
+
 
 Choosing the Right Valohai Environment
 ########################################

@@ -19,7 +19,7 @@ Download metadata of a single execution
       headers = {'Authorization': 'Token %s' % auth_token}
 
       # Send a request (with the authentication headers) to fetch all executions in a project
-      # You can get the project ID for example 
+      # You can get the project ID for example
       resp = requests.get('https://app.valohai.com/api/v0/executions/{execution_id}/metadata/', headers=headers)
 
       resp.raise_for_status()

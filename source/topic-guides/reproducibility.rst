@@ -2,7 +2,7 @@
     :description: Valohai automatically keeps track of key information about your executions, making it easier to reproduce your experiments in the future and understand how they work.
 
 
-Reproducibility and lineage 
+Reproducibility and lineage
 #############################
 
 Valohai automatically keeps track of key information about your executions, making it easier to reproduce your experiments in the future and understand how they work.

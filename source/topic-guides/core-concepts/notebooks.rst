@@ -16,4 +16,4 @@ Jupyhai is a Jupyter notebook extension developed and maintained by Valohai. It 
 
 .. seealso::
 
-    * Tutorial on :ref:`jupyter` with Valohai  
+    * Tutorial on :ref:`jupyter` with Valohai

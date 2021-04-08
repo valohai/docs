@@ -16,11 +16,11 @@ Defining Valohai parameters will allow you to easily rerun your executions and e
 
 .. admonition:: A short recap on parameters
     :class: tip
-    
+
     * A Valohai parameter can be a type of a string, int, float or a flag (=bool).
     * The parameter values you define in your code are default values. These can be changed when creating an execution from the UI, command-line or API.
     * Parameters get passed to each Valohai execution as command-line arguments (e.g. ``train.py --epoch=5``)
-  
+
 ..
 
 Update **train.py** to parameterize ``epoch``.
@@ -47,11 +47,11 @@ Update **train.py** to parameterize ``epoch``.
     mnist = tf.keras.datasets.mnist
 
     mnist_file_path = 'mnist.npz'
-    
+
     with numpy.load(mnist_file_path, allow_pickle=True) as f:
         x_train, y_train = f['x_train'], f['y_train']
         x_test, y_test = f['x_test'], f['y_test']
-    
+
     x_train, x_test = x_train / 255.0, x_test / 255.0
 
     model = tf.keras.models.Sequential([
@@ -98,19 +98,19 @@ Finally run a new Valohai execution.
 Rerun an execution with different parameter values
 -------------------------------------------------------
 
-* **Open your project** on `app.valohai.com <https://app.valohai.com>`_ 
+* **Open your project** on `app.valohai.com <https://app.valohai.com>`_
 * **Open the latest execution**
-* Click **Copy** 
+* Click **Copy**
 * Scroll down to the **Parameters** section
 * Change the value of **epoch**
-* Click **Create execution** 
+* Click **Create execution**
 
 
 .. video:: /_static/videos/execution_parameters.mp4
     :autoplay:
     :width: 600
 
-.. tip:: 
+.. tip::
 
     You can also run a new execution with different parameter values from the command line:
 

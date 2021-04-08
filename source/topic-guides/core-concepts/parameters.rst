@@ -23,7 +23,7 @@ record something that is defined or changes during runtime, use :doc:`Valohai me
     Valohai supports numerous workloads in addition to normal machine learning training such as data generation
     and feature extraction. Check out :doc:`What is Valohai? page </topic-guides/core-concepts/index>` to learn
     what else could be achieved.
-    
+
     This is the reason why we don't always use the training-centric *hyperparameter* term.
 
 
@@ -83,7 +83,7 @@ You can then parse the command-line arguments in your script.
    Python users can use the valohai-utils helper library to define and parse parameters.
 
    .. code:: python
-      
+
       import valohai
 
       my_parameters = {
@@ -91,9 +91,9 @@ You can then parse the command-line arguments in your script.
          'learning_rate': 0.001,
          'dropout': 0.9,
       }
-      
+
       valohai.prepare(step="helloworld", default_parameters=my_parameters)
-      
+
       print("Max steps: %s" % valohai.parameters('max_steps').value)
 
    ..
