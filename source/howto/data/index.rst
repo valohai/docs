@@ -15,5 +15,6 @@ Work with data
     cloud-storage/index
     save-files
     upload-data
+    mount-nfs
 
 
