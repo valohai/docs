@@ -1,6 +1,9 @@
 .. meta::
     :description: What are Valohai tasks? Launch hundreds of distributed hyperparameter optimizations on the cloud.
 
+
+.. _tasks:
+
 Tasks
 =====
 

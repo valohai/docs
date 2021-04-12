@@ -23,7 +23,7 @@ How-to guides include the steps involved in addressing key problems and use-case
     executions/complex-visualizations
     tasks/index
     docker-private-registry
-    pipelines/triggers
+    pipelines/index
     organization/index
     deployments/deployments-test
 ..
