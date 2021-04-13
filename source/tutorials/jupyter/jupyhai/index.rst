@@ -27,6 +27,8 @@ In this tutorial, we will use Jupyhai, to run a Valohai execution from your loca
 
    ..
 
+
+
 Start notebook
 ----------------
 
@@ -34,7 +36,7 @@ Create a new folder ``valohai-notebook`` on your desktop and launch Jupyter in t
 
 .. code-block:: none
 
-   mkdir valohai-Notebook
+   mkdir valohai-notebook
    cd valohai-notebook
    jupyter notebook
 
@@ -74,6 +76,11 @@ Create a new folder ``valohai-notebook`` on your desktop and launch Jupyter in t
 
 MNIST sample
 -------------
+
+.. admonition:: Prerequirements
+   :class: attention
+
+   `Download the sample MNIST dataset <https://onboard-sample.s3-eu-west-1.amazonaws.com/tf-sample/mnist.npz>`_ and place it in the same folder as the notebook.
 
 Replace your ``print('Hello Valohai Notebooks!')`` with the sample code from below.
 
