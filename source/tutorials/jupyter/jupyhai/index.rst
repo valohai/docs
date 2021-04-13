@@ -21,9 +21,10 @@ In this tutorial, we will use Jupyhai, to run a Valohai execution from your loca
 
    .. code:: bash
 
-         pip install notebook
-         pip install jupyhai
-         jupyhai install
+      pip install --upgrade pip
+      pip install notebook
+      pip install jupyhai
+      jupyhai install
 
    ..
 
