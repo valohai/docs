@@ -21,7 +21,7 @@ Here are more in-depth example repositories which have ``valohai.yaml`` defined:
 * https://github.com/valohai/mxnet-example
 * https://github.com/valohai/integration-example
 
-We also have `quick start tutorials </howto/example-project/index>`_ to get you started right away.
+We also have `quick start tutorials </howto/example-project/>`_ to get you started right away.
 
 
 .. admonition:: See also

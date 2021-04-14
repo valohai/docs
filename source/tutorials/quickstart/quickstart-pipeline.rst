@@ -19,7 +19,7 @@ Pipelines automate your machine learning operations on Valohai ecosystem. A pipe
 
     * A pipeline graphs consist of nodes and edges
     * You can launch pipelines manually, on a schedule or trigger them from your internal systems using the API
-    * Read more about `pipelines </topic-guides/core-concept/pipelines>`_
+    * Read more about `pipelines </topic-guides/core-concepts/pipelines>`_
 
 ..
 

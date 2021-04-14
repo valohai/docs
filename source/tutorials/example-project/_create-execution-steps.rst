@@ -9,7 +9,7 @@
 .. tip::
 
     Valohai command-line client allows creating one-off executions from local files.
-    See `Using valohai-cli </howto/valohai-cli/>`_ for more details.
+    See `Using valohai-cli </tutorials/valohai-cli/>`_ for more details.
 
     .. code-block:: bash
 

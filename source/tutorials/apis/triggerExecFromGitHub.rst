@@ -6,7 +6,7 @@ Trigger an execution after a push to a code repository
 
 .. container:: alert alert-success
 
-    **Not using GitHub?** Scroll down to `see a example of the Valohai API call </tutorials/apis/trigger-exec-from-github/#define-the-action-that-should-be-triggered>`_ you'd need to trigger from your own code repository (e.g. WebHooks on `GitLab <https://docs.gitlab.com/ee/user/project/integrations/webhooks.html>`_ or `BitBucket <https://confluence.atlassian.com/bitbucket/manage-webhooks-735643732.html>`_)
+    **Not using GitHub?** Scroll down to `see a example of the Valohai API call </tutorials/apis/triggerExecFromGitHub/#define-the-action-that-should-be-triggered>`_ you'd need to trigger from your own code repository (e.g. WebHooks on `GitLab <https://docs.gitlab.com/ee/user/project/integrations/webhooks.html>`_ or `BitBucket <https://confluence.atlassian.com/bitbucket/manage-webhooks-735643732.html>`_)
 
 ..
 

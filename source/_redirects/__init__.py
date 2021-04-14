@@ -16,13 +16,13 @@ redirects = {
     '/quickstarts/quick-start-r.html': '/quickstarts/quick-start-r/',
     '/quickstarts/quick-start-cli.html': '/quickstarts/quick-start-cli/',
     '/quickstarts/quick-start-api.html': '/quickstarts/quick-start-api/',
-    '/core-concepts/what-is-valohai.html': '/core-concepts/what-is-valohai/',
+    '/core-concepts/what-is-valohai.html': '/core-concepts/',
     '/core-concepts/projects.html': '/core-concepts/projects/',
     '/core-concepts/configuration-file.html': '/core-concepts/configuration-file/',
     '/core-concepts/steps.html': '/core-concepts/steps/',
     '/core-concepts/executions.html': '/core-concepts/executions/',
     '/core-concepts/parameters.html': '/core-concepts/parameters/',
-    '/core-concepts/data-stores.html': '/core-concepts/data-stores/',
+    '/core-concepts/data-stores.html': '/topic-guides/core-concepts/data-stores/',
     '/core-concepts/tasks.html': '/core-concepts/tasks/',
     '/core-concepts/pipelines.html': '/core-concepts/pipelines/',
     '/core-concepts/deployments.html': '/core-concepts/deployments/',
@@ -145,6 +145,25 @@ redirects = {
     '/core-concepts/what-is-valohai.html': '/topic-guides/core-concepts/',
     '/architecture/index.html': '/topic-guides/architecture/index.html',
     '/docker-images.html': '/topic-guides/docker-images/index.html',
+    '/core-concepts/deployments/index.html': '/topic-guides/core-concepts/deployments/index.html',
+    '/valohai-api/index.html': '/tutorials/apis/index.html',
+    '/valohai-cli/index.html': '/tutorials/valohai-cli/index.html',
+    '/valohai-cli/index.html': '/tutorials/valohai-cli/index.html',
+    '/on-premises/index.html': '/topic-guides/setup/on-premises/index.html',
+    '/core-concepts/parameters/index.html': '/topic-guides/core-concepts/parameters/index.html',
+    '/quickstarts/quick-start-cli/index.html': '/tutorials/valohai-cli/index.html',
+    '/core-concepts/pipelines/index.html': '/topic-guides/core-concepts/pipelines/index.html',
+    '/docker-images/index.html': '/topic-guides/docker-images/index.html',
+    '/valohai-api/index.html': '/tutorials/apis/index.html',
+    '/tutorials/quick-start-cli.html': '/tutorials/valohai-cli/index.html',
+    '/valohai-yaml/step-inputs/index.html': '/reference-guides/valohai-yaml/step-inputs/index.html',
+    '/valohai-yaml/step-parameters/index.html': '/reference-guides/valohai-yaml/step-parameters/index.html',
+    '/core-concepts/pipelines/?highlight=pipelines': '/topic-guides/core-concepts/pipelines/?highlight=pipelines',
+    '/core-concepts/parameters/?highlight=hyperparameter': '/topic-guides/core-concepts/parameters/?highlight=hyperparameter',
+    '/tutorials/quick-start-cli.html?highlight': '/tutorials/valohai-cli/index.html',
+    '/guides/build-docker-image/index.html': '/tutorials/docker-build-image/index.html'
+
+
 }
 
 TEMPLATE = """
