@@ -32,6 +32,7 @@ You can also generate more complex graphs inside your execution and save them as
     plt.savefig(save_path)
 
     plt.show()
+    plt.close()
 
 ..
 
