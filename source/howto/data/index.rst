@@ -13,7 +13,7 @@ Work with data
     :maxdepth: 1
 
     cloud-storage/index
-    save-files
+    tag-files
     upload-data
     mount-nfs
 

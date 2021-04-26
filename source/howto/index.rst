@@ -22,6 +22,7 @@ How-to guides include the steps involved in addressing key problems and use-case
     executions/compare
     executions/complex-visualizations
     tasks/index
+    notifications/index
     docker-private-registry
     pipelines/index
     organization/index
