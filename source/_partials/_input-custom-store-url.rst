@@ -13,6 +13,12 @@ This syntax also has supports wildcard syntax to download multiple files:
 * ``s3://my-bucket/dataset/images/*.jpg`` for all .jpg (JPEG) files
 * ``s3://my-bucket/dataset/image-sets/**.jpg`` for recursing subdirectories for all .jpg (JPEG) files
 
+
+You can also interpolate `execution parameter </reference-guides/valohai-yaml/step-parameters>`_ into input URIs:
+
+* ``s3://my-bucket/dataset/images/{parameter:user-id}/*.jpeg`` would replace ``{parameter:user-id}`` with the value of the parameter ``user-id`` during an execution.
+
+
 .. tip::
 
     If you are using your own data store, we show the exact location for each file through Data browser (2).
