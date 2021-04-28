@@ -1,6 +1,8 @@
 .. meta::
     :description: With live outputs, you don't need to wait your executions to finish to receive you results.
 
+.. _live-outputs:
+
 Live Outputs
 ============
 
