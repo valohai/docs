@@ -23,6 +23,12 @@ Valohai triggers allow you to launch a copy of an existing pipeline on a time-ba
 7. Open the action and select the *Source Pipeline* that you want to run
 8. Click on *Create trigger*
 
+.. warning::
+
+    Note that all times are expressed in UTC time.
+
+..
+
 .. image:: /_images/pipeline-trigger.png
     :alt: Create a pipeline trigger
 
