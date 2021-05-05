@@ -1,14 +1,14 @@
 .. meta::
     :description: Learn how to access additional private repositories during your execution
 
-Access additional git repository during execution runs
+Clone a repository during an execution
 #########################################################
 
 Each Valohai project can be connected either to a public or a private Git repository. Having a repository linked to a project will allow you to easily reproduce your experiments with the exact code and configuration files used in your commit.
 
 When you run a Valohai execution all the files from the specified commit will be copied to your working folder (``/valohai/repository/``)
 
-However, sometimes you might want to connect and fetch additional files from a different private repository. In this tutorial we'll show you how to authenticate and fetch files from another private repository during an execution run.
+However, sometimes you might want to connect and fetch additional files from a different private repository. In this guide we'll show you how to authenticate and fetch files from another private repository during an execution run.
 
 .. admonition:: A note on versioning and reproducability
     :class: warning

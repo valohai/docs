@@ -3,7 +3,7 @@
 
 .. _repository:
 
-Connect to a Git-repository
+Connect to a Git repository
 ----------------------------
 
 You can easily connect all of your projects to either a public or a private Git-repository.
@@ -14,9 +14,18 @@ You can easily connect all of your projects to either a public or a private Git-
     private-github-repository/index
     private-bitbucket-repository/index
     private-gitlab-repository/index
-    accessing-repositories-during-executions/index
+    use-multiple-repositories-in-a-project/index
 
 ..
+
+.. seealso::
+
+    Are you new to Git? Get started with these resources:
+
+    * `Videos to help you get started with Git <https://git-scm.com/videos>`_ 
+    * `Git Handbook by GitHub <https://guides.github.com/introduction/git-handbook/>`_ 
+    * `Learn Git with the Bitbucket Cloud <https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud>`_ 
+    * You can also get the entire `Pro Git <https://git-scm.com/book/en/v2>`_ book
 
 .. admonition:: --adhoc executions
     :class: tip
