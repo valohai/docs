@@ -131,7 +131,8 @@ Start by creating a policy that defines permissions for the role that Valohai ca
                     "ec2:DescribeSubnets",
                     "ec2:DescribeInstanceTypes",
                     "ec2:DescribeLaunchTemplates",
-                    "autoscaling:DescribeAutoScalingGroups"
+                    "autoscaling:DescribeAutoScalingGroups",
+                    "autoscaling:DescribeScalingActivities"
                 ],
                 "Resource": "*"
             },
