@@ -87,6 +87,12 @@ over parsing command-line arguments.
             "path": "/valohai/inputs/dataset-images/t10k-images-idx3-ubyte.gz",
             "size": 1648877,
             "uri": "https://valohai-mnist.s3.amazonaws.com/t10k-images-idx3-ubyte.gz",
+            "metadata": [
+              {
+                "mykey": "myvalue",
+                "category": "images"
+              }
+            ],
             "checksums": {
               "md5": "9fb629c4189551a2d022fa330f9573f3",
               "sha1": "c3a25af1f52dad7f726cce8cacb138654b760d48",
@@ -131,6 +137,9 @@ over parsing command-line arguments.
           md5: 9fb629c4189551a2d022fa330f9573f3
           sha1: c3a25af1f52dad7f726cce8cacb138654b760d48
           sha256: 8d422c7b0a1c1c79245a5bcf07fe86e33eeafee792b84584aec276f5a2dbc4e6
+        metadata:
+          - mykey: myvalue
+            category: images
     dataset-labels:
       files:
       - name: t10k-labels-idx1-ubyte.gz

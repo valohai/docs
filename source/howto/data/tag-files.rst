@@ -106,3 +106,31 @@ You can access the files metadata using Valohai `DatumList API <https://app.valo
     with open(metadata_path, 'w') as outfile:
         json.dump(metadata, outfile)
 
+Read a files metadata
+------------------------------------------
+
+You can access the metadata that you've attached to a file either through the Valohai API or during an execution.
+
+Access files metadata during an execution
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Any metadata created with datums is available during runtime under the `/valohai/config/inputs.json` file.
+
+.. code-block:: python
+
+    import json
+
+    with open('/valohai/config/inputs.json') as json_file:
+        vh_inputs_config = json.load(json_file)
+        
+    # Print metadata from each file that is in the input named "myinput"
+    for data in vh_inputs_config['myinput']['files']:
+        print(data["metadata"])
+
+..
+
+.. seealso::
+
+    * `File-based configuration </topic-guides/executions/file-config/#valohai-config-inputs-json>`_ 
+    * `Fetch Datum with Valohai APIs <https://app.valohai.com/api/docs/#operation/DatumRetrieve>`_ 
+
