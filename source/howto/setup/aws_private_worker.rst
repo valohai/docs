@@ -21,12 +21,12 @@ Select the appropriate region for the resources:
     * For EU customers, we recommend **EU West 1 (Ireland)** as it has the widest array of GPU machine types in the Europe.
 
 
-.. admonition:: Setting Up a Sub-Account (optional)
+.. admonition:: Setting up a sub account (optional)
     :class: ip
 
-    You can create a dedicated subaccount in AWS for all the Valohai resources. This subaccount separates the Valohai resources from all other AWS services you might be using.
+    You can create a dedicated sub account in AWS for all the Valohai resources. This sub account separates the Valohai resources from all other AWS services you might be using.
 
-    Create all the following IAM access control entities in this sub-account.
+    Create all the following IAM access control entities in this sub account.
 
 
 Creating IAM Entities
@@ -231,8 +231,8 @@ VPC and subnets
 Create a VPC and subnets per each availability zone you want to use. For example:
 
 * VPC
-    * **Name:** valohai-ip-queue
-    * **CIRD:** 10.0.0.0/16
+    * **Name:** valohai-vpc
+    * **CIDR:** 10.0.0.0/16
 * One subnet per zone. For example
     * Subnet: valohai-subnet-1, 10.0.0.0/20, -
     * Subnet: valohai-subnet-2, 10.0.16.0/20, -
@@ -287,6 +287,10 @@ Create a new security group named **valohai-sg-queue** and set the Inbound rules
       - 6379
       - valohai-sg-workers
       - for plain Redis connection from workers
+    * - TCP
+      - 22
+      - 3.251.38.215/32
+      - for SSH management from Valohai
 
 **EC2 Instance for queue machine**
 
