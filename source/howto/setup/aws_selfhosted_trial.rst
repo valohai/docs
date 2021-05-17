@@ -1,13 +1,13 @@
 :orphan:
 
 .. meta::
-    :description: How to prepare your AWS environment for a Valohai Private Workers installation
+    :description: How to prepare your AWS environment for a Valohai self-hosted trial
 
 
-Preparing your AWS for Valohai Private Worker Setup
+Preparing your AWS for Valohai self-hosted trial
 #################################################
 
-This document prepares your AWS account for Valohai private worker installation. 
+This document prepares your AWS account for a Valohai self-hosted trial.
 
 Select the correct region
 --------------------------
@@ -87,7 +87,7 @@ Copy the `Role ARN` shown for the newly created role. You'll need this in the ne
     If you use the AWS Management Console to create the `ValohaiWorkerRole`, the console will automatically create an instance profile and gives it the same name as the role. If you're using the AWS CLI or APIs to create this role, you'll need to manually create an instance profile and add the role to it. Read more at [AWS: Using instance profiles](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2_instance-profiles.html)
 
 
-IAM Role for ValohaiMaster
+IAM User for ValohaiMaster
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 These are credentials for the Valohai web application at https://app.valohai.com/ and scaling services to: 
@@ -178,57 +178,23 @@ Start by creating a policy that defines permissions for the role that Valohai ca
 
 **Create the IAM role**
 
-* Open the AWS Console and navigate to `IAM -> Roles <https://console.aws.amazon.com/iam/home#/roles>`_
-* Create a new role called `ValohaiMaster` 
+* Open the AWS Console and navigate to `IAM -> Users <https://console.aws.amazon.com/iam/home#/users>`_
+* Create a new user called `ValohaiMaster` 
 * Choose EC2 as the use case
 * Find and attach the `ValohaiMasterPolicy` policy
 * Add a tag `valohai` with value `1`
 
-Once the role is created open the role's **Trust relationships** tab and click **Edit trust relationship**
-
-Paste in the below trust relationship to give Valohai access to this role.
-
-You'll get the username from your Valohai contact.
-
-.. code-block:: json
-
-    {
-        "Version": "2012-10-17",
-        "Statement": [
-            {
-            "Effect": "Allow",
-            "Principal": {
-                "AWS": "arn:aws:iam::905675611115:user/<USERNAME-FROM-VALOHAI>"
-            },
-            "Action": "sts:AssumeRole",
-            "Condition": {}
-            }
-        ]
-    }
-..
+You'll need the access key and secret key during the installation to allow the Valohai application to scale IAM resources in your subscription.
 
 Setting up Valohai resources
 ------------------------------
 
-Below is a list of the AWS resources that are required for the Valohai Private Worker installation.
+Below is a list of the AWS resources that are required for the self-hosted Valohai installation.
 
-You can either create these resources yourself, or give `ValohaiMaster` elevated permissions for the duration of the setup.
+Optional: VPC and subnets
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Option 1) Give Valohai permission to provision the resources
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Add the following policies to the `ValohaiMaster` role to give Valohai permission to create the queue instance and setup the networking resources.
-
-* **AmazonEC2FullAccess**
-* **AmazonVPCFullAccess**
-
-Option 2) Provision the resources yourself
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-VPC and subnets
-^^^^^^^^^^^^^^^^
-
-Create a VPC and subnets per each availability zone you want to use. For example:
+You can use your existing VPC or create a new VPC and subnets per each availability zone you want to use. For example:
 
 * VPC
     * **Name:** valohai-vpc
@@ -248,7 +214,8 @@ Create a VPC and subnets per each availability zone you want to use. For example
         * 10.0.0.0/16 -> local
         * 0.0.0.0/0 => valohai-igw
 
-**Security groups**
+Security groups
+^^^^^^^^^^^^^^^^^^^^
 
 Create a new security group named **valohai-sg-workers** and set the Inbound rules listed below:
 
@@ -262,10 +229,10 @@ Create a new security group named **valohai-sg-workers** and set the Inbound rul
       - Description
     * - TCP
       - 22
-      - 3.251.38.215/32 (optional)
+      - 3.251.38.215/32 (during installation)
       - for SSH management from Valohai
 
-Create a new security group named **valohai-sg-queue** and set the Inbound rules listed below:
+Create a new security group named **valohai-sg-master** and set the Inbound rules listed below:
 
 .. list-table::
     :header-rows: 1
@@ -276,14 +243,6 @@ Create a new security group named **valohai-sg-queue** and set the Inbound rules
       - Source
       - Description
     * - TCP
-      - 80
-      - 0.0.0.0/0
-      - for acme tooling (certificate for machine)
-    * - TCP
-      - 63790
-      - 34.248.245.191/32
-      - for Redis over TLS from app.valohai.com
-    * - TCP
       - 6379
       - valohai-sg-workers
       - for plain Redis connection from workers
@@ -292,18 +251,19 @@ Create a new security group named **valohai-sg-queue** and set the Inbound rules
       - 3.251.38.215/32 (during installation)
       - for SSH management from Valohai
 
-**EC2 Instance for queue machine**
+EC2 Instance for Valohai master
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Provision an Elastic IP and a EC2 instance for storing the job quue and short term logs.
 
 * Elastic IP from the Amazon pool
-    * **Name:** valohai-ip-queue
-* EC2 instance works as the queue instace for Valohai. It hosts a Redis server to handle real-time logging and job queues.
-    * **Name:** valohai-i-queue
+    * **Name:** valohai-ip-master
+* EC2 instance works as the master instace for Valohai and will host all the core Valohai services.
+    * **Name:** valohai-i-master
     * **OS:** Ubuntu 20.04 LTS
-    * **Machine type:** t3.medium (2 vCPU, 4GB RAM)
-    * **Standard persistent disk:** 16GB
-    * **Security Group:** valohai-sg-queue
+    * **Machine type:** t3.xlarge (4 vCPU, 16GB RAM)
+    * **Standard persistent disk:** 200GB
+    * **Security Group:** valohai-sg-master
     * **Key Pair**: You'll receive the key pair from your Valohai contact
     * **Tag:** Valohai
 
@@ -315,14 +275,13 @@ Conclusion
 You should now have the following details:
 
 * Region
-* ARN of the ValohaiMaster-role that Valohai can assume
-
-If you created the above mentioned resources yourself, you should also have the following information:
-
-* Name of VPC
+* IAM User for ValohaiMaster (inc. Access Key and Secret)
+* IAM Role for ValohaiWorkerRole
+* Name of VPC for Valohai workers
+* Security groups for valohai-sg-master and valohai-sg-workers
 * Names of subnets that can be used for Valohai workers
-* Public IP of the queue instance
-* Private IP of the queue instance
+* Public IP of the EC2 instance for Valohai
+* Private IP of the EC2 instance for Valohai
 
 
 .. seealso:: 
