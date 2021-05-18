@@ -21,4 +21,4 @@ Tutorials take you by the hand through a series of steps to integrate Valohai fe
     valohai-cli/index
     example-project/index
     airflow-management/index
-
+    batch-inference/index
