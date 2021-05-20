@@ -18,7 +18,7 @@ In this tutorial, we will use the Valohai API to login and fetch a list of proje
 
     .. code:: bash
 
-        python --veresion
+        python --version
     ..
 
     We also need to install the ``requests`` library to make HTTP requests:
