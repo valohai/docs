@@ -208,6 +208,7 @@ Conclusion
 
 You should now have the following details:
 
+* GCP Project ID and Name
 * Region
 * JSON Key for the service account valohai-sa-master
 * A ValohaiAdmin role and access to valohai.com users (if you'd like Valohai to setup the resources for you)
