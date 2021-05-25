@@ -35,6 +35,14 @@ Choose a base image
 
 First, we need to choose a base image to build the Docker image upon.
 
+.. important::
+
+    Add the following environment variables to your custom Docker images to make sure the Valohai execution can access the GPU.
+    
+    ``ENV NVIDIA_VISIBLE_DEVICES all``
+    
+    ``ENV NVIDIA_DRIVER_CAPABILITIES=compute,utility``
+
 It's wise to choose a Docker image that contains the core libraries you are using; for example:
 
 * `nvidia/cuda <https://hub.docker.com/r/nvidia/cuda>`_
@@ -75,6 +83,9 @@ Write the following into a file called ``Dockerfile`` (without extension).
         apt-get clean && \
         apt-get autoremove && \
         rm -rf /var/lib/apt/lists/*
+
+    ENV NVIDIA_VISIBLE_DEVICES all
+    ENV NVIDIA_DRIVER_CAPABILITIES=compute,utility
 
     # Install a specific version of TensorFlow
     # You may also install anything else from pip like this
