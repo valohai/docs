@@ -17,7 +17,7 @@ Building images is frequently optional, but is recommended especially when...
 
     If you don't wish to maintain your own Docker images, you can find images for the most popular machine learning frameworks on `Docker Hub <https://hub.docker.com/>`_.
 
-.. admonition:: Prequirements
+.. admonition:: Prerequirements
     :class: attention
 
     For this tutorial you will need:
