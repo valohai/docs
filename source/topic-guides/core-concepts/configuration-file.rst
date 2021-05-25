@@ -8,6 +8,54 @@ Each Valohai-enabled git repository has a ``valohai.yaml`` **configuration file*
 
 A single configuration file can be used by multiple projects by various users, as long as the user has access to the git repository.
 
+Example of a ``valohai.yaml`` file:
+
+.. code-block:: yaml
+
+    # This step downloads a set of images
+    # and runs preprocess.py
+    - step:
+        name: Preprocess dataset (MNIST)
+        image: tensorflow/tensorflow:1.13.1-py3
+        command: python preprocess.py
+        inputs:
+          - name: training-set-images
+            default: https://valohaidemo.blob.core.windows.net/mnist/imgages.tar.gz
+
+    # This step downloads preprocessed-data
+    # and runs train.py with two parameters (max_steps and learning_rate)
+    - step:
+        name: Train model
+        image: tensorflow/tensorflow:1.13.1-py3
+        command: python train.py {parameters}
+        parameters:
+          - name: max_steps
+            type: integer
+            default: 300
+          - name: learning_rate
+            type: float
+            default: 0.001
+        inputs:
+          - name: preprocessed-data
+            default: https://valohaidemo.blob.core.windows.net/mnist/data.tar.gz
+
+    # This step downloads a trained model file and images,
+    # installs libraries listed in requirements.txt
+    # and runs batch_inference.py
+    - step:
+        name: Batch inference
+        image: tensorflow/tensorflow:1.13.1-py3
+        command:
+          - pip install -r requirements.txt
+          - python batch_inference.py
+        inputs:
+          - name: model
+          - name: images
+
+.. tip::
+
+    Python users can use ``valohai-utils`` to define Valohai steps in their code, and then run ``vh yaml step myfile.py`` to generate the YAML file.
+
 .. seealso::
 
     :doc:`Valohai YAML Standard </reference-guides/valohai-yaml/index>`

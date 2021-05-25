@@ -19,6 +19,7 @@ How-to guides include the steps involved in addressing key problems and use-case
 
     code-repository/index
     data/index
+    new-user-guide/index
     executions/compare
     executions/complex-visualizations
     tasks/index
@@ -27,4 +28,5 @@ How-to guides include the steps involved in addressing key problems and use-case
     pipelines/index
     organization/index
     deployments/deployments-test
+    notebooks/popular-notebook-images
 ..
