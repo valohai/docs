@@ -28,6 +28,72 @@ Select the appropriate region for the resources:
 
     Create all the following IAM access control entities in this sub account.
 
+Create a S3 Bucket
+---------------------------------
+
+Create an S3 bucket through AWS console (https://s3.console.aws.amazon.com/s3/home).
+
+Select bucket name and region
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1. Throughout this guide, we will assume the name of the bucket is ``valohai-bucket``; *be sure to replace this with the actual name of your bucket* when copying in any example configuration!
+2. Create the bucket in the region you'll be running your training to minimize data transfer costs. If you don't have a preference, we recommend using Ireland (`eu-west-1`) as most of our computation resides there.
+
+Use default bucket properties & permissions
+---------------------------------------------------------------
+
+Default bucket properties are fine, but double check that your bucket is not public.
+You can of course edit the default settings based on your needs.
+
+Create a new bucket.
+
+Configure CORS for the S3 bucket
+------------------------------------
+
+If you wish to be able to upload files to the store using the app.valohai.com web UI, you will need to
+add a CORS policy document to the S3 bucket.
+
+First you navigate to the AWS S3 bucket you created.
+
+Then you go to the *Permissions* tab and scroll down to *Cross-origin resource sharing (CORS)*.
+
+Click *Edit* add the rules below.
+
+.. code-block:: json
+
+   [
+      {
+         "AllowedHeaders": [
+               "Authorization"
+         ],
+         "AllowedMethods": [
+               "GET"
+         ],
+         "AllowedOrigins": [
+               "*"
+         ],
+         "ExposeHeaders": [],
+         "MaxAgeSeconds": 3000
+      },
+      {
+         "AllowedHeaders": [
+               "Authorization"
+         ],
+         "AllowedMethods": [
+               "POST"
+         ],
+         "AllowedOrigins": [
+               "https://app.valohai.com"
+         ],
+         "ExposeHeaders": [],
+         "MaxAgeSeconds": 3000
+      }
+   ]
+
+..
+
+Now your bucket allows POSTs for your user on `https://app.valohai.com` website
+
 
 Creating IAM Entities
 ------------------------------------
@@ -131,6 +197,7 @@ Start by creating a policy that defines permissions for the role that Valohai ca
                     "ec2:DescribeSubnets",
                     "ec2:DescribeInstanceTypes",
                     "ec2:DescribeLaunchTemplates",
+                    "ec2:CreateTags",
                     "autoscaling:DescribeAutoScalingGroups",
                     "autoscaling:DescribeScalingActivities"
                 ],
@@ -170,6 +237,15 @@ Start by creating a policy that defines permissions for the role that Valohai ca
                     "iam:GetRole"
                 ],
                 "Resource": "arn:aws:iam::<YOUR-AWS-ACCOUNT-ID>:role/ValohaiWorkerRole"
+            },
+            {
+                "Sid": "4",
+                "Effect": "Allow",
+                "Action": "s3:*",
+                "Resource": [
+                    "arn:aws:s3:::valohai-bucket",
+                    "arn:aws:s3:::valohai-bucket/*"
+                ]
             }
         ]
     }
@@ -275,6 +351,7 @@ Conclusion
 You should now have the following details:
 
 * Region
+* S3 Bucket for Valohai
 * IAM User for ValohaiMaster (inc. Access Key and Secret)
 * IAM Role for ValohaiWorkerRole
 * Name of VPC for Valohai workers

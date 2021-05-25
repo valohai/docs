@@ -5,7 +5,7 @@
 
 
 Preparing your AWS for Valohai Private Worker Setup
-###################################################
+######################################################
 
 This document prepares your AWS account for Valohai private worker installation. 
 
