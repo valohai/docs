@@ -326,6 +326,14 @@ Create a new security group named **valohai-sg-master** and set the Inbound rule
       - 22
       - 3.251.38.215/32 (during installation)
       - for SSH management from Valohai
+    * - TCP
+      - 80
+      - 0.0.0.0/0
+      - for access to web app
+    * - TCP
+      - 443
+      - 0.0.0.0/0
+      - for access to web app
 
 EC2 Instance for Valohai master
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -357,14 +365,6 @@ You should now have the following details:
 * Name of VPC for Valohai workers
 * Security groups for valohai-sg-master and valohai-sg-workers
 * Names of subnets that can be used for Valohai workers
+* Name of the Key Pair in your AWS
 * Public IP of the EC2 instance for Valohai
 * Private IP of the EC2 instance for Valohai
-
-
-.. seealso:: 
-
-    Each Valohai project has one or more data stores. A data store is a secure place to keep your files; you download training data from there and upload files from your executions there (e.g. models, weights, images).
-
-    It's good practice to setup one S3 Bucket to work as the default bucket for all projects in your organization. Each project owner can then change the bucket if needed, but this way you can ensure that all data ends up in your S3 bucket, instead of the shared Valohai storage.
-
-    `Add AWS S3 to Valohai </tutorials/cloud-storage/private-s3-bucket/>`_
