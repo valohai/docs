@@ -156,7 +156,7 @@ Firewall rules
       - Allow
       - valohai-queue (target networking tag)
       - 34.248.245.191/32 (IP range)
-      - 80, 63790
+      - 63790
     * - valohai-fr-queue-ssh
       - for SSH management from Valohai
       - valohai-vpc
@@ -165,6 +165,14 @@ Firewall rules
       - valohai-queue (target networking tag)
       - 3.251.38.215/32 (IP range)
       - 22
+    * - valohai-fr-queue-acme
+      - for acme tooling and cert renewal
+      - valohai-vpc
+      - Ingress
+      - Allow
+      - valohai-queue (target networking tag)
+      - 0.0.0.0/0
+      - 80, 443
     * - valohai-fr-queue-internal
       - for plain Redis from workers
       - valohai-vpc
