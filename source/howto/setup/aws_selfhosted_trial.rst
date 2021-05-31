@@ -40,60 +40,12 @@ Select bucket name and region
 2. Create the bucket in the region you'll be running your training to minimize data transfer costs. If you don't have a preference, we recommend using Ireland (`eu-west-1`) as most of our computation resides there.
 
 Use default bucket properties & permissions
----------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Default bucket properties are fine, but double check that your bucket is not public.
 You can of course edit the default settings based on your needs.
 
 Create a new bucket.
-
-Configure CORS for the S3 bucket
-------------------------------------
-
-If you wish to be able to upload files to the store using the app.valohai.com web UI, you will need to
-add a CORS policy document to the S3 bucket.
-
-First you navigate to the AWS S3 bucket you created.
-
-Then you go to the *Permissions* tab and scroll down to *Cross-origin resource sharing (CORS)*.
-
-Click *Edit* add the rules below.
-
-.. code-block:: json
-
-   [
-      {
-         "AllowedHeaders": [
-               "Authorization"
-         ],
-         "AllowedMethods": [
-               "GET"
-         ],
-         "AllowedOrigins": [
-               "*"
-         ],
-         "ExposeHeaders": [],
-         "MaxAgeSeconds": 3000
-      },
-      {
-         "AllowedHeaders": [
-               "Authorization"
-         ],
-         "AllowedMethods": [
-               "POST"
-         ],
-         "AllowedOrigins": [
-               "https://app.valohai.com"
-         ],
-         "ExposeHeaders": [],
-         "MaxAgeSeconds": 3000
-      }
-   ]
-
-..
-
-Now your bucket allows POSTs for your user on `https://app.valohai.com` website
-
 
 Creating IAM Entities
 ------------------------------------
@@ -334,6 +286,10 @@ Create a new security group named **valohai-sg-master** and set the Inbound rule
       - 443
       - 0.0.0.0/0
       - for access to web app
+    * - TCP
+      - 8811
+      - 0.0.0.0/0
+      - access to hosted notebooks
 
 EC2 Instance for Valohai master
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
