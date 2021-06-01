@@ -147,7 +147,7 @@ tqdm==4.60.0
     # via valohai-utils
 typing-extensions==3.10.0.0
     # via valohai-cli
-urllib3==1.26.4
+urllib3==1.26.5
     # via
     #   botocore
     #   requests
