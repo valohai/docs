@@ -8,17 +8,11 @@ alabaster==0.7.12
     # via sphinx
 attrs==21.2.0
     # via jsonschema
-awscli==1.19.77
-    # via -r requirements.in
 babel==2.9.1
     # via sphinx
 beautifulsoup4==4.9.3
     # via furo
-botocore==1.20.77
-    # via
-    #   awscli
-    #   s3transfer
-certifi==2020.12.5
+certifi==2021.5.30
     # via requests
 cffi==1.14.5
     # via cryptography
@@ -28,17 +22,14 @@ click==8.0.1
     # via
     #   sphinx-click
     #   valohai-cli
-colorama==0.4.3
-    # via
-    #   awscli
-    #   sphinx-autobuild
+colorama==0.4.4
+    # via sphinx-autobuild
 cryptography==3.4.7
     # via
     #   pyopenssl
     #   requests
-docutils==0.15.2
+docutils==0.16
     # via
-    #   awscli
     #   sphinx
     #   sphinx-click
 furo==2021.4.11b34
@@ -49,8 +40,6 @@ imagesize==1.2.0
     # via sphinx
 jinja2==3.0.1
     # via sphinx
-jmespath==0.10.0
-    # via botocore
 jsonschema==3.2.0
     # via valohai-yaml
 livereload==2.6.3
@@ -61,8 +50,6 @@ packaging==20.9
     # via sphinx
 pbr==5.6.0
     # via sphinxcontrib-video
-pyasn1==0.4.8
-    # via rsa
 pycparser==2.20
     # via cffi
 pygments==2.9.0
@@ -73,14 +60,10 @@ pyparsing==2.4.7
     # via packaging
 pyrsistent==0.17.3
     # via jsonschema
-python-dateutil==2.8.1
-    # via botocore
 pytz==2021.1
     # via babel
 pyyaml==5.4.1
-    # via
-    #   awscli
-    #   valohai-yaml
+    # via valohai-yaml
 requests-toolbelt==0.9.1
     # via valohai-cli
 requests[security]==2.25.1
@@ -90,16 +73,11 @@ requests[security]==2.25.1
     #   sphinxcontrib-images
     #   valohai-cli
     #   valohai-utils
-rsa==4.7.2
-    # via awscli
-s3transfer==0.4.2
-    # via awscli
 six==1.16.0
     # via
     #   jsonschema
     #   livereload
     #   pyopenssl
-    #   python-dateutil
     #   sphinx-sitemap
 snowballstemmer==2.1.0
     # via sphinx
@@ -129,7 +107,7 @@ sphinxcontrib-applehelp==1.0.2
     # via sphinx
 sphinxcontrib-devhelp==1.0.2
     # via sphinx
-sphinxcontrib-htmlhelp==1.0.3
+sphinxcontrib-htmlhelp==2.0.0
     # via sphinx
 sphinxcontrib-images==0.9.3
     # via -r requirements.in
@@ -137,20 +115,18 @@ sphinxcontrib-jsmath==1.0.1
     # via sphinx
 sphinxcontrib-qthelp==1.0.3
     # via sphinx
-sphinxcontrib-serializinghtml==1.1.4
+sphinxcontrib-serializinghtml==1.1.5
     # via sphinx
 git+https://github.com/sphinx-contrib/video.git
     # via -r requirements.in
 tornado==6.1
     # via livereload
-tqdm==4.60.0
+tqdm==4.61.0
     # via valohai-utils
 typing-extensions==3.10.0.0
     # via valohai-cli
 urllib3==1.26.5
-    # via
-    #   botocore
-    #   requests
+    # via requests
 valohai-cli==0.15.0
     # via -r requirements.in
 valohai-papi==0.1.1

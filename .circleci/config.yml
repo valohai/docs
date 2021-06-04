@@ -20,4 +20,4 @@ jobs:
         - ~/.cache
     - run: python check_descriptions.py
     - run: make dirhtml
-    - run: '[ "${CIRCLE_BRANCH}" == "master" ] && ./upload.sh || true'
+    - run: '[ "${CIRCLE_BRANCH}" == "master" ] && (pip install awscli && ./upload.sh) || true'
