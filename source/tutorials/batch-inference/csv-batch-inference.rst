@@ -11,7 +11,7 @@ In this tutorial you will learn how to create and run a Batch Inference executio
 
     For this tutorial you will need:
 
-    * Python 3
+    * Python 3.6 or newer
     * Valohai command-line client (Run ``pip install --upgrade valohai-cli``)
 
     We're also going to need two files:
@@ -96,7 +96,7 @@ Add these imports to the beginning of the file:
     import tensorflow as tf
     import valohai as vh
 
-For unpacking the model, we will only need `zipfile` and `valohai`, but we will use the rest of the imports soon enough.
+For unpacking the model, we will only need ``zipfile`` and ``valohai``, but we will use the rest of the imports soon enough.
 
 Next, unpack the model to a folder called model in the current working directory:
 
@@ -131,15 +131,20 @@ Aaand we are almost done. Run the model with the loaded up data. While we're at 
 
     results = model.predict(batch_data)
 
-    values = [str(nums[0]) for nums in results]
-    metadata = {k:v for (k, v) in zip(range(1, len(values) + 1), values)}
+    # Let's build a dictionary out of the results,
+    # e.g. {"1": 0.375, "2": 0.76}
+    flattened_results = results.flatten()
+    indexed_results = enumerate(flattened_results, start=1)
+    metadata = dict(indexed_results)
 
-    for _, value in metadata.items():
+    for value in metadata.values():
         with vh.logger() as logger:
             logger.log("result", value)
 
     with open(vh.outputs().path('results.json'), 'w') as f:
-        json.dump(metadata, f)
+        # The JSON library doesn't know how to print
+        # NumPy float32 values, so we stringify them 
+        json.dump(metadata, f, default=lambda v: str(v))
 
 Let's run the batch inference on Valohai:
 
@@ -147,7 +152,7 @@ Let's run the batch inference on Valohai:
 
     vh exec run --adhoc "Batch Inference"
 
-If everything went according to plan, you can now preview the results in the Outputs-tab:
+If everything went according to plan, you can now preview the results in the Outputs tab:
 
 .. image:: csv-batch-inference-tutorial-2.png
    :alt: Results of our batch inference execution

@@ -11,7 +11,7 @@ In this tutorial you will learn how to create and run a Batch Inference executio
 
     For this tutorial you will need:
 
-    * Python 3
+    * Python 3.6 or newer
     * Valohai command-line client (Run ``pip install --upgrade valohai-cli``)
 
     We're also going to need two files:
@@ -83,7 +83,7 @@ If everything went as planned, we should see our Valohai execution end after fin
 Unpacking the Images
 --------------------
 
-...actually Valohai unpacks the images automatically, so we can just fetch their location with ``vh.inputs('images').paths()``!
+...actually the Valohai helper library (``valohai-utils``) unpacks the images automatically, so we can just fetch their location with ``vh.inputs('images').paths()``!
 
 Loading and Using Our Model
 ---------------------------
@@ -110,17 +110,27 @@ Begin by loading our model:
 
     model = tf.keras.models.load_model(vh.inputs('model').path())
 
-Easy, huh? Let's define a function to load up an image:
+Easy, huh? Let's define a function to load up an image and apply preprocessing.
+
+As we are using the MNIST dataset, our preprocessing will:
+
+- Convert our images to grayscale
+- Resize the images to 28x28 pixels
+- Normalize the image levels from 0–255 to 0.0–1.0
+
+Let's go!
 
 .. code-block:: python
 
     def load_image(image_path):
-        _, image_name = os.path.split(image_path)
+        image_name = os.path.basename(image_path)
         image = Image.open(image_path)
         image.load()
+
         image = image.resize((28, 28)).convert('L')
         image_data = np.array(image).reshape(1, 28, 28)
         image_data = image_data / 255.0
+
         return (image_name, image_data)
 
 Then define a function to run inference on an image:
@@ -130,9 +140,11 @@ Then define a function to run inference on an image:
     def run_inference(image):
         image_name, image_data = image
         prediction = np.argmax(model.predict(image_data))
+
         with vh.logger() as logger:
             logger.log('image', image_name)
             logger.log('inferred_digit', prediction)
+
         return {
             'image': image_name,
             'inferred_digit': str(prediction),
@@ -142,10 +154,9 @@ Finally, let's run these functions for all the images. While we already log all 
 
 .. code-block:: python
 
-    image_paths = vh.inputs('images').paths()
-
-    images = [load_image(p) for p in image_paths]
-    results = [run_inference(i) for i in images]
+    results = []
+    for path in vh.inputs('images').paths():
+        results.append(run_inference(load_image(path)))
 
     with open(vh.outputs().path('results.json'), 'w') as f:
         json.dump(results, f)
@@ -156,7 +167,7 @@ Let's run the batch inference on Valohai:
 
     vh exec run --adhoc "Batch Inference"
 
-If everything went according to plan, you can now preview the results in the Outputs-tab:
+If everything went according to plan, you can now preview the results in the Outputs tab:
 
 .. image:: image-batch-inference-tutorial-2.png
    :alt: Results of our batch inference execution
