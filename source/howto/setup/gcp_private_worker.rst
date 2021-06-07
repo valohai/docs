@@ -155,7 +155,7 @@ Firewall rules
       - Ingress
       - Allow
       - valohai-queue (target networking tag)
-      - 34.248.245.191/32 (IP range)
+      - 34.248.245.191/32, 63.34.156.112/32 (IP range)
       - 63790
     * - valohai-fr-queue-ssh
       - for SSH management from Valohai
