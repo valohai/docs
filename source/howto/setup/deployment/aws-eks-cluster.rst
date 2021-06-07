@@ -220,30 +220,6 @@ Now we should get a default NGINX 404 from the load balancer external IP:
     curl http://XXX.YYY.elb.amazonaws.com
 
 
-Note that HTTPS doesn't work yet; either assign AWS certificate like below or follow instructions
-in ``deployment-https.md``.
-
-You **can** now modify the configuration, depending on setup:
-
-.. code-block:: bash
-
-    kubectl -n ingress-nginx edit service/ingress-nginx-controller --kubeconfig ~/.kube/$CLUSTER
-
-    # e.g. adding to annotations:
-
-    # **If** you want to use TLS certificates generated through AWS, replace with the correct value of 
-    # the generated certificate in the AWS console. Otherwise, setup free TLS/HTTPS in `deployment-https.md`.
-    service.beta.kubernetes.io/aws-load-balancer-ssl-cert: "arn:aws:acm:YYYYYYY:XXXXXXXX:certificate/XXXXXX-XXXXXXX-XXXXXXX-XXXXXXXX"
-
-    # Ensure the ELB idle timeout is less than nginx keep-alive timeout. By default,
-    # NGINX keep-alive is set to 75s. ELB is 60. If using WebSockets, the value will need to be
-    # increased to '3600' to avoid any potential issues.
-    service.beta.kubernetes.io/aws-load-balancer-connection-idle-timeout: "60"
-
-    # **If** a customer wants to limit access to the endpoints, you might want to create a new security group where 
-    # you can set the inbound rules, but you can also simply modify the existing one.
-    service.beta.kubernetes.io/aws-load-balancer-security-groups: "sg-XXXXXXXXX”
-
 Setup the RBAC user on Kubernetes (required)
 --------------------------------------------------
 
