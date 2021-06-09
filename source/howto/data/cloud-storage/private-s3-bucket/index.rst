@@ -188,6 +188,7 @@ Create a new AWS IAM **Role**. The role policy document should look like:
                "Effect": "Allow",
                "Action": [
                    "s3:AbortMultipartUpload",
+                   "s3:GetBucketLocation",
                    "s3:GetObject",
                    "s3:ListBucket",
                    "s3:ListBucketMultipartUploads",
