@@ -7,7 +7,7 @@
 Valohai 101 (Python)
 ============================
 
-Throughout this tutorial, we’ll walk you through running creating a new project on Valohai and running an sample Python script in Valohai.
+Throughout this tutorial, we’ll walk you through creating a new project and running an sample Python script in Valohai.
 
 The tutorial will start with simply getting a Python script to run on Valohai, and then continue with adding parameters, fetching input data and collecting key metrics.
 
@@ -104,7 +104,7 @@ A sample training script
 Import Valohai
 ------------------------
 
-Now we'll ``import valohai`` and define a new :ref:`step`.
+Now we'll ``import valohai`` and define a new :ref:`step` in the ``train.py`` file we just created..
 
 * Create a new the step called `train-model`
 * Define a default Docker image for this step. The Docker image should contain the packages we need to run our code, like Tensorflow.
@@ -124,7 +124,7 @@ Now we'll ``import valohai`` and define a new :ref:`step`.
 Save trained model
 ------------------------
 
-Finally we'll update the ``save_path`` to a Valohai output path.
+Next, we'll update the ``save_path`` to a Valohai output path in our sample scipt file.
 
 .. code-block:: python
     :linenos:
@@ -141,7 +141,7 @@ Finally we'll update the ``save_path`` to a Valohai output path.
 Run in Valohai
 ------------------------
 
-Finally on the command line run:
+Finally, we run the following commands in the the command line:
 
 .. code:: bash
 
