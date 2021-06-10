@@ -155,7 +155,7 @@ Create a new deployment
 * Click on your Project's **Deployment** tab
 * Click on the **Create deployment** button
 * Name your deployment **mydeployment** and select where the endpoint will be hosted (by default Valohai.Cloud)
-* Click on **Create deployment**
+* Click on **Create version**
 * Choose the ``digits`` endpoint and select a ``model.h5`` you've trained previously.
 * Click on **Create version**
 

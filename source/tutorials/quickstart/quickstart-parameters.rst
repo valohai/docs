@@ -12,13 +12,13 @@ Use parameters
     This tutorial is a part of our :ref:`quickstart` series.
 ..
 
-Defining Valohai parameters will allow you to easily rerun your executions and experiment with a different set of parameters.
+Defining Valohai parameters will allow you to easily rerun your executions and experiment with a different set of values.
 
-.. admonition:: A short recap on parameters
+.. admonition:: A short intro to parameters
     :class: tip
 
-    * A Valohai parameter can be a type of a string, int, float or a flag (=bool).
-    * The parameter values you define in your code are default values. These can be changed when creating an execution from the UI, command-line or API.
+    * A Valohai parameter can be a string, an int, a float or a flag (=bool).
+    * The default values for parameters are define in your code. These can be changed when creating an execution from the UI, command-line or API.
     * Parameters get passed to each Valohai execution as command-line arguments (e.g. ``train.py --epoch=5``)
 
 ..
@@ -37,6 +37,7 @@ Update **train.py** to parameterize ``epoch``.
     import tensorflow as tf
     import numpy
     import valohai
+    
 
     my_parameters = {
         'epoch': 5
