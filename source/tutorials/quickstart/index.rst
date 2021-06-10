@@ -106,7 +106,7 @@ Import Valohai
 
 Now we'll ``import valohai`` and define a new :ref:`step` in the ``train.py`` file we just created..
 
-* Create a new the step called `train-model`
+* Create a new the step called ``train-model``
 * Define a default Docker image for this step. The Docker image should contain the packages we need to run our code, like Tensorflow.
 
 .. code-block:: python
