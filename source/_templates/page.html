@@ -59,10 +59,6 @@
                 </label>
                 {% block content %}{{ body }}{% endblock %}
                 <div style="text-align:center;margin-top:25px;">
-                <span class="toc-title">
-                    <a href="https://github.com/valohai/docs/issues/new?title=Feedback%20on%20{% for doc in parents %}{{ doc.title|striptags|e }}%20%E2%80%94%20{% endfor %}{{ title|striptags|e }}&body=**Page:**%20{{ html_baseurl }}{{ pagename }}.html%0A%0A**Feedback:**"
-                        class="btn btn-neutral" title="Give Feedback" rel="Give Feedback" target="_blank">🐞 Give feedback about this page</a>
-                </span>
             </div>
             </article>
             <footer>
@@ -119,23 +115,7 @@
                     {%- endtrans %}
                     {%- endif %}
                 </div>
-                {% if analytics_id %}
-                    <script>
-                    (function (i, s, o, g, r, a, m) {
-                        i['GoogleAnalyticsObject'] = r;
-                        i[r] = i[r] || function () {
-                            (i[r].q = i[r].q || []).push(arguments)
-                        }, i[r].l = 1 * new Date();
-                        a = s.createElement(o),
-                        m = s.getElementsByTagName(o)[0];
-                        a.async = 1;
-                        a.src = g;
-                        m.parentNode.insertBefore(a, m)
-                    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-                    ga('create', 'UA-87958940-1', 'auto');
-                    ga('send', 'pageview');
-                    </script>
-                {% endif %}
+
                 {% endblock footer %}
             </footer>
         </div>
@@ -153,10 +133,40 @@
                         {{ toc }}
                     </div>
                 </div>
+                <div class="toc-title-container">
+                    <span class="toc-title">
+                        {{ _("Was this useful?") }}
+                    </span>
+                </div>
+                <div class="toc-tree-container">
+                    <div class="toc-tree">
+                        <ul>
+                            <li><span><a href="#" onclick="javascript:feedback(1)">Yes &#x1F44D;</a> | <a href="#" onclick="javascript:feedback(-1)">No &#x1F44E;</a></span></li>
+                            <li><br /></li>
+                            <li>
+                                <a href="https://github.com/valohai/docs/issues/new?title=Feedback%20on%20{{ title|striptags|e }}&body=**Page:**%20{{ html_baseurl }}{{ pagename }}.html%0A%0A**Feedback:**"
+                                    class="btn btn-neutral" title="Give Feedback" rel="Give Feedback" target="_blank">&#x1F41B; Report an issue</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
             {% endif %}
             {% endblock right_sidebar %}
         </aside>
     </main>
 </div>
+<script type="text/javascript">
+
+function feedback(vote) {
+    gtag(
+        'event', 'Vote', {
+        'event_category': 'Feedback',
+        'event_label': '{{ title|striptags|e }}',
+        'value': vote.toString()
+    });
+}
+
+
+</script>
 {%- endblock %}
