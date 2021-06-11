@@ -85,18 +85,18 @@ Create **one edge** to connect the nodes:
               path: model.h5
 
     - pipeline:
-      name: Train and deploy
-      nodes:
-        - name: train-node
-          type: execution
-          step: train-model
-        - name: deploy-node
-          type: deployment
-          deployment: mydeployment
-          endpoints:
-            - digits
-      edges:
-        - [train-node.output.model.h5, deploy-node.file.digits.model]
+        name: Train and deploy
+        nodes:
+          - name: train-node
+            type: execution
+            step: train-model
+          - name: deploy-node
+            type: deployment
+            deployment: mydeployment
+            endpoints:
+              - digits
+        edges:
+          - [train-node.output.model.h5, deploy-node.file.digits.model]
 
 ..
 
