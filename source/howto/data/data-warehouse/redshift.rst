@@ -55,7 +55,7 @@ You can edit the permissions of that role inside your AWS subscription to give i
 
 You can use for example `redshift_connector <https://github.com/aws/amazon-redshift-python-driver>`_  connect to Redshift from your execution.
 
-Below a simple example:
+Here's a simple example:
 
 .. code-block:: python
 
@@ -64,20 +64,28 @@ Below a simple example:
     import json
 
     # Fetch credentials from the machines ValohaiWorkerRole
-    response = requests.get('http://169.254.169.254/latest/meta-data/iam/security-credentials/ValohaiWorkerRole')
+    aws_metadata_ip = '169.254.169.254'
+    response = requests.get(f'http://{aws_metadata_ip}/latest/meta-data/iam/security-credentials/ValohaiWorkerRole')
 
     # Parse the JSON results
     credentials = json.loads(response.text)
 
+    # Fill in your details to these variables
+
+    host = '<cluster-identifier>.xxxxxxxxx.xx-xxxx-x.redshift.amazonaws.com'
+    database = 'XXX'
+    db_user = 'XXX'
+    cluster_identifier = '<cluster-identifier>',
+
     # Connect to Redshift cluster using AWS credentials
     conn = redshift_connector.connect(
         iam=True,
-        host='<cluster-identifier>.xxxxxxxxx.xx-xxxx-x.redshift.amazonaws.com',
-        database='XXX',
-        db_user='XXXX',
+        host=host,
+        database=database,
+        db_user=db_user,
         user='',
         password='',
-        cluster_identifier='<cluster-identifier>',
+        cluster_identifier=cluster_identifier,
         access_key_id=credentials["AccessKeyId"],
         secret_access_key=credentials["SecretAccessKey"],
         session_token=credentials["Token"],
