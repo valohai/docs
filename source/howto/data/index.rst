@@ -17,5 +17,6 @@ Work with data
     tag-files
     upload-data
     mount-nfs
+    data-warehouse/redshift
 
 
