@@ -94,7 +94,8 @@ You can access the files metadata using Valohai `DatumList API <https://app.valo
     import json
 
     metadata = {
-        "valohai.tags": ["prod", "lemonade"], #creates Valohai tags for the file
+        "valohai.tags": ["prod", "lemonade"], # creates Valohai tags for the file
+        "valohai.alias": ["model-prod"], # creates or updates a Valohai alias to point to this file
         "key": "value",
         "sample": "metadata"
     }

@@ -15,6 +15,7 @@ Work with data
     cloud-storage/index
     save-files
     tag-files
+    datum-alias
     upload-data
     mount-nfs
     data-warehouse/redshift
