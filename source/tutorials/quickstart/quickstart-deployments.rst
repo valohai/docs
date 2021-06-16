@@ -106,6 +106,13 @@ Edit your ``valohai.yaml`` and add the following endpoint definition.
 
 ..
 
+.. admonition:: Installing uvicorn from requirements-deployment.txt
+    :class: warning
+
+    If your base image doesn't contain ``uvicorn`` you can also install it when the Valohai deployment is created. Make sure you have a requirements file for your deployments ``requirements-deployment.txt`` and inside it ``uvicorn``, and any other dependencies your deployment has.
+
+    You'll then need to update the ``server-command`` to point to that uvicorn installation: ``server-command: ~/.local/bin/uvicorn``. Otherwise you'll receive an error that uvicorn can't be found.
+
 .. list-table::
    :widths: 10 90
    :stub-columns: 1
@@ -120,7 +127,7 @@ Edit your ``valohai.yaml`` and add the following endpoint definition.
      - Define which files are needed to run the endpoint. The ``path`` defines where the file will be stored in your deployment. In our case, the model file will always be at ``model.h5``, regardless of what's the name of the uploaded file
 
 
-You can add any packages that are not included in the Docker image to the ``requirements.txt``.
+You can add any packages that are not included in the Docker image to the ``requirements-deployment.txt``.
 
 .. code-block::
     :linenos:
