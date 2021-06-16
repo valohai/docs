@@ -6,7 +6,7 @@
 Data aliases
 ################################################
 
-Data aliases are aliases to Valohai datum URLs, enabling you to update the datab being used without any changes to code.
+Data aliases are aliases to Valohai datum URLs, enabling you to update the data being used without any changes to code.
 
 You can create a data alias in your project and use the alias as the input for your executions.
 
