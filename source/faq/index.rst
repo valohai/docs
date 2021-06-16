@@ -126,10 +126,10 @@ Deployments
         * Essentially add an ``endpoint`` to your ``valohai.yaml`` configuration, and write your serving code either as ``wsgi`` or run any custom command with ``server-command``.
 
 * **How do I install additional libraries to deployments?**
-    You can place a ``requirements.txt`` in the root of your folder, and Valohai will run ``pip install`` on it to install any missing Python dependencies.
+    You can place a ``requirements-deployment.txt`` in the root of your folder, and Valohai will run ``pip install`` on it to install any missing Python dependencies.
 
 * **What if I don't want to run a WSGI server?**
-    Valohai endpoints can be served as a WSGI server but we also support a more generic ``server-command`` with which you can run any HTTP server. Just make sure you either use a Docker image with the all the required dependencies installed on it, or install them by placing a ``requirements.txt`` in the root of your folder.
+    Valohai endpoints can be served as a WSGI server but we also support a more generic ``server-command`` with which you can run any HTTP server. Just make sure you either use a Docker image with the all the required dependencies installed on it, or install them by placing a ``requirements-deployment.txt`` in the root of your folder.
 
 * **What if I want to authenticate users before?**
     Valohai doesn't provide built-in authentication functionality for deployments. If you want to expose your endpoint only to authenticated users consider writing the authentication logic inside your app, using an HTTP server that can do that for you or placing the cluster in a location where only authenticated users can access it.
