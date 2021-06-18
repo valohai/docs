@@ -150,7 +150,7 @@ Firewall rules
       - Source
       - TCP
     * - valohai-fr-queue-external
-      - for ACME tooling and Redis over SSL
+      - Redis over SSL from Valohai
       - valohai-vpc
       - Ingress
       - Allow
