@@ -324,3 +324,4 @@ You should now have the following details:
 * Name of the Key Pair in your AWS
 * Public IP of the EC2 instance for Valohai
 * Private IP of the EC2 instance for Valohai
+* Name of the Key Pair used for the EC2 instance
