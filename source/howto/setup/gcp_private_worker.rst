@@ -229,8 +229,7 @@ If you created the above mentioned resources yourself, you should also send the 
 * Internal IP of the queue instance
 * (optional) Service Account you'd like to attach to the Valohai workers
 
-
-Send this information to your Valohai contact for them to finalize the installation on valohai.com.
+Share this information with your Valohai contact using the Vault credentials provided to you.
 
 
 .. seealso:: 

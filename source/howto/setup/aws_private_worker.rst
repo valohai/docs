@@ -327,6 +327,7 @@ If you created the above mentioned resources yourself, you should also have the 
 * Name of the Key Pair in AWS
 * Name of the Key Pair used for the EC2 instance
 
+Share this information with your Valohai contact using the Vault credentials provided to you.
 
 .. seealso:: 
 
