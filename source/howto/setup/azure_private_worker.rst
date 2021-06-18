@@ -1,7 +1,7 @@
 :orphan:
 
 .. meta::
-    :description: How to prepare your GCP environment for a Valohai Private Workers installation
+    :description: How to prepare your Azure environment for a Valohai Private Workers installation
 
 
 Preparing your Azure for Valohai Worker Setup
