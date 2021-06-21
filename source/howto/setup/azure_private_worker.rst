@@ -1,11 +1,11 @@
 :orphan:
 
 .. meta::
-    :description: How to prepare your Azure environment for a Valohai Private Workers installation
+    :description: How to prepare your Microsoft Azure environment for a Valohai Private Workers installation
 
 
-Preparing your Azure for Valohai Worker Setup
-#################################################
+Preparing your Azure subscription for Valohai Worker Setup
+############################################################################
 
 This document prepares your Azure subscription for a Valohai private worker installation.
 
@@ -13,7 +13,7 @@ This document prepares your Azure subscription for a Valohai private worker inst
 Creating a Subscription (optional)
 ----------------------------------------
 
-This document prepares your Microsoft Azure account for Valohai worker installation. You can either use an existing Azure subscription, or setup a new subscription for the Valohai resources.
+This document prepares your Microsoft Azure account for Valohai worker installation. You can either use an existing Microsoft Azure subscription, or setup a new subscription for the Valohai resources.
 
 If you wish to create a separate subscription for Valohai, navigate to Subscriptions panel and click "Add" at the top left of the screen to get started.
 
@@ -34,7 +34,7 @@ Also select the appropriate region for the resources:
 * When selecting your region, remember that regions have different collections of available GPU types.
     * For US customers, we recommend **East US** or **West US 2** as they have the widest array of GPU machine types in the United States.
     * For EU customers, we recommend **West Europe** as it has the widest array of GPU machine types in the Europe.
-    * Check [Azure product availability page][azure-products] for more details.
+    * Check Azure product availability page for more details.
 * Consider using the same region where your data is located to reduce data transfer times.
 * Consider using the regions where you've already acquired GPU quota from Microsoft.
 

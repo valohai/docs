@@ -24,7 +24,7 @@ You cluster can be configured to serve only private deployment endpoints.
 * Find the token name (one secret token should be generated automatically). You'll need to provide this token back to Valohai.
     ``kubectl get serviceaccounts valohai-deployment -o json``
     ``kubectl get secret valohai-deployment-token-<TOKEN_NAME> -o json``
-* Setup the `valohai-metadata-role` in kube. If you want to limit access to specific namespace define it below, otherwise leave it empty.
+* Setup the `valohai-metadata-role` in Kuberenetes. If you want to limit access to specific namespace define it below, otherwise leave it empty.
   
   * Create a new file ``valohai-deployment-role.yml`` with the following contents:
     
