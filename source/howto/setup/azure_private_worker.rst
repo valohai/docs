@@ -7,7 +7,7 @@
 Preparing your Azure subscription for Valohai Worker Setup
 ############################################################################
 
-This document prepares your Azure subscription for a Valohai private worker installation.
+This document prepares your Microsoft Azure subscription for a Valohai private worker installation.
 
 
 Creating a Subscription (optional)
