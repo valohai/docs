@@ -1,6 +1,8 @@
 .. meta::
     :description: How to do Batch Inference
 
+:orphan:
+
 Batch Inference
 ===============
 
