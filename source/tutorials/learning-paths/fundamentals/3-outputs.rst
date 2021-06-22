@@ -11,7 +11,7 @@ Upload output data
     This tutorial is a part of our :ref:`learning-paths-fundamentals` series.
 ..
 
-During execution the outputs are stored in ``/valohai/outputs`` directory. After the execution is finished, they will be automatically uploaded to the user configured data store. This will happen regardless the execution was terminated as intended or stopped or crashed.
+During execution the outputs are stored in ``/valohai/outputs`` directory. After the execution is finished, they will be automatically uploaded to the user configured data store. This will happen regardless of whether the execution was terminated as intended or stopped or crashed.
 
 In this section you will learn:
 
@@ -33,24 +33,15 @@ In this section you will learn:
 Let's update the ``save_path`` to a Valohai output path in our sample scipt file.
 
 .. code-block:: python
-    :emphasize-lines: 45
+    :emphasize-lines: 36
     :linenos:
 
     import tensorflow as tf
     import numpy
-    import valohai
 
-    my_parameters = {
-        'epoch': 5
-    }
+    mnist = tf.keras.datasets.mnist
 
-    my_inputs = {
-        'mnist': 's3://onboard-sample/tf-sample/mnist.npz'
-    }
-
-    valohai.prepare(step="train-model", image='tensorflow/tensorflow:2.4.1', default_parameters=my_parameters, default_inputs=my_inputs)
-
-    mnist_file_path = valohai.inputs('mnist').path()
+    mnist_file_path = 'mnist.npz'
 
     with numpy.load(mnist_file_path, allow_pickle=True) as f:
         x_train, y_train = f['x_train'], f['y_train']
@@ -78,7 +69,7 @@ Let's update the ``save_path`` to a Valohai output path in our sample scipt file
                 loss=loss_fn,
                 metrics=['accuracy'])
 
-    model.fit(x_train, y_train, epochs=valohai.parameters('epoch').value)
+    model.fit(x_train, y_train, epochs=5)
 
     save_path = valohai.outputs().path('model.h5')
     model.save(save_path)
