@@ -150,12 +150,12 @@ Firewall rules
       - Source
       - TCP
     * - valohai-fr-queue-external
-      - for ACME tooling and Redis over SSL
+      - Redis over SSL from Valohai
       - valohai-vpc
       - Ingress
       - Allow
       - valohai-queue (target networking tag)
-      - 34.248.245.191/32 (IP range)
+      - 34.248.245.191/32, 63.34.156.112/32 (IP range)
       - 63790
     * - valohai-fr-queue-ssh
       - for SSH management from Valohai
@@ -229,8 +229,7 @@ If you created the above mentioned resources yourself, you should also send the 
 * Internal IP of the queue instance
 * (optional) Service Account you'd like to attach to the Valohai workers
 
-
-Send this information to your Valohai contact for them to finalize the installation on valohai.com.
+Share this information with your Valohai contact using the Vault credentials provided to you.
 
 
 .. seealso:: 

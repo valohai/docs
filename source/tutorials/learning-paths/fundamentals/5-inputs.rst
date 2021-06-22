@@ -1,21 +1,23 @@
 .. meta::
-    :description: Downloading data to your Valohai execution
-
-.. _quickstart-inputs:
-
+    :description: Valohai Fundamentals learning path - Downloading data with Valohai inputs
 
 Download input data
-####################
+#######################
 
 .. admonition:: Note
     :class: seealso
 
-    This tutorial is a part of our :ref:`quickstart` series.
+    This tutorial is a part of our :ref:`learning-paths-fundamentals` series.
 ..
 
-Define inputs to easily download data from a public address or your private cloud storage.
+By defining inputs you can easily download data from a public address or your private cloud storage. 
 
-.. admonition:: A short recap on inputs
+In this section you will learn:
+
+- How to define Valohai inputs
+- How to change inputs between executions both in the CLI and in the UI
+
+.. admonition:: A short introduction inputs
     :class: tip
 
     * Valohai inputs can be from a public location (HTTP/HTTPS) or from your private cloud storage (AWS S3, Azure Storage, GCP Cloud Storage, OpenStack Swift)
@@ -25,8 +27,8 @@ Define inputs to easily download data from a public address or your private clou
     * You can interpolate parameter values into input URIs with the syntax ``s3://mybucket/images/{parameter:myparam}/**.jpeg``. This is of particular use in tasks, where you can now easily run your execution on multiple variable datasets. 
     * Valohai inputs are cached on the virtual machine.
 
-
 ..
+
 
 Update **train.py** to add inputs:
 
@@ -37,7 +39,7 @@ Update **train.py** to add inputs:
 You should also remove the ``mnist.npz`` from your local machine.
 
 .. code-block:: python
-    :emphasize-lines: 2,9,10,11,13,15
+    :emphasize-lines: 10,11,12,14,16
     :linenos:
 
     import tensorflow as tf

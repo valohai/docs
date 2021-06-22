@@ -1,6 +1,8 @@
 .. meta::
     :description: If you want to save results from an execution, store your files in /valohai/outputs and they are automatically uploaded.
 
+.. _outputs:
+
 Uploading Files from Executions
 ===============================
 

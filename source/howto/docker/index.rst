@@ -3,8 +3,8 @@
 
 .. _docker:
 
-Docker Images
-*************
+Docker images
+#################################################
 
 Valohai utilizes Docker images to define your runtime environment.
 This means that the platform is capable of running any code from C to Python
@@ -12,7 +12,7 @@ as long as it can run inside a Docker container.
 
 You can use any Docker image available online.
 After getting initial versions working, it makes sense to package your dependencies by
-:doc:`building your own images </tutorials/docker-build-image>`.
+:doc:`building your own images </howto/docker/docker-build-image/>`.
 
 We recommend hosting your images on `Docker Hub <https://hub.docker.com/>`_ as it's the most straight forward
 but you can use any Docker registry. You can configure authenticated access under organization settings.
@@ -28,3 +28,11 @@ Which images to use depend on your specific use-case, but it usually makes sense
 
     * :ref:`docker-private-registries`
     * :ref:`docker-build`
+
+.. toctree::
+    :titlesonly:
+    :maxdepth: 1
+
+    docker-private-registry
+    popular-notebook-images
+    docker-build-image

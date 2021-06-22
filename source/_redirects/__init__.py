@@ -161,7 +161,14 @@ redirects = {
     '/core-concepts/pipelines/?highlight=pipelines': '/topic-guides/core-concepts/pipelines/?highlight=pipelines',
     '/core-concepts/parameters/?highlight=hyperparameter': '/topic-guides/core-concepts/parameters/?highlight=hyperparameter',
     '/tutorials/quick-start-cli.html?highlight': '/tutorials/valohai-cli/index.html',
-    '/guides/build-docker-image/index.html': '/tutorials/docker-build-image/index.html'
+    '/guides/build-docker-image/index.html': '/tutorials/docker-build-image/index.html',
+
+
+    '/tutorials/docker-build-image/index.html': '/howto/docker/docker-build-image/index.html',
+    '/tutorials/airflow-management/index.html': '/howto/airflow-management/index.html',
+    '/howto/docker-private-registry/index.html': '/howto/docker/docker-private-registry/index.html',
+    '/howto/notebooks/popular-notebook-images/index.html': '/howto/docker/popular-notebook-images/index.html',
+    '/topic-guides/docker-images/index.html': '/howto/docker/index.html',
 
 
 }

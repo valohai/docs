@@ -20,13 +20,14 @@ How-to guides include the steps involved in addressing key problems and use-case
     code-repository/index
     data/index
     new-user-guide/index
+    docker/index
     executions/compare
     executions/complex-visualizations
     tasks/index
     notifications/index
-    docker-private-registry
     pipelines/index
     organization/index
     deployments/deployments-test
-    notebooks/popular-notebook-images
+    airflow-management/index
+    
 ..

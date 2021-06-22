@@ -14,11 +14,9 @@ Tutorials take you by the hand through a series of steps to integrate Valohai fe
 .. toctree::
     :titlesonly:
 
+    learning-paths/index
     quickstart/index
     jupyter/jupyhai/index
-    docker-build-image
     apis/index
     valohai-cli/index
     example-project/index
-    airflow-management/index
-    batch-inference/index

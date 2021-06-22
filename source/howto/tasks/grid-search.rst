@@ -14,7 +14,7 @@ When starting a task, instead of a single value for a single hyperparameter, you
     :class: attention
 
     * A Valohai project that is connected to a Git-repository.
-    * At least one :ref:`step` with parameters defined. Follow our :ref:`quickstart-parameters` tutorial to create a step with parameters.
+    * At least one :ref:`step` with parameters defined. Follow our :ref:`migrate-parameters` tutorial to create a step with parameters.
 
 ..
 

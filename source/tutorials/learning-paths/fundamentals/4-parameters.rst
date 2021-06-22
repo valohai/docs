@@ -1,7 +1,5 @@
 .. meta::
-    :description: Add parameters to your Valohai executions
-
-.. _quickstart-parameters:
+    :description: Valohai Fundamentals learning path - Adding parameters to your executions
 
 Use parameters
 ###############
@@ -9,10 +7,16 @@ Use parameters
 .. admonition:: Note
     :class: seealso
 
-    This tutorial is a part of our :ref:`quickstart` series.
+    This tutorial is a part of our :ref:`learning-paths-fundamentals` series.
 ..
 
-Defining Valohai parameters will allow you to easily rerun your executions and experiment with a different set of values.
+This section will show you how to use parameters in Valohai. Defining parameters will allow you to easily rerun your executions and experiment with a different set of values.
+
+In this section you will learn:
+
+- How to define Valohai parameters
+- How to change parameter values between executions both in the CLI and in the UI
+- Defining Valohai parameters will allow you to easily rerun your executions and experiment with a different set of values.
 
 .. admonition:: A short intro to parameters
     :class: tip
@@ -31,7 +35,7 @@ Update **train.py** to parameterize ``epoch``.
 
 
 .. code-block:: python
-    :emphasize-lines: 3,4,5,6,7,8,9,41
+    :emphasize-lines: 6,7,8,10,42
     :linenos:
 
     import tensorflow as tf

@@ -1,21 +1,24 @@
 .. meta::
-    :description: Collecting metrics and comparing executions
-
-.. _quickstart-metadata:
-
+    :description: Valohai Fundamentals learning path - Collect and visualize key metrics
 
 Collect and view metrics
-########################################
+#############################
 
 .. admonition:: Note
     :class: seealso
 
-    This tutorial is a part of our :ref:`quickstart` series.
+    This tutorial is a part of our :ref:`learning-paths-fundamentals` series.
 ..
 
-Valohai allows you to easily collect key performance metrics from executions, visualize them and compare metrics across multiple executions.
+Valohai allows you to easily collect metadata, such as key performance metrics from executions, visualize it and compare it across multiple executions. 
 
-.. admonition:: A short recap on metadata
+In this section you will learn:
+
+- How to collect metadata
+- How to visualize metadata in the UI
+- How to compare metadata between executions
+
+.. admonition:: A short introduction to metadata
     :class: tip
 
     * Valohai metadata is collected as key:value pairs
@@ -32,7 +35,7 @@ Update **train.py** to add metadata logging:
 * Pass the new callback to ``model.fit``
 
 .. code-block:: python
-    :emphasize-lines: 3,5,6,7,8,9,49,50
+    :emphasize-lines: 5,6,7,8,9,49,50
     :linenos:
 
     import tensorflow as tf

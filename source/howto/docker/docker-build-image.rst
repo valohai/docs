@@ -65,7 +65,39 @@ As an example, we'll be creating a Docker image that utilizes GPUs with TensorFl
 
 Docker images are build with Dockerfiles that specify the steps how to build the image. More information about Dockerfile syntax at `Dockerfile reference <https://docs.docker.com/engine/reference/builder/>`_.
 
-Write the following into a file called ``Dockerfile`` (without extension).
+Write the following into a file called ``Dockerfile`` (without extension). You can place this anywhere on your machine.
+
+Below you'll see two examples of a Dockerfile.
+
+
+Example 1) Custom image based on ``tensorflow/tensorflow``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In this example we'll create a new image based on the official Tensorflow image and add our own requirements.txt on top of that. This way our Docker image will already have our requirements inside it, and we don't have to install them seperately during the execution.
+
+.. note::
+
+    We're using ``tensorflow/tensorflow`` here but you can use any other image as a base image.
+
+
+* Start by finding the right base image from hub.docker.com
+* For our example, we'll use ``tensorflow/tensorflow:2.2.3-gpu`` as the base image. You can find all the TensorFlow images under the **Tags** page on https://hub.docker.com/r/tensorflow/tensorflow/tags
+* The sample below assumes that there is a ``requirements.txt`` file in the same directory as the ``Dockerfile``
+
+.. code-block:: Dockerfile
+
+    # Our base image
+    FROM tensorflow/tensorflow:2.2.3-gpu
+
+    # Copy the requirements.txt file to our Docker image
+    ADD requirements.txt .
+
+    # Install the requirements.txt
+    RUN pip install -r requirements.txt
+
+
+Example 2) Custom image based on ``nvidia/cuda``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: Dockerfile
 
@@ -91,6 +123,10 @@ Write the following into a file called ``Dockerfile`` (without extension).
     # You may also install anything else from pip like this
     RUN pip install --no-cache-dir tensorflow-gpu==1.12.0
 
+
+Build the image
+--------------------
+
 The run the following commands to name and build the image.
 
 .. code-block:: bash
@@ -105,6 +141,7 @@ The run the following commands to name and build the image.
     If you are using ``nvidia/cuda`` base image, you might be required to use Linux with kernel version >3.10 to work with the images. You need to have `nvidia-docker <https://github.com/nvidia/nvidia-docker/wiki/Installation-(version-2.0)>`_ installed.
 
 Now you have your own Docker image! Next we'll host it somewhere for later use.
+
 
 Host the image
 -----------------------
