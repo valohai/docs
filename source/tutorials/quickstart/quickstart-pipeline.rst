@@ -9,7 +9,7 @@ Create a pipeline
 .. admonition:: Note
     :class: seealso
 
-    This tutorial is a part of our :ref:`quickstart` series.
+    This tutorial continues from where the :ref:`learning-paths-fundamentals` left off.
 ..
 
 Pipelines automate your machine learning operations on Valohai ecosystem. A pipeline is a series of executions, Tasks and deployments.

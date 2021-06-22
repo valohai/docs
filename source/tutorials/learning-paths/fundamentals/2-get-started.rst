@@ -141,7 +141,7 @@ View in Valohai
 
 .. seealso::
 
-    * :doc:`Docker images</topic-guides/docker-images/>`
+    * :doc:`Docker images</howto/docker/index>`
     * :ref:`yaml`
     * `vh project </reference-guides/valohai-cli/project/>`_
     * `vh execution run </reference-guides/valohai-cli/execution/#vh-execution-run>`_

@@ -22,7 +22,6 @@ In this tutorial we will be using simple Python scripts and sample data. At the 
 
 .. toctree::
     :titlesonly:
-    :hidden:
 
     2-get-started
     3-outputs

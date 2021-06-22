@@ -10,7 +10,7 @@ Deploy a model for online inference
 .. admonition:: Note
     :class: seealso
 
-    This tutorial is a part of our :ref:`quickstart` series.
+    This tutorial continues from where the :ref:`learning-paths-fundamentals` left off.
 ..
 
 You can deploy a trained model for online inference using Valohai deployments.

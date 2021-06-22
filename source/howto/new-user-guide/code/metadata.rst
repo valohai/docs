@@ -3,6 +3,9 @@
 .. meta::
     :description: Overview of how to collect key metrics as Valohai metadata
 
+
+.. _migrate-metadata:
+
 Collect metadata
 #################################################
 
