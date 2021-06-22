@@ -11,7 +11,7 @@ Using the Bayesian optimizer
   :class: attention
 
   * A Valohai project that is connected to a Git-repository.
-  * At least one :ref:`step` with parameters defined. Follow our :ref:`quickstart-parameters` tutorial to create a step with parameters.
+  * At least one :ref:`step` with parameters defined. Follow our :ref:`migrate-parameters` tutorial to create a step with parameters.
 
 ..
 
@@ -33,7 +33,7 @@ Now set your prefered settings:
    * - Setting
      - Description
    * - Early stopping
-     - Allows you to set early stopping criteria based on the Tasks :ref:`metadata`. When one of the executions from the Task meets this criteria, the whole Task will be stopped.
+     - Allows you to set early stopping criteria based on the Tasks :ref:`migrate-metadata`. When one of the executions from the Task meets this criteria, the whole Task will be stopped.
    * - Optimization engine
      - By default Valohai will use `Optuna <https://optuna.org/>`_ but you can also choose to use `HyperOpt <https://github.com/hyperopt/hyperopt>`_ as the engine.
    * - Maximum execution count

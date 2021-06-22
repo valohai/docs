@@ -26,8 +26,8 @@ Here is a "Hello World" step on ``valohai.yaml`` to print "hello" on a worker ma
 
     `busybox <https://hub.docker.com/_/busybox>`_ is one of the simplest Docker images in existence
     as it includes only the most basic Unix utilities. You can either utilize
-    :doc:`freely available images from Docker Hub </topic-guides/docker-images>` or
-    :doc:`build your own. </tutorials/docker-build-image>`
+    :doc:`freely available images from Docker Hub </howto/docker/index>` or
+    :doc:`build your own. </howto/docker/docker-build-image>`
 
 This section describes how to write ``valohai.yaml`` files in more detail.
 

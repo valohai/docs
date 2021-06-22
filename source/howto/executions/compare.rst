@@ -13,7 +13,7 @@ Valohai allows you to easily compare key metrics from executions.
   :class: attention
 
   * A Valohai project that is connected to a Git-repository.
-  * Multiple completed executions which print out metadata. Follow our :ref:`quickstart-metadata` tutorial to learn how to use metadata.
+  * Multiple completed executions which print out metadata. Follow our :ref:`migrate-metadata` tutorial to learn how to use metadata.
 
 ..
 
