@@ -16,6 +16,7 @@ Work with data
     save-files
     tag-files
     datum-alias
+    datum-adoption
     upload-data
     mount-nfs
     data-warehouse/redshift
