@@ -43,7 +43,9 @@ By using API requests
 
 * Generate yourself an API token as shown in :doc:`API Basics </tutorials/example-project/quick-start-api>`
 * Send a POST request to ``https://app.valohai.com/api/v0/stores/{id}/adopt/``
+    * You can get the IDs to replace the placeholder ``{id}`` for all your stores by sending an API request to ``https://app.valohai.com/api/v0/stores/``
 * In the request body, send a JSON consisting of the URL to adopt and the project ID:
+    * You can get the project ID from under the **Settings** tab in the Valohai UI
 
 .. code-block:: JSON
 
@@ -54,7 +56,47 @@ By using API requests
 
 ..
 
-* You can get the project ID from under the **Settings** tab in the Valohai UI
+
+If the datum adoption was successfull, you should get the following response.
+
+.. code-block:: JSON
+
+    {
+        "ok": true,
+        "created": {
+            "s3://onboard-sample/tf-sample/test.txt": "017a515f-30a4-d0f1-d37a-53ffc38e90c7"
+            }
+    }
+
+..
+
+
+In case the datum already exists, this will be indicated in the response. 
+
+.. code-block:: JSON
+
+    {
+        {
+            "message": "s3://onboard-sample/test.txt already exists in onboard-sample",
+            "code": null
+        }
+    }
+
+..
+
+
+Finally, if the file was not found, you will be notified of it as well.
+
+.. code-block:: JSON
+
+    {
+        {
+            "message": "Not found in onboard-sample: 's3://onboard-sample/tf-sample12332/test.txt'",
+            "code": "adoptable_file_not_found"
+        }
+    }
+
+..
 
 
 .. seealso::
