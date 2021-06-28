@@ -77,7 +77,7 @@ In case the datum already exists, this will be indicated in the response.
 
     {
         {
-            "message": "s3://onboard-sample/test.txt already exists in onboard-sample",
+            "message": "s3://my-bucket/my-file.txt already exists in my-bucket",
             "code": null
         }
     }
