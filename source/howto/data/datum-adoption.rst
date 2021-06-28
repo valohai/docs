@@ -91,7 +91,7 @@ Finally, if the file was not found, you will be notified of it as well.
 
     {
         {
-            "message": "Not found in onboard-sample: 's3://onboard-sample/tf-sample12332/test.txt'",
+            "message": "Not found in my-bucket: 's3://my-bucket/my-file.txt'",
             "code": "adoptable_file_not_found"
         }
     }
