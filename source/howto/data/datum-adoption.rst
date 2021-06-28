@@ -64,7 +64,7 @@ If the datum adoption was successfull, you should get the following response.
     {
         "ok": true,
         "created": {
-            "s3://onboard-sample/tf-sample/test.txt": "017a515f-30a4-d0f1-d37a-53ffc38e90c7"
+            "s3://my-bucket/my-file.txt": "017a515f-30a4-d0f1-d37a-53ffc38e90c7"
             }
     }
 
