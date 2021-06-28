@@ -1,6 +1,8 @@
 .. meta::
     :description: How to create a R project with Valohai machine learning platform? Read through the quick start tutorial to learn how to to set up a project, link to a version control repository, run executions and view results of machine learning experiments.
 
+.. _example-projects-quick-start-r:
+
 R - Example Project
 ##########################
 
