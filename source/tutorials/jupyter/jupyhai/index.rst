@@ -8,6 +8,13 @@ Jupyter Notebooks
 
 In this tutorial, we will use Jupyhai, to run a Valohai execution from your local Jupyter notebook.
 
+.. admonition:: A short recap on Notebooks
+   :class: tip
+
+   * Jupyhai is a Jupyter notebook extension developed and maintained by Valohai.
+   * Use the **Run remote** button, instead of the Run cell button to run your notebook on Valohai.
+   * The Jupyhai addon will generate a :ref:`yaml` file for each execution based on the contents of the Notebook. You don't need to create the YAML file yourself.
+   * Notebook executions use a custom Docker image called ``valohai/pypermill``. Make sure to use it as a base for your custom Docker images.
 
 .. admonition:: Installing Jupyhai to on your machine
    :class: attention
