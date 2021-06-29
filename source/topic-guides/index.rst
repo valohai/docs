@@ -17,6 +17,7 @@ Topic guides discuss key topics and concepts at a fairly high level and provide 
     architecture/index
     reproducibility
     setup/index
+    valohai-utils/index
 
 
 "So, what *is* Valohai?"

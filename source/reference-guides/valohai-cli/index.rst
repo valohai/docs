@@ -1,6 +1,9 @@
 .. meta::
     :description: Command listing for the Valohai command-line client
 
+.. _cli:
+
+
 Command-line Reference
 ======================
 
