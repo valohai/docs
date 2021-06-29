@@ -1,9 +1,3 @@
-.. meta::
-    :description: Valohai Fundamentals learning path - Recap and knowledge check
-
-Recap
-#############################
-
 .. admonition:: Note
     :class: seealso
 
