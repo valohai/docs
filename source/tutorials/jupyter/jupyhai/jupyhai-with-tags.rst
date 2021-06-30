@@ -210,7 +210,7 @@ Update the ``myinput`` in your sample code to point to ``/valohai/inputs/mydata/
 Save a trained model
 ----------------------
 
-Finally you'd need to save the trained model as a Valohai output.
+Finally you need to save the trained model as a Valohai output.
 
 .. code-block:: python
    :linenos:
@@ -233,5 +233,4 @@ View in Valohai
 .. seealso::
 
    * Using :ref:`howto-tasks` for hyperparameter tuning
-
 
