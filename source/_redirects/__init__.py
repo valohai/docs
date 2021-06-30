@@ -170,6 +170,13 @@ redirects = {
     '/howto/notebooks/popular-notebook-images/index.html': '/howto/docker/popular-notebook-images/index.html',
     '/topic-guides/docker-images/index.html': '/howto/docker/index.html',
 
+    '/tutorials/learning-paths/fundamentals/2-get-started/index.html': '/tutorials/learning-paths/fundamentals/valohai-utils/2-get-started/index.html',
+    '/tutorials/learning-paths/fundamentals/3-outputs/index.html': '/tutorials/learning-paths/fundamentals/valohai-utils/3-outputs/index.html',
+    '/tutorials/learning-paths/fundamentals/4-parameters/index.html': '/tutorials/learning-paths/fundamentals/valohai-utils/4-parameters/index.html',
+    '/tutorials/learning-paths/fundamentals/5-inputs/index.html': '/tutorials/learning-paths/fundamentals/valohai-utils/5-inputs/index.html',
+    '/tutorials/learning-paths/fundamentals/6-metadata/index.html': '/tutorials/learning-paths/fundamentals/valohai-utils/6-metadata/index.html',
+    '/tutorials/learning-paths/fundamentals/7-recap/index.html': '/tutorials/learning-paths/fundamentals/valohai-utils/7-recap/index.html',
+
 
 }
 
