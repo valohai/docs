@@ -65,7 +65,7 @@ Create a new folder ``valohai-notebook`` on your desktop and launch Jupyter in t
 * Click on **Settings** on the toolbar
 * Login with your Valohai credentials
 * Update the Docker image to ``valohai/notebook:tensorflow-2.5.0``
-* Close the settings tab
+* Close the **Settings** tab
 * Add ``print('Hello Valohai Notebooks!')`` to the first cell
 * Click on ``Run remote`` to run the notebook remotely
 * View the logs from the execution by clicking on the gizmo on the right side of the page (e.g. ``#1``)
