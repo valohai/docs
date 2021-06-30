@@ -4,28 +4,7 @@
 Use parameters
 ###############
 
-.. admonition:: Note
-    :class: seealso
-
-    This tutorial is a part of our :ref:`learning-paths-fundamentals` series.
-..
-
-This section will show you how to use parameters in Valohai. Defining parameters will allow you to easily rerun your executions and experiment with a different set of values.
-
-In this section you will learn:
-
-- How to define Valohai parameters
-- How to change parameter values between executions both in the CLI and in the UI
-- Defining Valohai parameters will allow you to easily rerun your executions and experiment with a different set of values.
-
-.. admonition:: A short intro to parameters
-    :class: tip
-
-    * A Valohai parameter can be a string, an int, a float or a flag (=bool).
-    * The default values for parameters are define in your code. These can be changed when creating an execution from the UI, command-line or API.
-    * Parameters get passed to each Valohai execution as command-line arguments (e.g. ``train.py --epoch=5``)
-
-..
+.. include:: ../_shared/_4-parameters.rst
 
 Update **train.py** to parameterize ``epoch``.
 
@@ -91,39 +70,8 @@ Run in Valohai
 
 Update your :ref:`yaml` with ``vh yaml step``. This will generate a ``parameters`` section in your step.
 
-Finally run a new Valohai execution.
-
-.. code:: bash
+.. code-block:: bash
 
     vh yaml step train.py
-    vh exec run train-model --adhoc
 
-..
-
-Rerun an execution with different parameter values
--------------------------------------------------------
-
-* **Open your project** on `app.valohai.com <https://app.valohai.com>`_
-* **Open the latest execution**
-* Click **Copy**
-* Scroll down to the **Parameters** section
-* Change the value of **epoch**
-* Click **Create execution**
-
-
-.. video:: /_static/videos/execution_parameters.mp4
-    :autoplay:
-    :width: 600
-
-.. tip::
-
-    You can also run a new execution with different parameter values from the command line:
-
-    ``vh exec run train-model --adhoc --epoch=10``
-
-.. seealso::
-
-    * Core concept: :ref:`parameters`
-    * Core conept: `Hyperparameter search </topic-guides/core-concepts/parameters/#hyperparameter-search>`_
-    * Tutorial: :ref:`task-grid-search`
-..
+.. include:: ../_shared/_4-parameters-end.rst

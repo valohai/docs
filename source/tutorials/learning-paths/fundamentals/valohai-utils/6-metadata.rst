@@ -4,34 +4,10 @@
 Collect and view metrics
 #############################
 
-.. admonition:: Note
-    :class: seealso
-
-    This tutorial is a part of our :ref:`learning-paths-fundamentals` series.
-..
-
-Valohai allows you to easily collect metadata, such as key performance metrics from executions, visualize it and compare it across multiple executions. 
-
-In this section you will learn:
-
-- How to collect metadata
-- How to visualize metadata in the UI
-- How to compare metadata between executions
-
-.. admonition:: A short introduction to metadata
-    :class: tip
-
-    * Valohai metadata is collected as key:value pairs
-    * Easily visualized as a time series graph or a scatter plot in the web app
-    * Used to compare performance of multiple executions
-    * Sort and find executions based on metadata metrics
-
-..
-
-Update **train.py** to add metadata logging:
+.. include:: ../_shared/_6-metadata.rst
 
 * Create a new method ``logMetadata`` that will use log metadata
-* Create a TensorFlow LambdaCallback to trigger ``logMetadta`` every time an epoch ends
+* Create a TensorFlow LambdaCallback to trigger ``logMetadata`` every time an epoch ends
 * Pass the new callback to ``model.fit``
 
 .. code-block:: python
@@ -94,41 +70,4 @@ Update **train.py** to add metadata logging:
 
 ..
 
-Run in Valohai
-------------------------
-
-Adding or changing metadata doesn't require any changes to the :ref:`yaml`.
-
-You can immediately launch a new execution and view the collected metadata.
-
-.. code:: bash
-
-    vh exec run train-model --adhoc
-
-..
-
-View metrics
--------------------
-
-* Go to your project's executions
-* Click on the **Show columns** button on the right side, above the table
-* **Select accuracy and loss** to show them in the table.
-* **Open the latest execution**
-* **Go to the metadata tab** to view metrics from that executions.
-* Select **epoch on X-axis** and **accuracy and loss on Y-axis**
-
-.. admonition:: Latest metada value
-    :class: Important
-
-    The metadata value displayed in the table is always the latest printed metadata. In your script you should ensure that the last value you print out for ``accuracy`` is the best value for your use case.
-
-.. video:: /_static/videos/execution_metadata.mp4
-    :autoplay:
-    :width: 600
-
-.. seealso::
-
-    * :ref:`executions-compare`
-    * :ref:`executions-graphs`
-
-..
+.. include:: ../_shared/_6-metadata-end.rst

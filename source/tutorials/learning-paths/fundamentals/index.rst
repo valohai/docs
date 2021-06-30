@@ -20,14 +20,17 @@ Learning objectives:
 
 In this tutorial we will be using simple Python scripts and sample data. At the end of this path you will know how to run executions in Valohai both from the CLI (command line interface) and from the UI and are ready to start working with your own code and data.
 
+You can choose to complete this learning path using:
+
+* `Standard Python scripts <python/>`_, and manually writing the :ref:`yaml`.
+* `The valohai-utils helper library for Python <valohai-utils/>`_ that you can import to your script and use the command line tools to generate the :ref:`yaml`
+
 .. toctree::
     :titlesonly:
+    :maxdepth: 1
+    :hidden:
 
-    2-get-started
-    3-outputs
-    4-parameters
-    5-inputs
-    6-metadata
-    7-recap
+    python/index
+    valohai-utils/index
 
 ..
