@@ -180,7 +180,7 @@ Firewall rules
       - Allow
       - valohai-queue (target networking tag)
       - 10.0.0.0/20 (IP ranges of subnets used for workers)
-      - 6379
+      - 63790
 
 VM Instance for queue machine
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

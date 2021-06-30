@@ -286,7 +286,7 @@ Create a new security group named **valohai-sg-queue** and set the Inbound rules
       - 34.248.245.191/32
       - for Redis over TLS from app.valohai.com
     * - TCP
-      - 6379
+      - 63790
       - valohai-sg-workers
       - for plain Redis connection from workers
     * - TCP
