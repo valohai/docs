@@ -14,7 +14,7 @@ Datums are unique identifiers that can be used to point to specific output files
     You'll also have the option to copy your cloud data store's URL (e.g. ``s3://``, ``gs://``, or ``azure://``. You can use either the datum URL or the cloud provider URL for your Valohai executions.
 
 
-    The advantage of using ``datum://`` is that it allows Valohai keep track of that exact file and version. This allows you to later on trace back files and understand where different files are used, or for example know which pipeline was ran to generate a trained model file.
+    The advantage of using ``datum://`` is that it allows Valohai keep track of that exact file and version. This allows you to later on trace back files and understand where different files are used, or for example to keep track of which pipeline was ran to generate a trained model file.
 
 Setting datum aliases
 --------------------------------
