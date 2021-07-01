@@ -25,7 +25,7 @@ For example, consider the following sequence of data science operations:
 Our pipeline would have 4 or more **nodes**; at least one for each :doc:`step </topic-guides/core-concepts/steps>` mentioned above and one for the deployment.
 
 In the example below we'll train 3 different models in parallel and compare them to find the best performing model that we can deploy to an HTTP endpoint. 
-It is noteworthy that when evaluating multiple trained models inside a pipeline, **the comparison for choosing the best model is not done automatically**. The comparison needs to be defined separately and run for example in its own node (find-best-model node in the figure below).    
+It is worth noting that when evaluating multiple trained models inside a pipeline, **the comparison for choosing the best model is not done automatically**. It's up to you to define the comparison according to your models criteria and run the comparison in its own node (find-best-model node in the figure below). 
 
 
 .. image:: /topic-guides/core-concepts/pipelines.png
