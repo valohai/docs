@@ -129,7 +129,7 @@ Pipeline with multiple nodes
 
 For an example with multiple nodes, please see our :ref:`example-projects-quick-start-tensorflow`. 
 
-* It is noteworthy that when evaluating multiple trained models inside a pipeline, **the comparison for choosing the best model is not done automatically**. 
+* It is worth noting that when evaluating multiple trained models inside a pipeline, **the comparison for choosing the best model is not done automatically**. 
 * The user needs to define the comparison programatically in a separate node and then output the results to the possible next node (see the ``yaml`` file and ``compare.py`` in the example project).
 
 Reusing nodes in a pipeline
