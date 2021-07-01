@@ -1,6 +1,8 @@
 .. meta::
     :description: This tutorial guides you through setting up a machine learning pipeline for a TensorFlow MNIST project. Learn how to create a project, link a version control repository to your projects and create executions.
 
+.. _example-projects-quick-start-tensorflow:
+
 Tensorflow - Example project
 #################################
 

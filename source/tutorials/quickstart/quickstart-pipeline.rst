@@ -120,9 +120,33 @@ Launch a pipeline in Valohai
 * Click on the **Create pipeline** button
 * Select the **blueprint** from the dropdown menu
 * You can click on either of the nodes to change their default settings
-* Click on **Create pipeline**
+* Click on the **Create pipeline** button
 
 The pipeline will start execution the train-model step and once it's done start a new deployment. When the deployment goes to ``100% Available`` the pipeline will be marked as completed.
+
+Pipeline with multiple nodes
+--------------------------------
+
+For an example with multiple nodes, please see our :ref:`example-projects-quick-start-tensorflow`. 
+
+* It is noteworthy that when evaluating multiple trained models inside a pipeline, **the comparison for choosing the best model is not done automatically**. 
+* The user needs to define the comparison programatically in a separate node and then output the results to the possible next node (see the ``yaml`` file and ``compare.py`` in the example project).
+
+Reusing nodes in a pipeline
+--------------------------------
+
+In some cases it might happen that some nodes in a pipeline fail. To avoid having to run all the executions again, it is possible to reuse nodes from a previous pipeline run. 
+
+* Start by creating a new pipeline by clicking on the **Create pipeline** button
+* After choosing the pipeline blueprint, click on the **Reuse nodes...** button
+* Select the source pipeline
+* Select the nodes to reuse 
+* Click on the **Apply** button
+* You can change the default settings for the non-reused nodes by clicking on them.
+* Click on the **Create pipeline** button
+
+.. image:: reuse-nodes.png
+    :alt: Reusing nodes in pipelines.
 
 .. admonition:: Launch pipelines without YAML
     :class: tip
