@@ -6,7 +6,7 @@
 Valohai-utils Python Toolkit
 ============================
 
-One of the Valohai core design principles is to be an unopinionated agnostic platform. The user is not forced to use
+One of the Valohai core design principles is to be an unopinionated agnostic platform. The user is not required to use
 any specific programming language, framework or SDK.
 
 That said, Valohai offers a Python utility library called
@@ -57,7 +57,9 @@ What is it?
 
 The ``valohai-utils`` is a generic utility library for the Valohai user. In general, it streamlines pipeline definition and writing Valohai-compatible code. This is achieved by offering utility functions for the most common tasks, which are all described in the sections below.
 
-The library is designed to be used hand-in-hand with the `Valohai CLI </reference-guides/valohai-cli>`_. User can update the valohai YAML configuration based on ``valohai-utils`` powered code using the CLI commands ``vh yaml step`` and ``vh yaml pipeline``.
+The library is designed to be used hand-in-hand with the `Valohai CLI </reference-guides/valohai-cli>`_. 
+
+You can generate or update an existing :ref:`yaml` using the command ``vh yaml step <filename>`` and ``vh yaml pipeline <filename>``.
 
 What it isn't?
 ---------------
@@ -68,7 +70,7 @@ The ``valohai-utils`` library is not a machine learning or data science library.
 .. toctree::
     :titlesonly:
 
-    prepare()
+    prepare
     parameters
     inputs
     outputs

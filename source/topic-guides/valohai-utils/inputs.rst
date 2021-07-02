@@ -7,7 +7,7 @@ Inputs
 To get some data for your :doc:`step </topic-guides/core-concepts/steps>`, you need :doc:`inputs </reference-guides/valohai-yaml/step-inputs>`.
 Inputs are basically the required files that are expected to be there when the code is executed.
 
-With ``valohai-utils``, you define the inputs in the call to the :doc:`prepare() </topic-guides/valohai-utils/prepare()>` method.
+With ``valohai-utils``, you define the inputs in the call to the :doc:`prepare </topic-guides/valohai-utils/prepare>` method.
 Feed the ``default_inputs`` argument with a key/value dictionary of the inputs.
 
 * **key** is the name of the input in the configuration YAML and in the Valohai UI.
@@ -58,7 +58,7 @@ This key/value pair...
       default: https://example.com/images.zip
       optional: false
 
-.. note::
+.. hint::
 
     Empty default value signals an  **optional** input.
 
@@ -77,10 +77,10 @@ This key/value pair...
 Accessing input files
 ---------------------
 
-Once you have defined an input using the :doc:`prepare() </topic-guides/valohai-utils/prepare()>` method, you can access
+Once you have defined an input using the :doc:`prepare </topic-guides/valohai-utils/prepare>` method, you can access
 the files by referring to the input name.
 
-In Valohai, input is not a single file. It can be multiple URIs. And it doesn't end there.
+In Valohai, an input is not always A single file. It can be multiple URIs. And it doesn't end there.
 Each of those URIs may actually represent multiple files on multiple folders. And some of those files may actually
 be zip archives with multiple files and folders in them!
 
@@ -90,9 +90,9 @@ handles most of this complexity for you.
 Use the ``.path()``, ``.paths()``, ``.stream()``, ``.streams()`` methods to access files of a single input.
 
 Single file
------------
+-------------
 
-When you are always expecting a single file, use ``.path()``.
+If you're expecting a single file in your inputs, you can simply use ``.path()``.
 
 .. code-block:: python
 
@@ -243,7 +243,7 @@ You can also override the default with the command-line. See the next section.
 Overriding input URIs
 ---------------------
 
-Inputs defined by the :doc:`prepare() </topic-guides/valohai-utils/prepare()>` often have a default value.
+Inputs defined by the :doc:`prepare </topic-guides/valohai-utils/prepare>` often have a default value.
 
 There are two ways to override the default (or empty) value:
 
@@ -266,3 +266,9 @@ Example (remote):
 
     vh yaml step train.py
     vh exec run -a train --images==https://alternative.com/images.zip
+
+.. seealso::
+
+    * `step.inputs </reference-guides/valohai-yaml/step-inputs/>`_
+    * `Data aliases </howto/data/datum-alias.html>`_
+    * `Add your own cloud data store </howto/data/cloud-storage/>`_

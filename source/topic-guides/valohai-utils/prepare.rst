@@ -5,7 +5,7 @@ valohai.prepare()
 =================
 
 In Valohai jargon, a :doc:`step </topic-guides/core-concepts/steps>` is a piece of code that performs a single operation like "train" or "preprocess".
-Calling the ``valohai.prepare()`` method defines a single step.
+A single step is defined by calling the ``valohai.prepare()`` method.
 
 Under the hood, Valohai steps are always defined in the `valohai.yaml </reference-guides/valohai-yaml>`_ config file. What ``valohai-utils``
 offers is a shortcut for defining the step in your Python code. Those steps can then be transpiled into
@@ -85,14 +85,14 @@ The ``prepare()`` method has a dual purpose.
 1. Define a Valohai :doc:`step </topic-guides/core-concepts/steps>`
 2. Parse the command-line overrides
 
-1. Define a Valohai step
+3. Define a Valohai step
 ----------------------------------------
 To define a step, the call to the ``prepare()`` method doesn't actually do anything. It just acts as a decorator.
 A decorator for what? A decorator for the ``vh yaml step`` command.
 
 When the ``vh yaml step train.py`` CLI command is executed, the ``train.py`` is parsed by the CLI program.
 
-.. note::
+.. important::
 
 	Parsing is not the same as executing!
 
