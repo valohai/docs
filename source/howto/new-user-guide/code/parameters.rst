@@ -106,3 +106,7 @@ Using parameters allows you to:
 .. seealso::
 
     * `More about parameters </topic-guides/core-concepts/parameters/>`_
+
+.. hint:: 
+
+    `Read more about valohai-utils </topic-guides/valohai-utils/>`_

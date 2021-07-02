@@ -67,3 +67,7 @@ Collecting metadata from a Valohai execution allows you to easily sort, filter, 
     * `Creating visualizations </topic-guides/executions/metadata/>`_
     * `Compare executions </howto/executions/compare/>`_
     * `Save graphs from executions </howto/executions/complex-visualizations/>`_
+
+.. hint:: 
+
+    `Read more about valohai-utils </topic-guides/valohai-utils/>`_

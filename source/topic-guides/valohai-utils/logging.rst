@@ -36,3 +36,8 @@ It is important to use the ``with`` block so that the logger knows how to group 
 The metrics of a single ``iteration``, ``epoch`` or similar, need to be grouped into
 a single JSON object printout. If printed out as separated objects, the platform doesn't understand
 them as a meaningful set.
+
+.. seealso::
+
+    * `Compare executions </howto/executions/compare/>`_
+    * `Save graphs from executions </howto/executions/complex-visualizations/>`_

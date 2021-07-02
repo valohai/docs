@@ -6,7 +6,7 @@ Parameters
 
 To parameterize a :doc:`step </topic-guides/core-concepts/steps>`, you need :doc:`parameters </topic-guides/core-concepts/parameters>`. They can be ``float``, ``integer``, ``string`` or ``boolean`` type.
 
-With ``valohai-utils``, you define the parameters in the call to the :doc:`prepare() </topic-guides/valohai-utils/prepare()>` method. Feed the ``default_parameters`` argument with a key/value dictionary of the parameters.
+With ``valohai-utils``, you define the parameters in the call to the :doc:`prepare </topic-guides/valohai-utils/prepare>` method. Feed the ``default_parameters`` argument with a key/value dictionary of the parameters.
 
 * **key** is the name of the parameter. Used in the code, the YAML and the Valohai UI.
 * **value** defines the default value of the parameter and also it's type.
@@ -60,7 +60,7 @@ This key/value pair...
 Accessing values
 ----------------
 
-Once you have defined a parameter using the :doc:`prepare() </topic-guides/valohai-utils/prepare()>` method, you can access it in your code
+Once you have defined a parameter using the :doc:`prepare </topic-guides/valohai-utils/prepare>` method, you can access it in your code
 by referring to the parameter name.
 
 .. code-block:: python
@@ -71,7 +71,7 @@ by referring to the parameter name.
 Overriding values
 -----------------
 
-All parameters defined by the :doc:`prepare() </topic-guides/valohai-utils/prepare()>` method always have a default value.
+All parameters defined by the :doc:`prepare </topic-guides/valohai-utils/prepare>` method always have a default value.
 
 There are two ways to override the default value:
 
@@ -90,3 +90,8 @@ Example (remote):
 
     vh yaml step train.py
     vh exec run -a train --learning-rate=.002
+
+.. seealso::
+
+    * `Running a Grid Search </howto/tasks/grid-search/>`_
+    * `Using the Bayesian Optimizer </howto/tasks/bayesian/>`_

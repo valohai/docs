@@ -159,3 +159,7 @@ All files that are saved to ``/valohai/outputs/`` will automatically get version
     * `Upload files mid-execution </topic-guides/executions/live-outputs/>`_
     * `Trace modes and data files </topic-guides/reproducibility.html#trace-models-and-data-files>`_
     * `Mount a network file system (NFS) </howto/data/mount-nfs.html>`_ 
+
+.. hint:: 
+
+    `Read more about valohai-utils </topic-guides/valohai-utils/>`_

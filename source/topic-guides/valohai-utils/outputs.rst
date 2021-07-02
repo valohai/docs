@@ -129,3 +129,7 @@ For each local run, a new ``{hash}`` is generated. The hash starts with a timest
 .. note::
 
     If you want to override the target folder for local or remote execution, set the ``VH_OUTPUTS_DIR`` environment variable.
+
+.. seealso::
+
+    * `Reproducibility and lineage </topic-guides/reproducibility/>`_
