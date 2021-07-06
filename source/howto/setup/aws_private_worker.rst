@@ -47,10 +47,10 @@ This role is assigned to the individual EC2 instances to query information about
 Start by creating a policy that we'll attach to the role:
 
 * Open the AWS Console and navigate to `IAM -> Policies <https://console.aws.amazon.com/iam/home#/policies>`_
-* Click on **create policy**
+* Create policy
 * Paste the JSON from below as the new policy
 * Add a tag `valohai` with value `1`
-* Give the policy a name `ValohaiWorkerPolicy`
+* Name the policy `ValohaiWorkerPolicy`
 
 .. code-block:: json
 
@@ -74,12 +74,12 @@ Start by creating a policy that we'll attach to the role:
 
 **Create an IAM Role**
 
-* Open the AWS Console and navigate to `IAM -> Roles <https://console.aws.amazon.com/iam/home#/roles>`_
-* Create a new role called `ValohaiWorkerRole` 
+* Open the AWS Console and navigate to `IAM -> Roles <https://console.aws.amazon.com/iam/home#/roles>`_ 
 * Create role
 * Choose EC2 as the use case
 * Find and attach the `ValohaiWorkerPolicy` policy
 * Add a tag `valohai` with value `1`
+* Name the role `ValohaiWorkerRole`
 
 📝 Record the `ValohaiWorkerRole` ARN.
 
@@ -104,10 +104,10 @@ These are credentials allowing the Valohai web application at https://app.valoha
 Start by creating a policy that defines permissions for the role that Valohai can assume:
 
 * Open the AWS Console and navigate to `IAM -> Policies <https://console.aws.amazon.com/iam/home#/policies>`_
-* Click on **Create policy**
+* Create policy
 * Paste the JSON from below as the new policy
 * Add a tag `valohai` with value `1`
-* Give the policy a name `ValohaiMasterPolicy`
+* Name the policy `ValohaiMasterPolicy`
 
 .. admonition:: Important
     :class: warning
@@ -179,10 +179,11 @@ Start by creating a policy that defines permissions for the role that Valohai ca
 **Create an IAM Role**
 
 * Open the AWS Console and navigate to `IAM -> Roles <https://console.aws.amazon.com/iam/home#/roles>`_
-* Create a new role called `ValohaiMaster` 
+* Create role
 * Choose EC2 as the use case
 * Find and attach the `ValohaiMasterPolicy` policy
 * Add a tag `valohai` with value `1`
+* Name the role `ValohaiMaster`
 
 Once the role is created open the role's **Trust relationships** tab and click **Edit trust relationship**
 
