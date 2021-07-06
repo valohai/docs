@@ -238,14 +238,19 @@ Create a VPC and subnets per each availability zone you want to use. For example
 
 📝 Record the subnet names.
 
+Create an internet gateway:
+
 * Internet Gateway
     * Name: `valohai-igw`
     * Tag: Key=valohai Value=1
     * **Attach** this Internet Gateway to `valohai-vpc`
 
-* Routing Table rename the default table of `valohai-vpc` to `valohai-rt`
+Rename the default routing table of `valohai-vpc`:
+
+* Routing Table
+    * **Rename** to `valohai-rt`
     * Tag: Key=valohai Value=1
-    * **Edit the routes:**
+    * **Edit** the routes:
         * 10.0.0.0/16 => local
         * 0.0.0.0/0 => `valohai-igw`
 
@@ -303,7 +308,7 @@ Tag the security group with Key=valohai Value=1.
 
 **EC2 Instance for the Worker Queue**
 
-Here we provision an Elastic IP and an EC2 instance for running the worker queue. The worker queue hosts a Redis server for passing jobs to workers and storing short-term logs.
+Next provision an Elastic IP and an EC2 instance for running the worker queue. The worker queue hosts a Redis server for passing jobs to workers and storing short-term logs.
 
 * EC2 instance
     * Name: `valohai-i-queue`
