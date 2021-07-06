@@ -5,21 +5,24 @@
 
 
 Preparing your AWS for Valohai Private Worker Setup
-######################################################
+###################################################
 
-This document prepares your AWS account for Valohai private worker installation. 
+This document prepares your AWS account for Valohai private worker installation.
+
+📝 From your Valohai contact, ask and record the AssumeRole ARN.
 
 Select the correct region
---------------------------
+-------------------------
 
 Select the appropriate region for the resources:
 
-* Consider using the same region where your data is located to reduce data transfer times.
-* Consider using the regions where you've already acquired GPU quota from Amazon.
-* When selecting your region, note that regions have different collections of available GPU types.
-    * For US customers, we recommend **US West 2 (Oregon)** as they have the widest array of GPU machine types in the United States.
-    * For EU customers, we recommend **EU West 1 (Ireland)** as it has the widest array of GPU machine types in the Europe.
+* Consider selecting the same region where your data is located. This way data is transferred quickly and there are no transfer fees.
+* Consider selecting a region where you've already acquired GPU quota from Amazon.
+* When selecting your region, note that different regions have different GPUs available:
+    * For US customers, we recommend **US West 2 (Oregon)** as they have the widest array of GPU instance types in the United States.
+    * For EU customers, we recommend **EU West 1 (Ireland)** as it has the widest array of GPU instance types in Europe.
 
+📝 Record the region you have selected.
 
 .. admonition:: Setting up a sub account (optional)
     :class: ip
@@ -29,17 +32,18 @@ Select the appropriate region for the resources:
     Create all the following IAM access control entities in this sub account.
 
 
-Creating IAM Entities
-------------------------------------
+Create IAM Entities
+-------------------
 
-As we want to avoid having access to your AWS authentication and authorization, do a couple of configurations under IAM.
+These IAM entities are required to create autoscaling groups for the Valohai workers.
 
 IAM Role "ValohaiWorkerRole"
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This role is assigned to the individual EC2 instances (machine learning job workers) to query information about themselves and set instance protection to prevent inadvertent termination when processing workloads.
+This role is assigned to the individual EC2 instances to query information about themselves and set instance protection to prevent unwanted termination when processing workloads.
 
-**Create a IAM policy**
+**Create an IAM Policy**
+
 Start by creating a policy that we'll attach to the role:
 
 * Open the AWS Console and navigate to `IAM -> Policies <https://console.aws.amazon.com/iam/home#/policies>`_
@@ -68,9 +72,7 @@ Start by creating a policy that we'll attach to the role:
         ]
     }
 
-..
-
-**Create a IAM role**
+**Create an IAM Role**
 
 * Open the AWS Console and navigate to `IAM -> Roles <https://console.aws.amazon.com/iam/home#/roles>`_
 * Create a new role called `ValohaiWorkerRole` 
@@ -79,25 +81,25 @@ Start by creating a policy that we'll attach to the role:
 * Find and attach the `ValohaiWorkerPolicy` policy
 * Add a tag `valohai` with value `1`
 
-Copy the `Role ARN` shown for the newly created role. You'll need this in the next step.
+📝 Record the `ValohaiWorkerRole` ARN.
 
 .. admonition:: Note: Instance profile
     :class: info
     
-    If you use the AWS Management Console to create the `ValohaiWorkerRole`, the console will automatically create an instance profile and gives it the same name as the role. If you're using the AWS CLI or APIs to create this role, you'll need to manually create an instance profile and add the role to it. Read more at [AWS: Using instance profiles](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2_instance-profiles.html)
+    If you use the AWS Management Console to create the `ValohaiWorkerRole`, the console will automatically create an instance profile and gives it the same name as the role. If you're using the AWS CLI or APIs to create this role, you'll need to manually create an instance profile and add the role to it. Read more at `AWS: Using instance profiles <https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2_instance-profiles.html>`_
 
 
-IAM Role for ValohaiMaster
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+IAM Role "ValohaiMaster"
+^^^^^^^^^^^^^^^^^^^^^^^^
 
-These are credentials for the Valohai web application at https://app.valohai.com/ and scaling services to: 
+These are credentials allowing the Valohai web application at https://app.valohai.com/ and autoscaling services to: 
 
-1. be able to see how many Valohai-related instances are running 
-2. allow scaling worker clusters up and down
-3. add various launch configurations and auto scaling groups, one for each instance type.
-4. allow the organization admin to adjust max price for spot instances through app.valohai.com
+1. See how many instances related to Valohai are running
+2. Scale workers up and down
+3. Add launch configurations and autoscaling groups, one for each instance type
+4. Enable the organization admin to adjust the maximum price for spot instances in the Valohai web app
 
-**Create a IAM policy**
+**Create an IAM Policy**
 
 Start by creating a policy that defines permissions for the role that Valohai can assume:
 
@@ -110,9 +112,7 @@ Start by creating a policy that defines permissions for the role that Valohai ca
 .. admonition:: Important
     :class: warning
     
-    Make sure you paste your own ValohaiWorkerRole ARN to the last line.
-
-..
+    📝 Replace the template on the last line in the policy with the recorded `ValohaiWorkerRole` ARN.
 
 .. code-block:: json 
 
@@ -171,14 +171,12 @@ Start by creating a policy that defines permissions for the role that Valohai ca
                     "iam:PassRole",
                     "iam:GetRole"
                 ],
-                "Resource": "arn:aws:iam::<YOUR-AWS-ACCOUNT-ID>:role/ValohaiWorkerRole"
+                "Resource": "RECORDED ValohaiWorkerRole ARN HERE"
             }
         ]
     }
 
-..
-
-**Create the IAM role**
+**Create an IAM Role**
 
 * Open the AWS Console and navigate to `IAM -> Roles <https://console.aws.amazon.com/iam/home#/roles>`_
 * Create a new role called `ValohaiMaster` 
@@ -190,7 +188,10 @@ Once the role is created open the role's **Trust relationships** tab and click *
 
 Paste in the below trust relationship to give Valohai access to this role.
 
-You'll get the username from your Valohai contact.
+.. admonition:: Important
+    :class: warning
+    
+    📝 Replace the template "AWS" in the policy with the recorded AssumeRole ARN.
 
 .. code-block:: json
 
@@ -200,57 +201,55 @@ You'll get the username from your Valohai contact.
             {
             "Effect": "Allow",
             "Principal": {
-                "AWS": "arn:aws:iam::905675611115:user/<USERNAME-FROM-VALOHAI>"
+                "AWS": "RECORDED AssumeRole ARN HERE"
             },
             "Action": "sts:AssumeRole",
             "Condition": {}
             }
         ]
     }
-..
 
-Setting up Valohai resources
-------------------------------
+Create Network Resources and the Worker Queue Instance
+------------------------------------------------------
 
-Below is a list of the AWS resources that are required for the Valohai Private Worker installation.
+Below is a list of the AWS resources that the Valohai Private Worker installation requires.
 
-You can either create these resources yourself, or give `ValohaiMaster` elevated permissions for the duration of the setup.
+You can either create these resources yourself, or give the ValohaiMaster role elevated permissions for the duration of the setup.
 
-Option 1) Give Valohai permission to provision the resources
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Option 1) Provision the Resources Yourself
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Add the following policies to the `ValohaiMaster` role to give Valohai permission to create the queue instance and setup the networking resources.
-
-* **AmazonEC2FullAccess**
-* **AmazonVPCFullAccess**
-
-Option 2) Provision the resources yourself
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-VPC and subnets
-^^^^^^^^^^^^^^^^
+**VPC and Subnets**
 
 Create a VPC and subnets per each availability zone you want to use. For example:
 
 * VPC
-    * **Name:** valohai-vpc
-    * **CIDR:** 10.0.0.0/16
+    * Name: `valohai-vpc`
+    * CIDR: 10.0.0.0/16
+    * Tag: Key=valohai Value=1
+
+📝 Record the VPC ID.
+
 * One subnet per zone. For example
-    * Subnet: valohai-subnet-1, 10.0.0.0/20, -
-    * Subnet: valohai-subnet-2, 10.0.16.0/20, -
-    * Subnet: valohai-subnet-3, 10.0.32.0/20, -
-    * Subnet: valohai-subnet-4, 10.0.48.0/20, -
+    * Subnet: `valohai-subnet-1`, 10.0.0.0/20, Tag: Key=valohai Value=1
+    * Subnet: `valohai-subnet-2`, 10.0.16.0/20, Tag: Key=valohai Value=1
+    * Subnet: `valohai-subnet-3`, 10.0.32.0/20, Tag: Key=valohai Value=1
+    * Subnet: `valohai-subnet-4`, 10.0.48.0/20, Tag: Key=valohai Value=1
+
+📝 Record the subnet names.
+
 * Internet Gateway
-    * **Name:** valohai-igw
-    * **Attach** this Internet Gatway to valohai-vpc
+    * Name: `valohai-igw`
+    * Tag: Key=valohai Value=1
+    * **Attach** this Internet Gateway to `valohai-vpc`
 
+* Routing Table rename the default table of `valohai-vpc` to `valohai-rt`
+    * Tag: Key=valohai Value=1
+    * **Edit the routes:**
+        * 10.0.0.0/16 => local
+        * 0.0.0.0/0 => `valohai-igw`
 
-* **Routing Table** rename the default table to valohai-rt
-    * **Edit Routes:**
-        * 10.0.0.0/16 -> local
-        * 0.0.0.0/0 => valohai-igw
-
-**Security groups**
+**Security Groups**
 
 Create a new security group named **valohai-sg-workers** and set the Inbound rules listed below:
 
@@ -266,6 +265,8 @@ Create a new security group named **valohai-sg-workers** and set the Inbound rul
       - 22
       - 3.251.38.215/32 (optional)
       - for SSH management from Valohai
+
+Tag the security group with Key=valohai Value=1.
 
 Create a new security group named **valohai-sg-queue** and set the Inbound rules listed below:
 
@@ -288,47 +289,69 @@ Create a new security group named **valohai-sg-queue** and set the Inbound rules
     * - TCP
       - 63790
       - valohai-sg-workers
-      - for plain Redis connection from workers
+      - for Redis over TLS connection from workers
     * - TCP
       - 22
-      - 3.251.38.215/32 (during installation)
+      - your IP (if you install the worker queue)
+      - for SSH management
+    * - TCP
+      - 22
+      - 3.251.38.215/32 (if Valohai installs the worker queue)
       - for SSH management from Valohai
 
-**EC2 Instance for queue machine**
+Tag the security group with Key=valohai Value=1.
 
-Provision an Elastic IP and a EC2 instance for storing the job quue and short term logs.
+**EC2 Instance for the Worker Queue**
+
+Here we provision an Elastic IP and an EC2 instance for running the worker queue. The worker queue hosts a Redis server for passing jobs to workers and storing short-term logs.
+
+* EC2 instance
+    * Name: `valohai-i-queue`
+    * OS: Ubuntu 20.04 LTS
+    * Machine type: t3.medium (2 vCPU, 4GB RAM)
+    * Standard persistent disk: 16GB
+    * Security Group: `valohai-sg-queue`
+    * Key Pair: Create a new key pair
+    * Tag: Key=valohai Value=1
+
+📝 Record the name of the Key Pair and the key itself.
 
 * Elastic IP from the Amazon pool
-    * **Name:** valohai-ip-queue
-* EC2 instance works as the queue instace for Valohai. It hosts a Redis server to handle real-time logging and job queues.
-    * **Name:** valohai-i-queue
-    * **OS:** Ubuntu 20.04 LTS
-    * **Machine type:** t3.medium (2 vCPU, 4GB RAM)
-    * **Standard persistent disk:** 16GB
-    * **Security Group:** valohai-sg-queue
-    * **Key Pair**: You'll receive the key pair from your Valohai contact
-    * **Tag:** Valohai
+    * Name: `valohai-ip-queue`
+    * Tag: Key=valohai Value=1
+    * **Attach** this Elastic IP to the `valohai-i-queue` instance
 
-Attach the Elastic IP to the new VM instance.
+📝 Record the public and private IP addresses of the EC2 instance.
+
+Option 2) Give Valohai Permission to Provision the Resources
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Add the following policies to the `ValohaiMaster` role to give Valohai permission to create the queue instance and setup the networking resources.
+
+* **AmazonEC2FullAccess**
+* **AmazonVPCFullAccess**
 
 Conclusion
--------------
+----------
 
-You should now have the following details:
+Share the recorded information with your Valohai contact using the Vault credentials provided to you:
 
-* Region
-* ARN of the ValohaiMaster-role that Valohai can assume
+📝 You should now have the following information recorded:
 
-If you created the above mentioned resources yourself, you should also have the following information:
+* Region (where your workers will run)
+* ValohaiMaster role ARN (that Valohai can assume to setup workers)
 
-* Name of VPC
-* Names of subnets that can be used for Valohai workers
-* Public IP of the queue instance
-* Private IP of the queue instance
-* Name of the Key Pair in AWS
-* Name of the Key Pair used for the EC2 instance
+📝 If you provisioned the resources yourself, you should also have the following recorded:
 
-Share this information with your Valohai contact using the Vault credentials provided to you.
+* VPC ID
+* Subnet names
+* Public IP of the `valohai-i-queue` instance
+* Private IP of the `valohai-i-queue` instance
+* Name of the EC2 Key Pair
+
+📝 If you provisioned the resources and Valohai will setup the worker queue for you, then you need to share the recorded key. If you setup the worker queue, you will need this key yourself:
+
+* The EC2 Key Pair key
 
 .. seealso:: 
 
