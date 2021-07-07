@@ -26,7 +26,18 @@ If ``pass-as`` is not defined, the parameter is passed as ``--<PARAMETER_NAME>={
 
 .. note::
 
-    ``flag`` type defaults to just ``--<PARAMETER_NAME>`` when set to true.
+    ``flag`` type defaults to just ``--<PARAMETER_NAME>`` when set to true. When set to false, nothing is passed. 
+
+The note above implies that when you want to pass a flag with the value ``false``, you will need to use the ``pass-as`` property.    
+
+.. code-block:: yaml
+
+    pass-true-as: --<PARAMETER_NAME>=true
+    pass-false-as: --<PARAMETER_NAME>=false
+
+..
+
+
 
 ``{parameters}`` placeholder
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
