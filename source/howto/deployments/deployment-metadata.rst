@@ -16,7 +16,12 @@ Deployment version metadata
 
 ..
 
-You can easily access the ``valohai-metadata.json`` file and read the details that you need for your execution. Inside your deployment code read the file and parse out the values that you're interestaed in.
+You can easily access the ``valohai-metadata.json`` file and read the details that you need for your execution. Inside your deployment code read the file and parse out the values that you're interested in.
+
+.. note:: 
+
+    The ``valohai-metadata.json`` file is read-only so it is not possible to customize the metadata for deployments.
+
 
 .. code--block:: python
 
