@@ -27,7 +27,7 @@ How-to guides include the steps involved in addressing key problems and use-case
     notifications/index
     pipelines/index
     organization/index
-    deployments/deployments-test
+    deployments/index
     airflow-management/index
     
 ..
