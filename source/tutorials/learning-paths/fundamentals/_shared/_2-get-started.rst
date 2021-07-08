@@ -15,7 +15,7 @@ In this section you will learn how to
 A sample training script
 ------------------------
 
-
+* Download `this mnist.npz <https://onboard-sample.s3-eu-west-1.amazonaws.com/tf-sample/mnist.npz>`_ file to your working directory
 * Create a **new file** ``valohai-quickstart/train.py`` and paste the following example script:
 
 
