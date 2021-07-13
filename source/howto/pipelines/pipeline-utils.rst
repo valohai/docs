@@ -41,7 +41,7 @@ Next, run the command:
     vh yaml pipeline <filename>
 ..
 
-If you now check your ``valohai.yaml``, you might notice that the pipeline block looks different from that described in the section :ref:`quickstart-pipeline`. Regardless, the pipeline will be built in a similar manner in the UI. 
+If you now check your ``valohai.yaml``, you might notice that the pipeline block looks different from that described in the section :ref:`quickstart-pipeline`. The quickstart uses the `shorthand syntax </reference-guides/valohai-yaml/pipeline/edges/#edge-shorthand-syntax>`_ but ``valohai-utils`` doesn't. Regardless, the pipeline will be built in a similar manner in the UI. 
 
 .. code-block:: YAML
 
