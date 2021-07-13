@@ -7,7 +7,7 @@ Create pipelines by using valohai-utils
 #######################################
 
 It's possible to define pipelines using the ``valohai-utils`` helper library, in addition to manually defining them in the ``valohai.yaml`` configuration file.
-First, create a file with the instructions how to build the pipeline in it (see the example below). Remember to define the nodes and edges according to the steps you have in your `valohai.yaml` file. 
+First, create a file with the instructions how to build the pipeline in it (see the example below). Remember to define the nodes and edges according to the steps you have in your ``valohai.yaml`` file. 
 
 .. note::
 
