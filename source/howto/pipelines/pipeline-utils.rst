@@ -73,7 +73,7 @@ If you want to run your pipeline from the CLI, you should first update your git 
 
 ..
 
-Next, fetch the changes to the Valohai project and run the pipeline. If you know go to the UI, you should see the pipeline there under your project.
+Next, fetch the changes to the Valohai project and run the pipeline. If you now go to the UI, you should see the pipeline there under your project.
 
 .. code-block::
 
