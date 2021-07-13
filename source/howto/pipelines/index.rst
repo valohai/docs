@@ -18,4 +18,5 @@ Pipelines automate your machine learning operations on Valohai ecosystem. A pipe
 
     triggers
     tasks
+    pipeline-utils
 ..
