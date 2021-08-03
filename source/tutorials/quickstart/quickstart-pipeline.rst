@@ -98,6 +98,7 @@ Create **one edge** to connect the nodes:
         edges:
           - [train-node.output.model.h5, deploy-node.file.digits.model]
 
+
 ..
 
 You can now push a new version of ``valohai.yaml`` to your code repository.
@@ -131,6 +132,119 @@ For an example with multiple nodes, please see our :ref:`example-projects-quick-
 
 * It is worth noting that when evaluating multiple trained models inside a pipeline, **the comparison for choosing the best model is not done automatically**. 
 * The user needs to define the comparison programatically in a separate node and then output the results to the possible next node (see the ``yaml`` file and ``compare.py`` in the example project).
+
+Passing parameters in a pipeline
+--------------------------------
+In the previous example the edges between nodes were defined by the output of the first node and the deployment endpoint in the second node. Edges can be also used to pass parameters between consecutive nodes. 
+
+.. code-block:: yaml
+    :linenos:
+    :emphasize-lines: 36, 37, 38,39
+
+    - step:
+        name: Train model 1
+        image: tensorflow/tensorflow:2.4.1
+        command:
+        - print "{parameters}"
+        - python train.py {parameters}
+        parameters:
+        - name: user-id
+          default: 345345
+          multiple-separator: ','
+          optional: false
+          type: integer
+    - step:
+        name: Train model 2
+        image: tensorflow/tensorflow:2.4.1
+        command:
+        - print "{parameters}"
+        - python train.py {parameters}
+        parameters:
+        - name: user-id
+          default: 3
+          multiple-separator: ','
+          optional: false
+          type: integer
+    - pipeline:
+        name: Two trainings
+        nodes:
+        - name: train-model-1
+          actions: []
+          step: Train model 1
+          type: task
+        - name: train-model-2
+          actions: []
+          step: Train model 2
+          type: task
+        edges:
+        - configuration: {}
+          source: train-model-1.parameter.user-id
+          target: train-model-2.parameter.user-id
+
+..
+
+If you want to pass a value created during the execution to the next node, you need to do this by passing it as metadata to a parameter:
+
+.. code-block:: yaml
+    :linenos:
+    :emphasize-lines: 12,13,14,15
+
+    - pipeline:
+        name: Two trainings
+        nodes:
+        - name: train-model-1
+          actions: []
+          step: Train model 1
+          type: task
+        - name: train-model-2
+          actions: []
+          step: Train model 2
+          type: task
+        edges:
+        - configuration: {}
+          source: train-model-1.metadata.metadatakey
+          target: train-model-2.parameter.user-id
+
+You might notice that the syntax for the edges here looks a bit different from the previous example. Effectively, there is no difference and the pipeline will be created the same way in both cases. 
+
+Pipeline conditions
+--------------------------------
+
+In the example above, there is a property called ``actions`` that was left empty. It can be used to set conditions for the nodes in the pipeline. These conditions can be based on ``metadata`` or ``parameters`` and they define wheater the pipeline proceeds or is stopped. 
+
+.. code-block:: yaml
+    :linenos:
+    :emphasize-lines: 7,8,9,10
+
+    - pipeline:
+        name: Action pipeline
+        nodes:
+          - name: train-model
+            type: execution
+            step: train-model
+            actions:
+              - when: node-complete
+                if: metadata.foo >= 0.8
+                then: stop-pipeline
+          - name: test-model
+            type: execution
+            step: test-model
+        edges:
+          - [train-model.output.model*, test-model.input.model]
+
+..
+
+When the ``train-model`` node is completed, Valohai will check the ``if`` condition. In case it is true, the pipeline will be stopped as defined in ``then`` statement.
+
+
+The possible options for ``when`` are:
+
+* ``node-starting``
+* ``node-complete``
+* ``node-error``
+
+Currently, the only available option for ``then`` is ``stop-pipeline``. 
+
 
 Reusing nodes in a pipeline
 --------------------------------

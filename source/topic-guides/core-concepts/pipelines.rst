@@ -44,9 +44,12 @@ You can manage pipelines under the ``Pipelines`` tab on the web user interface i
 **Edges** of the pipeline (the lines between nodes) are either:
 
 * :doc:`output </topic-guides/executions/outputs/index>` files used as an input of an upcoming execution or deployment.
-* :doc:`parameters  </topic-guides/core-concepts/parameters>` that are passed from one node to another.
 * :doc:`input </topic-guides/executions/inputs/index>` files, to allow for copying inputs from one node to another and ensure multiple pipeline nodes use the same inputs.
+* :doc:`parameters  </topic-guides/core-concepts/parameters>` that are passed from one node to another.
+* :doc:`metadata </howto/new-user-guide/code/metadata>` that is passed from the node where it was created to a parameter in the next node.
 
 .. seealso::
 
+    * :ref:`quickstart-pipeline`
     * :ref:`pipeline-triggers`
+    
