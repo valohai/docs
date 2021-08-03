@@ -43,3 +43,13 @@ You can sort executions by metadata values in the web interface which is useful 
 executions with the highest prediction accuracy.
 
 The latest or last value of each key such as ``accuracy`` can be used for the sorting hyperparameter optimization results.
+
+What else can I do with metadata?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+That having been said about visualizations, it is good to keep in mind that metadata has other uses as well. Beyond creating the visuals, based on metadata values you can:
+ 
+* Easily sort execution tables.
+* Easily compare executions.
+* Set early-stopping rules for executions and Tasks.
+* Set pipeline condititions.
