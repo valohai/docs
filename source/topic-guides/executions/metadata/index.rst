@@ -47,7 +47,7 @@ The latest or last value of each key such as ``accuracy`` can be used for the so
 What else can I do with metadata?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-That having been said about visualizations, it is good to keep in mind that metadata has other uses as well. Beyond creating the visuals, based on metadata values you can:
+Beyond creating the visuals, based on metadata values you can for example:
  
 * Easily sort execution tables.
 * Easily compare executions.
