@@ -8,7 +8,7 @@
 Parameters are injected into the command by replacing any **Valohai parameter placeholders** defined further below.
 Good examples of parameters would be "learning rate" number or "network layout" string.
 
-A parameter in ``parameters`` has 2 required and 4 optional properties:
+A parameter in ``parameters`` has 2 required and 5 optional properties:
 
 * ``name``: the parameter name, shown on the user interface
 * ``type``: the parameter type, valid values are ``float``, ``integer``, ``string`` and ``flag``
@@ -16,6 +16,7 @@ A parameter in ``parameters`` has 2 required and 4 optional properties:
 * ``description``: **(optional)** more detailed human-readable description of the parameter
 * ``default``: **(optional)** the default value of the parameter
 * ``optional``: **(optional)** marks that this input is optional and the value can be left undefined
+* ``choices``: **(optional)** list of alternative values, shown as a dropdown menu in the UI
 
 .. note::
 
@@ -28,7 +29,7 @@ If ``pass-as`` is not defined, the parameter is passed as ``--<PARAMETER_NAME>={
 
     ``flag`` type defaults to just ``--<PARAMETER_NAME>`` when set to true. When set to false, nothing is passed. 
 
-The note above implies that when you want to pass a flag with the value ``false``, you will need to use the ``pass-as`` property.    
+The note above implies that when you want to pass a flag with the value ``false``, you will need to use a special version of the ``pass-as`` property.    
 
 .. code-block:: yaml
 
@@ -37,6 +38,22 @@ The note above implies that when you want to pass a flag with the value ``false`
 
 ..
 
+The ``choices`` property lets you to define a list of alternative values for the parameter. The value for the execution can be chosen by using a dropdown menu in the UI. 
+
+.. code-block:: yaml
+
+    parameters:
+    - name: color
+      type: string
+      default: blue
+      description: Choose a color
+      optional: false
+      choices:
+        - blue
+        - red
+        - green
+
+..
 
 
 ``{parameters}`` placeholder
