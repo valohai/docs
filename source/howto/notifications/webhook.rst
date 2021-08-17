@@ -36,7 +36,7 @@ Setup your webhooks under Project -> Settings.
 7. Choose your event and channel
 8. Save the routing
 
-.. video:: /_static/videos/datum-tags.mp4
+.. video:: /_static/videos/webhooks-setup.mp4
     :autoplay:
     :width: 600
 
