@@ -139,7 +139,7 @@ In the previous example the edges between nodes were defined by the output of th
 
 .. code-block:: yaml
     :linenos:
-    :emphasize-lines: 36, 37, 38, 39
+    :emphasize-lines: 36, 37
 
     - step:
         name: Train model
@@ -185,7 +185,7 @@ If you want to pass a value created during the execution to the next node, you n
 
 .. code-block:: yaml
     :linenos:
-    :emphasize-lines: 10,11,12,13
+    :emphasize-lines: 10,11
 
     - pipeline:
         name: Metadata to parameter

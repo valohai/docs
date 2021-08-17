@@ -6,4 +6,4 @@
 
 .. click:: valohai_cli.commands.execution:execution
    :prog: vh execution
-   :show-nested:
+   
