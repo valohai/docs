@@ -19,60 +19,6 @@ Install the tools
 Provision an Amazon EKS (Elastic Kubernetes Service)
 ---------------------------------------------------------
 
-IAM: Admin user (optional)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-This user is needed only if you want to give Valohai elevated permissions to install an EKS cluster in your subscription.
-
-You can skip this IAM user if you're creating the cluster yourself.
-
-- Create a user ``valohai-eks-admin``.
-    - enable ``Programmatic access`` and ``Console access``
-- Attach the following existing policies
-    - AmazonEKSClusterPolicy
-    - AmazonEC2FullAccess
-    - AmazonVPCFullAccess
-    - AmazonEC2ContainerRegistryPowerUser
-    - AmazonEKSServicePolicy
-- Click on ``Create policy`` to open a new tab. Describe the new policy with the JSON below.
-    .. code-block:: json
-  
-      {
-        "Version": "2012-10-17",
-        "Statement": [
-            {
-                "Sid": "1",
-                "Effect": "Allow",
-                "Action": [
-                    "iam:GetRole",
-                    "iam:ListRoleTags",
-                    "iam:CreateRole",
-                    "iam:DeleteRole",
-                    "iam:AttachRolePolicy",
-                    "iam:PutRolePolicy",
-                    "iam:PassRole",
-                    "iam:DetachRolePolicy",
-                    "iam:CreateServiceLinkedRole",
-                    "iam:GetRolePolicy",
-                    "eks:*",
-                    "cloudformation:*"
-                ],
-                "Resource": "*"
-            },
-            {
-                "Sid": "2",
-                "Effect": "Allow",
-                "Action": "ecr:*",
-                "Resource": "arn:aws:ecr:*:*:repository/*"
-            }
-        ]
-      }
-      
-    
-- Name the policy ``VH_EKS_ADMIN`` and create it.
-- Back in your ``Add user`` tab click on the refresh button and select the ``VH_EKS_ADMIN`` policy.
-- Store the access key & secret in a safe location.
-
 IAM: EKS User (required)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -102,6 +48,62 @@ This user is required so Valohai can deploy access the cluster and deploy new im
 - Name the policy ``VH_EKS_USER`` and create it.
 - Back in your ``Add user`` tab click on the refresh button and select the ``VH_EKS_USER`` policy.
 - Store the access key & secret in a safe place.
+
+IAM: Admin user (optional)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This user is needed only if you want to give Valohai elevated permissions to install an EKS cluster in your subscription.
+
+You can skip this IAM user if you're creating the cluster yourself or using an existing cluster.
+
+- Create a user ``valohai-eks-admin``.
+    - enable ``Programmatic access`` and ``Console access``
+- Attach the following existing policies
+    - AmazonEKSClusterPolicy
+    - AmazonEC2FullAccess
+    - AmazonVPCFullAccess
+    - AmazonEC2ContainerRegistryPowerUser
+    - AmazonEKSServicePolicy
+- Click on ``Create policy`` to open a new tab. Describe the new policy with the JSON below.
+    .. code-block:: json
+  
+      {
+        "Version": "2012-10-17",
+        "Statement": [
+            {
+                "Sid": "1",
+                "Effect": "Allow",
+                "Action": [
+                    "iam:GetRole",
+                    "iam:ListRoleTags",
+                    "iam:CreateRole",
+                    "iam:DeleteRole",
+                    "iam:AttachRolePolicy",
+                    "iam:PutRolePolicy",
+                    "iam:PassRole",
+                    "iam:DetachRolePolicy",
+                    "iam:CreateServiceLinkedRole",
+                    "iam:GetRolePolicy",
+                    "iam:CreateOpenIDConnectProvider",
+                    "iam:GetRolePolicy",
+                    "eks:*",
+                    "cloudformation:*"
+                ],
+                "Resource": "*"
+            },
+            {
+                "Sid": "2",
+                "Effect": "Allow",
+                "Action": "ecr:*",
+                "Resource": "arn:aws:ecr:*:*:repository/*"
+            }
+        ]
+      }
+      
+    
+- Name the policy ``VH_EKS_ADMIN`` and create it.
+- Back in your ``Add user`` tab click on the refresh button and select the ``VH_EKS_ADMIN`` policy.
+- Store the access key & secret in a safe location.
 
 
 Create the EKS cluster
@@ -137,15 +139,16 @@ Then create the cluster:
 .. code-block:: bash
 
     eksctl create cluster \
-    --name $CLUSTER \
-    --region $REGION \
-    --nodegroup-name standard-workers \
-    --node-type t3.medium \
-    --nodes 1 \
-    --nodes-min 1 \
-    --nodes-max 4 \
-    --managed \
-    --write-kubeconfig=0
+        --name $CLUSTER \
+        --region $REGION \
+        --nodegroup-name standard-workers \
+        --node-type t3.medium \
+        --nodes 1 \
+        --nodes-min 1 \
+        --nodes-max 4 \
+        --managed \
+        --asg-access \
+        --write-kubeconfig=0
 
 
 This takes 10-15 minutes to go up.
@@ -158,8 +161,7 @@ Logs are available under CloudFormation on console or with CLI:
 Setup kubeconfig
 --------------------
 
-We're defining a custom location for the config file (with `--kubeconfig`) to ensure we're writing to an empty file
-instead of modifying to the default config.
+We're defining a custom location for the config file (with `--kubeconfig`) to ensure we're writing to an empty file instead of modifying to the default config.
 
 .. code-block:: bash
 
@@ -176,54 +178,10 @@ Check that the cluster is up and running:
 
     kubectl get svc --kubeconfig ~/.kube/$CLUSTER
 
-
-Install NGINX Ingress Controller (required)
+Setup the RBAC user on Kubernetes (required)
 ----------------------------------------------
 
-.. code-block:: bash
-
-    kubectl create namespace ingress-nginx
-
-    helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
-    helm repo update
-    helm install \
-    ingress-nginx \
-    ingress-nginx/ingress-nginx \
-    --version v3.31.0 \
-    --namespace ingress-nginx
-    
-    # there is also a lot of configuration you can do here but defaults should be fine:
-    # helm show values ingress-nginx/ingress-nginx
-
-
-Make sure ``ingress-nginx-controller`` pod is running, might take a minute:
-
-.. code-block:: bash
-
-    kubectl get pods --all-namespaces --kubeconfig ~/.kube/$CLUSTER
-    # NAMESPACE       NAME                                        READY   STATUS    RESTARTS   AGE
-    # ingress-nginx   nginx-ingress-controller-6885bc7778-rckm6   1/1     Running   0          2m15s
-
-
-See that the ``ingress-nginx`` is running and get the external address:
-
-.. code-block:: bash
-
-    kubectl -n ingress-nginx get service/ingress-nginx-controller --kubeconfig ~/.kube/$CLUSTER
-    # The external IP is something on the lines of `XXX.YYY.elb.amazonaws.com`
-
-
-Now we should get a default NGINX 404 from the load balancer external IP:
-
-.. code-block:: bash
-
-    curl http://XXX.YYY.elb.amazonaws.com
-
-
-Setup the RBAC user on Kubernetes (required)
---------------------------------------------------
-
-Create the files below to enable the `valohai-eks-user` to deploy from Valohai to your cluster.
+Create the files below to enable the ``valohai-eks-user`` to deploy from Valohai to your cluster.
 
 Create a Kubernetes user and map it to the IAM user:
 
@@ -268,7 +226,6 @@ Create a ``namespace-reader`` role that will give ``valohai-eks-user`` permissio
     # and verify changes with...
     # kubectl get clusterrole/namespace-reader -o yaml --kubeconfig ~/.kube/$CLUSTER
 
-
 Bind our cluster role and user together:
 
 .. code-block:: bash
@@ -291,6 +248,133 @@ Bind our cluster role and user together:
     # and verify changes with...
     # kubectl get clusterrolebinding/namespace-reader-global -o yaml --kubeconfig ~/.kube/$CLUSTER
 
+Setup AWS EKS autoscaling
+----------------------------------------------
+
+We'll install ``cluster-autoscaler`` to manage autoscaling on the AWS EKS cluster.
+
+https://eksctl.io/usage/autoscaling/
+https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/cloudprovider/aws/README.md
+
+Create an IAM OIDC identity provider
+----------------------------------------------
+
+.. code-block:: bash
+
+    eksctl utils associate-iam-oidc-provider --cluster $CLUSTER --approve
+
+    # whichever entity is running the above command must be able to do "iam:CreateOpenIDConnectProvider"
+    #aws eks describe-cluster \
+    #  --name $CLUSTER \
+    #  --query "cluster.identity.oidc.issuer" \
+    #  --output text
+    # https://oidc.eks.eu-west-1.amazonaws.com/id/EXAMPLE7B896A512D065990B999222FC84
+    # note that the resource target comes from the previous command
+    #{
+    #    "Version": "2012-10-17",
+    #    "Statement": [
+    #        {
+    #            "Effect": "Allow",
+    #            "Action": "iam:CreateOpenIDConnectProvider",
+    #            "Resource": "arn:aws:iam::<ACCOUNT-ID>:oidc-provider/EXAMPLE7B896A512D065990B999222FC84"
+    #        }
+    #    ]
+    #}
+
+
+Create AWS IAM policy for ``cluster-autoscaler``
+------------------------------------------------
+
+In the next policy, you can also replace the ``"Resource"`` limitation with a ``"*"`` if getting the autoscaling group ARN is troublesome. The included ``Condition`` should be enough. Otherwise, list all ASG ARNs that are part of the cluster.
+
+.. code-block:: bash
+
+    # lists all ARNs of the autoscaling groups of the cluster...
+    aws autoscaling describe-auto-scaling-groups \
+    --query "AutoScalingGroups[?Tags[?Value == \`$CLUSTER\`]].AutoScalingGroupARN" \
+    --output text
+    # arn:aws:autoscaling:eu-west-1:<ACCOUNT-ID>:autoScalingGroup:EXAMPLE:autoScalingGroupName/eks-EXAMPLE
+
+    # note that you will have to be able to create new AWS IAM roles...
+    cat <<EOF >> cluster-autoscaler-policy.json
+    {
+        "Version": "2012-10-17",
+        "Statement": [
+            {
+                "Effect": "Allow",
+                "Action": [
+                    "autoscaling:SetDesiredCapacity",
+                    "autoscaling:TerminateInstanceInAutoScalingGroup"
+                ],
+                "Resource": [
+                    "arn:aws:autoscaling:eu-west-1:<ACCOUNT-ID>:autoScalingGroup:EXAMPLE:autoScalingGroupName/eks-EXAMPLE"
+                ],
+                "Condition": {
+                "StringEquals": {
+                    "autoscaling:ResourceTag/k8s.io/cluster-autoscaler/enabled": "true"
+                }
+                }
+            },
+            {
+                "Effect": "Allow",
+                "Action": [
+                    "autoscaling:DescribeAutoScalingInstances",
+                    "autoscaling:DescribeAutoScalingGroups",
+                    "autoscaling:DescribeTags",
+                    "autoscaling:DescribeLaunchConfigurations",
+                    "ec2:DescribeLaunchTemplateVersions"
+                ],
+                "Resource": "*"
+            }
+        ]
+    }
+    EOF
+    aws iam \
+    create-policy \
+    --policy-name ValohaiClusterAutoscalerPolicy \
+    --policy-document file://cluster-autoscaler-policy.json
+    rm cluster-autoscaler-policy.json
+    # record the printed ARN e.g. "arn:aws:iam::<ACCOUNT-ID>:policy/ValohaiClusterAutoscalerPolicy"
+
+Create AWS IAM role and service account for cluster-autoscaler
+---------------------------------------------------------------
+
+.. code-block:: bash
+
+    eksctl create iamserviceaccount \
+        --name cluster-autoscaler \
+        --namespace kube-system \
+        --cluster $CLUSTER \
+        --attach-policy-arn arn:aws:iam::<ACCOUNT-ID>:policy/ValohaiClusterAutoscalerPolicy \
+        --approve \
+        --override-existing-serviceaccounts
+    # creates a Role that is something like...
+    # arn:aws:iam::<ACCOUNT-ID>:role/eksctl-sandbox-valohai-addon-iamserviceaccou-Role1-1M0AUUY1YCW5S
+    # and a Kubernetes service account like...
+    kubectl get -n kube-system serviceaccount/cluster-autoscaler -o yaml
+
+Install ``cluster-autoscaler``
+-------------------------------
+
+.. code-block:: 
+
+    wget https://raw.githubusercontent.com/kubernetes/autoscaler/master/cluster-autoscaler/cloudprovider/aws/examples/cluster-autoscaler-autodiscover.yaml
+
+    # open in text editor and...
+    vim cluster-autoscaler-autodiscover.yaml
+    # 1. Remove the "kind: ServiceAccount" section as we created that already with eksctl
+    # 2. Find the "kind: Deployment" and...
+    # 2a. Replace <YOUR CLUSTER NAME> with the cluster name.
+    # 2b. Add the following `env` definition right below it, on the same level as `command`
+            env:
+                - name: AWS_REGION
+                value: eu-west-1  # or what region the cluster is in
+
+    # then apply these changes
+    kubectl apply -f cluster-autoscaler-autodiscover.yaml
+    kubectl get pods -n kube-system
+    # cluster-autoscaler-7dd5d74dc5-qs8gj   1/1     Running
+    kubectl logs -n kube-system cluster-autoscaler-7dd5d74dc5-qs8gj -f
 
 Send details to Valohai
 --------------------------
@@ -306,5 +390,3 @@ Send Valohai engineers:
     * Certificate authority
 * ECR name - Copy the URL you see when creating a new repository in your ECR (for example
   accountid.dkr.ecr.eu-west-1.amazonaws.com)
-* External IP of the ingress-nginx
-    * Run ``kubectl -n ingress-nginx get service/ingress-nginx-controller`` to see the IP
