@@ -57,7 +57,7 @@ This user is needed only if you want to give Valohai elevated permissions to ins
 You can skip this IAM user if you're creating the cluster yourself or using an existing cluster.
 
 - Create a user ``valohai-eks-admin``.
-    - enable ``Programmatic access`` and ``Console access``
+    - Enable ``Programmatic access`` and ``Console access``.
 - Attach the following existing policies
     - AmazonEKSClusterPolicy
     - AmazonEC2FullAccess
