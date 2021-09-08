@@ -46,7 +46,7 @@ This user is required so that Valohai can deploy access the cluster and deploy n
       
 
 - Name the policy ``VH_EKS_USER`` and create it.
-- Back in your ``Add user`` tab click on the refresh button and select the ``VH_EKS_USER`` policy.
+- Back in your ``Add user`` tab, click on the refresh button and select the ``VH_EKS_USER`` policy.
 - Store the access key & secret in a safe place.
 
 IAM: Admin user (optional)
