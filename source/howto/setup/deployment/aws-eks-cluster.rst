@@ -22,7 +22,7 @@ Provision an Amazon EKS (Elastic Kubernetes Service)
 IAM: EKS User (required)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This user is required so Valohai can deploy access the cluster and deploy new images to your ECR.
+This user is required so that Valohai can deploy access the cluster and deploy new images to your ECR.
 
 - Create a user ``valohai-eks-user``.
     - enable ``Programmatic access`` and ``Console access``
