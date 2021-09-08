@@ -360,7 +360,7 @@ Install ``cluster-autoscaler``
 
     wget https://raw.githubusercontent.com/kubernetes/autoscaler/master/cluster-autoscaler/cloudprovider/aws/examples/cluster-autoscaler-autodiscover.yaml
 
-    # open in text editor and...
+    # Open in text editor and: 
     vim cluster-autoscaler-autodiscover.yaml
     # 1. Remove the "kind: ServiceAccount" section as we created that already with eksctl
     # 2. Find the "kind: Deployment" and...
