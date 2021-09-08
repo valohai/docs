@@ -370,7 +370,7 @@ Install ``cluster-autoscaler``
                 - name: AWS_REGION
                 value: eu-west-1  # or what region the cluster is in
 
-    # then apply these changes
+    # Next, apply these changes:
     kubectl apply -f cluster-autoscaler-autodiscover.yaml
     kubectl get pods -n kube-system
     # cluster-autoscaler-7dd5d74dc5-qs8gj   1/1     Running
