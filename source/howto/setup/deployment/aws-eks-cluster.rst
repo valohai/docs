@@ -364,7 +364,7 @@ Install ``cluster-autoscaler``
     vim cluster-autoscaler-autodiscover.yaml
     # 1. Remove the "kind: ServiceAccount" section as we created that already with eksctl
     # 2. Find the "kind: Deployment", and
-    # 2a. Replace <YOUR CLUSTER NAME> with the cluster name.
+    # 3a. Replace <YOUR CLUSTER NAME> with the cluster name.
     # 2b. Add the following `env` definition right below it, on the same level as `command`
             env:
                 - name: AWS_REGION
