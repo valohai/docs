@@ -26,7 +26,7 @@ This user is required so that Valohai can deploy access the cluster and deploy n
 
 - Create a user ``valohai-eks-user``.
     - enable ``Programmatic access`` and ``Console access``
-- Attach the following existing policies
+- Attach the following existing policies:
     - AmazonEC2ContainerRegistryFullAccess
     - AmazonEKSServicePolicy
 - Click on ``Create policy`` to open a new tab. Describe the new policy with the JSON below.
