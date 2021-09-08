@@ -365,7 +365,7 @@ Install ``cluster-autoscaler``
     # 1. Remove the "kind: ServiceAccount" section as we created that already with eksctl
     # 2. Find the "kind: Deployment", and
     # 3a. Replace <YOUR CLUSTER NAME> with the cluster name.
-    # 2b. Add the following `env` definition right below it, on the same level as `command`
+    # 3b. Add the following `env` definition right below it, on the same level as `command`:
             env:
                 - name: AWS_REGION
                 value: eu-west-1  # or what region the cluster is in
