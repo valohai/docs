@@ -189,9 +189,9 @@ Create a Kubernetes user and map it to the IAM user:
 
     cat <<EOF > aws-auth-patch.yaml
     data:
-    mapUsers: |
+      mapUsers: |
         - userarn: arn:aws:iam::<ACCOUNT-ID>:user/valohai-eks-user
-        username: valohai-eks-user
+          username: valohai-eks-user
     EOF
     vim aws-auth-patch.yaml
     kubectl -n kube-system patch configmap/aws-auth --patch "$(cat aws-auth-patch.yaml)" --kubeconfig ~/.kube/$CLUSTER
@@ -207,18 +207,18 @@ Create a ``namespace-reader`` role that will give ``valohai-eks-user`` permissio
     apiVersion: rbac.authorization.k8s.io/v1
     kind: ClusterRole
     metadata:
-    name: namespace-reader
+      name: namespace-reader
     rules:
-    - apiGroups: [ "" ]
+      - apiGroups: [ "" ]
         resources: [ "namespaces", "services" ]
         verbs: [ "get", "watch", "list", "create", "update", "patch", "delete" ]
-    - apiGroups: [ "" ]
+      - apiGroups: [ "" ]
         resources: [ "pods", "pods/log", "events" ]
         verbs: [ "list","get","watch" ]
-    - apiGroups: [ "extensions","apps" ]
+      - apiGroups: [ "extensions","apps" ]
         resources: [ "deployments", "ingresses" ]
         verbs: [ "get", "list", "watch", "create", "update", "patch", "delete" ]
-    - apiGroups: [ "networking.k8s.io" ]
+      - apiGroups: [ "networking.k8s.io" ]
         resources: [ "ingresses" ]
         verbs: [ "get", "list", "watch", "create", "update", "patch", "delete" ]
     EOF
@@ -234,15 +234,15 @@ Bind our cluster role and user together:
     apiVersion: rbac.authorization.k8s.io/v1
     kind: ClusterRoleBinding
     metadata:
-    name: namespace-reader-global
+      name: namespace-reader-global
     subjects:
-    - kind: User
+      - kind: User
         name: valohai-eks-user
         apiGroup: rbac.authorization.k8s.io
     roleRef:
-    kind: ClusterRole
-    name: namespace-reader
-    apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: namespace-reader
+      apiGroup: rbac.authorization.k8s.io
     EOF
     kubectl apply -f rbacuser-clusterrole-binding.yaml --kubeconfig ~/.kube/$CLUSTER
     # and verify changes with...
@@ -331,8 +331,8 @@ In the next policy, you can also replace the ``"Resource"`` limitation with a ``
     EOF
     aws iam \
     create-policy \
-    --policy-name ValohaiClusterAutoscalerPolicy \
-    --policy-document file://cluster-autoscaler-policy.json
+      --policy-name ValohaiClusterAutoscalerPolicy \
+      --policy-document file://cluster-autoscaler-policy.json
     rm cluster-autoscaler-policy.json
     # record the printed ARN e.g. "arn:aws:iam::<ACCOUNT-ID>:policy/ValohaiClusterAutoscalerPolicy"
 
