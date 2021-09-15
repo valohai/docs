@@ -22,11 +22,11 @@ Provision an Amazon EKS (Elastic Kubernetes Service)
 IAM: EKS User (required)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This user is required so that Valohai can deploy access the cluster and deploy new images to your ECR.
+This user is required so Valohai can deploy access the cluster and deploy new images to your ECR.
 
 - Create a user ``valohai-eks-user``.
-    - Enable ``Programmatic access`` and ``Console access``.
-- Attach the following existing policies:
+    - enable ``Programmatic access`` and ``Console access``
+- Attach the following existing policies
     - AmazonEC2ContainerRegistryFullAccess
     - AmazonEKSServicePolicy
 - Click on ``Create policy`` to open a new tab. Describe the new policy with the JSON below.
@@ -46,7 +46,7 @@ This user is required so that Valohai can deploy access the cluster and deploy n
       
 
 - Name the policy ``VH_EKS_USER`` and create it.
-- Back in your ``Add user`` tab, click on the refresh button and select the ``VH_EKS_USER`` policy.
+- Back in your ``Add user`` tab click on the refresh button and select the ``VH_EKS_USER`` policy.
 - Store the access key & secret in a safe place.
 
 IAM: Admin user (optional)
@@ -57,7 +57,7 @@ This user is needed only if you want to give Valohai elevated permissions to ins
 You can skip this IAM user if you're creating the cluster yourself or using an existing cluster.
 
 - Create a user ``valohai-eks-admin``.
-    - Enable ``Programmatic access`` and ``Console access``.
+    - enable ``Programmatic access`` and ``Console access``
 - Attach the following existing policies
     - AmazonEKSClusterPolicy
     - AmazonEC2FullAccess
@@ -189,9 +189,9 @@ Create a Kubernetes user and map it to the IAM user:
 
     cat <<EOF > aws-auth-patch.yaml
     data:
-    mapUsers: |
+      mapUsers: |
         - userarn: arn:aws:iam::<ACCOUNT-ID>:user/valohai-eks-user
-        username: valohai-eks-user
+          username: valohai-eks-user
     EOF
     vim aws-auth-patch.yaml
     kubectl -n kube-system patch configmap/aws-auth --patch "$(cat aws-auth-patch.yaml)" --kubeconfig ~/.kube/$CLUSTER
@@ -207,18 +207,18 @@ Create a ``namespace-reader`` role that will give ``valohai-eks-user`` permissio
     apiVersion: rbac.authorization.k8s.io/v1
     kind: ClusterRole
     metadata:
-    name: namespace-reader
+      name: namespace-reader
     rules:
-    - apiGroups: [ "" ]
+      - apiGroups: [ "" ]
         resources: [ "namespaces", "services" ]
         verbs: [ "get", "watch", "list", "create", "update", "patch", "delete" ]
-    - apiGroups: [ "" ]
+      - apiGroups: [ "" ]
         resources: [ "pods", "pods/log", "events" ]
         verbs: [ "list","get","watch" ]
-    - apiGroups: [ "extensions","apps" ]
+      - apiGroups: [ "extensions","apps" ]
         resources: [ "deployments", "ingresses" ]
         verbs: [ "get", "list", "watch", "create", "update", "patch", "delete" ]
-    - apiGroups: [ "networking.k8s.io" ]
+      - apiGroups: [ "networking.k8s.io" ]
         resources: [ "ingresses" ]
         verbs: [ "get", "list", "watch", "create", "update", "patch", "delete" ]
     EOF
@@ -234,15 +234,15 @@ Bind our cluster role and user together:
     apiVersion: rbac.authorization.k8s.io/v1
     kind: ClusterRoleBinding
     metadata:
-    name: namespace-reader-global
+      name: namespace-reader-global
     subjects:
-    - kind: User
+      - kind: User
         name: valohai-eks-user
         apiGroup: rbac.authorization.k8s.io
     roleRef:
-    kind: ClusterRole
-    name: namespace-reader
-    apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: namespace-reader
+      apiGroup: rbac.authorization.k8s.io
     EOF
     kubectl apply -f rbacuser-clusterrole-binding.yaml --kubeconfig ~/.kube/$CLUSTER
     # and verify changes with...
@@ -291,8 +291,8 @@ In the next policy, you can also replace the ``"Resource"`` limitation with a ``
 
     # lists all ARNs of the autoscaling groups of the cluster...
     aws autoscaling describe-auto-scaling-groups \
-    --query "AutoScalingGroups[?Tags[?Value == \`$CLUSTER\`]].AutoScalingGroupARN" \
-    --output text
+      --query "AutoScalingGroups[?Tags[?Value == \`$CLUSTER\`]].AutoScalingGroupARN" \
+      --output text
     # arn:aws:autoscaling:eu-west-1:<ACCOUNT-ID>:autoScalingGroup:EXAMPLE:autoScalingGroupName/eks-EXAMPLE
 
     # note that you will have to be able to create new AWS IAM roles...
@@ -331,8 +331,8 @@ In the next policy, you can also replace the ``"Resource"`` limitation with a ``
     EOF
     aws iam \
     create-policy \
-    --policy-name ValohaiClusterAutoscalerPolicy \
-    --policy-document file://cluster-autoscaler-policy.json
+      --policy-name ValohaiClusterAutoscalerPolicy \
+      --policy-document file://cluster-autoscaler-policy.json
     rm cluster-autoscaler-policy.json
     # record the printed ARN e.g. "arn:aws:iam::<ACCOUNT-ID>:policy/ValohaiClusterAutoscalerPolicy"
 
@@ -360,17 +360,17 @@ Install ``cluster-autoscaler``
 
     wget https://raw.githubusercontent.com/kubernetes/autoscaler/master/cluster-autoscaler/cloudprovider/aws/examples/cluster-autoscaler-autodiscover.yaml
 
-    # Open in text editor and: 
+    # open in text editor and...
     vim cluster-autoscaler-autodiscover.yaml
     # 1. Remove the "kind: ServiceAccount" section as we created that already with eksctl
-    # 2. Find the "kind: Deployment", and
-    # 3a. Replace <YOUR CLUSTER NAME> with the cluster name.
-    # 3b. Add the following `env` definition right below it, on the same level as `command`:
+    # 2. Find the "kind: Deployment" and...
+    # 2a. Replace <YOUR CLUSTER NAME> with the cluster name.
+    # 2b. Add the following `env` definition right below it, on the same level as `command`
             env:
                 - name: AWS_REGION
                 value: eu-west-1  # or what region the cluster is in
 
-    # Next, apply these changes:
+    # then apply these changes
     kubectl apply -f cluster-autoscaler-autodiscover.yaml
     kubectl get pods -n kube-system
     # cluster-autoscaler-7dd5d74dc5-qs8gj   1/1     Running
