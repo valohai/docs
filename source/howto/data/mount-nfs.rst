@@ -60,6 +60,7 @@ In your ``valohai.yaml`` specify a new mount:
                 - destination: /my-data
                   source: fs-1234aa62.efs.eu-west-1.amazonaws.com:/
                   type: nfs
+                  readonly: false
 
     ..
 
@@ -79,6 +80,7 @@ In your ``valohai.yaml`` specify a new mount:
                 - destination: /my-data
                   source: <IP>:/mystore
                   type: nfs
+                  readonly: false
 
     ..
 
