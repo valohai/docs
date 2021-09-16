@@ -37,9 +37,11 @@ Collecting metadata from a Valohai execution allows you to easily sort, filter, 
         import json
 
         print()
-        print(json.dumps({"epoch": epoch})
-        print(json.dumps({"accuracy": accuracy})
-        print(json.dumps({"loss": loss})
+        print(json.dumps({
+            "epoch": epoch,
+            "accuracy": accuracy,
+            "loss": loss
+        }))
 
     ..
 
