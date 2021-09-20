@@ -4,8 +4,8 @@
     :description: How to prepare your AWS environment for a Valohai Private Workers installation
 
 
-Preparing your AWS for Valohai Hybrid Setup
-###################################################
+Preparing your AWS for Valohai Hybrid Implementation
+######################################################
 
 This document prepares your AWS account for Valohai private worker installation.
 
