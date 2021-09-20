@@ -4,7 +4,7 @@
     :description: How to prepare your AWS environment for a Valohai Private Workers installation
 
 
-Preparing your AWS for Valohai Private Worker Setup
+Preparing your AWS for Valohai Hybrid Setup
 ###################################################
 
 This document prepares your AWS account for Valohai private worker installation.
@@ -271,6 +271,23 @@ Create a new security group named **valohai-sg-workers** and set the Inbound rul
       - 22
       - 3.251.38.215/32 (optional)
       - for SSH management from Valohai
+
+Make sure the workers have access to **outbound internet** (default settings in AWS)
+
+.. list-table::
+    :header-rows: 1
+    :widths: 15 15 70
+
+    * - Protocol
+      - Port
+      - Destination
+    * - All
+      - All
+      - 0.0.0.0/0
+
+We recommend allowing all outbound traffic from your workers, so you can easily access various resources and install additional libraries from your ML executions.
+
+At the very least, you'll need to allow outbound access on ports 80 and 443 to 0.0.0.0/0 and 63790 to the ``valohai-sg-queue`` which is created below.
 
 Tag the security group with Key=valohai Value=1.
 

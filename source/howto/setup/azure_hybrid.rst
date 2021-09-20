@@ -4,7 +4,7 @@
     :description: How to prepare your Microsoft Azure environment for a Valohai Private Workers installation
 
 
-Preparing your Azure subscription for Valohai Worker Setup
+Preparing your Azure subscription for Valohai Hybrid Setup
 ############################################################################
 
 This document prepares your Microsoft Azure subscription for a Valohai private worker installation.
