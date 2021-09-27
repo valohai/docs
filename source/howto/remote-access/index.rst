@@ -120,7 +120,7 @@ Now depending on what your use-case, you may want to do one of these things:
 .. code-block:: bash
 
    # template
-   ssh -i <path-to-private-key> <ip-address> -p <port> -t /bin/bash
+   ssh -i <path-to-private-key> <ip-address> -p <port> -t -L<local-port>:<localhost>:<local-port>
 
 .. code-block:: bash
 
