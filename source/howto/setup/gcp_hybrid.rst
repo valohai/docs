@@ -4,8 +4,8 @@
     :description: How to prepare your GCP environment for a Valohai Private Workers installation
 
 
-Preparing your GCP for Valohai Worker Setup
-#################################################
+Preparing your GCP for Valohai Hybrid Implementation
+#####################################################
 
 This document prepares your GCP account for Valohai worker installation.
 
