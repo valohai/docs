@@ -51,7 +51,7 @@ You'll need to edit the firewall rules in your cloud to allow users to connect t
    * **Source:** Depending on your organization settings you can either set Source as 0.0.0.0/0 to allow connections from anywhere or whitelist certain IP ranges / source tags
    * **Description:** Allows connecting to Valohai jobs over SSH
 
-   Setting the source as 0.0.0.0/0 means that inbound connections will be allowed from all addresses. However, you'll still need the SSH Private Key (generated below) in order to authenticate and succesfully connect.
+   Setting the source as 0.0.0.0/0 means that inbound connections will be allowed from all addresses. However, you'll still need the SSH Private Key (generated below) in order to authenticate and successfully connect.
 
 
 .. tab:: GCP
@@ -67,7 +67,7 @@ You'll need to edit the firewall rules in your cloud to allow users to connect t
    * **Specified protocols and ports:**
      * TCP: with the port number you specified in your Valohai organization's settings.
 
-   Setting the source as 0.0.0.0/0 means that inbound connections will be allowed from all addresses.. However, you'll still need the SSH Private Key (generated below) in order to authenticate and succesfully connect.
+   Setting the source as 0.0.0.0/0 means that inbound connections will be allowed from all addresses.. However, you'll still need the SSH Private Key (generated below) in order to authenticate and successfully connect.
 
 
 1. Create an SSH keypair
