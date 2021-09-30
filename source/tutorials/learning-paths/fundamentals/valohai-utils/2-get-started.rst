@@ -2,12 +2,12 @@
     :description: Valohai Fundamentals learning path - Running your first Valohai execution
 
 Getting started
-####################
+###############
 
 .. include:: ../_shared/_2-get-started.rst
 
 Import Valohai
-------------------------
+--------------
 
 Now we'll ``import valohai`` and define a new :ref:`step` in the ``train.py`` file we just created..
 
@@ -16,20 +16,23 @@ Now we'll ``import valohai`` and define a new :ref:`step` in the ``train.py`` fi
 
 .. code-block:: python
     :linenos:
-    :emphasize-lines: 3,5
+    :emphasize-lines: 3,5,6,7,8
 
+    import numpy as np
     import tensorflow as tf
-    import numpy
     import valohai
 
-    valohai.prepare(step='train-model', image='tensorflow/tensorflow:2.4.1')
+    valohai.prepare(
+        step='train-model',
+        image='tensorflow/tensorflow:2.6.0',
+    )
 
 ..
 
 Run in Valohai
-------------------------
+--------------
 
-Finally, we run the following commands in the the command line, on your own computer:
+Finally, we run the following commands in the command line, on your own computer:
 
 .. code:: bash
 
