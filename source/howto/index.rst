@@ -26,9 +26,9 @@ How-to guides include the steps involved in addressing key problems and use-case
     tasks/index
     notifications/index
     pipelines/index
+    remote-access/index
     organization/index
     deployments/index
     airflow-management/index
-    remote-access/index
 
 ..

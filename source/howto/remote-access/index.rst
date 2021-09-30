@@ -2,7 +2,7 @@
 .. meta::
     :description: How remotely access and debug live execution
 
-.. _executions-compare:
+.. _remote-ssh:
 
 Remote access (SSH)
 ################################
@@ -19,7 +19,56 @@ It is a low-level and agnostic protocol, which makes it usable for a wide array 
 .. admonition:: Prerequirements
   :class: attention
 
-  * TODO
+  Remote access is available for enterprise users who are using onprem, AWS, or GCP environments.
+
+  Your organization admin needs to enable SSH connection to the workers and edit the firewall rules in your cloud provider.
+
+0. Configure SSH Access for your organization
+-----------------------------------------------
+
+Your organization admin will need to configure the organization wide settings and firewall rules before you can use remote SSH connections.
+
+Define the default SSH port
+============================
+
+Define a default port for SSH connections in your organization
+    
+* Navigate to ``Hi, <name> (the top right menu) > Manage <organization>``
+* Go to *Settings* under the organization controls
+* Set a *Default Debug Port* for your organization. Note, the value must be above 1023
+
+Allow connections on selected port
+==================================
+
+You'll need to edit the firewall rules in your cloud to allow users to connect to the workers on the defined port.
+
+.. tab:: AWS
+
+   In AWS open the Security Group ``valohai-sg-workers`` and click *Edit Inbound rules* to add a new inbound Custom TCP rule:
+
+   * **Type:** Custom TCP
+   * **Port range:** The port number you specified in your Valohai organization's settings.
+   * **Source:** Depending on your organization settings you can either set Source as 0.0.0.0/0 to allow connections from anywhere or whitelist certain IP ranges / source tags
+   * **Description:** Allows connecting to Valohai jobs over SSH
+
+   Setting the source as 0.0.0.0/0 means that inbound connections will be allowed from all addresses. However, you'll still need the SSH Private Key (generated below) in order to authenticate and succesfully connect.
+
+
+.. tab:: GCP
+
+   In GCP create a new firewall rule:
+
+   * **Name:** ``valohai-fr-worker-ssh``
+   * **Description:** Allows connecting to Valohai jobs over SSH
+   * **Network:** The network where your Valohai resources are created (e.g. ``valohai-vpc``)
+   * **Direction:** Ingress
+   * **Targets:** Specificed target tags: ``valohai-worker``
+   * **Source:** Depending on your organization settings you can either set Source as 0.0.0.0/0 to allow connections from anywhere or whitelist certain IP ranges / source tags.
+   * **Specified protocols and ports:**
+     * TCP: with the port number you specified in your Valohai organization's settings.
+
+   Setting the source as 0.0.0.0/0 means that inbound connections will be allowed from all addresses.. However, you'll still need the SSH Private Key (generated below) in order to authenticate and succesfully connect.
+
 
 1. Create an SSH keypair
 ----------------------------------
