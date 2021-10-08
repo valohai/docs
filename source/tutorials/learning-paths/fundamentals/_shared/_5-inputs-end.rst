@@ -26,7 +26,7 @@ Rerun an execution with different input data
 
     You can also run a new execution with different input value from the command line:
 
-    ``vh exec run train-model --adhoc --mnist=https://mmyurl.com/differentfile.npz``
+    ``vh exec run train-model --adhoc --mnist=https://myurl.com/differentfile.npz``
 
 
 .. seealso::

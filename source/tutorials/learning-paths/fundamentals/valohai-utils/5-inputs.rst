@@ -2,40 +2,40 @@
     :description: Valohai Fundamentals learning path - Downloading data with Valohai inputs
 
 Download input data
-#######################
+###################
 
 .. include:: ../_shared/_5-inputs.rst
 
 Update **train.py** to add inputs:
 
-* Create a dictionary ``my_inputs`` to define your inputs and their default values
-* Pass the dictionary to ``valohai.prepare``
+* Create a dictionary to pass ``valohai.prepare`` your inputs and their default values
 * Update the ``mnist_file_path`` to point to the Valohai inputs.
 
 You should also remove the ``mnist.npz`` from your local machine.
 
 .. code-block:: python
-    :emphasize-lines: 10,11,12,14,16
+    :emphasize-lines: 9,10,11,17
     :linenos:
 
+    import numpy as np
     import tensorflow as tf
-    import numpy
     import valohai
 
 
-    my_parameters = {
-        'epoch': 5
-    }
+    valohai.prepare(
+        step='train-model',
+        image='tensorflow/tensorflow:2.6.0',
+        default_inputs={
+            'dataset': 'https://valohaidemo.blob.core.windows.net/mnist/mnist.npz'
+        },
+        default_parameters={
+            'learning_rate': 0.001,
+            'epochs': 5,
+        },
+    )
 
-    my_inputs = {
-        'mnist': 's3://onboard-sample/tf-sample/mnist.npz'
-    }
-
-    valohai.prepare(step="train-model", image='tensorflow/tensorflow:2.4.1', default_parameters=my_parameters, default_inputs=my_inputs)
-
-    mnist_file_path = valohai.inputs('mnist').path()
-
-    with numpy.load(mnist_file_path, allow_pickle=True) as f:
+    input_path = valohai.inputs('dataset').path()
+    with np.load(input_path, allow_pickle=True) as f:
         x_train, y_train = f['x_train'], f['y_train']
         x_test, y_test = f['x_test'], f['y_test']
 
@@ -48,28 +48,23 @@ You should also remove the ``mnist.npz`` from your local machine.
     tf.keras.layers.Dense(10)
     ])
 
-    predictions = model(x_train[:1]).numpy()
-    predictions
-
-    tf.nn.softmax(predictions).numpy()
-
+    optimizer = tf.keras.optimizers.Adam(learning_rate=valohai.parameters('learning_rate').value)
     loss_fn = tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True)
-
-    loss_fn(y_train[:1], predictions).numpy()
-
-    model.compile(optimizer='adam',
+    model.compile(optimizer=optimizer,
                 loss=loss_fn,
                 metrics=['accuracy'])
 
     model.fit(x_train, y_train, epochs=valohai.parameters('epoch').value)
 
-    save_path = valohai.outputs().path('model.h5')
-    model.save(save_path)
+    model.evaluate(x_test,  y_test, verbose=2)
+
+    output_path = valohai.outputs().path('model.h5')
+    model.save(output_path)
 
 ..
 
 Run in Valohai
-------------------------
+--------------
 
 Update your :ref:`yaml` with ``vh yaml step``. This will generate a ``inputs`` section in your step.
 

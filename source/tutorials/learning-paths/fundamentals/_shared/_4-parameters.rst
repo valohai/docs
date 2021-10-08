@@ -18,6 +18,6 @@ In this section you will learn:
 
     * A Valohai parameter can be a string, an int, a float or a flag (=bool).
     * The default values for parameters are define in your code. These can be changed when creating an execution from the UI, command-line or API.
-    * Parameters get passed to each Valohai execution as command-line arguments (e.g. ``train.py --epoch=5``)
+    * Parameters get passed to each Valohai execution as command-line arguments (e.g. ``train.py --epochs=5``)
 
 ..

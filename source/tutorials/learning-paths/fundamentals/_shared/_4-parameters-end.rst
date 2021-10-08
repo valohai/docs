@@ -13,7 +13,7 @@ Rerun an execution with different parameter values
 * **Open the latest execution**
 * Click **Copy**
 * Scroll down to the **Parameters** section
-* Change the value of **epoch**
+* Change the value of **epochs**
 * Click **Create execution**
 
 
@@ -25,7 +25,7 @@ Rerun an execution with different parameter values
 
     You can also run a new execution with different parameter values from the command line:
 
-    ``vh exec run train-model --adhoc --epoch=10``
+    ``vh exec run train-model --adhoc --epochs=10``
 
 .. seealso::
 

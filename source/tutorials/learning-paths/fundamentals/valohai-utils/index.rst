@@ -4,7 +4,9 @@
 valohai-utils (Python)
 #######################
 
-The valohai-utils is a generic utility library for the Valohai user. In general, it streamlines pipeline definition and writing Valohai-compatible code. This is achieved by offering utility functions for the most common tasks.
+This learning path will show you how to get started with Valohai and Python, using the valohai-utils helper library.
+
+valohai-utils streamlines pipeline definition and writing Valohai-compatible code. This is achieved by offering utility functions for the most common tasks.
 
 **What does valohai-utils do?**
 

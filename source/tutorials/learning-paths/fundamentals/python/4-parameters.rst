@@ -6,7 +6,7 @@ Use parameters
 
 .. include:: ../_shared/_4-parameters.rst
 
-Update **train.py** to parameterize ``epoch``.
+Update **train.py** to parameterize ``epochs``.
 
 * Define a parameter in your ``valohai.yaml``
 * Import argparse
@@ -31,7 +31,7 @@ Start by commenting out the example parameter in your ``valohai.yaml`` and updat
         #  - name: example-input
         #    default: https://example.com/
         parameters:
-          - name: epoch
+          - name: epochs
             type: integer
             default: 5
 
@@ -53,7 +53,7 @@ Next update your ``train.py`` to parse the command line arguments and use the ar
 
     def parse_args():
         parser = argparse.ArgumentParser()
-        parser.add_argument('--epoch', type=int, default=10)
+        parser.add_argument('--epochs', type=int, default=10)
         return parser.parse_args()
 
     args = parse_args()
@@ -88,7 +88,7 @@ Next update your ``train.py`` to parse the command line arguments and use the ar
                 loss=loss_fn,
                 metrics=['accuracy'])
 
-    model.fit(x_train, y_train, epochs=args.epoch)
+    model.fit(x_train, y_train, epochs=args.epochs)
 
     save_path = os.path.join(VH_OUTPUTS_DIR, 'model.h5')
     model.save(save_path)
