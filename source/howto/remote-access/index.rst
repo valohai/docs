@@ -115,13 +115,12 @@ Start a Valohai execution with extra parameter :code:`debug-key-file` for your p
 
 .. code-block:: bash
 
-   vh exec run -a --debug-key-file=/tmp/remote-debug-key.pub train
+   vh exec run --adhoc --debug-key-file=/tmp/remote-debug-key.pub train
 
 3. Wait for an IP address
 ----------------------------------
 
-In order to connect to a remote execution, we need for it to start first. The worker IP address
-can't be known beforehand as multiple workers are available to pick up the job from the Valohai job queue.
+You need to start the Valohai execution before you can connect to it. Valohai will either run the execution on an existing virtual machine or create a new instance. Each machine has its own IP which is allocated by the cloud provider (e.g. AWS, GCP, Azure). You'll need the IP in order to SSH into the execution.
 
 Wait for the execution to start and watch for the first log events. Look for (something like) this:
 
@@ -146,6 +145,7 @@ Now depending on what your use-case, you may want to do one of these things:
 
 **Run a single command**
 
+This will execute the command and return the results to your terminal.
 .. code-block:: bash
 
    # template
@@ -156,6 +156,7 @@ Now depending on what your use-case, you may want to do one of these things:
 
 **Open an interactive shell**
 
+Allows you to connect to the execution and run commands directly inside the Docker container that's running your execution.
 .. code-block:: bash
 
    # template
