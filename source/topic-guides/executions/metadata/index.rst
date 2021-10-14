@@ -36,13 +36,49 @@ The ``_time`` value is in UTC, formatted as an ISO-8601 datetime (e.g. ``2017-04
 You can generate real-time charts based on metadata which helps with
 monitoring long runs so you can stop them if training doesn't converge well.
 
-.. thumbnail:: /_images/metadata-chart.jpg
+.. image:: /_images/metadata-chart.jpg
    :alt: Metadata chart comparison
 
 You can sort executions by metadata values in the web interface which is useful for e.g. finding training
 executions with the highest prediction accuracy.
 
 The latest or last value of each key such as ``accuracy`` can be used for the sorting hyperparameter optimization results.
+
+Visualizing a confusion matrix
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You can easily generate confusion matrices in Valohai.
+
+The supported formats are:
+
+* An array of ``[['x', 'y', v], ['x', 'y', v], ...]`` triples (i.e. x label, y label, value)
+* A 2-dimensional array of the shape ``[[v, v, v], [v, v, v], ...]``
+* A 2-dimensional array with a header for labels ``[['a', 'b', 'c'], [v, v, v], [v, v, v], ...]``
+
+
+For example:
+
+.. code-block:: python
+
+   from sklearn.metrics import confusion_matrix
+   import numpy as np
+
+   y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2]
+   y_pred = [0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2]
+
+   matrix = confusion_matrix(y_actu, y_pred)
+
+   # Convert to list
+   result = matrix.tolist()
+
+   print({"data": result})
+   # {'data': [[3, 0, 0], [0, 1, 2], [2, 1, 3]]}
+
+Would result in:
+
+.. image:: /_images/confusion_matrix.png
+   :alt: Confusion matrix
+
 
 What else can I do with metadata?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
