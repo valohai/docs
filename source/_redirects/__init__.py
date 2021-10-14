@@ -182,6 +182,7 @@ redirects = {
     '/howto/setup/aws_private_worker/index.html': '/howto/setup/aws_hybrid/index.html',
     '/howto/setup/gcp_private_worker/index.html': '/howto/setup/gcp_hybrid/index.html',
     '/howto/setup/azure_private_worker/index.html': '/howto/setup/azure_hybrid/index.html',
+    '/topic-guides/core-concepts/triggers/index.html': '/howto/pipelines/triggers/index.html'
 
 
 }

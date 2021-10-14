@@ -14,7 +14,6 @@ In this tutorial, we will use Jupyhai, to run a Valohai execution from your loca
    * Jupyhai is a Jupyter notebook extension developed and maintained by Valohai.
    * Use the **Run remote** button, instead of the Run cell button to run your notebook on Valohai.
    * The Jupyhai addon will generate a :ref:`yaml` file for each execution based on the contents of the Notebook. You don't need to create the YAML file yourself.
-   * Notebook executions use a custom Docker image called ``valohai/pypermill``. Make sure to use it as a base for your custom Docker images.
 
 .. admonition:: Installing Jupyhai to on your machine
    :class: attention
@@ -47,7 +46,7 @@ Create a new folder ``valohai-notebook`` on your desktop and launch Jupyter in t
 * Open the new Notebook
 * Click on **Settings** on the toolbar
 * Login with your Valohai credentials
-* Update the Docker image to ``drazend/jupyhai:tf.2.4.1``
+* Update the Docker image to ``valohai/notebook:tensorflow-2.5.0``
 * Close the settings tab
 * Add ``print('Hello Valohai Notebooks!')`` to the first cell
 * Click on ``Run remote`` to run the notebook remotely
