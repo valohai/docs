@@ -212,7 +212,12 @@ The possible options for ``when`` are:
 * ``node-complete``
 * ``node-error``
 
-The ``if`` condition can be based either on metadata or a parameter. Currently, the only available option for ``then`` is ``stop-pipeline``. 
+The ``if`` condition can be based either on metadata or a parameter. 
+
+Currently, the availables option for ``then`` are:
+
+* ``stop-pipeline`` to stop the complete pipeline.
+* ``require-approval`` to pause the pipeline until a user goes to manually approve the previous results of the pipeline.
 
 .. code-block:: yaml
     :linenos:
@@ -231,6 +236,9 @@ The ``if`` condition can be based either on metadata or a parameter. Currently, 
           - name: test-model
             type: execution
             step: Test model
+            actions:
+              - when: node-starting
+                then: require-approval
         edges:
           - [train-model.output.model*, test-model.input.model]
 
