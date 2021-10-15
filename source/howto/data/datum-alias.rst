@@ -44,7 +44,7 @@ Automatically when a file is created
 
 You can also automatically create or update an existing alias when you save a file in your executions.
 
-Read more about the ``.metadata.json``-file: `Store arbitrary metadata with your file <howto/data/tag-files/#store-arbitrary-metadata-with-your-files>`_
+Read more about the ``.metadata.json``-file: `Store arbitrary metadata with your file </howto/data/tag-files/#store-arbitrary-metadata-with-your-files>`_
 
 
 Use an alias as an input

@@ -101,4 +101,4 @@ Follow our Fundamentals tutorial with valohai-utils to learn how to interact wit
 
 .. hint::
 
-   Are you looking for the old Notebook tutorial that uses ``tags`` to define inputs and parameters? Find it `here </tutorials/jupyter/jupyhai/jupyhai-with-tags.html>`_.
+   Are you looking for the old Notebook tutorial that uses ``tags`` to define inputs and parameters? Find it `here </tutorials/jupyter/jupyhai/jupyhai-with-tags/>`_.

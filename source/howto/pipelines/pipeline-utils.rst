@@ -25,7 +25,7 @@ First, create a file with the instructions how to build the pipeline in it (see 
         pipe = Pipeline(name="mypipeline", config=config)
         
         # Define the pipeline nodes.
-        train = pipe.task("train-model")
+        train = pipe.execution("train-model")
         test = pipe.execution("test")
         
         # Configure the pipeline, i.e. define the edges.

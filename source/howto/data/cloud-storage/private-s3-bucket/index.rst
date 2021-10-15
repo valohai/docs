@@ -238,7 +238,7 @@ Name your store and paste in the bucket name and the IAM credentials in the fiel
 
 If you also created the optional IAM Role for large uploads, paste the ARN in in the "Multipart Upload IAM Role ARN" field. You may leave this field empty.
 
-When you create the store, the credentials provided will be checked by creating a small test file in the bucket.
+When you create the store, the credentials provided will be checked by creating a small test file in the bucket. The test file is automatically removed after the connection is verified.
 
 .. thumbnail:: store-settings-03.png
    :alt: Valohai project settings with default store highlighted

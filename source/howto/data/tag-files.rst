@@ -11,7 +11,7 @@ Attach tags and metadata to your files
     :class: tip
 
     * Tagging files allows you to easily find and sort data files
-    * Use can use tag names when searcing for an execution input file, or any data from your outputs
+    * You can use tag names when searching for an execution input file, or any data from your outputs
     * In addition to tags, you can send arbitrary JSON metadata to be stored with your files.
 
 ..

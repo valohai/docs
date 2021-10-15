@@ -18,11 +18,14 @@ Popular Docker images for notebook executions
 
 Below you'll find list of the most commonly used Notebook images and their Dockerfiles. You can use any of these images in your executions, or build your own image on top of them.
 
-Each of the images contains the library marked in the tag and the following libraries: ``seaborn``, ``numpy``, ``pandas``, ``matplotlib``, ``valohai-utils``, and ``statsmodels``
+Each of the images contains the library marked in the tag and the following libraries: ``seaborn``, ``numpy``, ``pandas``, ``matplotlib``, ``valohai-utils``, and ``statsmodels``.
 
-* ``valohai/notebook:tensorflow-2.5.0``
-* ``valohai/notebook:tensorflow-1.15.5``
+The Tensorflow images have a GPU enabled version. You'll recognize them by the ``-gpu`` extension.
+
+* ``valohai/notebook:tensorflow-2.5.0`` | ``valohai/notebook:tensorflow-2.5.0-gpu``
+* ``valohai/notebook:tensorflow-1.15.5`` | ``valohai/notebook:tensorflow-1.15.5-gpu``
 * ``valohai/notebook:sklearn-0.24.2``
+* ``valohai/notebook:sklearn-1.0``
 * ``valohai/notebook:xgboost-1.4.2``
 
 You can change the default Docker image for your Notebook by clicking on ``Settings`` inside your notebook.

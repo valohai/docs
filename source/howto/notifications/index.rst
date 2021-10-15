@@ -12,6 +12,7 @@ Notifications
     :titlesonly:
     :maxdepth: 1
 
+    email
     webhook
 
 
