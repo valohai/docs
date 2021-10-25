@@ -1,8 +1,8 @@
 .. meta::
     :description: Defining parameters with valohai-utils.
 
-Parameters
-==========
+``valohai.parameters()``
+========================
 
 To parameterize a :doc:`step </topic-guides/core-concepts/steps>`, you need :doc:`parameters </topic-guides/core-concepts/parameters>`. They can be ``float``, ``integer``, ``string`` or ``boolean`` type.
 

@@ -1,8 +1,8 @@
 .. meta::
     :description: Explaining the valohai-utils prepare() method.
 
-valohai.prepare()
-=================
+``valohai.prepare()``
+=====================
 
 In Valohai jargon, a :doc:`step </topic-guides/core-concepts/steps>` is a piece of code that performs a single operation like "train" or "preprocess".
 A single step is defined by calling the ``valohai.prepare()`` method.

@@ -3,8 +3,8 @@
 .. meta::
     :description: Overview of how you'll read and write data in Valohai
 
-Input and output data in Valohai
-#################################################
+Input and output data
+###########################
 
 .. seealso::
 

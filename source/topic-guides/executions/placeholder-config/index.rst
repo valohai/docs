@@ -1,7 +1,7 @@
 .. meta::
     :description: You can use placeholder syntax in Valohai commands to inject custom parameters to your executions.
 
-Placeholder-based Configuration
+Placeholder-based configuration
 ===============================
 
 Placeholder-based configuration is an alternative to file-based execution configuration.

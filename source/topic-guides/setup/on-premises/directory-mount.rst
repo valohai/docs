@@ -1,7 +1,7 @@
 .. meta::
     :description: Mount local directories to minimize data download and upload duration.
 
-Mounting a Directory
+Mounting a directory
 ====================
 
 On-premises installations allow users to **mount local directories** during executions.

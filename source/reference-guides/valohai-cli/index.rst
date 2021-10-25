@@ -4,8 +4,8 @@
 .. _cli:
 
 
-Command-line Reference
-======================
+``valohai-cli`` command-line
+=============================
 
 ``valohai-cli`` is a command-line tool to manage your Valohai experiments and installations.
 

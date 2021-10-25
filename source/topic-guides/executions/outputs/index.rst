@@ -3,7 +3,7 @@
 
 .. _outputs:
 
-Uploading Files from Executions
+Uploading files from executions
 ===============================
 
 At the end of an execution, anything stored in the ``/valohai/outputs`` directory will be uploaded

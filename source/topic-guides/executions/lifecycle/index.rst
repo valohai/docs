@@ -1,7 +1,7 @@
 .. meta::
     :description: Execution lifecycle starts from an execution being created and end when the commands haven been ran.
 
-Creating Executions
+Creating executions
 ===================
 
 Executions implement a step that's defined in ``valohai.yaml``. You can define your :ref:`step` by writing the :ref:`yaml-step` manually, or using valohai-utils.

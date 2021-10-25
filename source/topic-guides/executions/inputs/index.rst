@@ -1,7 +1,7 @@
 .. meta::
     :description: Executions can automatically download inputs from various data sources like AWS S3, Azure Blob Storage or custom databases.
 
-Downloading Files to Executions
+Downloading files to executions
 ===============================
 
 You frequently have changing files like training samples/labels or pretrained models you want to use during

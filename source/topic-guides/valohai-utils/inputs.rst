@@ -1,8 +1,8 @@
 .. meta::
     :description: Defining inputs with valohai-utils.
 
-Inputs
-======
+``valohai.inputs()``
+====================
 
 To get some data for your :doc:`step </topic-guides/core-concepts/steps>`, you need :doc:`inputs </reference-guides/valohai-yaml/step-inputs>`.
 Inputs are basically the required files that are expected to be there when the code is executed.

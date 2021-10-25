@@ -1,7 +1,7 @@
 .. meta::
     :description: Learn how to use Valohai APIs to download metadata of an execution
 
-Download metadata of a single execution
+Downloading metadata of a single execution
 ===============================================
 
 .. include:: _use-apis-basic.rst

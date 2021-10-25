@@ -1,8 +1,8 @@
 .. meta::
     :description: Learn how to use Valohai APIs to fetch all failed executions of a project
 
-Fetch failed executions with Valohai APIs
-===============================================
+Fetching failed executions
+=============================
 
 .. include:: _use-apis-basic.rst
 

@@ -3,7 +3,7 @@
 
 .. _pipeline-tasks:
 
-Run a Task inside a pipeline
+Run a task inside a pipeline
 ################################
 
 .. admonition:: Quick recap

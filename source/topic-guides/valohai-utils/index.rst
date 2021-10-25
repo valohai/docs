@@ -3,8 +3,8 @@
 
 .. _valohai-utils:
 
-Valohai-utils Python Toolkit
-============================
+``valohai-utils`` Toolkit
+=========================
 
 One of the Valohai core design principles is to be an unopinionated agnostic platform. The user is not required to use
 any specific programming language, framework or SDK.

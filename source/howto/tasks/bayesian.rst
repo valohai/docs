@@ -22,7 +22,7 @@ Create a Valohai Task
 * Click on **Create task**
 * Choose the step where you defined your parameters
 * Scroll down to the **Parameters section**
-* Select **Bayesian Optimization** as the Task type
+* Select **Bayesian optimization** as the Task type
 
 Now set your prefered settings:
 
@@ -49,7 +49,7 @@ Now set your prefered settings:
 * Click **Create Task** to start your Task.
 
 .. image:: /_images/bayesian_ui.gif
-   :alt: Bayesian Optimization.
+   :alt: Bayesian optimization.
 
 
 .. admonition:: Use Bayesian optimization only when the execution count is over 30

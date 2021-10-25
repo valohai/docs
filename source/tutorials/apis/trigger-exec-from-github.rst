@@ -1,8 +1,8 @@
 .. meta::
     :description: In this tutorial you'll learn to use GitHub Actions to trigger a Valohai execution from a new push to a GitHub repository.
 
-Trigger an execution after a push to a code repository
-========================================================
+Triggering an execution after a push to a code repository
+=========================================================
 
 .. container:: alert alert-success
 

@@ -3,8 +3,8 @@
 
 .. _quickstart-pipeline:
 
-Create a pipeline
-#################
+Creating a pipeline
+############################
 
 .. admonition:: Note
     :class: seealso

@@ -1,8 +1,8 @@
 .. meta::
     :description: How to do Batch Inference with a CSV dataset
 
-Batch Inference with CSV Data
-=============================
+Batch inference on CSVs
+=======================
 
 In this tutorial you will learn how to create and run a Batch Inference execution in Valohai. This execution will use TensorFlow 2.5.0 to run new CSV data through a previously trained model.
 

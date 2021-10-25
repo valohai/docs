@@ -1,7 +1,7 @@
 .. meta::
     :description: What are Valohai data stores? Keep your training data secure and scalable.
 
-Data Stores
+Data stores
 #############
 
 Each Valohai project has one or more **data stores**.
@@ -29,7 +29,7 @@ In addition to downloading files from data stores, you can also download from an
     * :doc:`/howto/data/cloud-storage/private-gcp-bucket/index`
     * :doc:`/howto/data/cloud-storage/private-swift-container/index`
 
-Data Version Control in Valohai
+Data version control in Valohai
 ----------------------------------
 
 Files managed by Valohai are fully version controlled.

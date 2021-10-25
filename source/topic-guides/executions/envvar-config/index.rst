@@ -1,7 +1,7 @@
 .. meta::
     :description: If you wish to parse runtime configuration from files instead of command-line parameters, use /valohai/config.
 
-Variable-based Configuration
+Variable-based configuration
 ============================
 
 You can configure your executions by using **standard environment variables**.

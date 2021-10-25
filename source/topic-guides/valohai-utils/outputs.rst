@@ -1,8 +1,8 @@
 .. meta::
     :description: Defining outputs with valohai-utils.
 
-Outputs
-=======
+``valohai.outputs()``
+=====================
 
 Once your code has trained a model or preprocessed a dataset, it is time to output something.
 

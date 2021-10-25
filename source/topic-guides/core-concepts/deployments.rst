@@ -83,7 +83,7 @@ You define endpoints in the `valohai.yaml`:
 | e.g.
 | ``https://valohai.cloud/ruksi/mnist/americas/20181002.0/predict-digit``
 
-Endpoint Testing
+Endpoint testing
 ---------------------
 
 You can test your endpoint using the **Test Deployment** tool from inside the deployment version page of the Valohai web interface.
@@ -92,7 +92,7 @@ This constructs ``POST/GET/PUT`` requests with the instructed payloads. The payl
 
 You'll get the response from your inference service directly in your browser.
 
-Endpoints with Environment Variables
+Endpoints with environment variables
 --------------------------------------
 
 You have two ways to introduce environment variables into the deployment endpoint runtime:
@@ -109,7 +109,7 @@ Aliases create canonical URLs for development so you can use Valohai to control 
 
 For example, version alias ``https://valohai.cloud/ruksi/mnist/americas/production/predict-digit`` could be used by applications utilizing your predictions and they don't need to change the URL when you a release new version.
 
-Deployment Monitoring
+Deployment monitoring
 -------------------------
 
 Under each deployment version, you can view the deployment logs from your deployment endpoints.

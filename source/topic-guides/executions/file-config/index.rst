@@ -1,7 +1,7 @@
 .. meta::
     :description: If you wish to parse runtime configuration from files instead of command-line parameters, use /valohai/config.
 
-File-based Configuration
+File-based configuration
 ========================
 
 File-based configuration is an alternative to placeholder-based execution configuration.

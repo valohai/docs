@@ -1,8 +1,8 @@
 .. meta::
     :description: How to do Batch Inference with an image dataset
 
-Batch Inference with Image Data
-===============================
+Batch inference on images
+=========================
 
 In this tutorial you will learn how to create and run a Batch Inference execution in Valohai. This execution will use TensorFlow 2.4.1 to run inference on ten unique images using a pre-trained MNIST model.
 

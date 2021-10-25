@@ -1,8 +1,8 @@
 .. meta::
     :description: Logging with valohai-utils.
 
-Logging
-=======
+``valohai.metadata.logger()``
+=============================
 
 When your training code is running on the Valohai platform, it is a good idea to store some metadata
 or metrics for the model training performance.

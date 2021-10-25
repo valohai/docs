@@ -1,8 +1,8 @@
 .. meta::
     :description: You can define which files to be downloaded from various data sources when using Valohai CLI.
 
-Using Inputs with valohai-cli
-=================================
+Using data inputs with ``valohai-cli``
+======================================
 
 Let's assume we have something similar to the following set up in Valohai YAML:
 
