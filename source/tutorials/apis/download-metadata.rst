@@ -4,7 +4,7 @@
 Download metadata of a single execution
 ===============================================
 
-.. include:: _useAPIsbasic.rst
+.. include:: _use-apis-basic.rst
 
 * You'll need the ID of a single execution to fetch its metadata.
     * You can query for it with Valohai APIs or by going to the browser and navigating inside an execution. You'll see the ID in the url.

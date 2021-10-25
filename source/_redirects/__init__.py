@@ -48,10 +48,10 @@ redirects = {
     '/setup/on-premises/worker-management.html': '/setup/on-premises/worker-management/',
     '/setup/setup-options.html': '/setup/setup-options/',
     '/core-concepts/notebooks.html': '/core-concepts/notebooks/',
-    '/tutorials/apis/downloadMetadata.html': '/tutorials/apis/downloadMetadata/',
-    '/tutorials/apis/fetchFailedExecutions.html': '/tutorials/apis/fetchFailedExecutions/',
-    '/tutorials/apis/fetchProjects.html': '/tutorials/apis/fetchProjects/',
-    '/tutorials/apis/triggerExecFromGitHub.html': '/tutorials/apis/triggerExecFromGitHub/',
+    '/tutorials/apis/download-metadata.html': '/tutorials/apis/download-metadata/',
+    '/tutorials/apis/fetch-failed-executions.html': '/tutorials/apis/fetch-failed-executions/',
+    '/tutorials/apis/fetch-projects.html': '/tutorials/apis/fetch-projects/',
+    '/tutorials/apis/trigger-exec-from-github.html': '/tutorials/apis/trigger-exec-from-github/',
     '/valohai-cli/reference/environments.html': '/valohai-cli/reference/environments/',
     '/valohai-cli/reference/execution.html': '/valohai-cli/reference/execution/',
     '/valohai-cli/reference/init.html': '/valohai-cli/reference/init/',
@@ -62,7 +62,6 @@ redirects = {
     '/valohai-cli/reference/project.html': '/valohai-cli/reference/project/',
     '/valohai-cli/reference/update-check.html': '/valohai-cli/reference/update-check/',
     '/valohai-yaml/example-tensorflow-mnist.html': '/valohai-yaml/example-tensorflow-mnist/',
-
 
     # '/old-page/index.html': '/new-page/awesome/whatever.html'
     '/tutorials/accessing-repositories-during-executions/index.html': '/howto/code-repository/accessing-repositories-during-executions/index.html',
@@ -163,7 +162,6 @@ redirects = {
     '/tutorials/quick-start-cli.html?highlight': '/tutorials/valohai-cli/index.html',
     '/guides/build-docker-image/index.html': '/tutorials/docker-build-image/index.html',
 
-
     '/tutorials/docker-build-image/index.html': '/howto/docker/docker-build-image/index.html',
     '/tutorials/airflow-management/index.html': '/howto/airflow-management/index.html',
     '/howto/docker-private-registry/index.html': '/howto/docker/docker-private-registry/index.html',
@@ -177,14 +175,19 @@ redirects = {
     '/tutorials/learning-paths/fundamentals/6-metadata/index.html': '/tutorials/learning-paths/fundamentals/valohai-utils/6-metadata/index.html',
     '/tutorials/learning-paths/fundamentals/7-recap/index.html': '/tutorials/learning-paths/fundamentals/valohai-utils/7-recap/index.html',
 
-
-
     '/howto/setup/aws_private_worker/index.html': '/howto/setup/aws_hybrid/index.html',
     '/howto/setup/gcp_private_worker/index.html': '/howto/setup/gcp_hybrid/index.html',
     '/howto/setup/azure_private_worker/index.html': '/howto/setup/azure_hybrid/index.html',
-    '/topic-guides/core-concepts/triggers/index.html': '/howto/pipelines/triggers/index.html'
+    '/topic-guides/core-concepts/triggers/index.html': '/howto/pipelines/triggers/index.html',
 
-
+    '/tutorials/apis/downloadMetadata.html': '/tutorials/apis/download-metadata/',
+    '/tutorials/apis/downloadMetadata/index.html': '/tutorials/apis/download-metadata/',
+    '/tutorials/apis/fetchFailedExecutions.html': '/tutorials/apis/fetch-failed-executions/',
+    '/tutorials/apis/fetchFailedExecutions/index.html': '/tutorials/apis/fetch-failed-executions/',
+    '/tutorials/apis/fetchProjects.html': '/tutorials/apis/fetch-projects/',
+    '/tutorials/apis/fetchProjects/index.html': '/tutorials/apis/fetch-projects/',
+    '/tutorials/apis/triggerExecFromGitHub.html': '/tutorials/apis/trigger-exec-from-github/',
+    '/tutorials/apis/triggerExecFromGitHub/index.html': '/tutorials/apis/trigger-exec-from-github/'
 }
 
 TEMPLATE = """
