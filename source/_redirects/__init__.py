@@ -188,6 +188,10 @@ redirects = {
 
     '/setup/setup-options.html': '/topic-guides/setup/setup-options/',
     '/setup/setup-options/index.html': '/topic-guides/setup/setup-options/',
+    '/howto/setup/aws_private_worker/index.html': '/howto/setup/aws/index.html',
+    '/howto/setup/gcp_private_worker/index.html': '/howto/setup/gcp/index.html',
+    '/howto/setup/azure_private_worker/index.html': '/howto/setup/azure/index.html',
+    '/howto/setup/aws_selfhosted_trial/index.html': '/howto/setup/self-hosted/index.html',
 }
 
 TEMPLATE = """

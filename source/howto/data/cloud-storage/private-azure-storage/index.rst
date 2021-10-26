@@ -1,7 +1,7 @@
 .. meta::
     :description: Link your Azure Blob storage for data science experiments on Valohai. You can also add multiple data stores, even across cloud providers.
 
-.. _cloud-storage-azure:
+.. _howto-data-azure:
 
 Add Azure Blob Storage
 ########################

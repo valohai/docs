@@ -20,5 +20,6 @@ Work with data
     upload-data
     mount-nfs
     data-warehouse/redshift
+    data-warehouse/bigquery
 
 

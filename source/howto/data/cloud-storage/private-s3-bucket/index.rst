@@ -1,6 +1,8 @@
 .. meta::
     :description: Link a private AWS S3 bucket containing the data for deep learning experiments to a Valohai project. Optionally create multiple buckets to keep track of different versions of deep learning models or projects.
 
+.. _howto-data-s3:
+
 Add AWS S3
 #############################
 

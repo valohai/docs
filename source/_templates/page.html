@@ -119,9 +119,9 @@
                 {% endblock footer %}
             </footer>
         </div>
+        {% if not furo_hide_toc %}
         <aside class="toc-drawer{% if furo_hide_toc %} no-toc{% endif %}">
             {% block right_sidebar %}
-            {% if not furo_hide_toc %}
             <div class="toc-sticky toc-scroll">
                 <div class="toc-title-container">
                     <span class="toc-title">
@@ -151,9 +151,9 @@
                     </div>
                 </div>
             </div>
-            {% endif %}
             {% endblock right_sidebar %}
         </aside>
+        {% endif %}
     </main>
 </div>
 <script type="text/javascript">

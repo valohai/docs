@@ -23,7 +23,8 @@ extensions = [
     '_redirects',
     'sphinx_inline_tabs',
     'sphinx_copybutton',
-    'sphinxcontrib.video'
+    'sphinxcontrib.video',
+    'sphinxcontrib.details.directive'
 ]
 
 templates_path = ["_templates"]

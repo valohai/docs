@@ -3,8 +3,9 @@ sphinx
 sphinx-autobuild
 sphinx-sitemap
 sphinxcontrib-images
-valohai-cli
+valohai-cli==0.16.0
 sphinx-copybutton
-furo
-sphinx_inline_tabs
+furo==2021.4.11b34
+sphinx-inline-tabs
 git+https://github.com/sphinx-contrib/video.git
+sphinxcontrib-details-directive
