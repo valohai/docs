@@ -3,7 +3,7 @@
 
 .. _architecture:
 
-Architecture Overview
+Architecture overview
 #######################
 
 Valohai can be deployed in numerous ways; here are the four most common configurations:

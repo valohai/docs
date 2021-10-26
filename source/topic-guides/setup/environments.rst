@@ -2,7 +2,7 @@
     :description: Selecting compute instances for Valohai
 
 *********************************************
-Selecting Compute Instances
+Selecting compute instances
 *********************************************
 
 Depending on what kind of models you are training you will need virtual machines with different CPU, memory, and GPU configurations. The list of environments available to your subscription can be updated at any time by our support team. You can enable/disable and change the (min/max) scaling rules of each environment type directly in your Valohai settings.

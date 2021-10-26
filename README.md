@@ -12,9 +12,9 @@ pip install -r requirements.txt
 Building:
 
 ```bash
-make watch                # starts 'sphinx-autobuild' server that rebuilds HTML on change, but doesn't watch CSS
-make SPHINXOPTS=-E watch  # force regenerates all files
-make html                 # builds the HTML for distribution
+make watch                # starts development server that rebuilds HTML on change
+make SPHINXOPTS=-E watch  # ... also force regenerates all files on server start
+make dirhtml              # builds the HTML for distribution
 ```
 
 ## Deployment

@@ -1,7 +1,7 @@
 .. meta::
     :description: Use on-premises machine learning workers to keep your GPU utilization at 100%.
 
-Using On-premises Workers
+Using on-premises workers
 =========================
 
 On-premises Valohai Enterprise installation includes local Valohai workers.

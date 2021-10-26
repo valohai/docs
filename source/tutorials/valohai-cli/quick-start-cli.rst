@@ -3,8 +3,8 @@
 
 .. _valohai-cli-tutorial:
 
-Using the Command-line Client
-##################################
+Using the ``valohai-cli``
+#########################
 
 In this tutorial, we will use `Valohai command-line client <https://github.com/valohai/valohai-cli>`_ to bootstrap a fresh project.
 

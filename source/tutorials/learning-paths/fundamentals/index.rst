@@ -1,11 +1,10 @@
-
 .. meta::
     :description: Learn about core Valohai concepts like parameters, inputs, metadata, and outputs.
 
 .. _learning-paths-fundamentals:
 
 
-Valohai Fundamentals
+Valohai fundamentals
 #####################
 
 This learning path is designed for those who have no previous experience from using Valohai. It will guide you through a Python Tutorial, where you get to run your first executions in Valohai and learn about parameters, inputs, collecting metadata, and outputs. 

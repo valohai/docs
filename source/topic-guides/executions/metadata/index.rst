@@ -1,7 +1,7 @@
 .. meta::
     :description: What is Valohai execution metadata? Create visualizations and keep track of your experiments.
 
-Creating Visualizations
+Creating visualizations
 =======================
 
 If you wish to create visualizations, you can either:

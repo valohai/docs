@@ -1,8 +1,8 @@
 .. meta::
     :description: You can change the hardware your executions run on with one parameter.
 
-Choosing Execution Environment
-==============================
+Choosing environment though ``valohai-cli``
+===========================================
 
 Let's assume we have something similar to the following set up in Valohai YAML:
 

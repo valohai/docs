@@ -3,8 +3,8 @@
 
 .. _example-projects-quick-start-r:
 
-R - Example Project
-##########################
+R example project
+##################
 
 In this tutorial, we will create a R machine learning project based on our
 `R example on GitHub <https://github.com/valohai/r-example>`_.

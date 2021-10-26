@@ -3,7 +3,7 @@
 
 :orphan:
 
-Batch Inference
+Batch inference
 ===============
 
 Here you will find tutorials on how to create and run a Batch Inference execution in Valohai.

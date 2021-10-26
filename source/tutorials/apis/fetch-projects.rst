@@ -1,7 +1,7 @@
 .. meta::
     :description: Learn how to use Valohai APIs to automate fetch all your projects
 
-Valohai API - Basics
+Valohai API basics
 ####################################
 
 In this tutorial, we will use the Valohai API to login and fetch a list of projects.

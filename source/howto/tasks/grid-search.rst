@@ -3,7 +3,7 @@
 
 .. _task-grid-search:
 
-Running a Grid search
+Running a grid search
 ##########################
 
 It can be daunting to try different hyperparameters one-by-one. Valohai offers a mechanism to do hyperparameter searches using parallel executions and a grid search.

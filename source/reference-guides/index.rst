@@ -17,5 +17,5 @@ Reference guides contain technical reference for APIs and other aspects of Valoh
 
     valohai-yaml/index
     valohai-cli/index
-    API <https://app.valohai.com/api/v0/>
-    API docs <https://app.valohai.com/api/docs/>
+    Valohai API <https://app.valohai.com/api/v0/>
+    Valohai API documentation <https://app.valohai.com/api/docs/>

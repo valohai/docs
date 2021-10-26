@@ -1,7 +1,7 @@
 .. meta::
     :description: Everything in Valohai deep learning platform works through an API. Learn how to setup and optimize deep learning experiments with direct calls to our RESTful API.
 
-Valohai API Tutorial
+Valohai API tutorial
 ####################################
 
 In this tutorial, we will use the Valohai API to login and fetch a list of projects.

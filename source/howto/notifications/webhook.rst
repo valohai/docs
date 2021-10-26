@@ -4,8 +4,8 @@
 
 .. _howto-notifications-webhooks:
 
-Using Webhooks with Valohai
-#########################################
+Webhooks
+##########
 
 Webhooks allow you to automatically trigger messages from Valohai to your application when an Valohai executions state changes.
 
@@ -19,7 +19,7 @@ In your application you could then receive this message from Valohai to for exam
 
 .. tip:: 
 
-    You can also use tools like `IFTTT <https://ifttt.com/home>`_ and `Zapier <https://zapier.com/>`_ to automate your workflows with Webhooks.
+    You can also use tools like `IFTTT <https://ifttt.com/home>`_ and `Zapier <https://zapier.com/>`_ to automate your workflows with webhooks.
 
 
 Setup a webhook

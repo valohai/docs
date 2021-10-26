@@ -23,4 +23,4 @@ check-descriptions:
 	python check_descriptions.py
 
 watch: check-descriptions
-	sphinx-autobuild --port 44044 $(SPHINXOPTS) "$(SOURCEDIR)" "$(BUILDDIR)/html"
+	sphinx-autobuild -b dirhtml --port 44044 "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS)

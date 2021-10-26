@@ -3,7 +3,7 @@
 
 .. _workload-management:
 
-Workload Management
+Workload management
 ===================
 
 We encapsulate machine learning workloads in entities called **executions**.

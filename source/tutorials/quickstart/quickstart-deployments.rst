@@ -1,10 +1,9 @@
-
 .. meta::
     :description: Deploy your model for online inference
 
 .. _quickstart-deployments:
 
-Deploy a model for online inference
+Deploying a model for online inference
 ######################################
 
 .. admonition:: Note

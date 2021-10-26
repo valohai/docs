@@ -1,8 +1,8 @@
 .. meta::
     :description: Valohai Fundamentals learning path - Running your first Valohai execution with valohai-utils
 
-valohai-utils (Python)
-#######################
+``valohai-utils`` (Python)
+##########################
 
 This learning path will show you how to get started with Valohai and Python, using the valohai-utils helper library.
 

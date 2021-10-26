@@ -4,8 +4,8 @@
 .. _valohai-cli-howto:
 
 
-Valohai CLI client
-###############################
+Valohai command-line client ``valohai-cli``
+###########################################
 
 
 Valohai CLI (command-line interface) is a Python command-line client to manage Valohai projects.

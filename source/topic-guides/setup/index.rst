@@ -3,7 +3,7 @@
 
 .. _setup:
 
-Running Valohai Inside Your Own Cloud or On-premise Environment
+Running Valohai inside your own cloud or on-premise environment
 ##################################################################
 
 .. toctree::
@@ -26,7 +26,7 @@ There are several ways to install Valohai. The most popular options are:
     Valohai will host the app.valohai.com web application and will store execution logs, code snapshots and user management data on Valohai servers.
 2) **Self-Hosted Valohai** - A fully custom installation of Valohai in your environment, and optionally inside your own private network. All Valohai services are hosted in your environment (AWS, GCP, Azure, OpenStack, on-prem) including the web app, core Valohai services, logs, snapshots etc.
 
-👉 Read more about `choosing the right Valohai environment </topic-guides/setup/setup-options.html>`__.
+👉 Read more about `choosing the right installation setup </topic-guides/setup/setup-options.html>`__.
 
 .. admonition:: Use your existing cloud benefits
     :class: tip

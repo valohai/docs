@@ -178,7 +178,7 @@ For example, here we have 6 different values for learning_rate and 6 different v
 of this screenshot.
 
 
-Bayesian Optimization
+Bayesian optimization
 ----------------------
 
 Using interactive hyperparameter optimisation can make hyperparameter tuning faster and more efficient than for example using a random search or an exhaustive grid search.
@@ -193,4 +193,4 @@ Under the hood, Bayesian optimization (of which TPE is an implementation) works 
 * Run the next batch of executions and repeat the process from step 2.
 
 .. image:: /_images/bayesian_ui.gif
-   :alt: Bayesian Optimization.
+   :alt: Bayesian optimization.

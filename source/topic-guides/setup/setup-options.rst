@@ -2,7 +2,7 @@
     :description: Comparison between a Private Worker and Full Private installation
 
 
-Choosing the Right Valohai Environment
+Choosing the right installation setup
 ########################################
 
 Valohai can be configured to run on both cloud (e.g. Microsoft Azure, Amazon Web Services, Google Cloud Platform) and on-premise servers, or a combination of these. In addition to the SaaS version available at app.valohai.com

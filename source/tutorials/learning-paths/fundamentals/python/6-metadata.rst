@@ -1,7 +1,7 @@
 .. meta::
     :description: Valohai Fundamentals learning path - Collect and visualize key metrics
 
-Collect and view metrics
+Collect metrics
 #############################
 
 .. include:: ../_shared/_6-metadata.rst

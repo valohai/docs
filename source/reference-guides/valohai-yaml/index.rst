@@ -4,7 +4,7 @@
 
 .. _yaml:
 
-valohai.yaml - Config File
+``valohai.yaml`` config file
 ==============================
 
 The ``valohai.yaml`` configuration file defines steps of your machine learning pipeline.

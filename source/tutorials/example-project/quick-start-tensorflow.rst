@@ -3,8 +3,8 @@
 
 .. _example-projects-quick-start-tensorflow:
 
-Tensorflow - Example project
-#################################
+TensorFlow example project
+###########################
 
 In this tutorial, we will create a TensorFlow machine learning project based on our
 `MNIST TensorFlow example on GitHub <https://github.com/valohai/tensorflow-example>`_

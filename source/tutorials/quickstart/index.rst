@@ -26,8 +26,8 @@ You can do that directly through the chat bubble at `app.valohai.com <http://app
 .. toctree::
     :titlesonly:
 
-    quickstart-deployments
     quickstart-pipeline
+    quickstart-deployments
     batch-inference/csv-batch-inference
     batch-inference/image-batch-inference
 

@@ -4,8 +4,8 @@
 
 .. _howto-deployment-test:
 
-Test your deployment endpoint
-######################################
+Deployment endpoint testing tool
+##################################
 
 You can test your deployment endpoints directly from the Valohai web app.
 

@@ -18,7 +18,7 @@ It can be daunting to try different hyperparameters one-by-one. Valohai offers a
 * **Grid search** - Search all permutations of multiple values for multiple hyperparameters.
     * For example, if we wanted to run with 6 different values for learning_rate and 6 different values for dropout we would get in total 6*6 = 36 executions
 * **Random search** - Configure a max count of executions and find the corresponding amount of random parameters in a defined search space
-* **Bayesian Optimization** - Using interactive hyperparameter optimisation can make hyperparameter tuning faster and more efficient than for example using a random search or an exhaustive grid search. Configure a max count of executions, an execution batch size, a target metric and a target value for that metric and iteratively optimise the target metric towards the target value.
+* **Bayesian optimization** - Using interactive hyperparameter optimisation can make hyperparameter tuning faster and more efficient than for example using a random search or an exhaustive grid search. Configure a max count of executions, an execution batch size, a target metric and a target value for that metric and iteratively optimise the target metric towards the target value.
 
 For each parameter you can set the value as a defined single value or use:
 

@@ -3,7 +3,7 @@
 
 .. _live-outputs:
 
-Live Outputs
+Live outputs
 ============
 
 You use **live outputs** to upload files mid-execution.

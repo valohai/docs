@@ -26,7 +26,7 @@ Below you'll find some examples of using Valohai APIs.
 .. toctree::
     :titlesonly:
 
-    fetchProjects
-    fetchFailedExecutions
-    downloadMetadata
-    triggerExecFromGitHub
+    fetch-projects
+    fetch-failed-executions
+    download-metadata
+    trigger-exec-from-github
