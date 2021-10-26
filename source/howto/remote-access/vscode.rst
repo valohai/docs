@@ -90,7 +90,10 @@ Start by opening a SSH tunnel to the Valohai execution. You'll get the IP of the
 
 ..
 
-Open the ``Run and Debug`` panel from VSCode and hit ``Run and Debug`` while you have your ``train.py`` open.
+Open the ``Run and Debug`` panel from VSCode and hit ``Run and Debug`` while you have your ``train.py`` open. Make sure you select the ``Remote Attach`` debug configuration.
+
+.. image:: /_images/ssh_remote_debug_vscode.png
+    :alt: Choose Remote Attach as the debug configuration
 
 As soon as your debugger is attached, the code will continue from ``debugpy.wait_for_client()`` and start hitting your breakpoints. When you hit a breakpoint, you'll also be able to see your local variables, and edit them on the fly.
 
