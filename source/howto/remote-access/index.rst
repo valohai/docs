@@ -7,6 +7,13 @@
 Remote access (SSH)
 ################################
 
+.. toctree::
+    :titlesonly:
+    :maxdepth: 1
+    :hidden:
+
+    vscode
+
 Valohai offers remote access to a live execution with `SSH <https://en.wikipedia.org/wiki/Secure_Shell>`_ (Secure Shell).
 It is a low-level and agnostic protocol, which makes it usable for a wide array of tasks.
 
@@ -29,7 +36,7 @@ It is a low-level and agnostic protocol, which makes it usable for a wide array 
 Your organization admin will need to configure the organization wide settings and firewall rules before you can use remote SSH connections.
 
 Define the default SSH port
-============================
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Define a default port for SSH connections in your organization
     
@@ -38,7 +45,7 @@ Define a default port for SSH connections in your organization
 * Set a *Default Debug Port* for your organization. Note, the value must be above 1023
 
 Allow connections on selected port
-==================================
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You'll need to edit the firewall rules in your cloud to allow users to connect to the workers on the defined port.
 
@@ -97,7 +104,7 @@ This will generate two files:
 ----------------------------------
 
 Valohai GUI
-===========
+^^^^^^^^^^^^
 
 .. thumbnail:: /howto/remote-access/start-execution.png
    :alt: Start Valohai execution with SSH enabled
@@ -108,16 +115,8 @@ Start a Valohai execution with the "Run with SSH" enabled.
 Copy-paste the entire contents of the :code:`my-debug-key.pub` file into the text field. Change the TCP/IP port if
 your network setup requires it.
 
-Valohai CLI
-===========
 
-Start a Valohai execution with extra parameter :code:`debug-key-file` for your public key file (and additionally :code:`debug-port`).
-
-.. code-block:: bash
-
-   vh exec run --adhoc --debug-key-file=/tmp/remote-debug-key.pub train
-
-3. Wait for an IP address
+1. Wait for an IP address
 ----------------------------------
 
 You need to start the Valohai execution before you can connect to it. Valohai will either run the execution on an existing virtual machine or create a new instance. Each machine has its own IP which is allocated by the cloud provider (e.g. AWS, GCP, Azure). You'll need the IP in order to SSH into the execution.
