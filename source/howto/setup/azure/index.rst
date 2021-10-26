@@ -1,14 +1,20 @@
-:orphan:
-
 .. meta::
-    :description: How to prepare your Microsoft Azure environment for a Valohai Private Workers installation
+    :description: How to manually deploy Valohai resources in your Azure environment
+
+.. _azure-hybrid-manual:
 
 
-Preparing your Azure subscription for Valohai Hybrid Implementation
-#####################################################################
+Deploy to Azure
+###############
 
-This document prepares your Microsoft Azure subscription for a Valohai private worker installation.
+.. toctree::
+    :titlesonly:
+    :maxdepth: 1
+    :hidden:
 
+    faq
+
+.. include:: _intro.rst
 
 Creating a Subscription (optional)
 ----------------------------------------

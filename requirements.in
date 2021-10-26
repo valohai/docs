@@ -6,5 +6,6 @@ sphinxcontrib-images
 valohai-cli
 sphinx-copybutton
 furo
-sphinx_inline_tabs
+sphinx-inline-tabs
 git+https://github.com/sphinx-contrib/video.git
+sphinxcontrib-details-directive

@@ -3,9 +3,6 @@
 .. meta::
     :description: How-to guides include the steps involved in addressing key problems and use-cases. They are more advanced than tutorials and assume some knowledge of how Valohai works.
 
-..
-
-
 .. _howto:
 
 How-to guides
@@ -30,5 +27,6 @@ How-to guides include the steps involved in addressing key problems and use-case
     organization/index
     deployments/index
     airflow-management/index
+    setup/index
 
 ..
