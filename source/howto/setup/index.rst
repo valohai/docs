@@ -4,8 +4,8 @@
     :description: Valohai deep learning management platform architecture diagram and installation flavors.
 
 
-Deploy Valohai to your cloud/on-premises environment
-####################################################
+Deploy Valohai in your environment
+##################################
 
 .. toctree::
     :titlesonly:
@@ -19,7 +19,7 @@ Deploy Valohai to your cloud/on-premises environment
     self-hosted/index
 
 
-Valohai can be deployed in the cloud, on-premise, on multi-cloud setups, and in hybrid setups with both on-premises and cloud resources.
+Valohai can be deployed in your environment, either in the cloud or on-premise. The platform can also be deployed in multi-cloud setups and in hybrid setups with both cloud and on-premise resources.
 
 When using Valohai:
 
@@ -33,7 +33,7 @@ When using Valohai:
    :stub-columns: 1
 
    * - Cloud
-     - Archicture
+     - Architecture
      - Installation
    * - AWS
      - Architecture
@@ -59,7 +59,7 @@ Valohai components
     :width: 700
     :alt: Valohai Components
 
-Valohai comprises of two layers, the application layer and the compute & data layer.
+Valohai comprises of two layers, the Application Layer and the Compute & Data Layer.
 
 The Valohai application doesn't directly access your workers but instead writes requests and updates to the job queue machine, from where your own workers find jobs that are scheduled for them.
 
@@ -82,11 +82,11 @@ The Valohai application doesn't directly access your workers but instead writes 
           * Launch batch processing jobs
           * …more :ref:`api`
      - 
-       * A **virtual machine** that manages the the machine learning job queue
-       * **Object storage(s)** to store job logs, snapshots, and generated files (e.g. models, dataset snapshots).
-       * **Autoscaled virtual machines** to run ML jobs.
+       * A **virtual machine** that manages the machine learning job queue
+       * **Object storage(s)** to store job logs, snapshots, and generated files (e.g. models, dataset snapshots)
+       * **Autoscaled virtual machines** to run machine learning jobs
        * Other optional services, like:
-          * Your existing **Kubernetes cluster**, to enable teams to deploy models for real-time inference.
+          * Your existing **Kubernetes cluster**, to enable teams to deploy models for real-time inference
           * **Private Docker Registry**
           * Other **data sources** (databases, data warehouses, etc.)
           * A **Spark cluster**
@@ -97,15 +97,15 @@ The Valohai application doesn't directly access your workers but instead writes 
 
 
 Permissions and access
------------------------
+----------------------
 
-Valohai will need a set of permissions in your cloud environment to enable autoscaling with your virtual machines, and storing logs, snapshots, and generated files in a object storage.
+Valohai will need a set of permissions in your cloud environment to autoscale your virtual machines and store logs, snapshots and generated files in an object storage.
 
-After you've provisioned the core Valohai services in your cloud, and your organization has registerred in Valohai, you can start setting up your projects and connecting their Git-repositories, object storages, and private Docker registries.
+First you provision the core Valohai services in your cloud and register your organization in Valohai. Then you can set up your projects and connect them with your Git repositories, object storages, and private Docker registries.
 
 .. seealso::
 
-    See the installation pages for AWS, GCP, and Azure for details guides and installation templates.
+    See the installation pages for AWS, GCP, and Azure for detailed guides and installation templates.
 
 .. list-table::
    :widths: 20 40 40
@@ -122,13 +122,13 @@ After you've provisioned the core Valohai services in your cloud, and your organ
        * :ref:`gcp-hybrid`
        * :ref:`azure-hybrid-manual`
    * - Object Storage
-     - Read or Read/Write access to existing object storages (AWS S3, GCP Cloud Storage, Azure Blob Storage)
+     - Read or Read/Write access to existing object storages (AWS S3, GCP Cloud Storage, Azure Blob Storage).
      - Configured in-app: :ref:`cloud-storage`
-   * - Git-repository
+   * - Git repository
      - SSH or Deploy key with read-only acccess to select repositories.
      - Configured in-app: :ref:`repository`
    * - Docker Registry
-     - Permissions to pull from your Docker repository. 
+     - Permissions to pull from your Docker repository.
      - Configured in-app:  :ref:`docker-private-registries`
    * - Kubernetes Cluster
      - A Kubernetes service account that can manage pods and other resources in a defined namespace. Permissions to read/write to your private Docker registry.

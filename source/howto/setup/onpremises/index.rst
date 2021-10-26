@@ -1,20 +1,20 @@
 .. meta::
-    :description: How to manually deploy Valohai resources in your GCP environment
+    :description: How to manually deploy Valohai resources in your on-premise environment
 
 .. _onpremises:
 
 
-Onpremises installation
-########################
+Deploy on-premise
+#################
 
-The "Compute and Data Layer" of Valohai can be deployed to your cloud and/or on-premises environment. This enables you to:
+The Compute and Data Layer of Valohai can be deployed to your on-premise environment. This enables you to:
 
-* Use your own on-premises machines to run machine learning jobs
+* Use your own on-premises machines to run machine learning jobs.
 * Use your own cloud storage for storing training artefacts, like trained models, preprocessed datasets, visualizations, etc.
-* Mount local data to your on-premises workers
+* Mount local data to your on-premises workers.
 * Access databases and date warehouses directly from the workers, which are inside your network.
 
-Valohai doesn't have direct access to the on-premises machine that executes the machine learning jobs. Instead it communicates with a seperate static virtual machine in your cloud/on-premises that's responsible for storing the job queue, job states, and short-term logs.
+Valohai doesn't have direct access to the on-premises machine that executes the machine learning jobs. Instead it communicates with a separate static virtual machine in your on-premise environment that's responsible for storing the job queue, job states, and short-term logs.
 
 .. image:: /_images/valohai_environment.png
     :width: 700

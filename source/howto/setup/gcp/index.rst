@@ -5,7 +5,7 @@
 
 
 Deploy to GCP
-##############
+#############
 
 .. toctree::
     :titlesonly:
@@ -18,7 +18,7 @@ Deploy to GCP
 .. include:: _intro.rst
 
 Deploying resources
------------------------
+-------------------
 
 You can easily deploy a Valohai to a fresh GCP Project using the provided Terraform template.
 

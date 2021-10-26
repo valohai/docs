@@ -1,5 +1,5 @@
 .. meta::
-    :description: How to deploy Valohai resources in your self-hosted environment
+    :description: How to deploy Valohai in your self-hosted environment
 
 .. _selfhosted:
 
@@ -8,20 +8,20 @@ Deploy a self-hosted Valohai
 
 Valohai can be fully self-hosted, with all components of the service running inside your environment. This enables you to:
 
-* Use your own virtual machines to run machine learning jobs
+* Use your own virtual machines to run machine learning jobs.
 * Use your own object storage (AWS S3, GCP Cloud Storage, Azure Blob Storage) for storing training artefacts, like trained models, preprocessed datasets, visualizations, etc.
 * Access databases and date warehouses directly from the workers, which are inside your network.
 * Host your own Valohai web application, scaling and deployment services, and databases.
 * If needed, run everything in a fully isolated network.
 
-The update schedule is of self-hosted installations is seperate from the updates on app.valohai.com. You can view the latest `Valohai patch notes here <https://valohai.com/patch-notes/>`_.
+The update schedule is of self-hosted installations is separate from the updates on app.valohai.com. You can view the latest `Valohai patch notes here <https://valohai.com/patch-notes/>`_.
 
 .. image:: /_images/valohai_selfhosted_environment.png
     :width: 700
     :alt: Valohai Self-Hosted Components
 
 Application Layer
---------------------
+-----------------
 
 .. list-table::
    :widths: 15 45 40
@@ -32,7 +32,7 @@ Application Layer
      - Details
      - Requirements
    * - Virtual Machine
-     - Running core Valohai services like the web application, autoscaling, and API services. The end-users will access the web application running on this instance (port 8000)
+     - Running core Valohai services like the web application, autoscaling, and API services. The end-users will access the web application running on this instance (port 8000).
      - 
 
        * **OS:** Ubuntu 20.04 LTS
@@ -59,17 +59,17 @@ Application Layer
      - The Valohai web application is served at port 8000 on the virtual machine.
      - HTTP/2 Enabled
    * - DNS Name
-     - Provide DNS name to point at the load balancer (used for the web application e.g. valohai.yourcompany.net)
+     - Provide DNS name to point at the load balancer (used for the web application e.g. valohai.yourcompany.net).
      - 
 
-You'll also need to create the resources defined in your clouds hybrid setup:
+You'll also need to create the resources defined in the cloud specific guide of the cloud(s) you are using:
 
 * :ref:`aws-hybrid`
 * :ref:`gcp-hybrid`
 * :ref:`azure-hybrid-manual`
 
 Frequently Asked Questions
----------------------------
+--------------------------
 
 General
 ^^^^^^^
@@ -98,7 +98,7 @@ General
 
 
 Network and security
-^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
    :widths: 30 70
@@ -126,7 +126,7 @@ Network and security
 
 
 Data
-^^^^^
+^^^^
 
 .. list-table::
    :widths: 30 70

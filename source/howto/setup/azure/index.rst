@@ -17,7 +17,7 @@ Deploy to Azure
 .. include:: _intro.rst
 
 Creating a Subscription (optional)
-----------------------------------------
+----------------------------------
 
 This document prepares your Microsoft Azure account for Valohai worker installation. You can either use an existing Microsoft Azure subscription, or setup a new subscription for the Valohai resources.
 
@@ -25,7 +25,7 @@ If you wish to create a separate subscription for Valohai, navigate to Subscript
 
 
 Creating a Resource Group
-----------------------------------------
+-------------------------
 
 You need to create a resource group to host the Valohai-managed resources.
 
@@ -45,7 +45,7 @@ Also select the appropriate region for the resources:
 * Consider using the regions where you've already acquired GPU quota from Microsoft.
 
 Creating an App Registration
-----------------------------------------
+----------------------------
 
 Next, create an app registration in your Azure AD to allow Valohai programmatic access to your resource group:
 
@@ -66,7 +66,7 @@ Once the Secret is created, copy the Value from the table and **take a note of i
 this is the only time you'll be able to see it.
 
 Adding permissions for the App Registration
-----------------------------------------------------------------
+-------------------------------------------
 
 Once the App Registration has been created, you will need to grant it access to manage resources.
 
@@ -92,7 +92,7 @@ Repeat this until the roles have been added.
 Please note that this will grant Valohai access to all virtual machines within that subscription or resource group. More granular permissions ([custom roles][custom-roles]) are supported by Azure, but they can not be created within the portal.azure.com user interface and as such are out of scope for this guide.
 
 Registering Resource Providers for the Subscription
-------------------------------------------------------
+---------------------------------------------------
 
 Registering a resource provider configures your subscription to work with the given resource provider. Essentially registering a provider means "enabling" the related services on your subscription.
 
@@ -111,7 +111,7 @@ To verify that the above resource providers are registered:
     * Microsoft.Network
 
 Requesting more virtual machine quota (optional)
-------------------------------------------------------------
+------------------------------------------------
 
 Azure quotas limit how many resources you can utilize in parallel. Some resources like high-end GPU virtual machines might have no quota by default.
 
@@ -130,7 +130,7 @@ To check your current quotas and request for more:
 Microsoft support resolves quota requests in a day or two.
 
 Conclusion
-------------
+----------
 
 You should now have the following values:
 

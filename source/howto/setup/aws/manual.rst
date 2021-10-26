@@ -24,9 +24,9 @@ Configure the IAM roles
 
 The 4 roles listed below are required for a Valohai installation.
 
-* ``ValohaiQueueRole`` will be attached to the Valohai Queue instance, and allows it to fetch the generated password from your AWS Secrets Manager. Access is restricted to secrets that are tagged valohai:1
+* ``ValohaiQueueRole`` will be attached to the Valohai Queue instance, and allows it to fetch the generated password from your AWS Secrets Manager. Access is restricted to secrets that are tagged valohai:1.
 * ``ValohaiWorkerRole`` is attached to all autoscaled EC2 instances that are launched for machine learning jobs.
-* ``ValohaiS3MultipartRole`` will be used to upload files larger than 5GB 
+* ``ValohaiS3MultipartRole`` will be used to upload files larger than 5GB.
 * ``ValohaiMaster`` is the role that the Valohai service will use to manage autoscaling and EC2 resources. The role is also used to manage the newly provisioned valohai-data-* S3 Bucket.
 
 Create the 4 policies listed below by going to your `AWS Console > IAM > Policies <https://console.aws.amazon.com/iamv2/home#/policies>`_.
@@ -258,7 +258,7 @@ Next create the roles listed below by going to your `AWS Console > IAM > Roles <
 
     Note ``ValohaiQueueRole`` and ``ValohaiWorkerRole`` need to also have instance profiles They will get automatically created when you create a role through the console.
     
-    Follow the `AWS documentation <https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2_instance-profiles.html>`_ to learn how to create and attach an instance profile to a role, you're creating the resources through CLI
+    If you're creating the resources with the AWS CLI, follow the `AWS documentation <https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2_instance-profiles.html>`_ to learn how to create and attach an instance profile to a role.
 
 Deploying resources
 ^^^^^^^^^^^^^^^^^^^^
