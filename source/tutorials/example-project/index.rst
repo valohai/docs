@@ -4,10 +4,9 @@
 Example projects
 ###################
 
-If you wish to understand Valohai without running anything yourself, read about the core concepts.
+If you wish to understand Valohai without running anything yourself, :doc:`read about the core concepts. </topic-guides/index>`
 
 If you wish to get your hands dirty, you can get a feeling for the platform with these quickstarts:
-
 
 .. toctree::
     :titlesonly:
