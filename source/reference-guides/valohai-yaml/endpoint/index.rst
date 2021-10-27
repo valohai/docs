@@ -17,7 +17,15 @@ You can either use your own Kubernetes cluster or our clusters.
 You can have multiple endpoints as a single project can have various inference requirements
 for different contexts e.g. various teams working on the project.
 
-The endpoints are defined in the ``valohai.yaml`` file, which specifies the WSGI application to serve.
+The endpoints are defined in the ``valohai.yaml`` file, which specifies how to start the inference web server e.g.
+
+.. code-block:: yaml
+
+    - endpoint:
+        name: greet-me
+        image: python:3.6
+        port: 8000
+        server-command: python run_server.py
 
 .. tip::
 
