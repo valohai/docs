@@ -12,17 +12,23 @@ Deployments
 
 After you've specified how your model code is served using your project and :doc:`the valohai.yaml endpoint definitions </reference-guides/valohai-yaml/endpoint/index>`, you can create and manage deployments under ``Deployment`` tab on Valohai web interface.
 
-.. admonition:: Batch predictions
+.. admonition:: Batch inference
     :class: tip
 
-    If you only need non-interactive batch predictions (taking a lot of samples as input and writing predictions into a file), you can just create a step to handle that, take your model/samples as inputs and write your predictions to ``/valohai/outputs``.
+    The discussed inference deployments are recommended if you want to get low latency predictions on per-sample basis.
 
-    Valohai Deployments are mainly required if one of the following is true:
+    If you only need non-interactive batch predictions (e.g. taking a lot of samples as input and writing predictions into a file), you can simply create a Valohai step to handle that, take your model/samples as inputs and write your predictions to ``/valohai/outputs`` to be uploaded.
 
-    * you want to get fast predictions on per-sample basis
-    * you want to give prediction endpoint access to application that outside of your organization e.g. a customer that doesn't have a Valohai account
+    Main upside of the batch inference approach is cost; there is no servers constantly running. And the main downside is latency as the worker must be started when predictions are requested. So if your predictions are not time sensitive and each group of predictions can take 10 minutes or so, batch inference is the way to go.
 
-Deployment Target
+    To learn more about batch inference:
+
+    * :doc:`Batch inference on CSVs </tutorials/quickstart/batch-inference/csv-batch-inference>`
+    * :doc:`Batch inference on images</tutorials/quickstart/batch-inference/image-batch-inference>`
+
+If you want to dive straight into deploying your first HTTP endpoint, check out :doc:`your tutorial how to deploy a model for online inference </tutorials/quickstart/quickstart-deployments/>`
+
+Deployment target
 -----------------------
 
 Each deployment has **a deployment target**, which is a Kubernetes cluster that the service will be served on. The default deployment target is a shared Kubernetes cluster managed by Valohai but you can also use your own cluster.
@@ -34,7 +40,7 @@ You can use multiple deployment targets if you want to run your service in diffe
 | ... which translates to the following on the shared Kubernetes cluster:
 | ``https://valohai.cloud/<owner>/<project>/<deployment>/``
 
-Deployment Version
+Deployment version
 -----------------------
 
 **A deployment version** is a Docker image that Valohai builds on top of the Docker image you specify in the ``endpoint`` YAML definition. The build image will include 1) your code repository and 2) all files you defined in the YAML file and specified during deployment version creation.
@@ -48,7 +54,7 @@ The deployment version is the actual artifact that is served on the target Kuber
 
 Each deployment can have multiple versions at the same time.
 
-Deployment Endpoint
+Deployment endpoint
 --------------------
 
 **A deployment endpoint** is one or more Docker containers running HTTP servers in an auto-scaling Kubernetes cluster.
@@ -100,14 +106,14 @@ You have two ways to introduce environment variables into the deployment endpoin
 * Inherit the `project's environment variables and secrets </reference-guides/valohai-yaml/step-environment-variables/#project-environment-variables>`_
 * Define environment variables for a particular deployment version
 
-Deployment Alias
+Deployment alias
 --------------------
 
-**A deployment alias** is a human-readable name that points to a specific deployment version e.g. ``staging`` or ``production``.
+**A deployment alias** is a name, like ``staging`` or ``production``, that points to a deployment version.
 
-Aliases create canonical URLs for development so you can use Valohai to control which version is being served in each context. This allows you to update currently used version or rollback to previous version if something goes wrong.
+Aliases create canonical URLs so you can use Valohai to control which version is being served in each context. This allows you to update currently used version or rollback to previous version if something goes wrong. Changing alias routing is instantaneous.
 
-For example, version alias ``https://valohai.cloud/ruksi/mnist/americas/production/predict-digit`` could be used by applications utilizing your predictions and they don't need to change the URL when you a release new version.
+For example, alias ``https://valohai.cloud/ruksi/mnist/americas/production/predict-digit`` could be used by applications utilizing your predictions and they don't need to change the URL when you a release new endpoint version.
 
 Deployment monitoring
 -------------------------
