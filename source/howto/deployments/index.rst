@@ -18,6 +18,7 @@ Deployments
     deployment-metadata
     deployment-environment-variables
     deployment-monitoring
+    deployment-debugging
 
 ..
 

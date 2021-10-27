@@ -82,3 +82,4 @@ For example, alias ``https://valohai.cloud/ruksi/mnist/americas/production/predi
     * :ref:`quickstart-deployments`
     * :ref:`howto-deployment-test`
     * :ref:`howto-deployment-monitoring`
+    * :ref:`howto-deployment-debugging`
