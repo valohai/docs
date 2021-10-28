@@ -3,20 +3,14 @@
 
 .. _howto-deployment-metadata:
 
-Deployment version metadata
+Reading deployment version metadata
 #########################################
 
-.. admonition:: Quick introduction to deployments
-    :class: tip
-
-    * Valohai deployments are primarily used for online inference
-    * All deployments are served from a Kubernetes cluster
-    * Each deployment can contain multiple versions, and each version can contain multiple endpoints
-    * Valohai includes a ``valohai-metadata.json`` file in each deployment version
+.. include:: _deployment-introduction.rst
 
 ..
 
-You can easily access the ``valohai-metadata.json`` file and read the details that you need for your endpoint. Inside your deployment code read the file and parse out the values that you're interested in.
+You can access a ``valohai-metadata.json`` file and read the details that you need for your endpoint. Inside your deployment code read the file and parse out the values that you're interested in.
 
 .. note:: 
 

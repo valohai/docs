@@ -1,17 +1,12 @@
 .. meta::
-    :description: In this guide you'll learn to use your own cloud storage (AWS, Azure, GCP, OpenStack) together with Valohai.
+    :description: A list of resources about how to work with your Valohai deployments.
 
 .. _howto-deployments:
 
 Deployments
 -------------
 
-.. admonition:: Quick introduction to deployments
-    :class: tip
-
-    * Valohai deployments are primarily used for online inference
-    * All deployments are served from a Kubernetes cluster
-    * Each deployment can contain multiple versions, and each version can contain multiple endpoints
+.. include:: _deployment-introduction.rst
 
 ..
 
@@ -21,11 +16,12 @@ Deployments
 
     deployments-test
     deployment-metadata
+    deployment-environment-variables
+    deployment-monitoring
+    deployment-debugging
 
 ..
-
 
 .. seealso::
 
   * :ref:`quickstart-deployments`
-  * `Core Concepts: Deployment </topic-guides/core-concepts/deployments>`_ 
