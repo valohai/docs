@@ -9,7 +9,7 @@ Debug from VSCode
 
 .. warning::
 
-    This guide assumes you're already familiar with the fundamentals of Valohai and are working with a project that's connected to a Git-repository, and configured on Valohai.
+    This guide assumes you're already familiar with the fundamentals of Valohai and are working with a project that's connected to a Git repository, and configured on Valohai.
 
 In this guide we'll look at attaching the VSCode remote debugger to a Valohai execution.
 
@@ -75,7 +75,7 @@ Now update the ``valohai.yaml`` file to install debugpy in your Valohai executio
         - pip install numpy debugpy
         - python train.py
 
-Commit your changes and push them to your Git-repository.
+Commit your changes and push them to your Git repository.
 
 Then launch a new Valohai execution with SSH debugging enabled. Follow the :ref:`remote-ssh` how-to guide for detailed instructions.
 
