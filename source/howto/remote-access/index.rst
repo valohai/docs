@@ -13,6 +13,7 @@ Remote access (SSH)
     :hidden:
 
     vscode
+    pycharm
 
 Valohai offers remote access to a live execution with `SSH <https://en.wikipedia.org/wiki/Secure_Shell>`_ (Secure Shell).
 It is a low-level and agnostic protocol, which makes it usable for a wide array of tasks.
