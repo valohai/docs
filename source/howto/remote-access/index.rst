@@ -145,8 +145,9 @@ Now depending on what your use-case, you may want to do one of these things:
 **Run a single command**
 
 This will execute the command and return the results to your terminal.
-.. code-block:: bash
 
+.. code-block:: bash
+   
    # template
    ssh -i <path-to-private-key> <ip-address> -p <port> -t <command>
 
@@ -156,6 +157,7 @@ This will execute the command and return the results to your terminal.
 **Open an interactive shell**
 
 Allows you to connect to the execution and run commands directly inside the Docker container that's running your execution.
+
 .. code-block:: bash
 
    # template
