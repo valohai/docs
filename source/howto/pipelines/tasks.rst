@@ -108,7 +108,7 @@ See the example below where we have two files:
     # train model...
 
 Here is also an example of the ``valohai.yaml`` that defines our steps, and the pipeline.
-In the pipeline's edge we pass the ``storeids`` from ``preprocess`` to the ``train`` Task's ``id`` parameter. This will create a ``train`` task with a set of multiple values for the ``id`` parameter (in our example, a Task with 5 executions, each with it's own ID parameter value)
+In the pipeline's edge we pass the ``storeids`` from ``preprocess`` to the ``train`` Task's ``id`` parameter. This will create a ``train`` Task with a set of multiple values for the ``id`` parameter (in our example, a Task with 5 executions, each with it's own ID parameter value)
 
 .. code-block:: yaml
    :linenos:
