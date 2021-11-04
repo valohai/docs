@@ -102,7 +102,27 @@ This will generate two files:
 ..
 
 2. Start an execution
-----------------------------------
+---------------------
+
+You can start a job either from the command-line or from the web application.
+
+Valohai CLI
+^^^^^^^^^^^
+
+.. admonition:: Upgrade your valohai-cli
+   :class: tip
+
+   You'll need ``valohai-cli`` version 0.17.0 or higher to run executions with debugging enabled from the CLI.
+
+   Update your version by running ``pip install --upgrade valohai-cli`` on your own machine.
+
+
+Start a Valohai execution with extra parameter :code:`debug-key-file` for your public key file (and additionally :code:`debug-port`).
+
+.. code-block:: bash
+
+   vh exec run --adhoc --debug-key-file=/tmp/remote-debug-key.pub train
+
 
 Valohai GUI
 ^^^^^^^^^^^^
