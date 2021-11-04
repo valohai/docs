@@ -75,7 +75,7 @@ Dynamically defining a Task inside a pipeline
 
 You can use an execution node to parametrize a downstream task node's variations by printing out metadata and defining an edge that connects the metadata to the Task's parameter.
 
-List-shaped metadata from executions automatically "spread" into a Multiple variant parameter if the destination node is a task.
+List-shaped metadata from executions is automatically "spread" into a Multiple variant parameter if the destination node is a Task.
 
 See the example below where we have two files:
 
