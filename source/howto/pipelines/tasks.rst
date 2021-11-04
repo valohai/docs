@@ -80,7 +80,7 @@ List-shaped metadata from executions is automatically "spread" into a Multiple v
 See the example below where we have two files:
 
 1) ``preprocess.py`` will generate a list of store IDs
-2) ``train.py`` will train a model for each store, using the store ID that it gets
+2) ``train.py`` will train a model for each store, using the store IDs that it gets
 
 ``preprocess.py``
 
