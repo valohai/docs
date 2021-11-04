@@ -70,3 +70,76 @@ All the outputs of the Task will be passed to the next node.
             - [train.output.model*, evaluate.input.model]
     ..
 
+Dynamically defining a Task inside a pipeline
+---------------------------------------------
+
+You can use an execution node to parametrize a downstream task node's variations by printing out metadata and defining an edge that connects the metadata to the Task's parameter.
+
+List-shaped metadata from executions is automatically "spread" into a Multiple variant parameter if the destination node is a Task.
+
+See the example below where we have two files:
+
+1) ``preprocess.py`` will generate a list of store IDs
+2) ``train.py`` will train a model for each store, using the store IDs that it gets
+
+``preprocess.py``
+
+.. code-block:: python
+
+    import json
+
+    # Your logic to fetch the right values...
+
+    storeids = [122,154,209,916,345]
+
+    # Print out a list as metadata
+    print(json.dumps({
+        "storeids": storeids
+    }))
+
+``train.py``
+
+.. code-block:: python
+
+    import valohai
+
+    storeid = valohai.parameters('id').value
+
+    # train model...
+
+Here is also an example of the ``valohai.yaml`` that defines our steps, and the pipeline.
+In the pipeline's edge we pass the ``storeids`` from ``preprocess`` to the ``train`` Task's ``id`` parameter. This will create a ``train`` Task with a set of multiple values for the ``id`` parameter (in our example, a Task with 5 executions, each with it's own ID parameter value)
+
+.. code-block:: yaml
+   :linenos:
+   :emphasize-lines: 11,25
+
+   - step:
+       name: preprocess
+       image: python:3.7
+       command:
+         - python ./preprocess.py
+   - step:
+       name: train
+       image: python:3.7
+       command:
+         - pip install valohai-utils
+         - python ./train.py {parameters}
+       parameters:
+       - name: id
+         type: string
+   - pipeline:
+       name: dynamic-task
+       nodes:
+       - name: preprocess
+         step: preprocess
+         type: execution
+       - name: train
+         step: train
+         type: task
+       edges:
+       - [preprocess.metadata.storeids, train.parameter.id]
+
+
+.. image:: /_images/task_in_pipeline.png
+    :alt: Dynamically defined Task in a pipeline

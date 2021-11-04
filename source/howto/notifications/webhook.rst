@@ -17,13 +17,32 @@ For example, you could trigger a message from Valohai when:
 
 In your application you could then receive this message from Valohai to for example post an update on a Slack channel, send an email, or start another internal process.
 
+
+Setup a Slack webhook
+-----------------------
+
+`Slack documentation to setup a new webhook <https://api.slack.com/messaging/webhooks>`_. You'll just need to complete the first 3 steps.
+
+Copy the generated Webhook URL from the *Webhook URLs for Your Workspace* page.
+
+Now go to Valohai and open your project's settings.
+
+1. Navigate to the Notifications tab
+2. Open Channels
+3. Click on **Create a new channel**, change the type to Slack, and add your webhook details
+4. Open Project Notifications
+5. Click on **Create new notification routing** 
+6. Choose your event and channel
+7. Save the routing
+
+
+Setup a custom webhook
+-----------------------
+
 .. tip:: 
 
     You can also use tools like `IFTTT <https://ifttt.com/home>`_ and `Zapier <https://zapier.com/>`_ to automate your workflows with webhooks.
 
-
-Setup a webhook
-------------------
 
 Setup your webhooks under Project -> Settings.
 
