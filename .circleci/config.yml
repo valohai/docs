@@ -10,12 +10,11 @@ jobs:
     - checkout
     - restore_cache:
         keys:
-        - v3-dep-{{ checksum "yarn.lock" }}-{{ checksum "requirements.txt" }}
-#    - run: yarn install
+        - v4-dep-{{ checksum "requirements.txt" }}
     - run: pip install -U pip wheel setuptools
     - run: pip install -r requirements.txt
     - save_cache:
-        key: v3-dep-{{ checksum "yarn.lock" }}-{{ checksum "requirements.txt" }}
+        key: v4-dep-{{ checksum "requirements.txt" }}
         paths:
         - ~/.cache
     - run: python check_descriptions.py
