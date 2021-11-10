@@ -19,11 +19,20 @@ Create a Service Account
 
 The easiest way to authenticate your Valohai jobs with BigQuery is using a GCP Service Account. 
 
-* Go to your GCP Project's `IAM -> Service Accounts <https://console.cloud.google.com/iam-admin/serviceaccounts>`_
+* Go to your GCP Project that hosts all the Valohai resources
+* Navigate to `IAM -> Service Accounts <https://console.cloud.google.com/iam-admin/serviceaccounts>`_
 * Create a new a service account
 * Give the service account ``BigQuery User`` permissions.
 
 Share the email of the service account with Valohai with the information on which environments you'd like to attach this service account to. Each Valohai environment can be configured to use a different service account. 
+
+.. admonition:: Accessing BigQuery from another GCP Project
+    :class: tip
+
+    If your BigQuery data is in a different GCP Project than your Valohai resources, you'll need to go to that project and give the newly created service account ``BigQuery User`` permissions there.
+
+    In this case your service account doesn't need ``BigQuery User`` permissions in the project where you have just the Valohai resources, but no BigQuery data.
+
 
 Connect to BigQuery
 -------------------
@@ -55,3 +64,9 @@ When you launch your Valohai executions, choose the environment that has the ser
         .to_dataframe()
     )
     print(df.head())
+
+.. tip::
+
+    You'll need to have the google-cloud-bigquery[bqstorage,pandas] packages run the example above.
+
+    ``pip install --upgrade 'google-cloud-bigquery[bqstorage,pandas]'``
