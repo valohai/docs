@@ -7,6 +7,10 @@
 Deploy on-premise
 #################
 
+.. warning::
+
+    Valohai agents can be installed on a on-premises machines running Linux, preferably Ubuntu 20.04.
+
 The Compute and Data Layer of Valohai can be deployed to your on-premise environment. This enables you to:
 
 * Use your own on-premises machines to run machine learning jobs.
