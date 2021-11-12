@@ -80,7 +80,7 @@ Next create two new `Service Accounts <https://console.cloud.google.com/iam-admi
            .. code-block::
              
             resource.name.extract('/secrets/{name}/versions/') == "valohai_redis_password" ||
-            resource.name.extract('/secrets/{name}/versions/') == "valohai_master_sa_key"
+            resource.name.extract('/secrets/{name}/versions/') == "valohai_master_sa"
 
            ..
        * ``ValohaiMaster``
@@ -96,7 +96,7 @@ Next create two new `Service Accounts <https://console.cloud.google.com/iam-admi
 
            ..
    * - Grant access
-     - Add the ``valohai_email`` you received a ``Service account user``
+     - Add the ``valohai_email`` you received a ``Service account token creator`` 
 
 .. list-table::
    :widths: 30 70
@@ -131,7 +131,7 @@ Secret Manager
 You'll need to upload two secrets for Valohai:
 
 * ``valohai_redis_password`` as the password that will be set on the job queue machine. Your workers and app.valohai.com will need this to be able to access the job queue.
-* ``valohai_master_sa_key`` will be used by the Valohai autoscaler to create and delete virtual machine resources for your Valohai machine learning jobs.
+* ``valohai_master_sa`` will be used by the Valohai autoscaler to create and delete virtual machine resources for your Valohai machine learning jobs.
 
 Start by going to the  `IAM -> Service Accounts <https://console.cloud.google.com/iam-admin/serviceaccounts>`_ page and opening ``valohai-sa-master``. 
 
@@ -147,7 +147,7 @@ Next go to the `Security -> Secret Manager <https://console.cloud.google.com/sec
      - Secret value
    * - valohai_redis_password
      - ``Generate a random password, that includes lowercase and capital letters and numbers.``
-   * - valohai_master_sa_key
+   * - valohai_master_sa
      - ``Paste the JSON contents of the key file you just downloaded``
 
 VPC
