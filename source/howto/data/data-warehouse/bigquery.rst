@@ -31,7 +31,7 @@ Share the email of the service account with Valohai with the information on whic
 
     If your BigQuery data is in a different GCP Project than your Valohai resources, you'll need to go to that project and give the newly created service account ``BigQuery User`` permissions there.
 
-    In this case your service account doesn't need ``BigQuery User`` permissions in the project where you have just the Valohai resources, but no BigQuery data.
+    In this case your service account doesn't need ``BigQuery User`` and ``BigQuery Data Viewer`` permissions in the project where you have just the Valohai resources, but no BigQuery data.
 
 
 Connect to BigQuery
