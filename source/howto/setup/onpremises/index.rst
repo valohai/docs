@@ -7,6 +7,10 @@
 Deploy on-premise
 #################
 
+.. warning::
+
+    Valohai agents can be installed on a on-premises machines running Linux, preferably Ubuntu 20.04.
+
 The Compute and Data Layer of Valohai can be deployed to your on-premise environment. This enables you to:
 
 * Use your own on-premises machines to run machine learning jobs.
@@ -55,3 +59,29 @@ You'll need to have ``Python 3.6+`` installed on the machines by default. The ``
     env "CLOUD=none" "ALLOW_MOUNTS=true" "INSTALLATION_TYPE=private-worker" "REDIS_URL=rediss://:$PASSWORD@$QUEUE_ADDRESS:63790"  "QUEUES=$NAME" ./bup.pex
 
     popd
+
+Frequently Asked Questions
+--------------------------
+
+.. list-table::
+   :widths: 30 70
+   :header-rows: 1
+   :stub-columns: 1
+
+   * - Question
+     - Answer
+   * - Can I run multiple jobs in parallel on the same on-premise machine?
+     - Yes. You can add ``SINGLE_GPU_PER_PEON=true`` in the peon configuration file (``/etc/peon.config``) to Valohai to run multiple jobs in parallel. Each job will have access to one GPU and will take up as much memory/CPU as it needs.
+   * - Can I define per execution how many GPUs I want to use?
+     - No. The ``SINGLE_GPU_PER_PEON`` inside ``/etc/peon.config`` defines if Valohai will always use all the GPUs for a job, or run one job per GPU.
+   * - I have just one GPU on my machine. Can I run multiple jobs on the same GPU?
+     - Yes. You'll need to udpate your the peon service file.
+      
+       * Rename ``/etc/systemd/system/peon.service`` to ``/etc/systemd/system/peon@.service``
+       * Run ``systemctl daemon-reload`` read the new service file
+       * Enable multiple peons:
+       
+         * ``systemctl enable --now peon@1``
+         * ``systemctl enable --now peon@2``
+         * ``systemctl enable --now peon@3``
+
