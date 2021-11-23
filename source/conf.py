@@ -23,7 +23,7 @@ extensions = [
     '_redirects',
     'sphinx_inline_tabs',
     'sphinx_copybutton',
-    'sphinxcontrib.video',
+    'sphinxvideo',  # from _ext
     'sphinxcontrib.details.directive'
 ]
 

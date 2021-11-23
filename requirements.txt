@@ -110,8 +110,6 @@ sphinxcontrib-qthelp==1.0.3
     # via sphinx
 sphinxcontrib-serializinghtml==1.1.5
     # via sphinx
-git+https://github.com/sphinx-contrib/video.git
-    # via -r requirements.in
 tornado==6.1
     # via livereload
 tqdm==4.62.3

@@ -7,5 +7,4 @@ valohai-cli==0.16.0
 sphinx-copybutton
 furo==2021.4.11b34
 sphinx-inline-tabs
-git+https://github.com/sphinx-contrib/video.git
 sphinxcontrib-details-directive
