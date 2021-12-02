@@ -62,6 +62,7 @@ For example:
 
    from sklearn.metrics import confusion_matrix
    import numpy as np
+   import json
 
    y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2]
    y_pred = [0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2]
@@ -71,8 +72,8 @@ For example:
    # Convert to list
    result = matrix.tolist()
 
-   print({"data": result})
-   # {'data': [[3, 0, 0], [0, 1, 2], [2, 1, 3]]}
+   print(json.dumps({"data": result}))
+   # {"data": [[3, 0, 0], [0, 1, 2], [2, 1, 3]]}
 
 Would result in:
 
