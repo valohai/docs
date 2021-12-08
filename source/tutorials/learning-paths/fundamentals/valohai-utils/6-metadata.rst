@@ -34,7 +34,7 @@ Collect and view metrics
         },
         default_parameters={
             'learning_rate': 0.001,
-            'epochs': 5,
+            'epoch': 5,
         },
     )
 
@@ -98,7 +98,7 @@ Collect test metrics
         },
         default_parameters={
             'learning_rate': 0.001,
-            'epochs': 5,
+            'epoch': 5,
         },
     )
 
