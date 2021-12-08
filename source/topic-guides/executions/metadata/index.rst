@@ -30,16 +30,18 @@ For instance, in Python,
    {"step": 200, "accuracy": 0.9262000918388367}
    {"model_layout": "ReLU8x-3xELUx32-softmax8"}
 
-Each metadata point also has an implicit value ``_time`` which tells the metadata line was output.
+Each metadata point also has an implicit value ``_time`` which tells when the metadata line was output.
 The ``_time`` value is in UTC, formatted as an ISO-8601 datetime (e.g. ``2017-04-04T15:03:39.321000``).
 
 You can generate real-time charts based on metadata which helps with
-monitoring long runs so you can stop them if training doesn't converge well.
+monitoring long runs so you can stop them if training doesn't converge well. Optionally, you can use any metadata value as the Horizontal axis value by selecting it in the corresponding dropdown menu. 
 
-.. image:: /_images/metadata-chart.jpg
+You can add and remove graphs for different metadata by clicking on "Add/remove". Once added, you can smooth the graph and choose the position of the vertical axis for each metadata. 
+
+.. image:: /_images/compare_executions.png
    :alt: Metadata chart comparison
 
-You can sort executions by metadata values in the web interface which is useful for e.g. finding training
+You can sort executions by metadata values in the web interface under the Executions tab which is useful for e.g. finding training
 executions with the highest prediction accuracy.
 
 The latest or last value of each key such as ``accuracy`` can be used for the sorting hyperparameter optimization results.
