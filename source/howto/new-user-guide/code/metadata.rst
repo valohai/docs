@@ -60,7 +60,7 @@ Collecting metadata from a Valohai execution allows you to easily sort, filter, 
         write(toJSON(metadataEvent, auto_unbox=TRUE), stdout())
     ..
 
-.. thumbnail:: /_images/metadata-chart.jpg
+.. thumbnail:: /_images/compare_executions.png
     :alt: Metadata chart comparison
 
     

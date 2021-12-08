@@ -27,7 +27,7 @@ View metrics
 
     The metadata value displayed in the table is always the latest printed metadata. In your script you should ensure that the last value you print out for ``accuracy`` is the best value for your use case.
 
-.. video:: /_static/videos/execution_metadata.mp4
+.. video:: /_static/videos/view_metadata.mp4
     :autoplay:
     :width: 600
 
