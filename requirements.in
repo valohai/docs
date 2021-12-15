@@ -1,10 +1,10 @@
-sphinx-click
-sphinx
+furo~=2021.11.23.0
 sphinx-autobuild
+sphinx-click
+sphinx-copybutton
+sphinx-inline-tabs
 sphinx-sitemap
+sphinx>=4.0
+sphinxcontrib-details-directive
 sphinxcontrib-images
 valohai-cli==0.16.0
-sphinx-copybutton
-furo==2021.4.11b34
-sphinx-inline-tabs
-sphinxcontrib-details-directive
