@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js"{% if language is not none %} lang="{{ language }}"{% endif %}>
   <head>
     {%- block site_meta -%}
     <meta charset="utf-8"/>
@@ -30,8 +30,8 @@
     {%- endblock linktags %}
 
     {# Favicon #}
-    {%- if favicon -%}
-      <link rel="shortcut icon" href="{{ pathto('_static/' + favicon, 1) }}"/>
+    {%- if favicon_url -%}
+      <link rel="shortcut icon" href="{{ favicon_url }}"/>
     {%- endif -%}
 
     {#- Generator banner -#}
@@ -50,23 +50,23 @@
 
     {%- block styles -%}
 
-    {#- Theme-related stylesheets -#}
-    {%- block theme_styles -%}
-    <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}">
-    <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="{{ pathto('_static/pygments_dark.css', 1) }}">
-    {% include "partials/_head_css_variables.html" with context %}
-    {%- endblock -%}
-
     {# Custom stylesheets #}
     {%- block regular_styles -%}
-    {%- for path in css_files -%}
-    {% if not path.filename.startswith("pygments_dark") -%}
-      {{ css_tag(path) }}
-    {%- endif %}
+    {%- for css in css_files -%}
+      {% if css|attr("filename") -%}
+        {{ css_tag(css) }}
+      {%- else -%}
+        <link rel="stylesheet" href="{{ pathto(css, 1)|e }}" type="text/css" />
+      {%- endif %}
     {% endfor -%}
     {%- endblock regular_styles -%}
 
-    {%- block extra_styles -%}
+    {#- Theme-related stylesheets -#}
+    {%- block theme_styles %}
+    {% include "partials/_head_css_variables.html" with context %}
+    {%- endblock -%}
+
+    {%- block extra_styles %}
     {%- endblock -%}
 
     {%- endblock styles -%}
@@ -74,29 +74,20 @@
     {#- Custom front matter #}
     {%- block extrahead -%}{%- endblock -%}
 
-        
     {#- Global site tag (gtag.js) - Google Analytics -#}
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-87958940-3"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-87958940-3');
-    </script>
-
+    {% include "_valohai_gtag.html" %}
   </head>
-  <body dir="{{ direction }}">
+  <body>
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+      {% include "_valohai_gtag_track.js" %}
+    </script>
     {% block body %}{% endblock %}
 
     {%- block scripts -%}
 
     {# Custom JS #}
     {%- block regular_scripts -%}
-    {%- set url_root = pathto('', 1) %}
-    {# URL root should never be #, then all links are fragments #}
-    {%- if url_root == '#' %}{% set url_root = '' %}{% endif %}
-    <script id="documentation_options" data-url_root="{{ url_root }}" src="{{ pathto('_static/documentation_options.js', 1) }}"></script>
     {% for path in script_files -%}
       {{ js_tag(path) }}
     {% endfor -%}
