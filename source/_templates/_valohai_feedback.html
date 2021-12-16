@@ -1,0 +1,32 @@
+<div class="toc-title-container">
+  <span class="toc-title">
+    {{ _("Was this useful?") }}
+  </span>
+</div>
+<div class="toc-tree-container">
+  <div class="toc-tree">
+    <ul>
+      <li>
+        <span>
+          <a href="#" onclick="javascript:feedback(1)">Yes &#x1F44D;</a> |
+          <a href="#" onclick="javascript:feedback(-1)">No &#x1F44E;</a>
+        </span>
+      </li>
+      <li><br/></li>
+      <li>
+        <a href="https://github.com/valohai/docs/issues/new?title=Feedback%20on%20{{ title|striptags|e }}&body=**Page:**%20{{ html_baseurl }}{{ pagename }}.html%0A%0A**Feedback:**"
+           class="btn btn-neutral" title="Give Feedback" rel="Give Feedback" target="_blank">&#x1F41B; Report an issue</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<script type="text/javascript">
+  function feedback(vote) {
+    gtag(
+      'event', 'Vote', {
+        'event_category': 'Feedback',
+        'event_label': '{{ title|striptags|e }}',
+        'value': vote.toString()
+      });
+  }
+</script>

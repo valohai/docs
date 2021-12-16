@@ -52,6 +52,7 @@ html_logo = 'favicon.ico'
 html_theme = 'furo'
 html_theme_path = ['_themes']
 html_static_path = ['_static']
+html_show_sourcelink = False
 html_theme_options = {
 
     "light_css_variables": {
