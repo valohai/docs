@@ -6,7 +6,7 @@
 Integrating with GitHub
 =======================
 
-In this guide, we'll link a private GitHub repository to a Valohai project using a deploy key.
+In this guide we will link a private GitHub repository to a Valohai project using a deploy key.
 
 .. admonition:: Alternative: Authenticate with GitHub Apps
    :class: tip
@@ -44,9 +44,9 @@ This will generate two files:
 ..
 
 Add the public key to GitHub
-###################################
+################################### 
 
-Find the :code:`my-project-deploy-key.pub` file we generated in the last section, and it should contain one line that starts with :code:`ssh-rsa AAAA...`. This line is the public key that we'll be adding to GitHub.
+Find the :code:`my-project-deploy-key.pub` file we generated in the last section, and it should contain one line that starts with :code:`ssh-rsa AAAA...`. This line is the public key that we will be adding to GitHub.
 
 Now go to your GitHub repository and navigate to the add deploy key page through `Settings` > `Deploy keys` > `Add deploy key`.
 
