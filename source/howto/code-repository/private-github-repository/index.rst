@@ -44,7 +44,7 @@ This will generate two files:
 ..
 
 Add the public key to GitHub
-################################### 
+###################################
 
 Find the :code:`my-project-deploy-key.pub` file we generated in the last section, and it should contain one line that starts with :code:`ssh-rsa AAAA...`. This line is the public key that we will be adding to GitHub.
 
