@@ -13,13 +13,7 @@ Define Valohai parameters
 
     This how-to is a part of our :ref:`new-user-guide` series.
 
-Parameters are passed as command-line arguments to your code.
-
-Using parameters allows you to:
-
-* Easily keep track and compare executions with different parameters
-* Rerun an execution with a different set of parameters
-* Run multiple executions with different parameter sets (parameter sweeps, hyperparameter optimization etc.)
+.. include:: /_partials/_recap-parameters.rst
 
 .. tab:: valohai-utils (Python)
 
@@ -33,7 +27,7 @@ Using parameters allows you to:
         }
         
         # Create a step 'Train Model' in valohai.yaml with a set of parameters
-        valohai.prepare(step="Train Model", default_parameters=default_parameters)
+        valohai.prepare(step="train", image="tensorflow/tensorflow:2.6.1-gpu", default_inputs=default_inputs, default_parameters=default_parameters)
         
         # Access the parameters in your code
         for i in range(valohai.parameters('iterations').value):
@@ -59,9 +53,9 @@ Using parameters allows you to:
         import argparse
 
         def parse_args():
-        parser = argparse.ArgumentParser()
-        parser.add_argument('--iterations', type=int, default=10)
-        return parser.parse_args()
+            parser = argparse.ArgumentParser()
+            parser.add_argument('--iterations', type=int, default=10)
+            return parser.parse_args()
 
         args = parse_args()
         

@@ -1,7 +1,7 @@
-:orphan:
-
 .. meta::
     :description: Overview of how you'll read and write data in Valohai
+
+.. _migrate-data:
 
 Input and output data
 ###########################
@@ -10,20 +10,13 @@ Input and output data
 
     This how-to is a part of our :ref:`new-user-guide` series.
 
-Valohai downloads data from your cloud storage as execution inputs and:
 
-#. Manages authentication with your cloud storage (AWS S3, Azure Blob Storage, Google Cloud Storage)
-#. Downloads all the input data and caches it on the machine
-#. Keeps track of which datasetd were used in which execution
-
-In the same way, Valohai will upload all execution outputs to your cloud storage, version them and track if they're bring used in other executions.
+.. include:: /_partials/_recap-inputs.rst
 
 Read files from ``/valohai/inputs/``
 --------------------------------------
 
-* All files are downloaded to the Valohai inputs directory on the machine (i.e. ``/valohai/inputs``)
-* Valohai will create a directory for each input inside that path (e.g. ``/valohai/inputs/myinput``)
-* Each input can have one or multiple files. All the files that are provided for an input will be downloaded to the corresponding path (e.g. ``/valohai/inputs/myinput/mydata.csv``)
+Start by configuring inputs to your step in ``valohai.yaml`` and update your code to read the data from Valohai inputs, rather than directly from your cloud storage.
 
 .. tab:: valohai-utils (Python)
 
@@ -37,8 +30,8 @@ Read files from ``/valohai/inputs/``
             'myinput': 's3://bucket/mydata.csv'
         }
 
-        # Create a step 'Train Model' in valohai.yaml with a set of inputs
-        valohai.prepare(step="Train Model", default_inputs=default_inputs)
+        # Create a step 'train' in valohai.yaml with a set of inputs
+        valohai.prepare(step="train", image="tensorflow/tensorflow:2.6.1-gpu", default_inputs=default_inputs)
 
         # Open the CSV file from Valohai inputs
         with open(valohai.inputs("myinput").path()) as csv_file:
@@ -94,8 +87,8 @@ Read files from ``/valohai/inputs/``
 .. code-block:: yaml
 
     - step:
-        name: Train Model
-        image: tensorflow/tensorflow:1.13.1
+        name: train
+        image: tensorflow/tensorflow:2.6.1-gpu
         command: python myfile.py
         inputs:
           - name: myinput
@@ -108,10 +101,20 @@ Read files from ``/valohai/inputs/``
     * `Download multiple files to a single input using keep-directories </reference-guides/valohai-yaml/step-inputs/>`_
     * `Add a cloud storage </howto/data/cloud-storage/>`_
 
+.. admonition:: Accessing databases and datawarehouses
+    :class: tip
+
+    You can also query data from sources like BigQuery, MongoDB, RedShift, Snowflake, BigTable and other databases and data warehouses. These are not accessed through Valohai inputs but instead you should run your existing code on Valohai to query from these data sources. 
+    
+    As database contents change over time, we recommend saving the query results as a file in Valohai outputs to make sure there is a snapshot of the query result, and you can later on easily reproduce your jobs with the exact same data.
+
+    * :ref:`howto-data-bigquery`
+    * :ref:`howto-data-redshift`
+
 Save files to ``/valohai/outputs/``
 ---------------------------------------
 
-All files that are saved to ``/valohai/outputs/`` will automatically get versioned, tracked and uploaded to your cloud storage.
+.. include:: /_partials/_recap-outputs.rst
 
 .. tab:: valohai-utils (Python)
 

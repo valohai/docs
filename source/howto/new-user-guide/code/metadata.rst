@@ -13,9 +13,8 @@ Collect metadata
 
     This how-to is a part of our :ref:`new-user-guide` series.
 
-Valohai allows you to easily collect any metrics as Valohai metadata. You can easily collect metrics by simply printing them as JSON key-value pairs in your execution.
 
-Collecting metadata from a Valohai execution allows you to easily sort, filter, and compare different executions. It's up to you to define which metrics are you collecting as metadata.
+.. include:: /_partials/_recap-metadata.rst
 
 .. tab:: valohai-utils (Python)
 

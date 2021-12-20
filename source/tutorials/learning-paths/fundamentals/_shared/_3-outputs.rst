@@ -13,13 +13,4 @@ In this section you will learn:
 - Where do you find datums
 - How to set aliases for datums
 
-.. admonition:: A short introduction to outputs
-    :class: tip
-
-    * At the end of each execution, outputs are stored in the default data store that is defined in your project settings
-    * Valohai will handle authenticating with your cloud data store and uploading the data. You just have to save the file locally to ``/valohai/outputs/``
-    * Uploading data never overwrites existing files. It is possible to upload multiple files with the same name. 
-    * Each uploaded file will get a unique identifier called datum.
-    * For easily accessing specific output files, it is possible to set aliases to datums. 
-
-..
+.. include:: /_partials/_recap-outputs.rst
