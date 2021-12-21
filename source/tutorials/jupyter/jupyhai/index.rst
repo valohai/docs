@@ -11,74 +11,94 @@ In this tutorial, we will use Jupyhai, to run a Valohai execution from your loca
 .. admonition:: A short recap on Notebooks
    :class: tip
 
-   * Jupyhai is a Jupyter notebook extension developed and maintained by Valohai. It allows you to easily run your notebooks on a remote (cloud) machine.
-   * The plugin adds a **Run remote** button to the user interface. Clicking it will execute the notebook in Valohai.
-     
-     * Valohai always executes the whole notebook, from the first to the last cell to ensure anyone can easily rerun the notebook as is.
-
+   * Jupyhai is a Jupyter notebook extension developed and maintained by Valohai.
+   * Use the **Run remote** button, instead of the Run cell button to run your notebook on Valohai.
    * The Jupyhai addon will generate a :ref:`yaml` file for each execution based on the contents of the Notebook. You don't need to create the YAML file yourself.
    * Notebook executions use a custom Docker image called ``valohai/pypermill``. Make sure to use it as a base for your custom Docker images.
-   * Each executed Notebook is versioned and stored in Valohai.
+
+.. admonition:: Installing Jupyhai to on your machine
+   :class: attention
+
+   .. code:: bash
+
+      pip install --upgrade pip
+      pip install notebook
+      pip install valohai-cli jupyhai
+      jupyhai install
+
+   ..
 
 
-Setting up
------------
+Start notebook
+----------------
 
-In this tutorial you'll learn how to:
+Create a new folder ``valohai-notebook`` on your desktop and launch Jupyter in that directory.
 
-* Run an existing Notebook on a remote virtual machine through Valohai
-* Read data from your private cloud storage
-* Save trained models and graphics in Valohai
-* Collect customer metrics from your executions
-* Create timeseries graphs and confusion matrices
+.. code-block:: bash
 
-In this tutorial we'll use the churn-analysis example notebook from `Donne Martin's Data Science iPython Notebooks repository <https://github.com/donnemartin/data-science-ipython-notebooks>`_.
+   mkdir valohai-notebook
+   cd valohai-notebook
 
-You can `download the example notebook from here <https://nbviewer.org/github/donnemartin/data-science-ipython-notebooks/blob/master/analyses/churn.ipynb>`_ and the `example dataset (churn.csv) <https://github.com/donnemartin/data-science-ipython-notebooks/blob/master/data/churn.csv>`_ file. (Right click on the links and click "Save Link as")
+   .. code-block:: bash
 
+   vh login
+   # ... login with your username and password
 
-Install the tools
-^^^^^^^^^^^^^^^^^^^
+   vh project create
+   # give the project a name
 
-We'll start by installing JupyterLab and Valohai's addon called ``jupyhai``.
-
-.. code:: bash
-
-   pip install --upgrade pip
-   pip install jupyterlab
-   pip install --upgrade jupyhai
-   jupyhai install
+   jupyter notebook
 
 ..
 
-Create a new directory on your machine and place in there the two files that you downloaded above. Then open JupyterLab from that directory by running ``jupyter-lab`` on your command line.
+.. note:: 
 
-Finally, go to the Valohai web app and create a new project.
+   Depending on your organization settings, you might be asked to choose the owner for the project. We suggest choosing the organization as the owner of the project.
 
-Run your notebook on Valohai
-------------------------------
+.. note:: 
 
-Let's start by running your existing notebook in Valohai.
+   If your organization is on a self-hosted version of Valohai, you'll need to specify the login address with ``vh login --host https://myvalohai.com``
 
-You should have your Jupyter environment open with only two files, the notebook and the ``churn.csv`` file.
 
-1. Update the notebook's second cell to read the csv file from the correct path:
+* Create a new Python 3 notebook
+* Open the new Notebook
+* Click on **Settings** on the toolbar
+* Login with your Valohai credentials
+* Update the Docker image to ``valohai/notebook:tensorflow-2.5.0``
+* Close the **Settings** tab
+* Add ``print('Hello Valohai Notebooks!')`` to the first cell
+* Click on ``Run remote`` to run the notebook remotely
+* View the logs from the execution by clicking on the gizmo on the right side of the page (e.g. ``#1``)
 
-   .. code-block:: python
-      :linenos:
-      :emphasize-lines: 1
+.. tip::
 
-      churn_df = pd.read_csv('churn.csv')
-      col_names = churn_df.columns.tolist()
+   All Valohai notebook executions have to be based on a custom Valohai Docker image ``valohai/pypermill``. You can build your own images for Notebook executions, as long as they're based on ``valohai/pypermill``
 
-      print "Column names:"
-      print col_names
+   Check out our prebuilt set of `Docker images for the most popular Notebook executions on Valohai </howto/docker/popular-notebook-images/>`_
 
-      to_show = col_names[:6] + col_names[-6:]
 
-      print "\nSample data:"
-      churn_df[to_show].head(6)
 
-2. Click on the **Run Remote** button and start by logging in with your Valohai username/password or API Token (if you have MFA setup).
-3. Choose your project from the dropdown menu and optionally choose a different execution environment.
-4. Change the default Docker image to ``valohai/notebook:sklearn-1.0``. This is a custom Valohai hosted image that contains sklearn, matplotlib, pandas, and numpy.
+.. video:: /_static/videos/jupyter-login-launch.mp4
+   :autoplay:
+   :width: 600
+
+
+
+.. admonition:: Open a Notebook from a previous execution
+   :class: tip
+
+   Each of the colored gizmos on the right side of the page signify a single Valohai execution. You can click on any of the completed executions and select ``Notebook`` to inspect the Notebook version that was used to run the execution.
+
+..
+
+Valohai 101 tutorial
+----------------------
+
+Follow our Fundamentals tutorial with valohai-utils to learn how to interact with Valohai inputs, outputs, metadata, and parameters. 
+
+`Valohai Fundamentals with valohai-utils </tutorials/learning-paths/fundamentals/valohai-utils/>`_ 
+
+
+.. hint::
+
+   Are you looking for the old Notebook tutorial that uses ``tags`` to define inputs and parameters? Find it `here </tutorials/jupyter/jupyhai/jupyhai-with-tags/>`_.
