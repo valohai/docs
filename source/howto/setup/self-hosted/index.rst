@@ -68,6 +68,39 @@ You'll also need to create the resources defined in the cloud specific guide of 
 * :ref:`gcp-hybrid`
 * :ref:`azure-hybrid-manual`
 
+Other services
+-----------------
+
+Both the Valohai application and the workers require access to a set of other resources that are used to run Valohai jobs.
+
+.. list-table::
+   :widths: 15 45 40
+   :header-rows: 1
+   :stub-columns: 1
+
+   * - Resource
+     - Details
+     - Requirements
+   * - Git repository
+     - Users store and version their machine learning code in Git. The Valohai app fetches code commits from a user defined Git repository and saves it in a object storage. When a job starts a Valohai agent on the worker machine will download the right commit from the object storage and run the commands defined in the ``valohai.yaml`` for that step.
+     - 
+
+       * The virtual machine running core Valohai services, like the web application, needs to be able to access the Git repository.
+       * Read more about how to :ref:`repository`
+   * - Docker registry
+     - Each Valohai job is executed inside a Docker container. A user defines a Docker image either in the ``valohai.yaml`` or when starting a new job. At the beginning of the job Valohai pulls the Docker image, code, and input data. After these are pulled in Valohai will launch a Docker container based on the defined image, mount the code and data there, and run the defined commands inside the container.
+     - 
+
+       * Both the web app and the workers need to be able to access the Docker registry.
+       * Read more about how to :ref:`docker-private-registries`
+   * - Databases and data warehouses (optional)
+     - Some of your data might be stored in a database or a data warehouse. As a part of a Valohai job, you can fetch data from various sources like MongoDB, Redshift, BigQuery, Snowflake, and others, using their native SDKs. Valohai doesn't natively offer integration to these services but instead you connect and run queries on them as a part of your machine leraning job.
+     - 
+
+       * The workers that will be running the machine learning jobs need to be able to access the databases and date warehouses.
+       * Read more about how to :ref:`data-howto`
+
+
 Frequently Asked Questions
 --------------------------
 
