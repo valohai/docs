@@ -13,27 +13,33 @@ Define Valohai parameters
 
     This how-to is a part of our :ref:`new-user-guide` series.
 
-Parameters are passed as command-line arguments to your code.
-
-Using parameters allows you to:
-
-* Easily keep track and compare executions with different parameters
-* Rerun an execution with a different set of parameters
-* Run multiple executions with different parameter sets (parameter sweeps, hyperparameter optimization etc.)
+.. include:: /_partials/_recap-parameters.rst
 
 .. tab:: valohai-utils (Python)
 
     .. code-block:: python
+        :linenos:
+        :emphasize-lines: 9,10,11,12,19,21,22,23
 
         import valohai
+
+        # Define inputs available for this step and their default location
+        # The default location can be overriden when you create a new execution (UI, API or CLI)
+        default_inputs = {
+            'myinput': 's3://bucket/mydata.csv'
+        }
 
         # Define parameters in a dictionary
         default_parameters = {
             'iterations': 10,
         }
+
+        # Open the CSV file from Valohai inputs
+        with open(valohai.inputs("myinput").path()) as csv_file:
+            reader = csv.reader(csv_file, delimiter=',')
         
-        # Create a step 'Train Model' in valohai.yaml with a set of parameters
-        valohai.prepare(step="Train Model", default_parameters=default_parameters)
+        # Create a step 'train' in valohai.yaml with a set of parameters
+        valohai.prepare(step="train", image="tensorflow/tensorflow:2.6.1-gpu", default_inputs=default_inputs, default_parameters=default_parameters)
         
         # Access the parameters in your code
         for i in range(valohai.parameters('iterations').value):
@@ -59,9 +65,9 @@ Using parameters allows you to:
         import argparse
 
         def parse_args():
-        parser = argparse.ArgumentParser()
-        parser.add_argument('--iterations', type=int, default=10)
-        return parser.parse_args()
+            parser = argparse.ArgumentParser()
+            parser.add_argument('--iterations', type=int, default=10)
+            return parser.parse_args()
 
         args = parse_args()
         

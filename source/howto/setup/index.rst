@@ -3,6 +3,7 @@
 .. meta::
     :description: Valohai deep learning management platform architecture diagram and installation flavors.
 
+.. _setup:
 
 Deploy Valohai in your environment
 ##################################
