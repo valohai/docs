@@ -18,13 +18,25 @@ Define Valohai parameters
 .. tab:: valohai-utils (Python)
 
     .. code-block:: python
+        :linenos:
+        :emphasize-lines: 9,10,11,12,19,21,22,23
 
         import valohai
+
+        # Define inputs available for this step and their default location
+        # The default location can be overriden when you create a new execution (UI, API or CLI)
+        default_inputs = {
+            'myinput': 's3://bucket/mydata.csv'
+        }
 
         # Define parameters in a dictionary
         default_parameters = {
             'iterations': 10,
         }
+
+        # Open the CSV file from Valohai inputs
+        with open(valohai.inputs("myinput").path()) as csv_file:
+            reader = csv.reader(csv_file, delimiter=',')
         
         # Create a step 'train' in valohai.yaml with a set of parameters
         valohai.prepare(step="train", image="tensorflow/tensorflow:2.6.1-gpu", default_inputs=default_inputs, default_parameters=default_parameters)
