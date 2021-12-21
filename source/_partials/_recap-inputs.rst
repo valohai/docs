@@ -2,7 +2,7 @@
     :class: seealso
 
     * Valohai will download data files from your private cloud storage. Data can come from for example AWS S3, Azure Storage, GCP Cloud Storage, or a public source (HTTP/HTTPS).
-    * Valohai handles authentication with your cloud storage, downloading and uploading, and caching data.
+    * Valohai handles both authentication with your cloud storage and downloading, uploading, and caching data.
       
       * This means that you don't need to manage keys, authentication, and use tools like ``boto3``, ``gsutils``, or ``BlobClient`` in your code. Instead you should always treat the data as local data.
     

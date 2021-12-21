@@ -1,4 +1,4 @@
-.. admonition:: A short introduction outputs
+.. admonition:: A short introduction parameters
     :class: seealso
 
     * Defining parameters allows you to easily rerun, sort, and keep track of executions based on the parameter values used to run them.
@@ -8,5 +8,5 @@
     * A parameter can be type of a ``string``, ``integer``, ``float``, and ``flag`` (=boolean).
     * Parameters are passed as command-line arguments to your code.
       
-      * Edit parameters are passed to your code using `pass-as </reference-guides/valohai-yaml/step-parameters/>`_.
+      * Edit how parameters are passed to your code using `pass-as </reference-guides/valohai-yaml/step-parameters/>`_.
       * You can also parse parameter values from YAML and JSON files inside your execution. See `file-based configuration </topic-guides/executions/file-config/>`_.

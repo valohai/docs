@@ -13,7 +13,7 @@ Valohai is completely technology agnostic. You can develop in notebooks or scrip
 
   Valohai expects that you have a :ref:`yaml` in the root of your repository. The file defines what kind of jobs can be executed inside your project, and the different properties of each job type (these are called steps in Valohai). 
 
-  You can either write the ``valohai.yaml`` by hand or if you're using Python you can use the :ref:`valohai-utils` define the configuration file in your code.
+  You can either write the ``valohai.yaml`` by hand or if you're using Python you can use the :ref:`valohai-utils` to define the configuration file in your code.
 
 
 Let's start by bringing just a single job type to Valohai.
@@ -25,10 +25,10 @@ Let's start by bringing just a single job type to Valohai.
 
   .. code-block:: python
 
-    import python
+    import valohai
 
     # Prepares a new step called train in valohai.yaml
-    # Every time you run train in Valohai this Python script will be executed
+    # Execute this Python file to run every time the train step is launched in Valohai
     valohai.prepare(step="train")
 
   You can now generate a ``valohai.yaml`` configuration file that includes the ``train`` step by running:
@@ -39,12 +39,12 @@ Let's start by bringing just a single job type to Valohai.
 
   This will create:
 
-  * a ``valohai.yaml`` file with the ``train`` step that will run:
+  * A ``valohai.yaml`` file with the ``train`` step that will run:
 
     * ``pip install -r requirements.txt``
     *  your Python script.
 
-  * a ``requirements.txt`` with ``valohai-utils``
+  * A ``requirements.txt`` with ``valohai-utils``
     
     * If you have an existing ``requirements.txt`` file the ``valohai-utils`` line will be just added there.
 
@@ -54,11 +54,11 @@ Let's start by bringing just a single job type to Valohai.
 
   .. code-block:: python
 
-    import python
+    import valohai
 
     # Prepares a new step called train in valohai.yaml
-    # Every time you run train in Valohai this Python script will be executed
-    # inside a GPU enabled Tensorflow 2.6.1 image
+    # Execute this Python file to run every time the train step is launched in Valohai
+    # inside a GPU enabled Tensorflow 2.6.1 image.
     valohai.prepare(step="train", image="tensorflow/tensorflow:2.6.1-gpu")
 
   and then rerun ``vh yaml step`` to update your ``valohai.yaml``.
@@ -67,13 +67,12 @@ Let's start by bringing just a single job type to Valohai.
 
     vh yaml step myfilename.py
 
-  You can now upload your local code to Valohai and run the ``train`` step and define a Docker image you'd like to use. 
 
 .. tab:: Other
 
     Create a new file called ``valohai.yaml`` and define a :ref:`step` inside it.
 
-    In our example below we're defining two commands to be ran every time I run the step called ``train``. You can remove the pip install command, if you don't have a need for it.
+    In our example below we're defining two commands to be ran every time the step called ``train`` is ran. You can remove the pip install command, if you don't have a need for it.
 
     .. code-block:: yaml
 
@@ -86,8 +85,7 @@ Let's start by bringing just a single job type to Valohai.
 
     ..
 
-    Create a ``valohai.yaml`` configuration file and define your step in it:
-
+You can now upload your local code to Valohai and run the ``train`` step inside the Docker container you just defined.
 
 .. code-block:: bash
 

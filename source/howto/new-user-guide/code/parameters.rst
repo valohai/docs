@@ -26,7 +26,7 @@ Define Valohai parameters
             'iterations': 10,
         }
         
-        # Create a step 'Train Model' in valohai.yaml with a set of parameters
+        # Create a step 'train' in valohai.yaml with a set of parameters
         valohai.prepare(step="train", image="tensorflow/tensorflow:2.6.1-gpu", default_inputs=default_inputs, default_parameters=default_parameters)
         
         # Access the parameters in your code

@@ -40,16 +40,14 @@ This guide will cover the common tasks that you need to perform to bring your ex
      - |docker|
      - |yaml|
      - |data|
-     - |metadata|
      - |parameters|
-   * - Connect to a Git repository
-     - Choose a Docker image
-     - Add a ``valohai.yaml`` configuration
-     - Use Valohai data inputs/outputs
-     - Collect key metrics in JSON
-     - Define parameters in ``valohai.yaml``
-
-
+     - |metadata|
+   * - `Connect to a Git repository <#connect-your-git-repository-to-a-valohai-project>`_
+     - `Choose a Docker image <#choose-a-docker-image>`_
+     - `Add a valohai.yaml configuration </howto/new-user-guide/yaml/>`_
+     - `Use Valohai data inputs/outputs </howto/new-user-guide/code/data/>`_
+     - `Define parameters in valohai.yaml </howto/new-user-guide/code/parameters/>`_
+     - `Collect key metrics in JSON </howto/new-user-guide/code/metadata/>`_ 
 
     
 .. admonition:: Environments and Data Stores
@@ -64,7 +62,7 @@ This guide will cover the common tasks that you need to perform to bring your ex
 Connect your Git repository to a Valohai project
 -------------------------------------------------
 
-Start by going to the Valohai application (`app.valohai.com <https://app.valohai.com>`_) creating a new project.
+Start by going to the Valohai application (`app.valohai.com <https://app.valohai.com>`_) and creating a new project.
 
 The owner of the project should be your organization or team, so that you can access your organizations cloud resources like virtual machines, data stores, and private Docker registries.
 
@@ -93,14 +91,14 @@ Install Valohai tools
 
 Valohai offers command-line tools and a Python helper library to make it easier to interact with the platform.
 
-* :ref:`valohai-utils` is a Python utility library that helps with everyday boilerplate.
 * :ref:`cli` allows you to easily run jobs, view logs, and create new projects directly from the cli.
+* :ref:`valohai-utils` is a Python utility library that helps with everyday boilerplate.
 
-Start by installing valohai-utils, logging in, and creating a project.
+Start by installing the Valohai tools, logging in, and linking your local directory to a Valohai project.
 
 .. code-block:: bash
 
-  pip3 install valohai-utils
+  pip3 install valohai-utils valohai-cli
   vh login
   
   # Navigate to your project
@@ -108,8 +106,6 @@ Start by installing valohai-utils, logging in, and creating a project.
 
   # Links your current working directory to a existing Valohai project
   vh project link
-
-
 
 
 .. toctree::
@@ -125,20 +121,20 @@ Start by installing valohai-utils, logging in, and creating a project.
 Choose a Docker image
 ----------------------
 
-Each Valohai execution is ran inside a Docker image. This makes it possible to run any code from C to Python as long as it can run inside a Docker container.
+Each Valohai execution is ran inside a Docker container. This makes it possible to execute any code from C to Python as long as it can run inside the chosen container.
 
 You can use any Docker images for your Valohai jobs, either from a public or a private Docker registry.
 
 .. include:: /_partials/_image-list.rst
 
-You can also any additional libraries inside the execution, by for example ``apt-get install`` or ``pip install -r requirements.txt``.
+You can also install any additional libraries inside the execution with for example ``apt-get install`` or ``pip install -r requirements.txt``.
 
 .. admonition:: Custom Docker images
     :class: tip
 
     Having a custom Docker image allows you to bake in all the libraries and other dependencies that your machine learning code has. This way you don't need to spend time running additional installation commands in the beginning of every execution to get everything you need.
     
-    Valohai will download and cache the Docker images, so it isn't redownloaded for every single job.
+    Valohai will download and cache the Docker images on the worker virtual machine, so they don't hae to be redownloaded for every job.
 
 .. seealso::
 
@@ -165,15 +161,15 @@ To get the most out of Valohai features you should integrate with Valohai input/
    * - Files
      - 
        * Data scientists don't need to worry about authenticating with your cloud object store, downloading/uploading files, and caching data.
-       * In Valohai you always treat files from an object store as "local files". Valohai downloads your data to a local directory in ``/valohai/inputs/`` and it will pick up any files ``/valohai/outputs/`` and upload them to your private cloud storage.
+       * In Valohai you always treat files from an object store as "local files". Valohai downloads your data to a local directory in ``/valohai/inputs/``. It will pick up any files from ``/valohai/outputs/`` and upload them to your private cloud storage.
      - :ref:`migrate-data`
-   * - Metrics
-     - 
-       * Easily keep track, compare, and sort your jobs based on customer metrics that you collect.
-       * Visualize and compare execution metrics in a time series graph, scatter plot, or a confusion matrix. 
-     - :ref:`migrate-metadata`
    * - Parameters
      - 
        * Keep track of parameters used in your executions, and rerun any job with the same or changed parameter values.
-       * Easily run parameter sweeps or hyperparameter optimization using Valohai Tasks.
+       * Easily run parameter sweeps or hyperparameter optimization by using Valohai Tasks.
      - :ref:`migrate-parameters`
+   * - Metrics
+     - 
+       * Easily keep track, compare, and sort your jobs based on custom metrics that you collect.
+       * Visualize and compare execution metrics in a time series graph, a scatter plot, or a confusion matrix. 
+     - :ref:`migrate-metadata`
