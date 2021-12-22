@@ -18,6 +18,7 @@ Deploy Valohai in your environment
     azure/index
     onpremises/index
     self-hosted/index
+    shared-cache
 
 
 Valohai can be deployed in your environment, either in the cloud or on-premise. The platform can also be deployed in multi-cloud setups and in hybrid setups with both cloud and on-premise resources.
