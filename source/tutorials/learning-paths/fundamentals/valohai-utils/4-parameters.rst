@@ -6,7 +6,7 @@ Use parameters
 
 .. include:: ../_shared/_4-parameters.rst
 
-Update **train.py** to parameterize ``epochs``.
+Update **train.py** to parameterize ``epoch``.
 
 * Create a dictionary to pass ``valohai.prepare`` your parameters and their default values
 * Read the parameter value during an execution with ``valohai.parameters('myparam').value``
@@ -25,7 +25,7 @@ Update **train.py** to parameterize ``epochs``.
         step='train-model',
         image='tensorflow/tensorflow:2.6.0',
         default_parameters={
-            'epochs': 5,
+            'epoch': 5,
         },
     )
 
@@ -79,7 +79,7 @@ Update **train.py** to parameterize ``learning_rate``.
         image='tensorflow/tensorflow:2.6.0',
         default_parameters={
             'learning_rate': 0.001,
-            'epochs': 5,
+            'epoch': 5,
         },
     )
 
