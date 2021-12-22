@@ -6,11 +6,17 @@
 Setting up a shared cache for Valohai workers
 ##############################################
 
-Most of your Valohai machine learning jobs have a set of input files that are downloaded from a cloud object storage like AWS S3, Azure Blob Storage, or GCP Cloud Storage. This data is downloaded on each of the virtual machines that are running your job.
+Most of your Valohai machine learning jobs have a set of input files that are downloaded from a cloud object storage like AWS S3, Azure Blob Storage, or GCP Cloud Storage. This data is downloaded on each of the virtual machines that are running your jobs.
 
-By default each Valohai worker (virtual machine) will have it's own cache where the downloaded data is stored. When the machine is no longer used it get scaled down, and with it the cache gets removed, and the next time a machine gets scaled up it will download the input files to it's own cache.
+By default each Valohai worker (virtual machine) will have its own cache where the downloaded data is stored.
 
-Valohai has the option to setup a shared network cache between all the workers. In this case the input data is stored on a NFS drive from where the workers can fetch the data, instead of always redownloading the data.
+When the machine is no longer used (after a configurable grace period) it gets scaled down, and with it the local cache gets removed.
+
+The next time a machine gets scaled up it will download the input files to its own cache.
+
+Valohai has the option to setup a shared network cache between several worker machines.
+
+In this case the input data is stored on an NFS or SMB network mount from where the workers can fetch the data, instead of always redownloading the data from cloud storage.
 
 This is for example useful when:
 
@@ -31,16 +37,18 @@ This is for example useful when:
 Setup a shared cache
 ---------------------
 
-You'll need to configure your network file system (NFS) either in your cloud or on-premises. The main thing is that the workers can access the NFS.
+You'll need to configure your network mount (NFS or SMB) either in your cloud or on-premises. 
 
-After completing your NFS configuration you'll need to send your Valohai the address of the network drive, so it can be configured with the relevant Valohai workers.
+The main thing to verify is that the workers can access the network mount.
+
+After completing your network mount configuration you'll need to send your Valohai contact the address of the network drive, so it can be configured with the relevant Valohai workers.
 
 Configure a network file system
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. tab:: AWS Elastic File System
 
-    You can either use an existing, or create a new EFS. 
+    You can either use an existing one or create a new EFS. 
 
     .. tip:: 
 
@@ -49,7 +57,7 @@ Configure a network file system
 
 .. tab:: GCP Fileshare
 
-    You can either use an existing, or create a new GCP Fileshare. 
+    You can either use an existing one or create a new GCP Fileshare. 
 
     .. tip:: 
 
