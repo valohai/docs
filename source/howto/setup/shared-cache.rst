@@ -8,11 +8,9 @@ Setting up a shared cache for Valohai workers
 
 Most of your Valohai machine learning jobs have a set of input files that are downloaded from a cloud object storage like AWS S3, Azure Blob Storage, or GCP Cloud Storage. This data is downloaded on each of the virtual machines that are running your jobs.
 
-By default each Valohai worker (virtual machine) will have its own cache where the downloaded data is stored.
-
-When the machine is no longer used (after a configurable grace period) it gets scaled down, and with it the local cache gets removed.
-
-The next time a machine gets scaled up it will download the input files to its own cache.
+* By default each Valohai worker (virtual machine) will have its own cache where the downloaded data is stored.
+* When the machine is no longer used (after a configurable grace period) it gets scaled down, and with it the local cache gets removed.
+* The next time a machine gets scaled up it will download the input files to its own cache.
 
 Valohai has the option to setup a shared network cache between several worker machines.
 
@@ -73,8 +71,8 @@ To update your worker configuration you'll need to send the following informatio
 
 * The address of the NFS drive and the name:
 * 
-  * AWS Example: ``fs-1234aa62.efs.eu-west-1.amazonaws.com:/``
-  * GCP Example: ``10.110.84.202:/my_valohai_cache``
+  * AWS Example: ``fs-1234aa12.efs.eu-west-1.amazonaws.com:/``
+  * GCP Example: ``10.123.12.123:/my_valohai_cache``
 
 * List of environment you want to configure to use the shared NFS cache
 
