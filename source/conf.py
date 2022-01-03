@@ -67,6 +67,7 @@ html_theme_options = {
 html_sidebars = {}
 html_extra_path = ['robots.txt']
 intersphinx_mapping = {'https://docs.python.org/3/': None}
+html_codeblock_linenos_style = 'table'
 
 # Replace the lexer with ours
 from sphinx.highlighting import lexers
