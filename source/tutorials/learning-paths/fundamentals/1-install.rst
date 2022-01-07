@@ -1,7 +1,7 @@
 .. meta::
     :description: Valohai Fundamentals learning path - Running your first Valohai execution with valohai-utils
 
-``valohai-utils`` (Python)
+Setting up
 ##########################
 
 This learning path will show you how to get started with Valohai and Python, using the valohai-utils helper library.
@@ -54,15 +54,3 @@ Next login to Valohai and link your local folder to a new Valohai project:
 
     If your organization is on a self-hosted version of Valohai, you'll need to specify the login address with ``vh login --host https://myvalohai.com``
 
-
-.. toctree::
-    :titlesonly:
-
-    2-get-started
-    3-outputs
-    4-parameters
-    5-inputs
-    6-metadata
-    7-recap
-
-..

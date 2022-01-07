@@ -1,6 +1,8 @@
 .. meta::
     :description: Valohai Fundamentals learning path - Running your first Valohai execution with Python
 
+:orphan:
+
 Python
 #######################
 

@@ -4,7 +4,7 @@
 Download input data
 ###################
 
-.. include:: ../_shared/_5-inputs.rst
+.. include:: _shared/_5-inputs.rst
 
 Update **train.py** to add inputs:
 
@@ -72,4 +72,4 @@ Update your :ref:`yaml` with ``vh yaml step``. This will generate a ``inputs`` s
 
     vh yaml step train.py
 
-.. include:: ../_shared/_5-inputs-end.rst
+.. include:: _shared/_5-inputs-end.rst

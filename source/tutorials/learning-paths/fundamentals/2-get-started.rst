@@ -4,7 +4,7 @@
 Getting started
 ###############
 
-.. include:: ../_shared/_2-get-started.rst
+.. include:: _shared/_2-get-started.rst
 
 Import Valohai
 --------------
@@ -43,4 +43,4 @@ Finally, we run the following commands in the command line, on your own computer
 
 * ``vh yaml step`` uses the command-line tools to generate a :ref:`yaml` and a ``requirements.txt`` that contains ``valohai-utils`` (which is need to run the Python script).
 
-.. include:: ../_shared/_2-get-started-end.rst
+.. include:: _shared/_2-get-started-end.rst

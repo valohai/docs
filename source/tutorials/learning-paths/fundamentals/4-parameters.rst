@@ -4,7 +4,7 @@
 Use parameters
 ##############
 
-.. include:: ../_shared/_4-parameters.rst
+.. include:: _shared/_4-parameters.rst
 
 Update **train.py** to parameterize ``epoch``.
 
@@ -121,4 +121,4 @@ Update your :ref:`yaml` with ``vh yaml step``. This will generate a ``parameters
 
     vh yaml step train.py
 
-.. include:: ../_shared/_4-parameters-end.rst
+.. include:: _shared/_4-parameters-end.rst

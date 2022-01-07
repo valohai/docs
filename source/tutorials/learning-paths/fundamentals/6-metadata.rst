@@ -4,7 +4,7 @@
 Collect and view metrics
 ########################
 
-.. include:: ../_shared/_6-metadata.rst
+.. include:: _shared/_6-metadata.rst
 
 * Create a new function ``log_metadata`` that will log metadata
 * Create a TensorFlow LambdaCallback to trigger the ``log_metadata`` function every time an epoch ends
@@ -135,4 +135,4 @@ Collect test metrics
 
 ..
 
-.. include:: ../_shared/_6-metadata-end.rst
+.. include:: _shared/_6-metadata-end.rst

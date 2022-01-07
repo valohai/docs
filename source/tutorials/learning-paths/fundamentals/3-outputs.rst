@@ -5,7 +5,7 @@
 Upload output data
 ##################
 
-.. include:: ../_shared/_3-outputs.rst
+.. include:: _shared/_3-outputs.rst
 
 Let's update the ``output_path`` to a Valohai output path in our sample script file.
 
@@ -51,4 +51,4 @@ Let's update the ``output_path`` to a Valohai output path in our sample script f
 
 ..
 
-.. include:: ../_shared/_3-outputs-end.rst
+.. include:: _shared/_3-outputs-end.rst
