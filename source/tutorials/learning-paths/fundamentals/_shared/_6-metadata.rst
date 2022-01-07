@@ -13,5 +13,3 @@ In this section you will learn:
 - How to compare metadata between executions
 
 .. include:: /_partials/_recap-metadata.rst
-
-Update **train.py** to add metadata logging:

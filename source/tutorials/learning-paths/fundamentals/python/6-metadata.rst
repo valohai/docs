@@ -6,6 +6,8 @@ Collect metrics
 
 .. include:: ../_shared/_6-metadata.rst
 
+Update **train.py** to add metadata logging:
+
 * import json
 * Create a new method ``logMetadata`` that will print as key metrics as JSON
 * Create a TensorFlow LambdaCallback to trigger ``logMetadata`` every time an epoch ends

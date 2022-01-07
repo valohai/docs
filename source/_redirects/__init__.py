@@ -187,12 +187,12 @@ redirects = {
     '/howto/setup/aws_selfhosted_trial/index.html': '/howto/setup/self-hosted/index.html',
 
     '/tutorials/learning-paths/fundamentals/valohai-utils/index.html': '/tutorials/learning-paths/fundamentals/1-install.html',
-    '/tutorials/learning-paths/fundamentals/valohai-utils/2-get-started.html': '/tutorials/learning-paths/fundamentals/1-get-started.html',
-    '/tutorials/learning-paths/fundamentals/valohai-utils/3-outputs.html': '/tutorials/learning-paths/fundamentals/1-outputs.html',
-    '/tutorials/learning-paths/fundamentals/valohai-utils/4-parameters.html': '/tutorials/learning-paths/fundamentals/1-parameters.html',
-    '/tutorials/learning-paths/fundamentals/valohai-utils/5-inputs.html': '/tutorials/learning-paths/fundamentals/1-inputs.html',
-    '/tutorials/learning-paths/fundamentals/valohai-utils/6-metadata.html': '/tutorials/learning-paths/fundamentals/1-metadata.html',
-    '/tutorials/learning-paths/fundamentals/valohai-utils/7-recap.html': '/tutorials/learning-paths/fundamentals/1-recap.html',
+    '/tutorials/learning-paths/fundamentals/valohai-utils/2-get-started.html': '/tutorials/learning-paths/fundamentals/2-get-started.html',
+    '/tutorials/learning-paths/fundamentals/valohai-utils/3-outputs.html': '/tutorials/learning-paths/fundamentals/3-outputs.html',
+    '/tutorials/learning-paths/fundamentals/valohai-utils/4-parameters.html': '/tutorials/learning-paths/fundamentals/4-parameters.html',
+    '/tutorials/learning-paths/fundamentals/valohai-utils/5-inputs.html': '/tutorials/learning-paths/fundamentals/5-inputs.html',
+    '/tutorials/learning-paths/fundamentals/valohai-utils/6-metadata.html': '/tutorials/learning-paths/fundamentals/6-metadata.html',
+    '/tutorials/learning-paths/fundamentals/valohai-utils/7-recap.html': '/tutorials/learning-paths/fundamentals/8-recap.html',
 
 }
 

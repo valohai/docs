@@ -6,41 +6,31 @@ Getting started
 
 .. include:: _shared/_2-get-started.rst
 
-Import Valohai
---------------
+.. raw:: html
+    
+    <div style="position: relative; padding-bottom: 52.94117647058824%; height: 0;"><iframe src="https://www.loom.com/embed/cd8d03fec53a4b3f9f83d2b23e4d70c1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
-Now we'll ``import valohai`` and define a new :ref:`step` in the ``train.py`` file we just created..
+Create a configuration file
+---------------------------
 
-* Create a new the step called ``train-model``
-* Define a default Docker image for this step. The Docker image should contain the packages we need to run our code, like Tensorflow.
+Add a new file called ``valohai.yaml`` to define a new Valohai step called ``train``. Whenever we launch this step in Valohai we want to run the ``train.py`` script inside a TensorFlow 2.6.0 Docker image.
 
-.. code-block:: python
-    :linenos:
-    :emphasize-lines: 3,5,6,7,8
+.. code-block:: yaml
 
-    import numpy as np
-    import tensorflow as tf
-    import valohai
-
-    valohai.prepare(
-        step='train-model',
-        image='tensorflow/tensorflow:2.6.0',
-    )
-
-..
+    - step:
+        name: train-model
+        command: python train.py
+        image: tensorflow/tensorflow:2.6.0
 
 Run in Valohai
 --------------
 
-Finally, we run the following commands in the command line, on your own computer:
+Finally, we can start a new Valohai job directly from your command-line.
 
 .. code:: bash
 
-    vh yaml step train.py
     vh exec run train-model --adhoc
 
 ..
-
-* ``vh yaml step`` uses the command-line tools to generate a :ref:`yaml` and a ``requirements.txt`` that contains ``valohai-utils`` (which is need to run the Python script).
 
 .. include:: _shared/_2-get-started-end.rst

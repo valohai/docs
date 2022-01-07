@@ -32,4 +32,5 @@ Valohai is completely language and framework agnostic. This quickstart is availa
     4-parameters
     5-inputs
     6-metadata
-    7-recap
+    7-yaml
+    8-recap

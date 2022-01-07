@@ -6,33 +6,44 @@ Download input data
 
 .. include:: _shared/_5-inputs.rst
 
-Update **train.py** to add inputs:
+.. raw:: html
 
-* Create a dictionary to pass ``valohai.prepare`` your inputs and their default values
-* Update the ``mnist_file_path`` to point to the Valohai inputs.
+    <div style="position: relative; padding-bottom: 52.7086383601757%; height: 0;"><iframe src="https://www.loom.com/embed/7fe4a2d1709841b9bc5e7d9a8a348f13" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
+Let's start by defining the inputs for our ``train-model`` step.
+
+Update **valohai.yaml** to define new inputs:
+
+.. code-block:: yaml
+
+    - step:
+        name: train-model
+        command:
+          - pip install -r requirements.txt
+          - python train.py {parameters}
+        image: tensorflow/tensorflow:2.6.0
+        parameters:
+          - name: epoch
+            type: integer
+            default: 5
+          - name: learning_rate
+            type: float
+            default: 0.001
+        inputs:
+          - name: dataset
+            default: https://valohaidemo.blob.core.windows.net/mnist/mnist.npz
+
+Update **train.py** to point the ``mnist_file_path`` to the Valohai inputs.
 
 You should also remove the ``mnist.npz`` from your local machine.
 
 .. code-block:: python
-    :emphasize-lines: 9,10,11,17
+    :emphasize-lines: 5
     :linenos:
 
     import numpy as np
     import tensorflow as tf
     import valohai
-
-
-    valohai.prepare(
-        step='train-model',
-        image='tensorflow/tensorflow:2.6.0',
-        default_inputs={
-            'dataset': 'https://valohaidemo.blob.core.windows.net/mnist/mnist.npz'
-        },
-        default_parameters={
-            'learning_rate': 0.001,
-            'epochs': 5,
-        },
-    )
 
     input_path = valohai.inputs('dataset').path()
     with np.load(input_path, allow_pickle=True) as f:
@@ -66,10 +77,5 @@ You should also remove the ``mnist.npz`` from your local machine.
 Run in Valohai
 --------------
 
-Update your :ref:`yaml` with ``vh yaml step``. This will generate a ``inputs`` section in your step.
-
-.. code:: bash
-
-    vh yaml step train.py
 
 .. include:: _shared/_5-inputs-end.rst
