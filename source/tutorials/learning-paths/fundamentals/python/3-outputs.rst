@@ -63,4 +63,4 @@ Let's get the path to the Valohai outputs folder from the environment variable `
 
 .. include:: ../_shared/_3-outputs-end.rst
 
-Next: `Use parameters </tutorials/leaning-paths/fundamentals/python/4-parameters/>`_ 
+Next: `Use parameters </tutorials/learning-paths/fundamentals/python/4-parameters/>`_ 
