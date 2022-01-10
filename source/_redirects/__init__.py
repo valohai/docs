@@ -165,13 +165,6 @@ redirects = {
     '/howto/notebooks/popular-notebook-images/index.html': '/howto/docker/popular-notebook-images/index.html',
     '/topic-guides/docker-images/index.html': '/howto/docker/',
 
-    '/tutorials/learning-paths/fundamentals/2-get-started/index.html': '/tutorials/learning-paths/fundamentals/valohai-utils/2-get-started/index.html',
-    '/tutorials/learning-paths/fundamentals/3-outputs/index.html': '/tutorials/learning-paths/fundamentals/valohai-utils/3-outputs/index.html',
-    '/tutorials/learning-paths/fundamentals/4-parameters/index.html': '/tutorials/learning-paths/fundamentals/valohai-utils/4-parameters/index.html',
-    '/tutorials/learning-paths/fundamentals/5-inputs/index.html': '/tutorials/learning-paths/fundamentals/valohai-utils/5-inputs/index.html',
-    '/tutorials/learning-paths/fundamentals/6-metadata/index.html': '/tutorials/learning-paths/fundamentals/valohai-utils/6-metadata/index.html',
-    '/tutorials/learning-paths/fundamentals/7-recap/index.html': '/tutorials/learning-paths/fundamentals/valohai-utils/7-recap/index.html',
-
     '/howto/setup/aws_private_worker/index.html': '/howto/setup/aws_hybrid/index.html',
     '/howto/setup/gcp_private_worker/index.html': '/howto/setup/gcp_hybrid/index.html',
     '/howto/setup/azure_private_worker/index.html': '/howto/setup/azure_hybrid/index.html',
@@ -192,6 +185,15 @@ redirects = {
     '/howto/setup/gcp_private_worker/index.html': '/howto/setup/gcp/index.html',
     '/howto/setup/azure_private_worker/index.html': '/howto/setup/azure/index.html',
     '/howto/setup/aws_selfhosted_trial/index.html': '/howto/setup/self-hosted/index.html',
+
+    '/tutorials/learning-paths/fundamentals/valohai-utils/index.html': '/tutorials/learning-paths/fundamentals/1-install.html',
+    '/tutorials/learning-paths/fundamentals/valohai-utils/2-get-started.html': '/tutorials/learning-paths/fundamentals/2-get-started.html',
+    '/tutorials/learning-paths/fundamentals/valohai-utils/3-outputs.html': '/tutorials/learning-paths/fundamentals/3-outputs.html',
+    '/tutorials/learning-paths/fundamentals/valohai-utils/4-parameters.html': '/tutorials/learning-paths/fundamentals/4-parameters.html',
+    '/tutorials/learning-paths/fundamentals/valohai-utils/5-inputs.html': '/tutorials/learning-paths/fundamentals/5-inputs.html',
+    '/tutorials/learning-paths/fundamentals/valohai-utils/6-metadata.html': '/tutorials/learning-paths/fundamentals/6-metadata.html',
+    '/tutorials/learning-paths/fundamentals/valohai-utils/7-recap.html': '/tutorials/learning-paths/fundamentals/8-recap.html',
+
 }
 
 TEMPLATE = """

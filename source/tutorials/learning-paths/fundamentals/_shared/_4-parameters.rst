@@ -1,10 +1,4 @@
 
-.. admonition:: Note
-    :class: seealso
-
-    This tutorial is a part of our :ref:`learning-paths-fundamentals` series.
-..
-
 This section will show you how to use parameters in Valohai. Defining parameters will allow you to easily rerun your executions and experiment with a different set of values.
 
 In this section you will learn:
