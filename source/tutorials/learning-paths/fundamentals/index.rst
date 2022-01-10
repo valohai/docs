@@ -25,6 +25,8 @@ Valohai is completely language and framework agnostic. This quickstart is availa
 
 .. toctree::
     :titlesonly:
+    :maxdepth: 1
+    :hidden:
 
     1-install
     2-get-started
@@ -34,3 +36,4 @@ Valohai is completely language and framework agnostic. This quickstart is availa
     6-metadata
     7-yaml
     8-recap
+

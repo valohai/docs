@@ -4,11 +4,13 @@
 Collect and view metrics
 ########################
 
-.. include:: _shared/_6-metadata.rst
+.. include:: _shared/_intro.rst
 
 .. raw:: html
 
     <div style="position: relative; padding-bottom: 52.785923753665685%; height: 0;"><iframe src="https://www.loom.com/embed/3d85b6d6128c40ef9d8b03fe73e48705" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
+.. include:: _shared/_6-metadata.rst
 
 Update **train.py** to add metadata logging:
 

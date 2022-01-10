@@ -4,11 +4,15 @@
 Download input data
 ###################
 
-.. include:: _shared/_5-inputs.rst
+.. include:: _shared/_intro.rst
 
 .. raw:: html
 
     <div style="position: relative; padding-bottom: 52.7086383601757%; height: 0;"><iframe src="https://www.loom.com/embed/7fe4a2d1709841b9bc5e7d9a8a348f13" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
+
+.. include:: _shared/_5-inputs.rst
+
 
 Let's start by defining the inputs for our ``train-model`` step.
 

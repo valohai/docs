@@ -5,6 +5,8 @@
 Upload output data
 ####################
 
+.. include:: ../_shared/_intro.rst
+
 .. include:: ../_shared/_3-outputs.rst
 
 Let's get the path to the Valohai outputs folder from the environment variable ``VH_OUTPUTS_DIR``` and update the ``save_path`` to save our model in that folder.
@@ -60,3 +62,5 @@ Let's get the path to the Valohai outputs folder from the environment variable `
 ..
 
 .. include:: ../_shared/_3-outputs-end.rst
+
+Next: `Use parameters </tutorials/leaning-paths/fundamentals/python/4-parameters/>`_ 

@@ -4,6 +4,8 @@
 Define your steps in Python
 ###########################
 
+.. include:: _shared/_intro.rst
+
 .. raw:: html
 
     <div style="position: relative; padding-bottom: 52.7086383601757%; height: 0;"><iframe src="https://www.loom.com/embed/65d18d5a4b5f42f49bff61f54d497ffa" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>

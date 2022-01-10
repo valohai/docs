@@ -4,7 +4,7 @@
 :orphan:
 
 Python
-#######################
+^^^^^^^
 
 This learning path will show you how to get started with Valohai and Python, without using the ``valohai-utils`` helper library.
 

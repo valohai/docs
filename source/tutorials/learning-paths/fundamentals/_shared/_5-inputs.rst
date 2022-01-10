@@ -1,10 +1,4 @@
 
-.. admonition:: Note
-    :class: seealso
-
-    This tutorial is a part of our :ref:`learning-paths-fundamentals` series.
-..
-
 By defining inputs you can easily download data from a public address or your private cloud storage. 
 
 In this section you will learn:

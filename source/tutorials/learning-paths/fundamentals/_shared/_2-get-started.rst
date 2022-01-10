@@ -1,10 +1,4 @@
 
-.. admonition:: Note
-    :class: seealso
-
-    This tutorial is a part of our :ref:`learning-paths-fundamentals` series.
-..
-
 In this section you will learn how to
 
 - Import Valohai in your Python scripts
