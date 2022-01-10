@@ -94,4 +94,4 @@ Run in Valohai
 
 .. include:: ../_shared/_5-inputs-end.rst
 
-Next: `Collect and view metrics </tutorials/leaning-paths/fundamentals/python/6-metadata/>`_ 
+Next: `Collect and view metrics </tutorials/learning-paths/fundamentals/python/6-metadata/>`_ 

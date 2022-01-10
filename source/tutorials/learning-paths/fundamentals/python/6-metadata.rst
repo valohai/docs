@@ -81,4 +81,4 @@ Update **train.py** to add metadata logging:
 
 .. include:: ../_shared/_6-metadata-end.rst
 
-Next: `Recap </tutorials/leaning-paths/fundamentals/python/7-recap/>`_ 
+Next: `Recap </tutorials/learning-paths/fundamentals/python/7-recap/>`_ 

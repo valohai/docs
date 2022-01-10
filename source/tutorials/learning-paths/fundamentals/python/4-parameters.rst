@@ -104,4 +104,4 @@ Update your :ref:`yaml` with ``vh yaml step``. This will generate a ``parameters
 
 .. include:: ../_shared/_4-parameters-end.rst
 
-Next: `Download input data </tutorials/leaning-paths/fundamentals/python/5-inputs/>`_ 
+Next: `Download input data </tutorials/learning-paths/fundamentals/python/5-inputs/>`_ 
