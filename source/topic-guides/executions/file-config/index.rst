@@ -33,34 +33,34 @@ over parsing command-line arguments.
 
 .. code-block:: json
 
-    {
-        "valohai.commit-identifier": "<commit-id>",
-        "valohai.creator-id": <creator-id>,
-        "valohai.creator-name": "<creator-username>",
-        "valohai.environment-id": "<environmet-id>",
-        "valohai.environment-name": "<environment-name>",
-        "valohai.environment-slug": "<environment-slug>",
-        "valohai.execution-counter": <execution-counter>,
-        "valohai.execution-ctime": "<execution-ctime>",
-        "valohai.execution-duration": <execution-duration>,
-        "valohai.execution-id": "<execution-id>",
-        "valohai.execution-image": "<execution-image>",
-        "valohai.execution-qtime": <execution-queue-time>,
-        "valohai.execution-status": "created",
-        "valohai.execution-step": "<step-name>",
-        "valohai.execution-tags": [],
-        "valohai.execution-title": None,
-        "valohai.pipeline-counter": <pipeline-counter>,
-        "valohai.pipeline-id": "<pipeline-id>",
-        "valohai.pipeline-node-id": "<pipeline-node-id>",
-        "valohai.pipeline-tags": [],
-        "valohai.pipeline-title": "<pipeline-name>",
-        "valohai.project-id": "<project-id>",
-        "valohai.project-name": "<project-owner/project-name>",
-        "valohai.task-counter": <task-counter>,
-        "valohai.task-id": "<task-id>
+  {
+      "valohai.commit-identifier": "<commit-id>",
+      "valohai.creator-id": "<creator-id>",
+      "valohai.creator-name": "<creator-username>",
+      "valohai.environment-id": "<environmet-id>",
+      "valohai.environment-name": "<environment-name>",
+      "valohai.environment-slug": "<environment-slug>",
+      "valohai.execution-counter": "<execution-counter>",
+      "valohai.execution-ctime": "<execution-ctime>",
+      "valohai.execution-duration": "<execution-duration>",
+      "valohai.execution-id": "<execution-id>",
+      "valohai.execution-image": "<execution-image>",
+      "valohai.execution-qtime": "<execution-queue-time>",
+      "valohai.execution-status": "created",
+      "valohai.execution-step": "<step-name>",
+      "valohai.execution-tags": [],
+      "valohai.execution-title": null,
+      "valohai.pipeline-counter": "<pipeline-counter>",
+      "valohai.pipeline-id": "<pipeline-id>",
+      "valohai.pipeline-node-id": "<pipeline-node-id>",
+      "valohai.pipeline-tags": [],
+      "valohai.pipeline-title": "<pipeline-name>",
+      "valohai.project-id": "<project-id>",
+      "valohai.project-name": "<project-owner/project-name>",
+      "valohai.task-counter": "<task-counter>",
+      "valohai.task-id": "<task-id>"
 
-    }
+  }
 
 ``/valohai/config/execution.yaml``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
