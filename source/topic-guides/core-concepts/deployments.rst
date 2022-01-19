@@ -23,10 +23,10 @@ After you've specified how your model is served using your project and :doc:`the
 
     To learn more about batch inference:
 
-    * :doc:`Batch inference on CSVs </tutorials/quickstart/batch-inference/csv-batch-inference>`
-    * :doc:`Batch inference on images</tutorials/quickstart/batch-inference/image-batch-inference>`
+    * :doc:`Batch inference on CSVs </tutorials/quickstart/deployments/batch-inference/csv-batch-inference>`
+    * :doc:`Batch inference on images</tutorials/quickstart/deployments/batch-inference/image-batch-inference>`
 
-If you want to dive straight into deploying your first HTTP endpoint, check out :doc:`your tutorial how to deploy a model for online inference </tutorials/quickstart/quickstart-deployments/>`
+If you want to dive straight into deploying your first HTTP endpoint, check out :doc:`your tutorial how to deploy a model for online inference </tutorials/quickstart/deployments/quickstart-deployments/>`
 
 Deployment targets
 -----------------------

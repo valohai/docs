@@ -194,6 +194,10 @@ redirects = {
     '/tutorials/learning-paths/fundamentals/valohai-utils/6-metadata.html': '/tutorials/learning-paths/fundamentals/6-metadata.html',
     '/tutorials/learning-paths/fundamentals/valohai-utils/7-recap.html': '/tutorials/learning-paths/fundamentals/8-recap.html',
 
+    '/tutorials/quickstart/batch-inference/csv-batch-inference/index.html': '/tutorials/quickstart/deployments/batch-inference/csv-batch-inference/index.html',
+    '/tutorials/quickstart/batch-inference/image-batch-inference/index.html': '/tutorials/quickstart/deployments/batch-inference/image-batch-inference/index.html',
+    '/tutorials/quickstart/batch-inference/quickstart-deployments/index.html': '/tutorials/quickstart/deployments/quickstart-deployments/index.html',
+
 }
 
 TEMPLATE = """
