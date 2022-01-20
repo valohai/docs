@@ -12,7 +12,8 @@ In this section you will
 Previously, you defined the pipeline manually in your ``valohai.yaml``. Alternatively, you can define pipelines using the :ref:`valohai-utils` helper library.
 Start by creating a new file with the following code in it. 
 
-.. note::
+.. admonition:: Create a separate Python script for your pipeline definition
+    :class: tip
 
     When creating the ``valohai.yaml`` and updating the step information with ``vh yaml step <filename>`` the code in the file is only parsed and not executed. For ``vh yaml pipeline <filename>`` the ``main`` method defined below is actually run.
     This means that you should have all the libraries that will be imported installed. Thus, it might make more sense to have the pipeline code in a separate file.  
@@ -70,7 +71,16 @@ When creating the pipeline manually, you used the `shorthand syntax </reference-
 
 ..
 
-If you want to run your pipeline from the CLI, you should first update your git repository.  
+You can now test this pipeline by running an ``--adhoc`` pipeline from the command line. 
+
+.. code-block:: bash
+
+    vh pipeline run utilspipeline --adhoc
+
+..
+
+
+If you want to run the pipeline in the Valohai UI, remember to push the changes to your Git repository. 
 
 .. code-block::
 
@@ -80,14 +90,15 @@ If you want to run your pipeline from the CLI, you should first update your git 
 
 ..
 
-Next, fetch the changes to the Valohai project and run the pipeline. If you now go to the UI, you should see the pipeline there under your project.
+Instead of the UI, you can of course run the the pipeline from the CLI. Remember to fetch the changes to your Valohai project either by running the ``fetch`` command on the CLI or pushing the button in the UI. 
 
 .. code-block::
 
     vh project fetch
-    vh pipeline run mypipeline
+    vh pipeline run utilspipeline
 
 ..
+
 
 .. note::
 

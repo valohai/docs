@@ -41,21 +41,12 @@ Create **two nodes:**
 
 
 Create **one edge** to connect the nodes:
-    * ``preprocessed_mnist.npz`` from ``preprocess-dataset``'s outputs will be passed into the input called ``dataset`` in the ``train-model`` node.
+    * ``preprocessed_mnist.npz`` from ``preprocess-dataset``'s outputs will be passed into the input called ``dataset`` in the ``train`` node.
 
 
 .. image:: /_images/pipeline-nodes-edges.png
     :alt: Pipelines consist of nodes connected by edges.
 
-Finally, remember to push a new version of ``valohai.yaml`` to your code repository.
-
-.. code-block:: bash
-
-    git add valohai.yaml
-    git commit -m "Added pipeline definition"
-    git push
-
-..
 
 You can now continue to the next part of the learning path. Optionally, you can keep reading to learn more about the different edge types.
 

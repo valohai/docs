@@ -7,18 +7,15 @@
 Valohai pipelines
 ###################
 
-.. admonition:: Prerequirements
-    :class: attention
+.. include:: _intro-pl.rst
 
-    * :ref:`repository` before using pipelines.
-    * Basic knowledge on Valohai fundamentals.
 
 This learning path is designed for those who have already finished the :ref:`learning-paths-fundamentals` and are familiar with the core concepts.  
 
 Learning objectives:
 
 - What is a pipeline
-- Defining pipeline in the valohai.yaml
+- Defining pipeline in the ``valohai.yaml``
 - Running pipelines
 - Creating pipelines with ``valohai-utils``
 

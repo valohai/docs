@@ -69,4 +69,38 @@ Currently, the availables option for ``then`` are:
 Pipeline triggers
 -------------------
 
-Triggers page goes here
+Valohai triggers allow you to launch a copy of an existing pipeline on a time-based trigger. For example, running a pipeline weekly on Mondays at 09:00.
+
+* Go to project settings
+* Navigate to the Triggers tab
+* Set your trigger title (e.g. Daily retraining, every 4 hours)
+* Select Scheduled (Cron) as the condition, as click Add
+* Open the condition and set the schedule you want.
+   * You can either use one of the options or select Custom
+   * For example a custom value: 0 0/4 * * 1-7 would run the pipeline every 4 hours on every day of the week.
+* On the Actions column select the right action and click Add
+   * Copy Pipeline reruns always the same pipeline version
+      * Select the Source Pipeline that you want to run
+   * Run Pipeline runs a pipeline with whatever is the newest version fetched to Valohai
+   * Source Commit Reference, could be for example main to always run with the latest pipeline from your main branch
+   * Pipeline Name is the name of the pipeline in your valohai.yaml
+   * Pipeline Title is the title used in the UI and API results
+* Click on Create trigger
+
+.. warning::
+
+    Note that all times are expressed in UTC time.
+
+..
+
+.. image:: /_images/pipeline-trigger.png
+    :alt: Create a pipeline trigger
+
+..
+
+.. admonition:: Name your pipelines
+    :class: tip
+
+    Open the Pipelines tab and name your pipeline by editing the pipeline title. This will make it easier to find the right pipeline when setting up the triggers.
+
+..

@@ -8,14 +8,76 @@ Running a pipeline
 
 In this section you will:
 
-- Run a pipeline in Valohai.
+- Run pipelines from the command line.
+- Run pipelines in the Valohai UI.
 - Reuse pipeline nodes.
-- Learn how to run a pipeline from the command line.
 
-Run a pipeline in Valohai
-----------------------------
 
-Before the proceeding with the next steps, make sure you have pushed the latest version of ``valohai.yaml`` to your code repository.
+Run an ``--adhoc`` pipeline from the command line
+--------------------------------------------------
+
+Before running your pipeline, make sure to login to Valohai and connect the working directory to a Valohai project. 
+
+.. code-block:: bash
+
+    vh login
+    vh project status
+
+    # Link to and existing project
+    vh project link
+
+    # Create a new project
+    vh project create
+
+..
+
+Next, you can start your pipeline by running the following command.  
+
+.. code-block:: bash
+
+    vh pipeline run preprocess-and-train --adhoc
+
+..
+
+If you now go to the Valohai UI you can see the whole pipeline under the Pipeline tab and the related executions under the Executions tab. 
+
+
+Run a pipeline after pushing to Git
+------------------------------------
+
+If you have connected your project to a Git repository, you can also run the pipeline defined in your latest commit from the command line. 
+
+Start by pushing the sample code, ``valohai.yaml`` and the ``requirements.txt`` to your code repository.
+
+.. code-block:: bash
+
+    git add preprocess_dataset.py train_model.py valohai.yaml requirement.txt
+    git commit -m "Add pipeline definition"
+    git push
+
+..
+
+Before running the code, you will need to fetch the code to Valohai. You can do it either from the command line or by pushing the button in the UI.
+
+.. code-block:: bash
+
+    vh project fetch
+    vh pipeline run preprocess-and-train
+
+..
+
+Run a pipeline in the Valohai UI
+---------------------------------
+
+Before the proceeding with the next steps, make sure you have pushed the latest version of ``valohai.yaml`` to your code repository. 
+
+.. code-block:: bash
+
+    git add preprocess_dataset.py train_model.py valohai.yaml requirement.txt
+    git commit -m "Add pipeline definition"
+    git push
+
+..
 
 * Login to `app.valohai.com <https://app.valohai.com>`_
 * Open your project
@@ -50,23 +112,3 @@ For example, for the sample pipeline in this tutorial, might want to change a pa
 .. image:: /_images/reuse-nodes.png
     :alt: Reusing nodes in pipelines.
 
-Run a pipeline from the command line
---------------------------------------
-
-After pushing to Git, you can run the latest version of the pipeline also from the CLI.
-
-.. code-block:: bash
-
-    vh project fetch
-    vh pipeline run preprocess-and-train
-
-..
-
-If you want to run a the latest version of the pipeline without pushing to Git, you can add the ``--adhoc`` flag to the previous command.
-Similarly to single executions, this allows you to also use local file as they will be uploaded to the worker instance.
-
-.. code-block:: bash
-
-    vh pipeline run preprocess-and-train --adhoc
-
-..

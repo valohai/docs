@@ -20,6 +20,12 @@ What is a pipeline?
 
 Pipelines automate your machine learning operations on Valohai ecosystem. They are series of executions, Tasks and deployments.
 
+Examples of pipelines could be:
+
+* A pipeline that runs every Monday at 09:00 to fetch data from a database, and if there are over 1000 new records it will retrain the model, evaluate its performance, and update the ``latest-model`` `alias </howto/data/datum-alias>`_ to the newly trained model.
+* A pipeline that trains 300 models in parallel and compares if any of those models is better than the existing model.
+* A pipeline that trains a new model and deploys a new version of your REST API with the new model.
+
 Valohai pipelines consist of ``nodes`` and ``edges``. 
 
 .. list-table::
@@ -29,7 +35,7 @@ Valohai pipelines consist of ``nodes`` and ``edges``.
    * - ``nodes``
      - A node can be type of a execution, Task or a deployment. It's a "single step" in the pipeline.
    * - ``edges``
-     - Edges define how flows data from one node to another. For example: move the file called ``preprocessed_mnist.npz`` from ``preprocess`` node's outputs to ``train`` node as the input called ``dataset``
+     - Edges define how data flows from one node to another. For example: move the file called ``preprocessed_mnist.npz`` from ``preprocess`` node's outputs to ``train`` node as the input called ``dataset``
 
 How to define nodes and edges in ``valohai.yaml`` will be covered in more detail in this tutorial. You can read more about pipelines `here </topic-guides/core-concepts/pipelines>`_. 
 
@@ -134,23 +140,23 @@ Start by creating these files in your current repository.
     model.save(output_path)
 ..
 
+Remember to make sure that all the libraries are installed by adding them into the ``requirements.txt`` or by having the respective ``pip install`` commands in the ``valohai.yaml``. 
 
 
-Add these steps to your ``valohai.yaml`` manually or by running the following command on the CLI:
+Add two steps steps, ``preprocess-dataset`` and ``train-model``, to your ``valohai.yaml`` manually or by by using ``valohai-utils``. 
 
 .. code-block:: bash
 
+    vh login
+    vh project status
+
+    # Link to and existing project
+    vh project link
+
+    # Or create a new project
+    vh project create
+
+    # Add the steps to valohai.yaml
     vh yaml step preprocess_dataset.py
     vh yaml step train_model.py
 
-Remember to make sure that all the libraries are installed by adding them into the ``requirements.txt`` or by having the respective ``pip install`` commands in the ``valohai.yaml``. 
-
-Finally, remember to push the files to the Git repository connected to the Valohai project.
-
-.. code-block:: bash
-
-    git add valohai.yaml preprocess_dataset.py train_model.py
-    git commit -m "Added sample files"
-    git push
-
-..
