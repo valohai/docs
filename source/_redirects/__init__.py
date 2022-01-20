@@ -194,6 +194,14 @@ redirects = {
     '/tutorials/learning-paths/fundamentals/valohai-utils/6-metadata.html': '/tutorials/learning-paths/fundamentals/6-metadata.html',
     '/tutorials/learning-paths/fundamentals/valohai-utils/7-recap.html': '/tutorials/learning-paths/fundamentals/8-recap.html',
 
+    '/tutorials/quickstart/quickstart-pipeline.html': '/tutorials/learning-paths/pipelines.html',
+    '/tutorials/quickstart/quickstart-pipeline.html#define-your-pipeline-in-yaml': '/tutorials/learning-paths/pipelines/2-pipeline-yaml.html#add-a-pipeline-to-valohai-yaml',
+    '/tutorials/quickstart/quickstart-pipeline.html#launch-a-pipeline-in-valohai': '/tutorials/learning-paths/pipelines/3-run-pipeline.html',
+    '/tutorials/quickstart/quickstart-pipeline.html#pipeline-with-multiple-nodes': '/tutorials/learning-paths/pipelines/5-advanced-pipeline.html#pipeline-with-multiple-nodes',
+    '/tutorials/quickstart/quickstart-pipeline.html#passing-parameters-in-a-pipeline': '/tutorials/learning-paths/pipelines/2-pipeline-yaml.html#pipeline-edges',
+    '/tutorials/quickstart/quickstart-pipeline.html#pipeline-conditions': '/tutorials/learning-paths/pipelines/5-advanced-pipeline.html#pipeline-conditions',
+    '/tutorials/quickstart/quickstart-pipeline.html#reusing-nodes-in-a-pipeline': '/tutorials/learning-paths/pipelines/3-run-pipeline.html#reuse-pipeline-nodes',
+
 }
 
 TEMPLATE = """
