@@ -58,21 +58,21 @@ Create **one edge** to connect the nodes:
     :emphasize-lines: 30,33,36,38,39,40
 
     - step:
-      name: train-model
-      image: tensorflow/tensorflow:2.4.1
-      command:
-        - pip install -r requirements.txt
-        - python ./train.py {parameters}
-      parameters:
-        - name: epoch
-          default: 5
-          multiple-separator: ','
-          optional: false
-          type: integer
-      inputs:
-        - name: mnist
-          default: s3://onboard-sample/tf-sample/mnist.npz
-          optional: false
+        name: train-model
+        image: tensorflow/tensorflow:2.4.1
+        command:
+          - pip install -r requirements.txt
+          - python ./train.py {parameters}
+        parameters:
+          - name: epoch
+            default: 5
+            multiple-separator: ','
+            optional: false
+            type: integer
+        inputs:
+          - name: mnist
+            default: s3://onboard-sample/tf-sample/mnist.npz
+            optional: false
 
     - endpoint:
         name: digits

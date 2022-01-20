@@ -4,7 +4,11 @@
 Collect metrics
 #############################
 
+.. include:: ../_shared/_intro.rst
+
 .. include:: ../_shared/_6-metadata.rst
+
+Update **train.py** to add metadata logging:
 
 * import json
 * Create a new method ``logMetadata`` that will print as key metrics as JSON
@@ -76,3 +80,5 @@ Collect metrics
 ..
 
 .. include:: ../_shared/_6-metadata-end.rst
+
+Next: `Recap </tutorials/learning-paths/fundamentals/python/7-recap/>`_ 

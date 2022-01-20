@@ -34,23 +34,6 @@ Create registry credentials for Valohai
 
     Create and use `service principal credentials <https://docs.microsoft.com/en-us/azure/container-registry/container-registry-auth-service-principal>`_
 
-.. tab:: GCP
-
-    Container Registry uses Cloud Storage buckets as their storage for your images.
-    You control access to your images by granting appropriate Cloud Storage permissions to identities.
-
-    1. Create a new service account under your Google Cloud project that contains the registry
-    2. Add ``Service Account Token Creator`` role so it can create temporary tokens for itself
-    3. Allow the service account to access the registry:
-        * Go to https://console.cloud.google.com/storage/browser (Cloud Storage listing)
-        * Find and click the bucket that hosts your Container Registry images, it's in format ``<OPTIONAL_REGION>.artifacts.<PROJECT_ID>.appspot.com``
-        * Click *Permissions*
-        * Click *Add members*
-        * Search for the service account using the full ID (the one that looks like an email)
-        * Add role ``Storage Object Viewer`` if pulling or ``Storage Admin`` if pulling and pushing
-        * Click *Save*
-    4. Download the service account JSON to use in Valohai
-
 .. tab:: AWS
 
     1. Login to your AWS Management Console
@@ -94,6 +77,31 @@ Create registry credentials for Valohai
         ..
     4. Attach the new policy to the user and create the user.
     5. Make note of the IAM access key and secret to use in Valohai
+
+.. tab:: GCP (Container Registry)
+
+    Container Registry uses Cloud Storage buckets as their storage for your images.
+    You control access to your images by granting appropriate Cloud Storage permissions to identities.
+
+    1. Create a new service account under your Google Cloud project that contains the registry
+    2. Add ``Service Account Token Creator`` role so it can create temporary tokens for itself
+    3. Allow the service account to access the registry:
+        * Go to https://console.cloud.google.com/storage/browser (Cloud Storage listing)
+        * Find and click the bucket that hosts your Container Registry images, it's in format ``<OPTIONAL_REGION>.artifacts.<PROJECT_ID>.appspot.com``
+        * Click *Permissions*
+        * Click *Add members*
+        * Search for the service account using the full ID (the one that looks like an email)
+        * Add role ``Storage Object Viewer`` if pulling or ``Storage Admin`` if pulling and pushing
+        * Click *Save*
+    4. Download the service account JSON to use in Valohai
+
+.. tab:: GCP (Artifact Registry)
+
+    1. Create a new service account under your Google Cloud project that contains the registry
+    2. Add ``Service Account Token Creator`` role so it can create temporary tokens for itself
+    3. Add ``Artifact Registry Reader``` role so it can download Docker images from your private repository
+    4. Download the service account JSON to use in Valohai
+
 
 Add credentials to Valohai
 ------------------------------------

@@ -4,6 +4,8 @@
 Getting started
 ####################
 
+.. include:: ../_shared/_intro.rst
+
 .. include:: ../_shared/_2-get-started.rst
 
 Define a Valohai configuration file
@@ -64,3 +66,5 @@ Finally, we run the following commands in the the command line, on your own comp
 ..
         
 .. include:: ../_shared/_2-get-started-end.rst
+
+Next: `Upload output data </tutorials/learning-paths/fundamentals/python/3-outputs/>`_ 

@@ -1,8 +1,7 @@
-:orphan:
-
 .. meta::
     :description: How to expose the Kubernetes ingress resource endpoints over HTTPS
 
+.. _setup-eks-https:
 
 Setting up HTTPS on a deployment cluster
 ######################################################
@@ -67,11 +66,11 @@ After a domain points to the cluster, we set up the certificate rotation with ce
     helm repo add jetstack https://charts.jetstack.io
     helm repo update
     helm install \
-    cert-manager \
-    jetstack/cert-manager \
-    --namespace cert-manager \
-    --version v1.3.1 \
-    --set installCRDs=true
+        cert-manager \
+        jetstack/cert-manager \
+        --namespace cert-manager \
+        --version v1.3.1 \
+        --set installCRDs=true
 
 ..
 
@@ -92,17 +91,17 @@ Configure Let's Encrypt to update credentials:
     apiVersion: cert-manager.io/v1
     kind: ClusterIssuer
     metadata:
-    name: letsencrypt-prod
+        name: letsencrypt-prod
     spec:
-    acme:
-    server: https://acme-v02.api.letsencrypt.org/directory
-    email: <CUSTOMER_CLOUD_ADMIN_EMAIL_HERE>
-    privateKeySecretRef:
-        name: letsencrypt-prod-acme-account-key
-    solvers:
-    - http01:
-        ingress:
-            class:  nginx
+        acme:
+            server: https://acme-v02.api.letsencrypt.org/directory
+            email: <CUSTOMER_CLOUD_ADMIN_EMAIL_HERE>
+            privateKeySecretRef:
+                name: letsencrypt-prod-acme-account-key
+            solvers:
+            - http01:
+                ingress:
+                    class: nginx
     EOF
     vim letsencrypt-prod.yaml
     kubectl apply -f letsencrypt-prod.yaml
@@ -127,17 +126,17 @@ Finally, create a certificate that we'll use:
     apiVersion: cert-manager.io/v1
     kind: Certificate
     metadata:
-    name: master-cert
-    namespace: default
+        name: master-cert
+        namespace: default
     spec:
-    secretName: master-cert
-    dnsNames:
-    - <valohai-deployment.company.com>  !!! CHANGE TO THE ACTUAL DOMAIN(s) !!!
-    issuerRef:
-        name: letsencrypt-prod
-        kind: ClusterIssuer
+        secretName: master-cert
+        dnsNames:
+        - valohai.dev.deepsee.ai
+        issuerRef:
+            name: letsencrypt-prod
+            kind: ClusterIssuer
     EOF
-    vim master-cert.yaml 
+    vim master-cert.yaml
     kubectl apply -f master-cert.yaml
     # kubectl -n default delete certificate/master-cert
 

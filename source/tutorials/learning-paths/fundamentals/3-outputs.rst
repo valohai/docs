@@ -5,12 +5,21 @@
 Upload output data
 ##################
 
-.. include:: ../_shared/_3-outputs.rst
+.. include:: _shared/_intro.rst
+
+.. raw:: html
+
+    <div style="position: relative; padding-bottom: 53.01914580265096%; height: 0;"><iframe src="https://www.loom.com/embed/c9b94a923ce045729d1d33bd28f42fe3" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
+
+.. include:: _shared/_3-outputs.rst
+
 
 Let's update the ``output_path`` to a Valohai output path in our sample script file.
+We'll use valohai-utils to define the output directory, so make sure you've imported valohai to your project.
 
 .. code-block:: python
-    :emphasize-lines: 34
+    :emphasize-lines: 3, 34
     :linenos:
 
     import numpy as np
@@ -51,4 +60,18 @@ Let's update the ``output_path`` to a Valohai output path in our sample script f
 
 ..
 
-.. include:: ../_shared/_3-outputs-end.rst
+Now create a new file ``requirements.txt`` and add there valohai-utils.
+
+Finally, update your ``valohai.yaml`` to first install the requirements and then run your Python script.
+
+.. code-block:: yaml
+
+    - step:
+      name: train-model
+      command:
+        - pip install -r requirements.txt
+        - python train.py
+      image: tensorflow/tensorflow:2.6.0
+
+
+.. include:: _shared/_3-outputs-end.rst

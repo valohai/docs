@@ -52,6 +52,7 @@ html_logo = 'favicon.ico'
 html_theme = 'furo'
 html_theme_path = ['_themes']
 html_static_path = ['_static']
+html_show_sourcelink = False
 html_theme_options = {
 
     "light_css_variables": {
@@ -66,6 +67,7 @@ html_theme_options = {
 html_sidebars = {}
 html_extra_path = ['robots.txt']
 intersphinx_mapping = {'https://docs.python.org/3/': None}
+html_codeblock_linenos_style = 'table'
 
 # Replace the lexer with ours
 from sphinx.highlighting import lexers

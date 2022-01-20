@@ -4,6 +4,8 @@
 Use parameters
 ###############
 
+.. include:: ../_shared/_intro.rst
+
 .. include:: ../_shared/_4-parameters.rst
 
 Update **train.py** to parameterize ``epochs``.
@@ -101,3 +103,5 @@ Run in Valohai
 Update your :ref:`yaml` with ``vh yaml step``. This will generate a ``parameters`` section in your step.
 
 .. include:: ../_shared/_4-parameters-end.rst
+
+Next: `Download input data </tutorials/learning-paths/fundamentals/python/5-inputs/>`_ 

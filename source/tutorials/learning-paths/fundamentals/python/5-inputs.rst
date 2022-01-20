@@ -4,6 +4,8 @@
 Download input data
 #######################
 
+.. include:: ../_shared/_intro.rst
+
 .. include:: ../_shared/_5-inputs.rst
 
 Let's start by defining an input in our ``valohai.yaml``. Uncomment the sample input and update the name and default address.
@@ -91,3 +93,5 @@ Run in Valohai
 ------------------------
 
 .. include:: ../_shared/_5-inputs-end.rst
+
+Next: `Collect and view metrics </tutorials/learning-paths/fundamentals/python/6-metadata/>`_ 

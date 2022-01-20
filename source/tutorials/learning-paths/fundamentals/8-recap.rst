@@ -4,4 +4,4 @@
 Recap
 #############################
 
-.. include:: ../_shared/_7-recap.rst
+.. include:: _shared/_7-recap.rst
