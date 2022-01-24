@@ -1,5 +1,3 @@
-:orphan:
-
 .. meta::
     :description: How to set up your EKS cluster for Valohai deployments
 
@@ -185,6 +183,11 @@ Create the files below to enable the ``valohai-eks-user`` to deploy from Valohai
 
 Create a Kubernetes user and map it to the IAM user:
 
+.. admonition:: Account ID
+    :class: warning
+
+    Make sure you replace the ``<ACCOUNT-ID>`` with your own AWS Account's ID.
+
 .. code-block:: bash
 
     cat <<EOF > aws-auth-patch.yaml
@@ -362,19 +365,31 @@ Install ``cluster-autoscaler``
 
     # open in text editor and...
     vim cluster-autoscaler-autodiscover.yaml
-    # 1. Remove the "kind: ServiceAccount" section as we created that already with eksctl
-    # 2. Find the "kind: Deployment" and...
-    # 2a. Replace <YOUR CLUSTER NAME> with the cluster name.
-    # 2b. Add the following `env` definition right below it, on the same level as `command`
+
+
+1. Remove the "kind: ServiceAccount" section as we created that already with eksctl
+2. Find the "kind: Deployment" and...
+   
+    * Replace <YOUR CLUSTER NAME> with the cluster name.
+    * Add the following `env` definition right below it, on the same level as `command`
+
+        .. code-block:: bash
+
             env:
                 - name: AWS_REGION
-                value: eu-west-1  # or what region the cluster is in
+                  value: eu-west-1  # or what region the cluster is in
 
-    # then apply these changes
-    kubectl apply -f cluster-autoscaler-autodiscover.yaml
-    kubectl get pods -n kube-system
-    # cluster-autoscaler-7dd5d74dc5-qs8gj   1/1     Running
-    kubectl logs -n kube-system cluster-autoscaler-7dd5d74dc5-qs8gj -f
+3. Then apply these changes
+
+    .. code-block::
+        
+        kubectl apply -f cluster-autoscaler-autodiscover.yaml
+        kubectl get pods -n kube-system
+        # cluster-autoscaler-7dd5d74dc5-qs8gj   1/1     Running
+        kubectl logs -n kube-system cluster-autoscaler-7dd5d74dc5-qs8gj -f
+
+
+.. include:: _shared/_nginx.rst
 
 Send details to Valohai
 --------------------------
@@ -388,5 +403,20 @@ Send Valohai engineers:
     * API server endpoint
     * Cluster ARN
     * Certificate authority
+    * External IP of the Load Balancer tied to the NGINX Ingress Controller (run ``kubectl -n ingress-nginx get service/ingress-nginx-controller``)
 * ECR name - Copy the URL you see when creating a new repository in your ECR (for example
   accountid.dkr.ecr.eu-west-1.amazonaws.com)
+
+
+.. admonition:: Setting up HTTPS
+    :class: tip
+
+    We strongly recommend setting up HTTPS on your cluster.
+
+    :ref:`setup-eks-https`
+
+
+.. toctree::
+    :hidden:
+
+    https-cluster

@@ -14,6 +14,7 @@ Deploy to AWS
 
     manual
     faq
+    deployment/index
 
 .. include:: _intro.rst
 

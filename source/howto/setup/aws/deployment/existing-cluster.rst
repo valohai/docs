@@ -62,7 +62,9 @@ You cluster can be configured to serve only private deployment endpoints.
 
 .. warning:: 
 
-    Make sure your cluter's nodes can pull from the repository that Valohai is pushing images to.
+    Make sure your cluster's nodes can pull from the repository that Valohai is pushing images to.
+
+
 
 
 AWS - User Account

@@ -201,6 +201,9 @@ redirects = {
     '/tutorials/quickstart/quickstart-pipeline.html#passing-parameters-in-a-pipeline': '/tutorials/learning-paths/pipelines/2-pipeline-yaml.html#pipeline-edges',
     '/tutorials/quickstart/quickstart-pipeline.html#pipeline-conditions': '/tutorials/learning-paths/pipelines/5-advanced-pipeline.html#pipeline-conditions',
     '/tutorials/quickstart/quickstart-pipeline.html#reusing-nodes-in-a-pipeline': '/tutorials/learning-paths/pipelines/3-run-pipeline.html#reuse-pipeline-nodes',
+    '/tutorials/quickstart/batch-inference/csv-batch-inference/index.html': '/tutorials/quickstart/deployments/batch-inference/csv-batch-inference/index.html',
+    '/tutorials/quickstart/batch-inference/image-batch-inference/index.html': '/tutorials/quickstart/deployments/batch-inference/image-batch-inference/index.html',
+    '/tutorials/quickstart/batch-inference/quickstart-deployments/index.html': '/tutorials/quickstart/deployments/quickstart-deployments/index.html',
 
 }
 
