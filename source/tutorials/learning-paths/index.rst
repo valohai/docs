@@ -18,5 +18,6 @@ The language used in these tutorials is Python. If you plan to use some other la
     :titlesonly:
 
     fundamentals/index
+    pipelines/index
 
 ..
