@@ -6,8 +6,13 @@ Creating a pipeline with ``valohai-utils``
 
 .. include:: _intro-pl.rst
 
+.. raw:: html
+
+    <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/25c5e7e0aa584a108a65b4d755ed88aa" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
 In this section you will
- * Learn how to use ``valohai-utils`` helper library to build and update pipelines in ``valohai.yaml``.
+
+- Learn how to use ``valohai-utils`` helper library to build and update pipelines in ``valohai.yaml``.
 
 Previously, you defined the pipeline manually in your ``valohai.yaml``. Alternatively, you can define pipelines using the :ref:`valohai-utils` helper library.
 Start by creating a new file with the following code in it. 
