@@ -1,5 +1,5 @@
 .. meta::
-    :description: How to link a private Azure DevOps repository to a Valohai project using a read-only SSH deploy key. For this tutorial you will need a private GitHub repository that includes your machine learning code and Valohai YAML file.
+    :description: How to link a private Azure DevOps repository to a Valohai project using a read-only SSH deploy key. For this tutorial you will need a private Azure DevOps repository that includes your machine learning code and Valohai YAML file.
 
 .. _repository-azuredevops:
 
@@ -28,7 +28,7 @@ Use :code:`ssh-keygen` to create a new SSH key pair.
 
 This will generate two files:
 
-* :code:`my-project-deploy-key.pub` is the public key you add to GitHub.
+* :code:`my-project-deploy-key.pub` is the public key you add to Azure DevOps.
 * :code:`my-project-deploy-key` is the private key you add to Valohai.
 
 .. admonition:: Don't include the keys in your version control
@@ -60,7 +60,7 @@ To make sure you get the correct repository URL, open Azure DevOps in another ta
 
 Make sure you **Clone with SSH**. By default the `HTTPS` is selected so make sure you click the `SSH` button to get the right URL.
 
-Then copy the text field with :code:`git@github.com:<owner>/<repository>.git`
+Then copy the text field with :code:`git@ssh.dev.azure.com:v3/<owner>/<project>/<repository>`
 
 .. image:: azure-devops-choose-ssh.png
    :alt: Azure DevOps - where to find repository SSH URL
@@ -75,9 +75,9 @@ Copy and paste the contents of :code:`my-project-deploy-key` into the `SSH priva
    :alt: Valohai - repository configuration example
 
 
-After you click **Save**, Valohai links the GitHub repository to the project and automatically fetches your code.
+After you click **Save**, Valohai links the Azure DevOps repository to the project and automatically fetches your code.
 
-After you add new commits to your GitHub repository, remember to press the **Fetch repository** to update the code in Valohai.
+After you add new commits to your Azure Devops repository, remember to press the **Fetch repository** to update the code in Valohai.
 
 .. image:: /tutorials/valohai-key-5.png
    :alt: Valohai - highlighted Fetch repository button
