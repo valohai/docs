@@ -6,6 +6,11 @@ Getting started
 
 .. include:: _intro-pl.rst
 
+.. raw:: html
+    
+    <div style="position: relative; padding-bottom: 36.45083932853717%; margin-bottom: 20%; height: 0;"><iframe src="https://www.loom.com/embed/2aff28bfe38a43389fc820b328ee2c4c" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 150%;"></iframe></div>  
+
+
 In this section you will learn:
 
 - What is a pipeline?
@@ -25,6 +30,7 @@ Examples of pipelines could be:
 * A pipeline that runs every Monday at 09:00 to fetch data from a database, and if there are over 1000 new records it will retrain the model, evaluate its performance, and update the ``latest-model`` `alias </howto/data/datum-alias>`_ to the newly trained model.
 * A pipeline that trains 300 models in parallel and compares if any of those models is better than the existing model.
 * A pipeline that trains a new model and deploys a new version of your REST API with the new model.
+* A pipeline that extracts data from a database, executes a transformation process on the data, and finally loads the data to a data store.
 
 Valohai pipelines consist of ``nodes`` and ``edges``. 
 
