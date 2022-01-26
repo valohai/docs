@@ -14,6 +14,7 @@ You can easily connect all of your projects to either a public or a private Git-
     private-github-repository/index
     private-bitbucket-repository/index
     private-gitlab-repository/index
+    private-azure-devops-repository/index
     use-multiple-repositories-in-a-project/index
 
 ..
