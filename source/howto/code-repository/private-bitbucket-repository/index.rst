@@ -14,7 +14,8 @@ In this guide, we'll link a private Bitbucket repository to a Valohai project us
    * A private Bitbucket repository
    * A Valohai project
    * A tool that generates SSH keys. This guide uses ``ssh-keygen``
-
+   * You're familiar with `Git for Data Science: What every data scientist should know about Git <https://valohai.com/blog/git-for-data-science/>`_ 
+   * 
 ..
 
 Generate an SSH key pair

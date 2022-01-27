@@ -20,7 +20,7 @@ In this guide we will link a private GitHub repository to a Valohai project usin
    * A private GitHub repository
    * A Valohai project
    * A tool that generates SSH keys. This guide uses ``ssh-keygen``
-
+   * You're familiar with `Git for Data Science: What every data scientist should know about Git <https://valohai.com/blog/git-for-data-science/>`_ 
 ..
 
 Generate an SSH key pair
