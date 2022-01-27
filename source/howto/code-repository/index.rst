@@ -23,10 +23,8 @@ You can easily connect all of your projects to either a public or a private Git-
 
     Are you new to Git? Get started with these resources:
 
-    * `Videos to help you get started with Git <https://git-scm.com/videos>`_ 
-    * `Git Handbook by GitHub <https://guides.github.com/introduction/git-handbook/>`_ 
-    * `Learn Git with the Bitbucket Cloud <https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud>`_ 
-    * You can also get the entire `Pro Git <https://git-scm.com/book/en/v2>`_ book
+    * `Git for Data Science: What every data scientist should know about Git <https://valohai.com/blog/git-for-data-science/>`_ 
+    * `What every data scientist should know about Python dependencies <https://valohai.com/blog/dependency-management-for-data-science/>`_
 
 .. admonition:: --adhoc executions
     :class: tip

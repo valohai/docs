@@ -20,7 +20,9 @@ valohai-utils streamlines pipeline definition and writing Valohai-compatible cod
 
 .. seealso::
 
-    `Read more about valohai-utils </topic-guides/valohai-utils/>`_
+    * `Read more about valohai-utils </topic-guides/valohai-utils/>`_
+    * `Git for Data Science: What every data scientist should know about Git <https://valohai.com/blog/git-for-data-science/>`_ 
+    * `What every data scientist should know about Python dependencies <https://valohai.com/blog/dependency-management-for-data-science/>`_
 
 
 .. raw:: html
