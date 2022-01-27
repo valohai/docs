@@ -131,7 +131,7 @@ Finally, create a certificate that we'll use:
     spec:
         secretName: master-cert
         dnsNames:
-        - valohai.dev.deepsee.ai
+        - <your-dns-name>
         issuerRef:
             name: letsencrypt-prod
             kind: ClusterIssuer
