@@ -29,6 +29,10 @@ When using Valohai:
 * The machine learning jobs are performed on your own virtual machines.
 * Models are deployed to your own object stores and registries.
 
+.. raw:: html
+
+  <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/cd6daa60b60e45f1ba1b04e1d90d99de" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
 .. list-table::
    :widths: 20 25 55
    :header-rows: 1
