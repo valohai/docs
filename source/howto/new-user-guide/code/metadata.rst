@@ -14,6 +14,11 @@ Collect metadata
     This how-to is a part of our :ref:`new-user-guide` series.
 
 
+.. raw:: html
+
+    <div style="position: relative; padding-bottom: 49.86149584487535%; height: 0;"><iframe src="https://www.loom.com/embed/ab2385e5b7a9408bb8527849e48d4645" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
+
 .. include:: /_partials/_recap-metadata.rst
 
 .. tab:: valohai-utils (Python)

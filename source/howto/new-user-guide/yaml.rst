@@ -6,6 +6,11 @@
 Add a ``valohai.yaml`` configuration file
 ##########################################
 
+.. raw:: html
+
+    <div style="position: relative; padding-bottom: 53.25443786982249%; height: 0;"><iframe src="https://www.loom.com/embed/d9fb29af8cdd48348e1db4712d54478a" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
+
 Valohai is completely technology agnostic. You can develop in notebooks or scripts in a language and framework of your choice.
 
 .. admonition:: valohai.yaml
