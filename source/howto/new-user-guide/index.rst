@@ -59,6 +59,12 @@ This guide will cover the common tasks that you need to perform to bring your ex
     * How to :ref:`setup`
 
 
+.. raw:: html
+
+    <div style="position: relative; padding-bottom: 53.57142857142857%; height: 0;"><iframe src="https://www.loom.com/embed/bd2ec4766f7e43e89d4533f6023564b2" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
+
+
 Connect your Git repository to a Valohai project
 -------------------------------------------------
 
@@ -115,8 +121,8 @@ Start by installing the Valohai tools, logging in, and linking your local direct
 
     yaml
     code/data
-    code/metadata
     code/parameters
+    code/metadata
 
 Choose a Docker image
 ----------------------

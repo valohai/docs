@@ -13,6 +13,11 @@ Define Valohai parameters
 
     This how-to is a part of our :ref:`new-user-guide` series.
 
+.. raw:: html
+
+    <div style="position: relative; padding-bottom: 50.2092050209205%; height: 0;"><iframe src="https://www.loom.com/embed/b2893913fdbe4d3a90e341a3f3c7d208" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
+
 .. include:: /_partials/_recap-parameters.rst
 
 .. tab:: valohai-utils (Python)
