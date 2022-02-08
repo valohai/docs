@@ -7,7 +7,7 @@
 ``pipeline.nodes`` is **an array of objects**, each object having the following properties:
 
 * ``name``: name of the node, used in edge definitions ``edges:``
-* ``type``: type of the node, accepts "execution", :doc:`step "task" </howto/pipelines/tasks/>`, or "deployment"
+* ``type``: type of the node, accepts "execution", :doc:`"task" </howto/pipelines/tasks/>`, or "deployment"
 * ``step``: name of the step to be executed, defined in the same file
 * ``override``: **(optional)** override values defined in the original :doc:`step </reference-guides/valohai-yaml/step>`
 
