@@ -30,7 +30,7 @@ Installing the Valohai worker
 
 The Valohai agent (Peon) is responsible for fetching new jobs, writing logs, and updating the job states for Valohai.
 
-You'll need to have ``Python 3.6+`` installed on the machines by default. The ``peon-bringup`` (bup) will install other dependencies, like ``docker`` and if needed ``nvidia-docker``.
+You'll need to have ``Python 3.8+`` installed on the machines by default. The ``peon-bringup`` (bup) will install other dependencies, like ``docker`` and if needed ``nvidia-docker``.
 
 .. warning::
 
