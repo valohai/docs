@@ -23,9 +23,11 @@ Generate an SSH key pair
 
 Use :code:`ssh-keygen` to create a new SSH key pair.
 
+You'll need to generate a key without a passphrase, so just hit enter when prompted for a passphrase.
+
 .. code-block:: bash
 
-   $ ssh-keygen -t rsa -b 4096 -N '' -f my-project-deploy-key
+   ssh-keygen -t rsa -b 4096 -f my-project-deploy-key
 
 This will generate two files:
 
