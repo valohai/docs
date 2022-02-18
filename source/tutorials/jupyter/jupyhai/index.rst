@@ -6,7 +6,11 @@
 Jupyter Notebooks
 ##################
 
-In this tutorial, we will use the Jupyhai extension to run a Valohai execution from your local Jupyter notebook.
+.. raw:: html  
+
+   <div style="position: relative; padding-bottom: 51.873198847262245%; height: 0;"><iframe src="https://www.loom.com/embed/7c7177d4699a45af8e4b0655091a02b0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
+In this tutorial, you will learn how to use the Jupyhai extension to run a Valohai execution from your local Jupyter notebook.
 
 .. admonition:: A short recap on Notebooks
    :class: tip
@@ -14,7 +18,7 @@ In this tutorial, we will use the Jupyhai extension to run a Valohai execution f
    * Jupyhai is a Jupyter notebook extension developed and maintained by Valohai.
    * Use the **Run remote** button, instead of the Run cell button to run your notebook on Valohai.
    * The Jupyhai addon will generate a :ref:`yaml` file for each execution based on the contents of the Notebook. You don't need to create the YAML file yourself.
-   * Make sure you're using the latest version of ``jupyhai``
+   * Make sure you're always using the latest version of ``jupyhai``
 
    .. code:: bash
 
@@ -180,9 +184,9 @@ Notebook previews and visualizations
 The notebooks you run in Valohai will be automatically versioned and saved as outputs. 
 You can preview them under the Data tab of your project or under the Outputs tab for individual executions.
 
-Note that the preview does not currently support ``showfig`` so you won't be able to preview the plots inside the notebook.
+When it comes to visualization such as plots, it might make more sense to save them as separate outputs. This allows you to access them quickly without having to scroll through the notebook.
 
-- You can still save the figures into outputs as described in the section on `saving graphs from executions </howto/executions/complex-visualizations/>`_. This way the graphs will be also versioned. 
+- To do this you can follow the instructions in the section on `saving graphs from executions </howto/executions/complex-visualizations/>`_. This way the graphs will be also versioned. 
 
 - If you mark the images read-only when saving them, you can view them under the outputs tab even before the execution has finished.  ``valohai-utils`` can also they care of the direct uploading for you: ``valohai.outputs().live_upload("myimage.png")``
 
