@@ -222,7 +222,6 @@ redirects = {
     '/tutorials/learning-paths/pipelines/4-utils-pipeline.html': 'https://help.valohai.com/hc/en-us/articles/4419911681553-Create-a-pipeline-with-valohai-utils',
     '/tutorials/learning-paths/pipelines/5-advanced-pipeline.html': 'https://help.valohai.com/hc/en-us/articles/4419898518673-Advanced-pipeline-features',
     '/tutorials/learning-paths/pipelines/6-recap.html': 'https://help.valohai.com/hc/en-us/articles/4419920737809-Knowledge-Check',
-    '/tutorials/learning-paths/index.html': 'https://valohai.zendesk.com/',
     '/tutorials/quickstart/quickstart-pipeline/index.html': 'https://valohai.zendesk.com/hc/en-us/categories/4419135164689-Pipelines',
     '/howto/new-user-guide/index.html': 'https://valohai.zendesk.com/hc/en-us/articles/4422925747857-Bring-your-existing-projects-to-Valohai',
     '/tutorials/learning-paths/pipelines/2-pipeline-yaml/index.html':'https://valohai.zendesk.com/hc/en-us/articles/4419251813265-Define-a-pipeline-in-valohai-yaml',
@@ -232,22 +231,9 @@ redirects = {
     '/howto/pipelines/triggers/index.html':'https://valohai.zendesk.com/hc/en-us/articles/4420952086801',
     '/tutorials/jupyter/jupyhai/index.html':'https://valohai.zendesk.com/hc/en-us/articles/4422923531793-Run-notebooks-on-Valohai',
     '/howto/docker/docker-build-image/index.html':'https://valohai.zendesk.com/hc/en-us/articles/4421364087569-Build-your-own-Docker-image',
-    '/tutorials/learning-paths/fundamentals/5-inputs/index.html': 'https://valohai.zendesk.com/hc/en-us/articles/4419897109777-Download-data-to-your-job',
     '/howto/executions/compare/index.html': 'https://valohai.zendesk.com/hc/en-us/articles/4420957824145-Compare-executions',
     '/howto/code-repository/private-github-repository/index.html': 'https://valohai.zendesk.com/hc/en-us/articles/4419972477073-Connect-a-GitHub-repository-to-your-project',
-    '/tutorials/learning-paths/pipelines/index.html': 'https://valohai.zendesk.com/hc/en-us/articles/4419257445521-Getting-started-with-pipelines',
-    '/tutorials/learning-paths/pipelines/3-run-pipeline/index.html': 'https://valohai.zendesk.com/hc/en-us/articles/4419920118801-Run-a-pipeline',
-    '/reference-guides/valohai-yaml/pipeline/edges/index.html': 'https://valohai.zendesk.com/hc/en-us/articles/4422592113553-pipeline-edges',
-    '/howto/data/index.html': 'https://valohai.zendesk.com/hc/en-us/categories/4419137304337-Data',
-    '/tutorials/apis/index.html':'https://valohai.zendesk.com/hc/en-us/categories/4419920952977-API',
-    '/tutorials/index.html':'https://valohai.zendesk.com/hc/en-us',
-    '/howto/index.html':'https://valohai.zendesk.com/hc/en-us',
-    '/topic-guides/index.html':'https://valohai.zendesk.com/hc/en-us',
-    '/tutorials/quickstart/index.html':'https://valohai.zendesk.com/hc/en-us',
-    '/reference-guides/index.html':'https://valohai.zendesk.com/hc/en-us',
-    '/howto/setup/index.html':'https://valohai.zendesk.com/hc/en-us/categories/4420339899537-Setup',
-    '/howto/code-repository/index.html':'https://valohai.zendesk.com/hc/en-us/categories/4419991511697-Git-repositories',
-    '/howto/docker/index.html':'https://valohai.zendesk.com/hc/en-us/categories/4419137323793-Docker'
+    '/reference-guides/valohai-yaml/pipeline/edges/index.html': 'https://valohai.zendesk.com/hc/en-us/articles/4422592113553-pipeline-edges'
 
 }
 
