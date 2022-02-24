@@ -54,7 +54,7 @@ html_theme_path = ['_themes']
 html_static_path = ['_static']
 html_show_sourcelink = False
 html_theme_options = {
-
+    "announcement": "🚨 Docs is moving to <a href='https://help.valohai.com'>help.valohai.com!</a> 🚨",
     "light_css_variables": {
         "color-brand-primary": "#003B49",
         "color-brand-content": "#003B49",
