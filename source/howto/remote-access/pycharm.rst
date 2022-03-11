@@ -17,6 +17,10 @@ Debug from PyCharm
 
 In this guide we'll look at attaching the PyCharm remote debugger to a Valohai execution.
 
+.. raw:: html
+
+    <div style="position: relative; padding-bottom: 52.17391304347826%; height: 0;"><iframe src="https://www.loom.com/embed/4b09a54ca5094138814b15526755fc14" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
 1. Sample Code
 ---------------
 

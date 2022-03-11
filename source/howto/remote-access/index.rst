@@ -31,6 +31,10 @@ It is a low-level and agnostic protocol, which makes it usable for a wide array 
 
   Your organization admin needs to enable SSH connection to the workers and edit the firewall rules in your cloud provider.
 
+.. raw:: html
+
+   <div style="position: relative; padding-bottom: 52.249637155297535%; height: 0;"><iframe src="https://www.loom.com/embed/9f1cf0b6dde84e558531b2107b272419" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
 0. Configure SSH Access for your organization
 -----------------------------------------------
 

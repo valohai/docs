@@ -13,6 +13,10 @@ Debug from VSCode
 
 In this guide we'll look at attaching the VSCode remote debugger to a Valohai execution.
 
+.. raw:: html
+
+    <div style="position: relative; padding-bottom: 50.42016806722689%; height: 0;"><iframe src="https://www.loom.com/embed/5112c1c0b4fc4842abfde80463c5ccc1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
 1. Sample Code
 ---------------
 
