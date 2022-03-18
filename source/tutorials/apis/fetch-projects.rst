@@ -38,7 +38,7 @@ Get an authentication token
 .. admonition:: Store your token in a secure location
     :class: warning
 
-    The generated token is personal and it gives you access to Valohai features through your account. You might want to save the token in a configuration file or a database.
+    The generated token is personal and it gives you access to Valohai features through your account. You might want to save the token in a local environment variable, a configuration file or a database.
 
     Don't include it directly in your version controlled files.
 
@@ -57,8 +57,12 @@ We will fetch a list of all projects accessible from this user account.
 
     import requests
     import json
+    import os
 
-    auth_token = '<insert your authentication token from step 3 here>'
+    # Get the Valohai API token you created earlier.
+    # Here it has been stored in a local environment variable.
+    # Remember to follow your organization's security standards when handling the token.  
+    auth_token = os.environ['VH_API_TOKEN']
     headers = {'Authorization': 'Token %s' % auth_token}
 
     resp = requests.get('https://app.valohai.com/api/v0/projects/', headers=headers)
