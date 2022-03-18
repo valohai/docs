@@ -27,6 +27,10 @@ In this tutorial, we will use the Valohai API to login and fetch a list of proje
 
         pip install requests
 
+.. raw:: html
+    
+    <div style="position: relative; padding-bottom: 52.123552123552116%; height: 0;"><iframe src="https://www.loom.com/embed/8a1cb98d3ac6437e87e654a948ab8c31" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>  
+
 
 Get an authentication token
 ---------------------------------
