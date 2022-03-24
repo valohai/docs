@@ -67,8 +67,9 @@ Our action will run a Python script inside a Docker container. That script will 
         import json
         import os
 
-        # Authenticate yourself with the token
-        auth_token = '<your-auth-token>'
+        # Authenticate yourself with the token.
+        # Remember to follow your organization's security standards when handling the token.   
+        auth_token = os.environ['VH_API_TOKEN']
         headers = {'Authorization': 'Token %s' % auth_token}
         project_id = '<your-project-id>'
         step_name = '<your-step-name-from-valohai.yaml>'

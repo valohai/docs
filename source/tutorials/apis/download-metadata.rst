@@ -13,9 +13,11 @@ Downloading metadata of a single execution
 
       import requests
       import json
+      import os
 
-      # Authenticate yourself with the token
-      auth_token = '<your-auth-token>'
+      # Authenticate yourself with the token.
+      # Remember to follow your organization's security standards when handling the token.  
+      auth_token = os.environ['VH_API_TOKEN']
       headers = {'Authorization': 'Token %s' % auth_token}
 
       # Send a request (with the authentication headers) to fetch all executions in a project
